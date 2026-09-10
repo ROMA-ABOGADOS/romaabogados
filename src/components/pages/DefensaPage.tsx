@@ -1,0 +1,411 @@
+"use client";
+
+import Link from "next/link";
+import { SiteLayout } from "@/components/SiteLayout";
+import { motion } from "framer-motion";
+import {
+  AlertTriangle, Shield, Gavel, MessageCircle, Clock, ArrowRight,
+  ChevronRight, CheckCircle2, FileWarning, FileText, Scale, Zap,
+  TrendingUp, Users
+} from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useScrollSlug } from "@/hooks/use-scroll-slug";
+import { useWhatsAppStore } from "@/lib/whatsapp";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import { SectionDivider } from "@/components/SectionDivider";
+import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
+import { useSanityDocument } from "@/sanity/useSanity";
+import { pageDefensaQuery } from "@/sanity/queries";
+import { getSanityImageUrl } from "@/sanity/image";
+
+const urgentCards = [
+  {
+    icon: FileWarning,
+    title: "Cartas Inductivas",
+    description: "SUNAT te envió una carta inductiva porque detectó inconsistencias en tu información tributaria. No responder a tiempo puede derivar en multas de hasta el 100% del tributo omitido.",
+    cta: "Atender mi Carta Inductiva",
+    serviceId: 5,
+    urgency: "Tienes 10 días hábiles para responder. Actúa ahora.",
+    price: "Desde S/ 200",
+    details: [
+      "Análisis completo de la carta recibida",
+      "Identificación de las inconsistencias detectadas por SUNAT",
+      "Preparación de la respuesta fundamentada con documentación",
+      "Presentación de descargos ante SUNAT",
+      "Seguimiento hasta la resolución del caso",
+    ],
+  },
+  {
+    icon: FileText,
+    title: "Carta por Incremento Patrimonial No Justificado",
+    description: "SUNAT detectó un incremento en tu patrimonio que no coincide con tus declaraciones tributarias. Es fundamental presentar descargos sólidos con documentación que sustente tus ingresos.",
+    cta: "Atender mi Carta Patrimonial",
+    serviceId: 11,
+    urgency: "Tienes 10 días hábiles para responder. Actúa ahora.",
+    price: "Consultar según el caso",
+    details: [
+      "Análisis completo de la carta recibida",
+      "Identificación de las inconsistencias detectadas por SUNAT",
+      "Preparación de la respuesta fundamentada con documentación",
+      "Presentación de descargos ante SUNAT",
+      "Seguimiento hasta la resolución del caso",
+    ],
+  },
+  {
+    icon: Shield,
+    title: "Fiscalizaciones",
+    description: "SUNAT seleccionó tu empresa para una auditoría tributaria. Una fiscalización mal manejada puede resultar en determinaciones de deuda significativas y cobranzas coactivas.",
+    cta: "Defender mi Empresa",
+    serviceId: 6,
+    urgency: "No esperes a que termine el plazo de fiscalización.",
+    price: "Consultar según caso",
+    details: [
+      "Revisión integral de la orden de fiscalización",
+      "Organización y preparación de toda la documentación requerida",
+      "Acompañamiento durante las actuaciones fiscales",
+      "Elaboración de observaciones y descargos",
+      "Estrategia de defensa tributaria personalizada",
+    ],
+  },
+  {
+    icon: Gavel,
+    title: "Cobranza Coactiva",
+    description: "Tienes deudas tributarias en etapa de cobranza coactiva. SUNAT puede embargar tus cuentas bancarias, bienes y afectar gravemente la operación de tu negocio.",
+    cta: "Negociar mi Deuda",
+    serviceId: 7,
+    urgency: "Evita embargos y afectaciones a tu patrimonio.",
+    price: "Consultar según deuda",
+    details: [
+      "Análisis de la deuda tributaria total",
+      "Verificación de la validez de los valores reclamados",
+      "Solicitud de fraccionamiento o aplazamiento",
+      "Presentación de recursos de reclamación",
+      "Negociación directa con SUNAT para obtener las mejores condiciones",
+    ],
+  },
+];
+
+const whyUs = [
+  { icon: Zap, text: "Respuesta inmediata: nos comunicamos contigo en menos de 1 hora" },
+  { icon: Shield, text: "Equipo especializado con experiencia en defensa tributaria real" },
+  { icon: Scale, text: "Conocimiento profundo de la normativa tributaria peruana vigente" },
+  { icon: CheckCircle2, text: "Seguimiento constante hasta la resolución final de tu caso" },
+];
+
+const inversionistaFeatures = [
+  { icon: TrendingUp, title: "Evaluación de Inversiones", desc: "Análisis de viabilidad y rentabilidad de proyectos de inversión" },
+  { icon: Scale, title: "Planificación Fiscal", desc: "Estructuración tributaria óptima para maximizar retornos" },
+  { icon: Users, title: "Constitución de Empresas", desc: "Creación de vehículos societarios para inversores nacionales y extranjeros" },
+  { icon: Gavel, title: "Debido Diligencia", desc: "Verificación integral de empresas antes de adquirir participaciones" },
+  { icon: FileText, title: "Reestructuración Societaria", desc: "Reorganización de estructuras corporativas para eficiencia fiscal" },
+  { icon: CheckCircle2, title: "Asesoría Inmobiliaria", desc: "Orientación en inversiones inmobiliarias y aspectos tributarios" },
+  { icon: ArrowRight, title: "Transferencia de Acciones", desc: "Asesoramiento en compra-venta de participaciones empresariales" },
+  { icon: Zap, title: "Reportes Financieros", desc: "Estados financieros especializados para toma de decisiones de inversión" },
+];
+
+export function DefensaPage() {
+  useScrollSlug();
+  const { ref, isVisible } = useScrollAnimation(0.1);
+  const { openModal } = useWhatsAppStore();
+  const sanityDoc = useSanityDocument<any>(pageDefensaQuery, null);
+
+  const heroImageSrc = sanityDoc?.heroImage
+    ? getSanityImageUrl(sanityDoc.heroImage, "/jhon-defensa.webp")
+    : "/jhon-defensa.webp";
+
+  const heroSubtitle =
+    sanityDoc?.heroSubtitle ||
+    "No dejes pasar el plazo. Cada día cuenta para defender tu patrimonio. Nuestro equipo de especialistas tributarios actúa con la urgencia que tu caso requiere.";
+
+  const sectionSituationsTitle = sanityDoc?.sectionSituationsTitle || "Elige tu";
+  const sectionSituationsHighlight = sanityDoc?.sectionSituationsHighlight || "situación";
+  const sectionSituationsSubtitle =
+    sanityDoc?.sectionSituationsSubtitle ||
+    "Cada caso es diferente. Selecciona tu situación y te ayudamos de inmediato.";
+
+  const activeUrgentCards = (sanityDoc?.urgentCards && sanityDoc.urgentCards.length > 0)
+    ? sanityDoc.urgentCards.map((card: any, idx: number) => ({
+        ...card,
+        icon: urgentCards[idx % urgentCards.length].icon,
+        details: Array.isArray(card.details) ? card.details : urgentCards[idx % urgentCards.length].details,
+      }))
+    : urgentCards;
+
+  const whyUsTitle = sanityDoc?.whyUsTitle || "¿Por qué confiar en nosotros?";
+  const activeWhyUs = (sanityDoc?.whyUsItems && sanityDoc.whyUsItems.length > 0)
+    ? sanityDoc.whyUsItems.map((text: string, idx: number) => ({
+        text,
+        icon: whyUs[idx % whyUs.length].icon,
+      }))
+    : whyUs;
+
+  const inversionistaHeroTitle = sanityDoc?.inversionistaHeroTitle || "Asesoría al Inversionista Planificación estratégica";
+  const inversionistaHeroSubtitle =
+    sanityDoc?.inversionistaHeroSubtitle ||
+    "Acompañamos a inversores nacionales y extranjeros en cada etapa: desde la evaluación de oportunidades hasta la estructuración fiscal óptima para maximizar sus retornos.";
+
+  const activeInversionistaFeatures = (sanityDoc?.inversionistaFeatures && sanityDoc.inversionistaFeatures.length > 0)
+    ? sanityDoc.inversionistaFeatures.map((item: any, idx: number) => ({
+        ...item,
+        icon: inversionistaFeatures[idx % inversionistaFeatures.length].icon,
+      }))
+    : inversionistaFeatures;
+
+  return (
+    <SiteLayout>
+      {/* ═══ SUBPAGE HERO — Responsive Layout ═══ */}
+      <section id="hero" className="relative w-full min-h-screen min-h-[100dvh] flex items-center overflow-hidden bg-[#112C22] pt-[100px] pb-12">
+        {/* Top urgency accent line */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-urgent via-gold to-urgent z-30" />
+        {/* Background image layer */}
+        <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+          <img
+            src={heroImageSrc}
+            alt="Especialista Roma Abogados"
+            className="w-full h-full object-cover object-[center_15%] md:object-[60%_20%] lg:object-[70%_22%] xl:object-[75%_20%] scale-105 brightness-[0.40] md:brightness-100"
+          />
+          <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#112C22] via-[#112C22]/80 to-transparent w-full md:w-[70%] lg:w-[60%] z-10"></div>
+          <div className="block md:hidden absolute inset-0 bg-gradient-to-b from-[#112C22]/90 via-[#112C22]/60 to-[#0B1E17] z-10"></div>
+        </div>
+        {/* Content — same container as homepage */}
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="w-full max-w-xl md:max-w-2xl lg:max-w-3xl flex flex-col justify-center text-left">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
+            {/* Breadcrumb */}
+            <Link href="/" className="inline-flex items-center gap-1 text-white/50 hover:text-white/75 text-[13px] transition-colors">
+              Inicio <ChevronRight className="w-4 h-4" /> Asesoría Tributaria
+            </Link>
+            {/* H1 */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="hero-h1 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white leading-tight tracking-tight mt-5"
+            >
+              ¿SUNAT te{" "}
+              <span className="text-[#ef4444]">fiscalizó</span>?
+            </motion.h1>
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hero-subtitle mt-5 text-[15px] sm:text-[17px] lg:text-[18px] text-[#f8fafc]/80 max-w-lg leading-relaxed font-light"
+            >
+              {heroSubtitle}
+            </motion.p>
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="hero-ctas mt-8 flex flex-col sm:flex-row gap-3.5"
+            >
+              <button
+                onClick={() => openModal(5)}
+                className="inline-flex items-center justify-center gap-2.5 bg-urgent hover:bg-urgent/90 text-white px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-bold transition-all shadow-lg shadow-urgent/30 hover:shadow-xl hover:shadow-urgent/40 active:scale-[0.98]"
+              >
+                Atención Inmediata
+                <ArrowRight className="w-4 h-4" />
+              </button>
+              <a
+                href="#elige-tu-situacion"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-semibold transition-all backdrop-blur-sm"
+              >
+                Ver Casos de Urgencia
+              </a>
+            </motion.div>
+            {/* Trust badges */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
+              className="hero-trust mt-8 flex flex-wrap gap-x-6 gap-y-2.5 text-white/45 text-xs sm:text-sm"
+            >
+              {[
+                "Respuesta en < 1 hora",
+                "Especialistas Tributarios",
+                "Defensa Estratégica"
+              ].map((badge) => (
+                <span key={badge} className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C5A572]" />
+                  {badge}
+                </span>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+        </div>
+        {/* Scroll down indicator */}
+        <ScrollDownIndicator />
+      </section>
+
+      {/* Urgent Service Cards */}
+      <SectionDivider from="#112C22" to="#FAF8F5" />
+      <section id="elige-tu-situacion" className="py-20 lg:py-28 bg-[#FAF8F5] relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-red-50/50 via-transparent to-red-50/30 pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div ref={ref} className="text-center max-w-3xl mx-auto mb-16">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={isVisible ? { opacity: 1, y: 0 } : {}}>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy">
+                {sectionSituationsTitle} <span className="text-urgent">{sectionSituationsHighlight}</span>
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                {sectionSituationsSubtitle}
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="space-y-8">
+            {activeUrgentCards.map((card: any, i: number) => {
+              const Icon = card.icon;
+              return (
+                <ScrollReveal
+                  key={card.title}
+                  delay={0.1 * i}
+                  duration={0.6}
+                  className="bg-white rounded-2xl border-2 border-urgent/20 shadow-sm hover:shadow-lg hover:border-urgent/40 transition-all overflow-hidden"
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
+                    <div className="p-6 lg:p-8 lg:col-span-1">
+                      <div className="w-14 h-14 bg-urgent/10 rounded-xl flex items-center justify-center mb-5">
+                        <Icon className="w-7 h-7 text-urgent" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-navy mb-2">{card.title}</h3>
+                      <span className="inline-block bg-emerald/10 text-emerald font-bold text-sm px-3 py-1 rounded-full mb-3">{card.price}</span>
+                      <div className="flex items-center gap-2 text-urgent bg-urgent/5 rounded-lg p-3">
+                        <Clock className="w-4 h-4 shrink-0 urgent-pulse" />
+                        <span className="text-sm font-medium">{card.urgency}</span>
+                      </div>
+                    </div>
+                    <div className="p-6 lg:p-8 lg:col-span-2 border-t lg:border-t-0 lg:border-l border-gray-100">
+                      <p className="text-muted-foreground leading-relaxed mb-6">{card.description}</p>
+                      <h4 className="text-sm font-bold text-navy mb-3 uppercase tracking-wider">¿Qué incluye?</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                        {card.details.map((d) => (
+                          <div key={d} className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-emerald mt-0.5 shrink-0" />
+                            <span className="text-sm text-muted-foreground">{d}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <button
+                        onClick={() => openModal(card.serviceId)}
+                        className="inline-flex items-center gap-2 bg-urgent hover:bg-urgent/90 text-white px-8 py-3.5 rounded-xl font-semibold text-sm transition-all shadow-md hover:shadow-lg"
+                      >
+                        {card.cta}
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Us */}
+      <SectionDivider from="#f9fafb" to="#ffffff" />
+      <section id="por-que-confiar-en-nosotros" className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block text-emerald font-semibold text-sm tracking-wider uppercase mb-4">Nuestra Ventaja</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy">
+              {whyUsTitle}
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {activeWhyUs.map((item: any, i: number) => {
+              const Icon = item.icon;
+              return (
+                <ScrollReveal
+                  key={i}
+                  delay={0.1 * i}
+                  duration={0.4}
+                  y={20}
+                  className="flex items-start gap-4 p-5 rounded-xl bg-gray-50 border border-gray-100"
+                >
+                  <div className="w-10 h-10 bg-emerald/10 rounded-lg flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5 text-emerald" />
+                  </div>
+                  <span className="text-muted-foreground leading-relaxed">{item.text}</span>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Asesoría al Inversionista */}
+      <SectionDivider from="#FAF8F5" to="#FAF8F5" />
+      <section id="asesoria-inversionista" className="py-20 lg:py-28 bg-[#FAF8F5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block text-[#C5A572] font-semibold text-sm tracking-wider uppercase mb-4">Servicio Especializado</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#183D2F]">
+              {inversionistaHeroTitle}
+            </h2>
+            <p className="mt-4 text-lg text-[#364A41] max-w-2xl mx-auto leading-relaxed">
+              {inversionistaHeroSubtitle}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {activeInversionistaFeatures.map((feature: any, i: number) => {
+              const Icon = feature.icon;
+              return (
+                <ScrollReveal
+                  key={feature.title}
+                  delay={0.05 * i}
+                  className="flex gap-4 p-6 rounded-xl border border-[#E8E2D5] bg-white hover:border-[#C5A572]/40 hover:shadow-sm transition-all"
+                >
+                  <div className="w-12 h-12 bg-[#C5A572]/15 rounded-xl flex items-center justify-center shrink-0">
+                    <Icon className="w-6 h-6 text-[#183D2F]" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-[#183D2F] mb-1">{feature.title}</h3>
+                    <p className="text-sm text-[#364A41] leading-relaxed">{feature.desc}</p>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+
+          <div className="text-center mt-12">
+            <ScrollReveal delay={0.3} duration={0.4} y={15}>
+              <button
+                onClick={() => openModal(9)}
+                className="inline-flex items-center justify-center gap-2.5 bg-[#C5A572] hover:bg-[#B39360] text-[#112C22] px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-lg shadow-[#C5A572]/25 hover:shadow-xl active:scale-[0.98]"
+              >
+                Consultar Asesoría
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <SectionDivider from="#FAF8F5" to="#991b1b" />
+      <section id="contacto" className="py-20 lg:py-28 bg-gradient-to-r from-urgent to-[#183D2F]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+            El tiempo es tu peor enemigo frente a SUNAT
+          </h2>
+          <p className="text-white/70 mb-8 text-lg">
+            Cuanto antes nos contactes, mejores serán las opciones de defensa para tu caso. Consulta sin costo.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onClick={() => openModal(5)} className="inline-flex items-center justify-center gap-2 bg-white text-[#183D2F] px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-lg hover:shadow-xl">
+              <MessageCircle className="w-5 h-5" /> Atender mi Caso Ahora
+            </button>
+            <Link href="/contabilidad-tributacion" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all">
+              Ver Servicios de Contabilidad
+            </Link>
+          </div>
+        </div>
+      </section>
+    </SiteLayout>
+  );
+}

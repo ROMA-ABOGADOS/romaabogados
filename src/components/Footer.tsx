@@ -1,0 +1,176 @@
+"use client";
+
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Facebook, Instagram, Linkedin, Youtube, ArrowUp, Video, Scale } from "lucide-react";
+import Image from "next/image";
+
+const quickLinks = [
+  { label: "Inicio", href: "/" },
+  { label: "Constitución de Empresas", href: "/constitucion-de-empresas" },
+  { label: "Contabilidad y Tributación", href: "/contabilidad-tributacion" },
+  { label: "Asesoría Tributaria", href: "/defensa-tributaria-sunat" },
+  { label: "Nosotros", href: "/nosotros-contacto" },
+];
+
+const socialLinks = [
+  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: Video, href: "#", label: "TikTok" },
+];
+
+export function Footer() {
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  return (
+    <footer className="bg-navy text-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <Link href="/" className="inline-block mb-5 group">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white/10 text-emerald-light flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-colors">
+                  <Scale className="w-5 h-5" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-black text-xl tracking-tight text-white leading-none">
+                    ROMA<span className="text-emerald">ABOGADOS</span>
+                  </span>
+                  <span className="text-[9px] uppercase font-bold text-white/70 tracking-[0.2em] mt-1">
+                    Estudio Jurídico & Tributario
+                  </span>
+                </div>
+              </div>
+            </Link>
+            <p className="text-white/60 text-sm leading-relaxed">
+              Protegemos el patrimonio y aseguramos el crecimiento de tu empresa con asesoría
+              jurídica de excelencia, contabilidad integral y defensa estratégica ante SUNAT.
+            </p>
+            <p className="text-white/40 text-sm mt-3">Estudio Jurídico Especializado</p>
+            <a
+              href="mailto:contacto@romaabogados.pe"
+              className="text-emerald hover:text-emerald-light text-sm transition-colors inline-block mt-1"
+            >
+              contacto@romaabogados.pe
+            </a>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-semibold text-sm uppercase tracking-wider text-white/80 mb-4">
+              Navegación
+            </h4>
+            <ul className="space-y-2.5">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-white/60 hover:text-emerald-light text-sm transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-semibold text-sm uppercase tracking-wider text-white/80 mb-4">
+              Servicios
+            </h4>
+            <ul className="space-y-2.5">
+              <li>
+                <Link href="/constitucion-de-empresas" className="text-white/60 hover:text-emerald-light text-sm transition-colors">
+                  Constitución de Empresas
+                </Link>
+              </li>
+              <li>
+                <Link href="/contabilidad-tributacion" className="text-white/60 hover:text-emerald-light text-sm transition-colors">
+                  Contabilidad Integral
+                </Link>
+              </li>
+              <li>
+                <Link href="/defensa-tributaria-sunat" className="text-white/60 hover:text-emerald-light text-sm transition-colors">
+                  Asesoría Tributaria
+                </Link>
+              </li>
+              <li>
+                <Link href="/contabilidad-tributacion#planillas-laboral" className="text-white/60 hover:text-emerald-light text-sm transition-colors">
+                  Planillas y Laboral
+                </Link>
+              </li>
+              <li>
+                <Link href="/defensa-tributaria-sunat#asesoria-inversionista" className="text-white/60 hover:text-emerald-light text-sm transition-colors">
+                  Asesoría al Inversionista
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact & Social */}
+          <div>
+            <h4 className="font-semibold text-sm uppercase tracking-wider text-white/80 mb-4">
+              Contacto
+            </h4>
+            <div className="space-y-3 text-sm text-white/60 mb-6">
+              <p>+51 943 366 950</p>
+              <p>contacto@romaabogados.pe</p>
+              <p>Lima, Perú</p>
+            </div>
+
+            <h4 className="font-semibold text-sm uppercase tracking-wider text-white/80 mb-3">
+              Síguenos
+            </h4>
+            <div className="flex gap-3">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    aria-label={social.label}
+                    className="w-10 h-10 bg-white/10 hover:bg-emerald/30 rounded-lg flex items-center justify-center transition-colors"
+                  >
+                    <Icon className="w-4 h-4 text-white/70" />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="border-t border-white/10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col items-center gap-2">
+            <p className="text-white/40 text-sm">
+              © 2026 ROMAABOGADOS. Todos los derechos reservados.
+            </p>
+            <p className="footer-credits">
+              Diseñado y desarrollado por <a href="https://www.fastpagepro.com" target="_blank" rel="noopener noreferrer">FastPagePro</a>
+            </p>
+          </div>
+          <div className="flex items-center gap-4">
+            <a href="#" className="text-white/40 hover:text-white/60 text-sm transition-colors">
+              Política de Privacidad
+            </a>
+            <button
+              onClick={scrollToTop}
+              className="w-10 h-10 bg-white/10 hover:bg-emerald/30 rounded-lg flex items-center justify-center transition-colors"
+              aria-label="Ir arriba"
+            >
+              <ArrowUp className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

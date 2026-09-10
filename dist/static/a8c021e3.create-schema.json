@@ -1,0 +1,805 @@
+[
+  {
+    "fields": [
+      {
+        "initialValue": "ROMAABOGADOS",
+        "name": "brandName",
+        "type": "string",
+        "title": "Nombre de la Marca"
+      },
+      {
+        "initialValue": "Estudio Jurídico & Tributario",
+        "name": "tagline",
+        "type": "string",
+        "title": "Lema / Subtítulo Corporativo"
+      },
+      {
+        "initialValue": "+51 943 366 950",
+        "name": "phone",
+        "type": "string",
+        "title": "Teléfono Principal"
+      },
+      {
+        "initialValue": "51943366950",
+        "name": "whatsapp",
+        "type": "string",
+        "title": "Número de WhatsApp (solo números con código país)"
+      },
+      {
+        "initialValue": "contacto@romaabogados.pe",
+        "name": "email",
+        "type": "string",
+        "title": "Correo Electrónico de Contacto"
+      },
+      {
+        "initialValue": "Lima, Perú",
+        "name": "address",
+        "type": "string",
+        "title": "Ubicación / Ciudad"
+      },
+      {
+        "initialValue": "Lun - Vie: 8:00 - 18:00 / Sáb: 9:00 - 13:00",
+        "name": "schedule",
+        "type": "string",
+        "title": "Horario de Atención"
+      },
+      {
+        "rows": 3,
+        "initialValue": "Protegemos el patrimonio y aseguramos el crecimiento de tu empresa con asesoría jurídica de excelencia, contabilidad integral y defensa estratégica ante SUNAT.",
+        "name": "footerDescription",
+        "type": "text",
+        "title": "Descripción del Pie de Página"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "logo",
+        "type": "image",
+        "title": "Logotipo Oficial (Opcional - Imagen)"
+      }
+    ],
+    "name": "siteSettings",
+    "type": "document",
+    "title": "Configuración Global del Sitio"
+  },
+  {
+    "fields": [
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "badge",
+                "type": "string",
+                "title": "Insignia / Badge"
+              },
+              {
+                "name": "titlePart1",
+                "type": "string",
+                "title": "Título (Primera parte)"
+              },
+              {
+                "name": "titleHighlight1",
+                "type": "string",
+                "title": "Título resaltado (Verde)"
+              },
+              {
+                "name": "titlePart2",
+                "type": "string",
+                "title": "Título (Segunda parte)"
+              },
+              {
+                "name": "titleHighlight2",
+                "type": "string",
+                "title": "Título resaltado 2 (Verde)"
+              },
+              {
+                "rows": 2,
+                "name": "subtitle",
+                "type": "text",
+                "title": "Subtítulo"
+              },
+              {
+                "name": "cta1Text",
+                "type": "string",
+                "title": "Texto Botón 1"
+              },
+              {
+                "name": "cta1Link",
+                "type": "string",
+                "title": "Enlace Botón 1 (o #whatsapp)"
+              },
+              {
+                "name": "cta2Text",
+                "type": "string",
+                "title": "Texto Botón 2"
+              },
+              {
+                "name": "cta2Link",
+                "type": "string",
+                "title": "Enlace Botón 2"
+              },
+              {
+                "of": [
+                  {
+                    "type": "string"
+                  }
+                ],
+                "name": "badges",
+                "type": "array",
+                "title": "Mini etiquetas"
+              },
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "name": "image",
+                "type": "image",
+                "title": "Foto de fondo"
+              }
+            ],
+            "type": "object",
+            "name": "slide"
+          }
+        ],
+        "name": "heroSlides",
+        "type": "array",
+        "title": "Carrusel del Hero (Slides)"
+      },
+      {
+        "fields": [
+          {
+            "name": "title",
+            "type": "string",
+            "title": "Nombre / Razón"
+          },
+          {
+            "name": "subtitle",
+            "type": "string",
+            "title": "Cargo / Especialidad"
+          },
+          {
+            "rows": 2,
+            "name": "quote",
+            "type": "text",
+            "title": "Cita / Lema"
+          },
+          {
+            "name": "sectionTitle",
+            "type": "string",
+            "title": "Título de la columna derecha"
+          },
+          {
+            "rows": 2,
+            "name": "sectionSubtitle",
+            "type": "text",
+            "title": "Subtítulo de la columna derecha"
+          },
+          {
+            "options": {
+              "hotspot": true
+            },
+            "name": "image",
+            "type": "image",
+            "title": "Fotografía"
+          }
+        ],
+        "name": "founder",
+        "type": "object",
+        "title": "Presentación del Estudio / Socio"
+      },
+      {
+        "fields": [
+          {
+            "name": "badge",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "title": "Título"
+          },
+          {
+            "rows": 4,
+            "name": "description",
+            "type": "text",
+            "title": "Descripción"
+          },
+          {
+            "of": [
+              {
+                "type": "string"
+              }
+            ],
+            "name": "achievements",
+            "type": "array",
+            "title": "Logros / Viñetas"
+          }
+        ],
+        "name": "trajectory",
+        "type": "object",
+        "title": "Sección Trayectoria y Respaldo"
+      },
+      {
+        "fields": [
+          {
+            "initialValue": "Nuestros Servicios",
+            "name": "badge",
+            "type": "string"
+          },
+          {
+            "initialValue": "¿Por qué elegir ROMA ABOGADOS?",
+            "name": "title",
+            "type": "string",
+            "title": "Título"
+          },
+          {
+            "rows": 2,
+            "initialValue": "Ofrecemos soluciones integrales y personalizadas para proteger y potenciar tu negocio.",
+            "name": "subtitle",
+            "type": "text",
+            "title": "Subtítulo"
+          },
+          {
+            "of": [
+              {
+                "fields": [
+                  {
+                    "name": "title",
+                    "type": "string",
+                    "title": "Título del Servicio"
+                  },
+                  {
+                    "rows": 2,
+                    "name": "description",
+                    "type": "text",
+                    "title": "Descripción"
+                  },
+                  {
+                    "name": "href",
+                    "type": "string",
+                    "title": "Enlace interno"
+                  },
+                  {
+                    "name": "serviceId",
+                    "type": "number",
+                    "title": "ID de WhatsApp"
+                  }
+                ],
+                "type": "object",
+                "name": "serviceCard"
+              }
+            ],
+            "name": "servicesList",
+            "type": "array",
+            "title": "Lista de Servicios"
+          }
+        ],
+        "name": "servicesSection",
+        "type": "object",
+        "title": "Sección de Servicios Destacados"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "name",
+                "type": "string",
+                "title": "Nombre del Cliente"
+              },
+              {
+                "rows": 3,
+                "name": "text",
+                "type": "text",
+                "title": "Testimonio"
+              },
+              {
+                "initialValue": 5,
+                "name": "stars",
+                "type": "number",
+                "title": "Estrellas (1-5)"
+              }
+            ],
+            "type": "object",
+            "name": "testimonial"
+          }
+        ],
+        "name": "testimonials",
+        "type": "array",
+        "title": "Testimonios de Clientes"
+      }
+    ],
+    "name": "homePage",
+    "type": "document",
+    "title": "Página de Inicio (Home)"
+  },
+  {
+    "fields": [
+      {
+        "rows": 2,
+        "name": "heroSubtitle",
+        "type": "text",
+        "title": "Subtítulo del Hero"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "heroImage",
+        "type": "image",
+        "title": "Imagen de Portada"
+      },
+      {
+        "initialValue": "Tipos Societarios Disponibles",
+        "name": "sectionPackagesTitle",
+        "type": "string",
+        "title": "Título de la Sección de Paquetes"
+      },
+      {
+        "initialValue": "Selecciona la modalidad que mejor se adapte a tu visión y número de socios.",
+        "name": "sectionPackagesSubtitle",
+        "type": "string",
+        "title": "Subtítulo de la Sección de Paquetes"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "name",
+                "type": "string",
+                "title": "Sigla (ej. SAC, EIRL)"
+              },
+              {
+                "name": "fullName",
+                "type": "string",
+                "title": "Nombre Completo (ej. Sociedad Anónima Cerrada)"
+              },
+              {
+                "name": "price",
+                "type": "string",
+                "title": "Precio / Tarifa"
+              },
+              {
+                "name": "recommended",
+                "type": "boolean",
+                "title": "Destacado / Recomendado"
+              },
+              {
+                "rows": 2,
+                "name": "idealFor",
+                "type": "text",
+                "title": "Ideal para (Descripción corta)"
+              },
+              {
+                "of": [
+                  {
+                    "type": "string"
+                  }
+                ],
+                "name": "features",
+                "type": "array",
+                "title": "Beneficios y Trámites Incluidos"
+              },
+              {
+                "name": "serviceId",
+                "type": "number",
+                "title": "ID de Servicio WhatsApp"
+              }
+            ],
+            "type": "object",
+            "name": "packageItem"
+          }
+        ],
+        "name": "packages",
+        "type": "array",
+        "title": "Paquetes Societarios (SAC, EIRL, SRL, Cooperativa)"
+      },
+      {
+        "initialValue": "¿Cómo es el proceso?",
+        "name": "sectionStepsTitle",
+        "type": "string",
+        "title": "Título de Proceso Paso a Paso"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "num",
+                "type": "string",
+                "title": "Número de Paso (ej. 01)"
+              },
+              {
+                "name": "title",
+                "type": "string",
+                "title": "Título del Paso"
+              },
+              {
+                "rows": 2,
+                "name": "desc",
+                "type": "text",
+                "title": "Descripción"
+              }
+            ],
+            "type": "object",
+            "name": "stepItem"
+          }
+        ],
+        "name": "steps",
+        "type": "array",
+        "title": "Pasos del Proceso de Constitución"
+      },
+      {
+        "initialValue": "Preguntas Frecuentes sobre Constitución",
+        "name": "sectionFaqsTitle",
+        "type": "string",
+        "title": "Título de Preguntas Frecuentes"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "q",
+                "type": "string",
+                "title": "Pregunta"
+              },
+              {
+                "rows": 3,
+                "name": "a",
+                "type": "text",
+                "title": "Respuesta"
+              }
+            ],
+            "type": "object",
+            "name": "faqItem"
+          }
+        ],
+        "name": "faqs",
+        "type": "array",
+        "title": "Lista de Preguntas y Respuestas (FAQ)"
+      }
+    ],
+    "name": "pageConstitucion",
+    "type": "document",
+    "title": "Página: Constitución de Empresas"
+  },
+  {
+    "fields": [
+      {
+        "rows": 2,
+        "name": "heroSubtitle",
+        "type": "text",
+        "title": "Subtítulo del Hero"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "heroImage",
+        "type": "image",
+        "title": "Imagen de Portada"
+      },
+      {
+        "initialValue": "Alerta Preventiva SUNAT",
+        "name": "alertTitle",
+        "type": "string",
+        "title": "Título de la Alerta SUNAT"
+      },
+      {
+        "rows": 3,
+        "name": "alertText",
+        "type": "text",
+        "title": "Texto de la Alerta SUNAT"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "value",
+                "type": "string",
+                "title": "Valor (ej. 100%, 0)"
+              },
+              {
+                "name": "label",
+                "type": "string",
+                "title": "Descripción"
+              }
+            ],
+            "type": "object",
+            "name": "statItem"
+          }
+        ],
+        "name": "stats",
+        "type": "array",
+        "title": "Métricas y Estadísticas"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string",
+                "title": "Nombre del Servicio (ej. Libros Electrónicos)"
+              },
+              {
+                "rows": 2,
+                "name": "desc",
+                "type": "text",
+                "title": "Descripción"
+              }
+            ],
+            "type": "object",
+            "name": "mainFeatureItem"
+          }
+        ],
+        "name": "mainFeatures",
+        "type": "array",
+        "title": "Servicios Contables Principales"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string",
+                "title": "Nombre del Servicio"
+              },
+              {
+                "rows": 2,
+                "name": "desc",
+                "type": "text",
+                "title": "Descripción"
+              },
+              {
+                "name": "price",
+                "type": "string",
+                "title": "Tarifa"
+              }
+            ],
+            "type": "object",
+            "name": "additionalServiceItem"
+          }
+        ],
+        "name": "additionalServices",
+        "type": "array",
+        "title": "Servicios Complementarios"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string",
+                "title": "Nombre del Trámite (ej. Planilla Mensual PDT 601)"
+              },
+              {
+                "rows": 2,
+                "name": "desc",
+                "type": "text",
+                "title": "Descripción"
+              }
+            ],
+            "type": "object",
+            "name": "laborFeatureItem"
+          }
+        ],
+        "name": "laborFeatures",
+        "type": "array",
+        "title": "Servicios de Planilla Laboral"
+      }
+    ],
+    "name": "pageContabilidad",
+    "type": "document",
+    "title": "Página: Contabilidad y Tributación"
+  },
+  {
+    "fields": [
+      {
+        "rows": 2,
+        "name": "heroSubtitle",
+        "type": "text",
+        "title": "Subtítulo del Hero"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "heroImage",
+        "type": "image",
+        "title": "Imagen de Portada"
+      },
+      {
+        "initialValue": "Elige tu",
+        "name": "sectionSituationsTitle",
+        "type": "string",
+        "title": "Título de la Sección de Casos (ej. Elige tu)"
+      },
+      {
+        "initialValue": "situación",
+        "name": "sectionSituationsHighlight",
+        "type": "string",
+        "title": "Palabra Destacada en Rojo (ej. situación)"
+      },
+      {
+        "initialValue": "Cada caso es diferente. Selecciona tu situación y te ayudamos de inmediato.",
+        "name": "sectionSituationsSubtitle",
+        "type": "string",
+        "title": "Subtítulo de la Sección de Casos"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string",
+                "title": "Título del Caso (ej. Cartas Inductivas)"
+              },
+              {
+                "name": "price",
+                "type": "string",
+                "title": "Precio / Tarifa (ej. Desde S/ 200)"
+              },
+              {
+                "name": "urgency",
+                "type": "string",
+                "title": "Alerta de Urgencia (ej. Tienes 10 días hábiles para responder)"
+              },
+              {
+                "rows": 3,
+                "name": "description",
+                "type": "text",
+                "title": "Descripción del Caso"
+              },
+              {
+                "of": [
+                  {
+                    "type": "string"
+                  }
+                ],
+                "name": "details",
+                "type": "array",
+                "title": "¿Qué Incluye? (Viñetas)"
+              },
+              {
+                "name": "cta",
+                "type": "string",
+                "title": "Texto del Botón CTA"
+              },
+              {
+                "name": "serviceId",
+                "type": "number",
+                "title": "ID de Servicio WhatsApp"
+              }
+            ],
+            "type": "object",
+            "name": "urgentCard"
+          }
+        ],
+        "name": "urgentCards",
+        "type": "array",
+        "title": "Tarjetas de Casos de Urgencia (Cartas Inductivas, Fiscalización, Coactiva)"
+      },
+      {
+        "initialValue": "¿Por qué confiar en nosotros?",
+        "name": "whyUsTitle",
+        "type": "string",
+        "title": "Título de ¿Por qué confiar en nosotros?"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "whyUsItems",
+        "type": "array",
+        "title": "Puntos de Confianza (Viñetas)"
+      },
+      {
+        "initialValue": "Asesoría al Inversionista",
+        "name": "inversionistaHeroTitle",
+        "type": "string",
+        "title": "Título Sección Asesoría al Inversionista"
+      },
+      {
+        "rows": 2,
+        "name": "inversionistaHeroSubtitle",
+        "type": "text",
+        "title": "Subtítulo Sección Asesoría al Inversionista"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string",
+                "title": "Título del Servicio"
+              },
+              {
+                "rows": 2,
+                "name": "desc",
+                "type": "text",
+                "title": "Descripción"
+              }
+            ],
+            "type": "object",
+            "name": "inversionistaFeature"
+          }
+        ],
+        "name": "inversionistaFeatures",
+        "type": "array",
+        "title": "Servicios para Inversionistas"
+      }
+    ],
+    "name": "pageDefensa",
+    "type": "document",
+    "title": "Página: Defensa Tributaria SUNAT"
+  },
+  {
+    "fields": [
+      {
+        "rows": 2,
+        "name": "heroSubtitle",
+        "type": "text",
+        "title": "Subtítulo del Hero"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "heroImage",
+        "type": "image",
+        "title": "Imagen de Portada"
+      },
+      {
+        "rows": 4,
+        "name": "mission",
+        "type": "text",
+        "title": "Misión"
+      },
+      {
+        "rows": 4,
+        "name": "vision",
+        "type": "text",
+        "title": "Visión"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "label",
+                "type": "string",
+                "title": "Valor"
+              },
+              {
+                "rows": 2,
+                "name": "description",
+                "type": "text",
+                "title": "Descripción"
+              }
+            ],
+            "type": "object",
+            "name": "valueItem"
+          }
+        ],
+        "name": "values",
+        "type": "array",
+        "title": "Valores"
+      }
+    ],
+    "name": "pageNosotros",
+    "type": "document",
+    "title": "Página: Nosotros"
+  }
+]
