@@ -3,9 +3,9 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 4000 2>&1 | tee dev.log",
-    "build": "next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/",
-    "start": "NODE_ENV=production bun .next/standalone/server.js 2>&1 | tee server.log",
+    "dev": "next dev -p 4000",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint .",
     "sanity:sync": "node src/sanity/sync.js",
     "studio": "sanity dev --port 3333",
