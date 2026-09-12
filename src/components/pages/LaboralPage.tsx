@@ -131,8 +131,8 @@ export function LaboralPage() {
 
   return (
     <SiteLayout>
-      {/* ═══ SUBPAGE HERO ═══ */}
-      <section id="derecho-laboral" className="relative w-full min-h-[85vh] flex items-center overflow-hidden bg-[#2b4b38] pt-[120px] pb-16">
+      {/* ═══ SUBPAGE HERO — Full-Bleed Corporate Green #2b4b38 ═══ */}
+      <section id="derecho-laboral" className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#2b4b38] pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-20 sm:pb-24">
         {/* Top accent line */}
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38] z-30" />
 
@@ -149,20 +149,22 @@ export function LaboralPage() {
           />
         </div>
 
-        {/* Hero Content */}
+        {/* Content */}
         <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl flex flex-col justify-center text-left">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
               {/* Breadcrumb */}
-              <Link href="/" className="inline-flex items-center gap-1 text-white/60 hover:text-white text-[13px] transition-colors">
-                Inicio <ChevronRight className="w-4 h-4" /> Derecho Laboral
-              </Link>
+              <div className="mb-4 sm:mb-5">
+                <Link href="/" className="inline-flex items-center gap-1.5 text-white/70 hover:text-[#fa9b0c] text-[13px] sm:text-[14px] font-medium transition-colors">
+                  Inicio <ChevronRight className="w-3.5 h-3.5 text-[#fa9b0c]" /> Derecho Laboral
+                </Link>
+              </div>
 
               {/* Badge */}
-              <div className="mt-4">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#fa9b0c] text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
-                  <Briefcase className="w-3.5 h-3.5" />
-                  Asesoría Preventiva & Defensa ante SUNAFIL
+              <div className="mb-4 sm:mb-5">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-[#fa9b0c] text-xs sm:text-[13px] font-bold uppercase tracking-wider backdrop-blur-sm shadow-sm">
+                  <Briefcase className="w-4 h-4 text-[#fa9b0c]" />
+                  Consultoría Laboral & Defensa Inspectiva SUNAFIL
                 </span>
               </div>
 
@@ -171,10 +173,10 @@ export function LaboralPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="hero-h1 text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight mt-4"
+                className="hero-h1 text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-white leading-[1.2] tracking-tight mb-5 sm:mb-6"
               >
-                Derecho Laboral y{" "}
-                <span className="text-[#fa9b0c]">Compliance Empresarial</span>
+                Derecho Laboral Empresarial y{" "}
+                <span className="text-[#fa9b0c]">Defensa SUNAFIL</span>
               </motion.h1>
 
               {/* Subtitle */}
@@ -182,9 +184,9 @@ export function LaboralPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="hero-subtitle mt-5 text-[16px] sm:text-[18px] text-[#FAFBF9]/85 max-w-2xl leading-relaxed font-light"
+                className="hero-subtitle mb-8 sm:mb-10 text-[16px] sm:text-[18px] text-[#FAFBF9]/85 max-w-2xl leading-relaxed font-light"
               >
-                Asesoría preventiva, compliance laboral, defensa técnica en inspecciones de SUNAFIL, patrocinio judicial en litigios laborales y gestión migratoria empresarial.
+                Auditorías de cumplimiento, comparecencias ante SUNAFIL, redacción de contratos, patrocinio en juicios laborales y gestión migratoria para empresas.
               </motion.p>
 
               {/* CTAs */}
@@ -195,11 +197,11 @@ export function LaboralPage() {
                 className="hero-ctas mt-8 flex flex-col sm:flex-row gap-4"
               >
                 <button
-                  onClick={() => openModal(7)}
+                  onClick={() => openModal(8)}
                   className="inline-flex items-center justify-center gap-2.5 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-7 py-4 rounded-xl text-[15px] sm:text-base font-bold transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  Consultar Abogado Laboralista
+                  Atención Inmediata SUNAFIL
                 </button>
                 <a
                   href="#ejes-laborales"
@@ -217,9 +219,9 @@ export function LaboralPage() {
                 className="hero-trust mt-8 flex flex-wrap gap-x-6 gap-y-2.5 text-white/65 text-xs sm:text-sm"
               >
                 {[
-                  "Defensa Inmediata SUNAFIL",
-                  "Compliance Laboral",
-                  "Nueva Ley Procesal del Trabajo",
+                  "Especialistas PUCP",
+                  "Comparecencias SUNAFIL",
+                  "Nueva Ley Procesal NLPT",
                 ].map((badge) => (
                   <span key={badge} className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#fa9b0c]" />
@@ -241,7 +243,7 @@ export function LaboralPage() {
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
-                Cobertura Especializada
+                Cobertura Legal Completa
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b4b38]">
                 Nuestros 5 Ejes de Práctica Laboral
@@ -260,13 +262,14 @@ export function LaboralPage() {
                   key={pillar.title}
                   delay={0.08 * idx}
                   duration={0.6}
-                  className="bg-white rounded-2xl border border-[#E8E2D5] shadow-sm hover:shadow-md transition-all overflow-hidden p-7 sm:p-9"
+                  className="bg-white rounded-3xl shadow-[0_10px_35px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_22px_45px_-5px_rgba(43,75,56,0.13)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden p-8 sm:p-10 relative group"
                 >
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
                     <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-12 h-12 rounded-xl bg-[#2b4b38]/10 flex items-center justify-center text-[#2b4b38]">
-                          <Icon className="w-6 h-6" />
+                      <div className="flex items-center gap-4 mb-3">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#2b4b38] group-hover:text-[#fa9b0c] group-hover:scale-110 transition-all duration-300 shrink-0">
+                          <Icon className="w-8 h-8" />
                         </div>
                         <div>
                           <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-2.5 py-0.5 rounded-full">
@@ -277,11 +280,11 @@ export function LaboralPage() {
                           </h3>
                         </div>
                       </div>
-                      <p className="text-[#42604e] text-[15px] leading-relaxed mb-5">
+                      <p className="text-[#42604e] text-[15px] leading-relaxed mb-5 pl-0 sm:pl-16">
                         {pillar.description}
                       </p>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-4 border-t border-[#E8E2D5]/70">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-4 border-t border-[#2b4b38]/10 sm:ml-16">
                         {pillar.items.map((item) => (
                           <div key={item} className="flex items-start gap-2.5">
                             <CheckCircle2 className="w-4 h-4 text-[#fa9b0c] shrink-0 mt-0.5" />
@@ -293,13 +296,13 @@ export function LaboralPage() {
                       </div>
                     </div>
 
-                    <div className="shrink-0 flex flex-col justify-center">
+                    <div className="shrink-0 flex flex-col justify-center lg:pt-2">
                       <button
                         onClick={() => openModal(8)}
-                        className="inline-flex items-center justify-center gap-2 bg-[#2b4b38] hover:bg-[#1e3527] text-white px-6 py-3.5 rounded-xl font-bold text-sm transition-all shadow-sm hover:shadow-md"
+                        className="inline-flex items-center justify-center gap-2 bg-[#2b4b38] hover:bg-[#fa9b0c] text-white hover:text-[#1e3527] px-6 py-3.5 rounded-xl font-bold text-sm transition-all shadow-sm hover:shadow-md"
                       >
-                        Consultar sobre este servicio
-                        <ArrowRight className="w-4 h-4 text-[#fa9b0c]" />
+                        Consultar este servicio
+                        <ArrowRight className="w-4 h-4 text-[#fa9b0c] group-hover:text-[#1e3527]" />
                       </button>
                     </div>
                   </div>
@@ -328,34 +331,35 @@ export function LaboralPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {urgentSituations.map((sit, i) => {
               const Icon = sit.icon;
               return (
                 <ScrollReveal
                   key={sit.title}
                   delay={0.1 * i}
-                  className="bg-[#FAFBF9] rounded-2xl p-7 border border-[#E8E2D5] hover:border-[#fa9b0c]/50 transition-all flex flex-col justify-between"
+                  className="bg-[#FAFBF9] rounded-3xl p-8 sm:p-9 shadow-[0_10px_30px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_24px_50px_-5px_rgba(43,75,56,0.14)] hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group text-center"
                 >
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-[#fa9b0c]/15 flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-[#2b4b38]" />
-                      </div>
-                      <div className="flex items-center gap-1.5 text-xs font-bold text-[#b45309] bg-[#fef3c7] px-3 py-1 rounded-full">
+                    <div className="flex justify-center mb-6">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#b45309] bg-[#fef3c7] px-3.5 py-1 rounded-full shadow-xs">
                         <Clock className="w-3.5 h-3.5" />
                         {sit.urgency}
-                      </div>
+                      </span>
                     </div>
-                    <h3 className="text-xl font-bold text-[#2b4b38] mb-2">{sit.title}</h3>
+                    <div className="flex justify-center mb-5">
+                      <Icon className="w-12 h-12 text-[#fa9b0c] group-hover:scale-115 transition-transform duration-300 drop-shadow-sm" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#2b4b38] mb-3 group-hover:text-[#1e3527] transition-colors">{sit.title}</h3>
                     <p className="text-[#42604e] text-sm leading-relaxed mb-6">{sit.description}</p>
                   </div>
                   <button
                     onClick={() => openModal(sit.serviceId)}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-[#2b4b38] hover:bg-[#1e3527] text-white px-5 py-3 rounded-xl text-sm font-bold transition-all shadow-sm"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-[#2b4b38] hover:bg-[#fa9b0c] text-white hover:text-[#1e3527] px-5 py-3.5 rounded-xl text-sm font-bold transition-all shadow-md hover:shadow-lg"
                   >
                     Atender este caso
-                    <ArrowRight className="w-4 h-4 text-[#fa9b0c]" />
+                    <ArrowRight className="w-4 h-4 text-[#fa9b0c] group-hover:text-[#1e3527]" />
                   </button>
                 </ScrollReveal>
               );
@@ -384,12 +388,13 @@ export function LaboralPage() {
                   key={i}
                   delay={0.1 * i}
                   duration={0.4}
-                  className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-[#E8E2D5] shadow-sm"
+                  className="flex items-center gap-5 p-7 rounded-3xl bg-white shadow-[0_8px_30px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_18px_40px_-5px_rgba(43,75,56,0.12)] hover:-translate-y-1.5 transition-all duration-300 group relative overflow-hidden"
                 >
-                  <div className="w-12 h-12 bg-[#fa9b0c]/15 rounded-xl flex items-center justify-center shrink-0">
-                    <Icon className="w-6 h-6 text-[#2b4b38]" />
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="shrink-0 flex items-center justify-center">
+                    <Icon className="w-8 h-8 text-[#fa9b0c] group-hover:scale-115 transition-transform duration-300" />
                   </div>
-                  <span className="text-[#2b4b38] font-semibold text-base leading-relaxed mt-2.5">
+                  <span className="text-[#2b4b38] font-semibold text-[15px] sm:text-base leading-relaxed">
                     {item.text}
                   </span>
                 </ScrollReveal>

@@ -666,19 +666,19 @@ html.mobile-menu-open .whatsapp-float {
 /* ─── Top/bottom fade transitions (~0.3cm per side) ─── */
 .hero-fade-top {
   position: relative !important;
-  /* 100% viewport — dvh handles mobile browser address bar */
-  height: 100vh;
-  height: 100dvh;
   min-height: 100vh;
   min-height: 100dvh;
-  max-height: none;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Safari fallback for dvh */
 @supports not (height: 100dvh) {
   .hero-fade-top {
-    height: 100vh;
     min-height: 100vh;
+    height: auto;
   }
 }
 
@@ -716,14 +716,22 @@ html.mobile-menu-open .whatsapp-float {
   pointer-events: none;
 }
 
-/* ─── Content layer — always above everything ─── */
+/* ─── Content layer — always above everything with guaranteed top breathing room ─── */
 .hero-content {
   position: relative;
   z-index: 20;
-  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 175px !important;
+  padding-bottom: 70px !important;
+}
+
+@media (min-width: 1280px) {
+  .hero-content {
+    padding-top: 195px !important;
+  }
 }
 
 /* ─── Desktop: H1 spacing only (sizing handled by Tailwind) ─── */
@@ -746,30 +754,30 @@ html.mobile-menu-open .whatsapp-float {
    ═══════════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
 
-  /* Section: 100% full screen — NO white space below */
+  /* Section: responsive height with breathing */
   .hero-fade-top {
-    height: 100dvh !important;
     min-height: 100dvh !important;
+    height: auto !important;
     max-height: none !important;
     align-items: stretch !important;
   }
 
-  /* Content: centered vertically, safe padding from navbar */
+  /* Content: safe 130px padding from fixed navbar */
   .hero-content {
     display: flex !important;
     flex-direction: column !important;
-    justify-content: center !important;
-    padding-top: 60px !important;
-    padding-bottom: 40px !important;
+    justify-content: flex-start !important;
+    padding-top: 130px !important;
+    padding-bottom: 50px !important;
   }
 
-  /* Mobile overlay: HORIZONTAL — dark left (text) → transparent right (face visible) */
+  /* Mobile overlay: ROMA & ABOGADOS Dark Green brand gradient */
   .hero-brand-overlay {
     background: linear-gradient(
-      90deg,
-      rgba(0, 35, 80, 0.88) 0%,
-      rgba(0, 35, 80, 0.48) 40%,
-      rgba(72, 17, 128, 0.08) 100%
+      180deg,
+      rgba(30, 53, 39, 0.95) 0%,
+      rgba(43, 75, 56, 0.78) 50%,
+      rgba(30, 53, 39, 0.92) 100%
     ) !important;
   }
 
@@ -780,14 +788,14 @@ html.mobile-menu-open .whatsapp-float {
 
   /* Badge */
   .hero-badge {
-    font-size: 10px;
-    padding: 5px 12px;
-    margin-bottom: 20px;
+    font-size: 11px;
+    padding: 6px 14px;
+    margin-bottom: 18px;
   }
 
   /* H1: sizing handled by Tailwind text-2xl responsive classes */
   .hero-h1 {
-    margin-bottom: 12px !important;
+    margin-bottom: 14px !important;
     color: #ffffff;
   }
 
@@ -795,8 +803,8 @@ html.mobile-menu-open .whatsapp-float {
   .hero-subtitle {
     font-size: 14px !important;
     margin-top: 0 !important;
-    margin-bottom: 28px !important;
-    color: rgba(248, 250, 252, 0.80);
+    margin-bottom: 24px !important;
+    color: rgba(248, 250, 252, 0.85);
     line-height: 1.55 !important;
   }
 
@@ -817,7 +825,7 @@ html.mobile-menu-open .whatsapp-float {
   /* Trust badges: clean spacing */
   .hero-trust {
     gap: 6px 14px;
-    font-size: 10px;
+    font-size: 11px;
     margin-top: 20px !important;
   }
 

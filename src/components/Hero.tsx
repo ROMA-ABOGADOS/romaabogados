@@ -304,7 +304,7 @@ export function Hero() {
       </div>
 
       {/* ═══ LAYER 20 — Content (animated per slide) ═══ */}
-      <div className="hero-content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="hero-content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-36 sm:pt-40 md:pt-44 lg:pt-48 pb-16 sm:pb-20">
         <div className="hero-text-col">
           {/* Animated text wrapper — key re-triggers entrance animation */}
           <motion.div
@@ -318,7 +318,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="hero-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2"
+              className="hero-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2 mb-4 sm:mb-5"
             >
               <Shield className="w-3.5 h-3.5 text-[#fa9b0c]" />
               <span className="text-white/90 text-xs sm:text-sm font-medium tracking-wide">
@@ -351,7 +351,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="hero-ctas mt-10 flex flex-col sm:flex-row gap-3.5"
+              className="hero-ctas mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3.5"
             >
               <CtaButton cta={slide.cta1} variant="primary" />
               <CtaButton cta={slide.cta2} variant="secondary" />
@@ -362,7 +362,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.45 }}
-              className="hero-trust mt-7 flex flex-wrap gap-x-5 gap-y-2 text-white/60 text-xs sm:text-sm"
+              className="hero-trust mt-6 sm:mt-7 flex flex-wrap gap-x-5 gap-y-2 text-white/60 text-xs sm:text-sm"
             >
               {slide.badges.map((badge) => (
                 <span key={badge} className="flex items-center gap-1.5">
@@ -379,7 +379,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.55 }}
-          className="hero-counters mt-14 lg:mt-20 grid grid-cols-3 gap-3 sm:gap-6 hero-text-col"
+          className="hero-counters mt-10 sm:mt-12 lg:mt-14 grid grid-cols-3 gap-3 sm:gap-6 hero-text-col"
         >
           {[
             { value: 12, suffix: "+", label: "Años de Trayectoria" },

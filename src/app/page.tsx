@@ -59,12 +59,12 @@ function LeadershipPresentation() {
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* LEFT: Institutional Card */}
           <ScrollReveal x={-30} duration={0.7} className="flex flex-col items-center text-center w-full">
-            <div className="w-full max-w-md bg-white rounded-3xl p-8 sm:p-10 border border-[#E8E2D5] shadow-lg shadow-[#2b4b38]/[0.06] relative overflow-hidden">
+            <div className="w-full max-w-md bg-white rounded-3xl p-8 sm:p-10 shadow-[0_15px_45px_-10px_rgba(43,75,56,0.12)] relative overflow-hidden group">
               <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38]" />
               
               {/* Shield Icon Badge */}
-              <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-[#2b4b38]/10 flex items-center justify-center border border-[#2b4b38]/20 shadow-inner">
-                <Scale className="w-10 h-10 text-[#2b4b38]" />
+              <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center text-[#fa9b0c] group-hover:scale-110 transition-transform duration-300">
+                <Scale className="w-14 h-14" />
               </div>
 
               <span className="inline-block px-4 py-1.5 rounded-full bg-[#fa9b0c]/15 text-[#2b4b38] text-xs font-bold uppercase tracking-wider mb-3">
@@ -78,13 +78,13 @@ function LeadershipPresentation() {
                 {subtitle}
               </p>
 
-              <div className="my-6 border-t border-[#E8E2D5]" />
+              <div className="my-6 border-t border-[#2b4b38]/10" />
 
               <p className="text-[#42604e] text-base italic leading-relaxed">
                 &ldquo;{quote}&rdquo;
               </p>
 
-              <div className="mt-6 pt-6 border-t border-[#E8E2D5]/60 flex items-center justify-center gap-2 text-xs text-[#2b4b38]/80 font-medium">
+              <div className="mt-6 pt-6 border-t border-[#2b4b38]/10 flex items-center justify-center gap-2 text-xs text-[#2b4b38]/80 font-medium">
                 <Award className="w-4 h-4 text-[#fa9b0c]" />
                 <span>Pontificia Universidad Católica del Perú (PUCP)</span>
               </div>
@@ -127,7 +127,7 @@ function LeadershipPresentation() {
               </button>
               <Link
                 href="/nosotros-contacto"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white hover:bg-[#FAFBF9] text-[#2b4b38] border border-[#E8E2D5] px-6 py-3.5 rounded-xl text-[15px] font-semibold transition-all shadow-sm"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white hover:bg-[#FAFBF9] text-[#2b4b38] border border-[#2b4b38]/15 hover:border-[#fa9b0c] px-6 py-3.5 rounded-xl text-[15px] font-semibold transition-all shadow-sm"
               >
                 Conocer al Equipo Legal
                 <ArrowRight className="w-4 h-4 text-[#fa9b0c]" />
@@ -176,7 +176,7 @@ function PillarsOverview() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-white border-y border-[#E8E2D5]">
+    <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -197,17 +197,18 @@ function PillarsOverview() {
             const Icon = p.icon;
             return (
               <ScrollReveal key={p.title} delay={0.1 * i} duration={0.6}>
-                <div className="bg-[#FAFBF9] rounded-2xl p-7 sm:p-9 border border-[#E8E2D5] hover:border-[#fa9b0c]/50 transition-all flex flex-col justify-between h-full group shadow-sm hover:shadow-md">
+                <div className="bg-[#FAFBF9] rounded-3xl p-8 sm:p-10 shadow-[0_10px_30px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_22px_45px_-5px_rgba(43,75,56,0.13)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full group relative overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-[#2b4b38]/10 flex items-center justify-center group-hover:bg-[#fa9b0c]/20 transition-colors">
-                        <Icon className="w-6 h-6 text-[#2b4b38] group-hover:text-[#fa9b0c] transition-colors" />
+                      <div className="w-12 h-12 flex items-center justify-center text-[#fa9b0c] group-hover:scale-115 transition-transform duration-300">
+                        <Icon className="w-8 h-8" />
                       </div>
                       <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-3 py-1 rounded-full">
                         {p.badge}
                       </span>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#2b4b38] mb-3">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#2b4b38] mb-3 group-hover:text-[#1e3527] transition-colors">
                       {p.title}
                     </h3>
                     <p className="text-[#42604e] text-[15px] leading-relaxed mb-6">
@@ -216,7 +217,7 @@ function PillarsOverview() {
                   </div>
                   <Link
                     href={p.link}
-                    className="inline-flex items-center gap-2 text-sm font-bold text-[#2b4b38] group-hover:text-[#fa9b0c] transition-colors"
+                    className="inline-flex items-center gap-2 text-sm font-bold text-[#2b4b38] group-hover:text-[#fa9b0c] transition-colors pt-4 border-t border-[#2b4b38]/10"
                   >
                     Explorar área de práctica
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -332,7 +333,7 @@ function CompanyFormation() {
   ];
 
   return (
-    <section id="derecho-corporativo" className="py-20 lg:py-28 bg-white border-t border-[#E8E2D5]">
+    <section id="derecho-corporativo" className="py-20 lg:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -361,17 +362,18 @@ function CompanyFormation() {
           </div>
         </ScrollReveal>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto space-y-6">
           {benefits.map((benefit, i) => {
             const Icon = benefit.icon;
             return (
               <ScrollReveal key={benefit.title} delay={0.1 * i} duration={0.6}>
-                <div className="benefit-item-immersive flex flex-row items-start gap-4 sm:gap-[18px] mb-8 last:mb-0 p-5 rounded-2xl bg-[#FAFBF9] border border-[#E8E2D5]">
-                  <div className="benefit-icon-pin w-12 h-12 shrink-0 rounded-xl bg-[#fa9b0c]/15 flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-[#2b4b38]" />
+                <div className="benefit-item-immersive flex flex-row items-center gap-5 p-6 rounded-3xl bg-white shadow-[0_8px_30px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_18px_40px_-5px_rgba(43,75,56,0.12)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="benefit-icon-pin w-12 h-12 shrink-0 flex items-center justify-center text-[#fa9b0c] group-hover:scale-115 transition-transform duration-300">
+                    <Icon className="w-8 h-8" />
                   </div>
                   <div className="benefit-text-block pt-0.5">
-                    <h3 className="benefit-item-title text-[18px] font-bold text-[#2b4b38] mb-1.5">
+                    <h3 className="benefit-item-title text-[18px] font-bold text-[#2b4b38] mb-1 group-hover:text-[#1e3527] transition-colors">
                       {benefit.title}
                     </h3>
                     <p className="benefit-item-desc text-[15px] text-[#42604e] leading-relaxed m-0">
@@ -434,7 +436,8 @@ function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((t, i) => (
             <ScrollReveal key={t.name} delay={0.1 * i} duration={0.6}>
-              <div className="bg-white rounded-2xl p-7 sm:p-8 h-full border border-[#E8E2D5] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div className="bg-white rounded-3xl p-8 sm:p-9 h-full shadow-[0_10px_30px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_22px_45px_-5px_rgba(43,75,56,0.13)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div>
                   {/* Stars */}
                   <div className="flex gap-1 mb-4">
@@ -449,7 +452,7 @@ function Testimonials() {
                     &ldquo;{t.text}&rdquo;
                   </p>
                 </div>
-                <div className="pt-4 border-t border-[#E8E2D5]/80">
+                <div className="pt-4 border-t border-[#2b4b38]/10">
                   <h4 className="text-[#2b4b38] font-bold text-base">
                     {t.name}
                   </h4>
@@ -569,26 +572,27 @@ function ActualidadTributaria() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {articles.map((art, i) => (
             <ScrollReveal key={art.title} delay={0.1 * i} duration={0.6}>
-              <div className="bg-white p-7 rounded-2xl border border-[#E8E2D5] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full">
+              <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_22px_45px_-5px_rgba(43,75,56,0.13)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full relative overflow-hidden group">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-3 py-1 rounded-full inline-block mb-4">
                     {art.tag}
                   </span>
-                  <h3 className="text-lg font-bold text-[#2b4b38] mb-2 leading-snug">
+                  <h3 className="text-lg font-bold text-[#2b4b38] mb-2 leading-snug group-hover:text-[#1e3527] transition-colors">
                     {art.title}
                   </h3>
                   <p className="text-[#42604e] text-sm leading-relaxed mb-6">
                     {art.desc}
                   </p>
                 </div>
-                <div className="flex items-center justify-between text-xs text-[#2b4b38]/70 pt-4 border-t border-[#E8E2D5]">
+                <div className="flex items-center justify-between text-xs text-[#2b4b38]/70 pt-4 border-t border-[#2b4b38]/10">
                   <span className="flex items-center gap-1.5 font-medium">
                     <BookOpen className="w-3.5 h-3.5 text-[#fa9b0c]" />
                     {art.date}
                   </span>
                   <Link
                     href="/defensa-tributaria-sunat"
-                    className="font-bold text-[#fa9b0c] hover:underline"
+                    className="font-bold text-[#fa9b0c] hover:underline inline-flex items-center gap-1"
                   >
                     Consultar →
                   </Link>
@@ -676,12 +680,15 @@ export default function Home() {
       <Testimonials />
 
       {/* Authority Metrics */}
+      <SectionDivider from="#FAFBF9" to="#2b4b38" />
       <AuthorityMetrics />
+      <SectionDivider from="#2b4b38" to="#FAFBF9" />
 
       {/* Actualidad Tributaria */}
       <ActualidadTributaria />
 
       {/* Final CTA */}
+      <SectionDivider from="#FAFBF9" to="#2b4b38" />
       <HighConversionCTA />
     </SiteLayout>
   );

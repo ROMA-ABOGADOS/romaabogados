@@ -106,13 +106,14 @@ export function Services() {
                 duration={0.7}
                 threshold={0.05}
               >
-                <Link href={card.href} className="service-card bg-white rounded-2xl p-6 lg:p-8 block cursor-pointer group border border-[#E8E2D5] hover:border-[#fa9b0c]/50 transition-all shadow-sm hover:shadow-md">
-                  <div className="service-card-icon mb-5 w-12 h-12 rounded-xl bg-[#fa9b0c]/15 flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-[#2b4b38] group-hover:text-[#fa9b0c] transition-colors" />
+                <Link href={card.href} className="service-card bg-white rounded-3xl p-7 lg:p-9 block cursor-pointer group shadow-[0_10px_30px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_24px_50px_-5px_rgba(43,75,56,0.14)] hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="service-card-icon mb-5 w-12 h-12 flex items-center justify-center text-[#fa9b0c] group-hover:scale-115 transition-transform duration-300">
+                    <Icon className="w-8 h-8" />
                   </div>
                   <h3 className="text-xl font-bold text-[#2b4b38] mb-3 group-hover:text-[#fa9b0c] transition-colors">{card.title}</h3>
                   <p className="text-[#42604e] leading-relaxed mb-5 text-[15px]">{card.description}</p>
-                  <span className="service-card-link inline-flex items-center gap-1.5 text-sm font-bold text-[#fa9b0c] group-hover:translate-x-1 transition-transform">
+                  <span className="service-card-link inline-flex items-center gap-1.5 text-sm font-bold text-[#fa9b0c] group-hover:translate-x-1.5 transition-transform">
                     Ver detalles
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

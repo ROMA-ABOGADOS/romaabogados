@@ -119,8 +119,8 @@ export function ConstitucionPage() {
 
   return (
     <SiteLayout>
-      {/* ═══ SUBPAGE HERO ═══ */}
-      <section id="derecho-empresarial" className="relative w-full min-h-[85vh] flex items-center overflow-hidden bg-[#2b4b38] pt-[120px] pb-16">
+      {/* ═══ SUBPAGE HERO — Full-Bleed Corporate Green #2b4b38 ═══ */}
+      <section id="derecho-empresarial" className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#2b4b38] pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-20 sm:pb-24">
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38] z-30" />
 
         {/* Ambient mesh */}
@@ -141,14 +141,16 @@ export function ConstitucionPage() {
           <div className="max-w-3xl flex flex-col justify-center text-left">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
               {/* Breadcrumb */}
-              <Link href="/" className="inline-flex items-center gap-1 text-white/60 hover:text-white text-[13px] transition-colors">
-                Inicio <ChevronRight className="w-4 h-4" /> Derecho Empresarial
-              </Link>
+              <div className="mb-4 sm:mb-5">
+                <Link href="/" className="inline-flex items-center gap-1.5 text-white/70 hover:text-[#fa9b0c] text-[13px] sm:text-[14px] font-medium transition-colors">
+                  Inicio <ChevronRight className="w-3.5 h-3.5 text-[#fa9b0c]" /> Derecho Empresarial
+                </Link>
+              </div>
 
               {/* Badge */}
-              <div className="mt-4">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#fa9b0c] text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
-                  <Building2 className="w-3.5 h-3.5" />
+              <div className="mb-4 sm:mb-5">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-[#fa9b0c] text-xs sm:text-[13px] font-bold uppercase tracking-wider backdrop-blur-sm shadow-sm">
+                  <Building2 className="w-4 h-4 text-[#fa9b0c]" />
                   Derecho Corporativo, Civil & Contrataciones OSCE
                 </span>
               </div>
@@ -158,7 +160,7 @@ export function ConstitucionPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="hero-h1 text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight mt-4"
+                className="hero-h1 text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-white leading-[1.2] tracking-tight mb-5 sm:mb-6"
               >
                 Derecho Empresarial y{" "}
                 <span className="text-[#fa9b0c]">Corporativo</span>
@@ -169,7 +171,7 @@ export function ConstitucionPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="hero-subtitle mt-5 text-[16px] sm:text-[18px] text-[#FAFBF9]/85 max-w-2xl leading-relaxed font-light"
+                className="hero-subtitle mb-8 sm:mb-10 text-[16px] sm:text-[18px] text-[#FAFBF9]/85 max-w-2xl leading-relaxed font-light"
               >
                 Constitución de sociedades, reorganizaciones societarias, contratos mercantiles, derecho administrativo y licitaciones públicas con el Estado bajo la Ley de Contrataciones.
               </motion.p>
@@ -247,13 +249,14 @@ export function ConstitucionPage() {
                   key={pillar.title}
                   delay={0.08 * idx}
                   duration={0.6}
-                  className="bg-white rounded-2xl border border-[#E8E2D5] shadow-sm hover:shadow-md transition-all overflow-hidden p-8 sm:p-10"
+                  className="bg-white rounded-3xl shadow-[0_10px_35px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_22px_45px_-5px_rgba(43,75,56,0.13)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden p-8 sm:p-10 relative group"
                 >
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
                     <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-12 h-12 rounded-xl bg-[#2b4b38]/10 flex items-center justify-center text-[#2b4b38]">
-                          <Icon className="w-6 h-6" />
+                      <div className="flex items-center gap-4 mb-3">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#2b4b38] group-hover:text-[#fa9b0c] group-hover:scale-110 transition-all duration-300 shrink-0">
+                          <Icon className="w-8 h-8" />
                         </div>
                         <div>
                           <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-2.5 py-0.5 rounded-full">
@@ -264,11 +267,11 @@ export function ConstitucionPage() {
                           </h3>
                         </div>
                       </div>
-                      <p className="text-[#42604e] text-[15px] leading-relaxed mb-6">
+                      <p className="text-[#42604e] text-[15px] leading-relaxed mb-6 pl-0 sm:pl-16">
                         {pillar.description}
                       </p>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-4 border-t border-[#E8E2D5]/70">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-4 border-t border-[#2b4b38]/10 sm:ml-16">
                         {pillar.items.map((item) => (
                           <div key={item} className="flex items-start gap-2.5">
                             <CheckCircle2 className="w-4 h-4 text-[#fa9b0c] shrink-0 mt-0.5" />
@@ -280,13 +283,13 @@ export function ConstitucionPage() {
                       </div>
                     </div>
 
-                    <div className="shrink-0 flex flex-col justify-center">
+                    <div className="shrink-0 flex flex-col justify-center lg:pt-2">
                       <button
                         onClick={() => openModal(1)}
-                        className="inline-flex items-center justify-center gap-2 bg-[#2b4b38] hover:bg-[#1e3527] text-white px-6 py-3.5 rounded-xl font-bold text-sm transition-all shadow-sm hover:shadow-md"
+                        className="inline-flex items-center justify-center gap-2 bg-[#2b4b38] hover:bg-[#fa9b0c] text-white hover:text-[#1e3527] px-6 py-3.5 rounded-xl font-bold text-sm transition-all shadow-sm hover:shadow-md"
                       >
                         Consultar este servicio
-                        <ArrowRight className="w-4 h-4 text-[#fa9b0c]" />
+                        <ArrowRight className="w-4 h-4 text-[#fa9b0c] group-hover:text-[#1e3527]" />
                       </button>
                     </div>
                   </div>
@@ -318,19 +321,21 @@ export function ConstitucionPage() {
               <ScrollReveal
                 key={ent.type}
                 delay={0.08 * i}
-                className="p-7 rounded-2xl bg-[#FAFBF9] border border-[#E8E2D5] hover:border-[#fa9b0c]/50 transition-all flex flex-col justify-between"
+                className="p-8 rounded-3xl bg-white shadow-[0_10px_30px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_22px_45px_-5px_rgba(43,75,56,0.14)] hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group"
               >
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div>
-                  <span className="text-2xl font-bold text-[#2b4b38] block mb-1">{ent.type}</span>
-                  <p className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] mb-3">{ent.recommended}</p>
+                  <span className="text-3xl font-black text-[#2b4b38] group-hover:text-[#fa9b0c] transition-colors block mb-1.5">{ent.type}</span>
+                  <p className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-2.5 py-1 rounded-full inline-block mb-3">{ent.recommended}</p>
                   <h4 className="font-bold text-[#2b4b38] text-base mb-2">{ent.name}</h4>
                   <p className="text-[#42604e] text-sm leading-relaxed mb-6">{ent.desc}</p>
                 </div>
                 <button
                   onClick={() => openModal(1)}
-                  className="inline-flex items-center gap-1.5 text-sm font-bold text-[#2b4b38] hover:text-[#fa9b0c] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-[#2b4b38] group-hover:text-[#fa9b0c] transition-colors pt-3 border-t border-[#2b4b38]/10 w-full justify-between"
                 >
-                  Constituir esta modalidad →
+                  <span>Constituir modalidad</span>
+                  <ArrowRight className="w-4 h-4 text-[#fa9b0c] group-hover:translate-x-1 transition-transform" />
                 </button>
               </ScrollReveal>
             ))}
@@ -355,13 +360,14 @@ export function ConstitucionPage() {
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className="bg-white p-6 rounded-2xl border border-[#E8E2D5] shadow-sm"
+                className="bg-white p-7 sm:p-8 rounded-3xl shadow-[0_8px_25px_-4px_rgba(43,75,56,0.05)] hover:shadow-[0_16px_35px_-4px_rgba(43,75,56,0.11)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
               >
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <h3 className="font-bold text-[#2b4b38] text-lg mb-2 flex items-start gap-3">
-                  <HelpCircle className="w-5 h-5 text-[#fa9b0c] shrink-0 mt-0.5" />
+                  <HelpCircle className="w-6 h-6 text-[#fa9b0c] shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
                   {faq.q}
                 </h3>
-                <p className="text-[#42604e] text-sm sm:text-base leading-relaxed pl-8">
+                <p className="text-[#42604e] text-sm sm:text-base leading-relaxed pl-9">
                   {faq.a}
                 </p>
               </div>

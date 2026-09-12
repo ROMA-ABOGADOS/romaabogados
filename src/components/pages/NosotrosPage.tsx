@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import {
   Shield, CheckCircle2, Award, ChevronRight, MessageCircle, ArrowRight,
   Send, Phone, Mail, MapPin, Scale, Briefcase, Calculator, Building2,
-  Users, Star, BookOpen
+  Users, Star, BookOpen, Zap
 } from "lucide-react";
 import { useScrollSlug } from "@/hooks/use-scroll-slug";
 import { useWhatsAppStore } from "@/lib/whatsapp";
@@ -117,22 +117,27 @@ const teamMembers: TeamMember[] = [
 
 const firmValues = [
   {
+    icon: Award,
     title: "Excelencia",
     desc: "Máximo estándar de calidad y rigurosidad técnica en cada informe, recurso contencioso o asesoría corporativa.",
   },
   {
+    icon: Scale,
     title: "Integridad",
     desc: "Actuamos con transparencia, ética inquebrantable y confidencialidad absoluta en todos los asuntos encomendados.",
   },
   {
+    icon: Shield,
     title: "Compromiso",
     desc: "Asumimos los objetivos de nuestros clientes como propios, blindando sus intereses con tenacidad jurídica.",
   },
   {
+    icon: Zap,
     title: "Innovación",
     desc: "Soluciones jurídicas modernas, eficientes y adaptadas a un entorno empresarial y tributario dinámico.",
   },
   {
+    icon: Users,
     title: "Trabajo en Equipo",
     desc: "Enfoque multidisciplinario que integra abogados y contadores para abordar contingencias complejas con éxito.",
   },
@@ -174,8 +179,8 @@ export function NosotrosPage() {
 
   return (
     <SiteLayout>
-      {/* ═══ HERO SECTION ═══ */}
-      <section id="quienes-somos" className="relative w-full min-h-[85vh] flex items-center overflow-hidden bg-[#2b4b38] pt-[120px] pb-16">
+      {/* ═══ HERO SECTION — 100% Full Bleed Verde Corporativo ═══ */}
+      <section id="quienes-somos" className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#2b4b38] pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-20 sm:pb-24">
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38] z-30" />
 
         {/* Ambient mesh */}
@@ -196,14 +201,16 @@ export function NosotrosPage() {
           <div className="max-w-3xl flex flex-col justify-center text-left">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
               {/* Breadcrumb */}
-              <Link href="/" className="inline-flex items-center gap-1 text-white/60 hover:text-white text-[13px] transition-colors">
-                Inicio <ChevronRight className="w-4 h-4" /> Quiénes Somos
-              </Link>
+              <div className="mb-4 sm:mb-5">
+                <Link href="/" className="inline-flex items-center gap-1.5 text-white/70 hover:text-[#fa9b0c] text-[13px] sm:text-[14px] font-medium transition-colors">
+                  Inicio <ChevronRight className="w-3.5 h-3.5 text-[#fa9b0c]" /> Quiénes Somos
+                </Link>
+              </div>
 
               {/* Badge */}
-              <div className="mt-4">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#fa9b0c] text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
-                  <Shield className="w-3.5 h-3.5" />
+              <div className="mb-4 sm:mb-5">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-[#fa9b0c] text-xs sm:text-[13px] font-bold uppercase tracking-wider backdrop-blur-sm shadow-sm">
+                  <Shield className="w-4 h-4 text-[#fa9b0c]" />
                   Firma Jurídica y Empresarial en el Perú
                 </span>
               </div>
@@ -213,7 +220,7 @@ export function NosotrosPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="hero-h1 text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight mt-4"
+                className="hero-h1 text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-white leading-[1.2] tracking-tight mb-5 sm:mb-6"
               >
                 ROMA & <span className="text-[#fa9b0c]">ABOGADOS</span>
               </motion.h1>
@@ -223,7 +230,7 @@ export function NosotrosPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="hero-subtitle mt-5 text-[16px] sm:text-[18px] text-[#FAFBF9]/85 max-w-2xl leading-relaxed font-light"
+                className="hero-subtitle mb-8 sm:mb-10 text-[16px] sm:text-[18px] text-[#FAFBF9]/85 max-w-2xl leading-relaxed font-light"
               >
                 Somos una firma de profesionales especializada en asesoría tributaria, laboral y empresarial. Te brindamos soluciones jurídicas eficientes y estratégicas para proteger y potenciar tu negocio.
               </motion.p>
@@ -276,13 +283,14 @@ export function NosotrosPage() {
       </section>
 
       {/* ═══ MISIÓN, VISIÓN Y VALORES ═══ */}
-      <SectionDivider from="#1e3527" to="#FAFBF9" />
+      <SectionDivider from="#2b4b38" to="#FAFBF9" />
       <section className="py-20 lg:py-28 bg-[#FAFBF9]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {/* Misión */}
-            <ScrollReveal className="bg-white p-8 sm:p-10 rounded-2xl border border-[#E8E2D5] shadow-sm">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-3 py-1 rounded-full mb-4 inline-block">
+            <ScrollReveal className="bg-white p-8 sm:p-10 rounded-3xl shadow-[0_10px_35px_-5px_rgba(43,75,56,0.07)] hover:shadow-[0_20px_45px_-5px_rgba(43,75,56,0.13)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38]" />
+              <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-3.5 py-1 rounded-full mb-5 inline-block">
                 Propósito
               </span>
               <h3 className="text-2xl font-bold text-[#2b4b38] mb-4">Nuestra Misión</h3>
@@ -292,8 +300,9 @@ export function NosotrosPage() {
             </ScrollReveal>
 
             {/* Visión */}
-            <ScrollReveal delay={0.15} className="bg-white p-8 sm:p-10 rounded-2xl border border-[#E8E2D5] shadow-sm">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-3 py-1 rounded-full mb-4 inline-block">
+            <ScrollReveal delay={0.15} className="bg-white p-8 sm:p-10 rounded-3xl shadow-[0_10px_35px_-5px_rgba(43,75,56,0.07)] hover:shadow-[0_20px_45px_-5px_rgba(43,75,56,0.13)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#fa9b0c] via-[#2b4b38] to-[#fa9b0c]" />
+              <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-3.5 py-1 rounded-full mb-5 inline-block">
                 Aspiración
               </span>
               <h3 className="text-2xl font-bold text-[#2b4b38] mb-4">Nuestra Visión</h3>
@@ -304,7 +313,7 @@ export function NosotrosPage() {
           </div>
 
           {/* Valores */}
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
               Principios Rectores
             </span>
@@ -313,20 +322,32 @@ export function NosotrosPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {firmValues.map((v, i) => (
-              <ScrollReveal
-                key={v.title}
-                delay={0.08 * i}
-                className="bg-white p-6 rounded-2xl border border-[#E8E2D5] shadow-sm"
-              >
-                <div className="w-10 h-10 rounded-xl bg-[#fa9b0c]/15 flex items-center justify-center mb-4">
-                  <CheckCircle2 className="w-5 h-5 text-[#2b4b38]" />
-                </div>
-                <h4 className="font-bold text-[#2b4b38] text-lg mb-2">{v.title}</h4>
-                <p className="text-[#42604e] text-sm leading-relaxed">{v.desc}</p>
-              </ScrollReveal>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {firmValues.map((v, i) => {
+              const Icon = v.icon;
+              return (
+                <ScrollReveal
+                  key={v.title}
+                  delay={0.08 * i}
+                  className="bg-white p-8 sm:p-9 rounded-3xl shadow-[0_4px_25px_-4px_rgba(43,75,56,0.06)] hover:shadow-[0_20px_45px_-6px_rgba(43,75,56,0.13)] hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center group relative overflow-hidden"
+                >
+                  {/* Subtle top brand gold accent line */}
+                  <div className="w-12 h-1 bg-gradient-to-r from-[#fa9b0c] to-[#eda340] rounded-full mb-6 group-hover:w-20 transition-all duration-300" />
+
+                  {/* Clean iconic center symbol without clumsy box */}
+                  <div className="mb-4 text-[#fa9b0c] group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                    <Icon className="w-10 h-10" strokeWidth={1.8} />
+                  </div>
+
+                  <h4 className="font-bold text-[#2b4b38] text-xl mb-2.5 group-hover:text-[#fa9b0c] transition-colors">
+                    {v.title}
+                  </h4>
+                  <p className="text-[#42604e] text-[15px] leading-relaxed">
+                    {v.desc}
+                  </p>
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -354,44 +375,45 @@ export function NosotrosPage() {
               <ScrollReveal
                 key={member.name}
                 delay={0.08 * idx}
-                className={`p-7 sm:p-9 rounded-2xl border ${idx === 0 ? "border-[#fa9b0c]/50 bg-[#FAFBF9] shadow-md" : "border-[#E8E2D5] bg-white shadow-sm"} flex flex-col justify-between`}
+                className="bg-white p-8 sm:p-9 rounded-3xl shadow-[0_10px_35px_-5px_rgba(43,75,56,0.07)] hover:shadow-[0_22px_48px_-6px_rgba(43,75,56,0.14)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
               >
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2b4b38] to-[#fa9b0c]" />
                 <div>
-                  <div className="flex items-center justify-between gap-4 mb-4">
+                  <div className="flex items-center justify-between gap-4 mb-5">
                     <div>
-                      <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-3 py-1 rounded-full">
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-3.5 py-1 rounded-full">
                         {member.role}
                       </span>
-                      <h3 className="text-2xl font-bold text-[#2b4b38] mt-2">
+                      <h3 className="text-2xl font-bold text-[#2b4b38] mt-2.5">
                         {member.name}
                       </h3>
                       <p className="text-sm font-semibold text-[#42604e] mt-0.5">
                         {member.area}
                       </p>
                     </div>
-                    <div className="w-14 h-14 rounded-2xl bg-[#2b4b38]/10 flex items-center justify-center shrink-0">
-                      <Scale className="w-7 h-7 text-[#2b4b38]" />
+                    <div className="w-14 h-14 rounded-2xl bg-[#2b4b38]/10 flex items-center justify-center shrink-0 group-hover:bg-[#2b4b38] transition-colors duration-300">
+                      <Scale className="w-7 h-7 text-[#2b4b38] group-hover:text-[#fa9b0c] transition-colors duration-300" />
                     </div>
                   </div>
 
-                  <p className="text-xs font-bold text-[#2b4b38] uppercase tracking-wide mb-1">Formación y Trayectoria</p>
+                  <p className="text-xs font-bold text-[#2b4b38] uppercase tracking-wide mb-1.5">Formación y Trayectoria</p>
                   <p className="text-sm text-[#42604e] leading-relaxed mb-3">{member.education}</p>
                   <p className="text-sm text-[#42604e] leading-relaxed mb-6">{member.experience}</p>
 
-                  <div className="pt-4 border-t border-[#E8E2D5] space-y-2">
+                  <div className="pt-4 border-t border-[#2b4b38]/10 space-y-2.5">
                     {member.highlights.map((hl) => (
-                      <div key={hl} className="flex items-center gap-2 text-xs font-semibold text-[#2b4b38]">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#fa9b0c] shrink-0" />
+                      <div key={hl} className="flex items-center gap-2.5 text-xs font-semibold text-[#2b4b38]">
+                        <CheckCircle2 className="w-4 h-4 text-[#fa9b0c] shrink-0" />
                         <span>{hl}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-[#E8E2D5]">
+                <div className="pt-6 mt-6 border-t border-[#2b4b38]/10">
                   <button
                     onClick={() => openModal(null)}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-[#2b4b38] hover:bg-[#1e3527] text-white py-3 rounded-xl text-sm font-bold transition-all shadow-sm"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-[#2b4b38] hover:bg-[#1e3527] text-white py-3.5 rounded-xl text-sm font-bold transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
                   >
                     Agendar reunión con {member.name.split(" ")[0]}
                     <ArrowRight className="w-4 h-4 text-[#fa9b0c]" />
@@ -416,12 +438,12 @@ export function NosotrosPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {testimonials.map((t, i) => (
               <ScrollReveal
                 key={t.name}
                 delay={0.1 * i}
-                className="bg-white p-7 rounded-2xl border border-[#E8E2D5] shadow-sm flex flex-col justify-between"
+                className="bg-white p-8 rounded-3xl shadow-[0_8px_30px_-4px_rgba(43,75,56,0.06)] hover:shadow-[0_20px_40px_-5px_rgba(43,75,56,0.12)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex gap-1 mb-4">
@@ -433,7 +455,7 @@ export function NosotrosPage() {
                     &ldquo;{t.text}&rdquo;
                   </p>
                 </div>
-                <div className="pt-4 border-t border-[#E8E2D5]">
+                <div className="pt-4 border-t border-[#2b4b38]/10">
                   <h4 className="font-bold text-[#2b4b38] text-base">{t.name}</h4>
                   <p className="text-xs text-[#42604e] mt-0.5 font-medium">{t.role}</p>
                 </div>
@@ -505,8 +527,9 @@ export function NosotrosPage() {
             </div>
 
             {/* Form */}
-            <div className="p-8 sm:p-10 rounded-2xl bg-[#FAFBF9] border border-[#E8E2D5] shadow-md">
-              <h3 className="text-xl font-bold text-[#2b4b38] mb-6">Envíanos un Mensaje Directo</h3>
+            <div className="p-8 sm:p-10 rounded-3xl bg-white shadow-[0_12px_40px_-5px_rgba(43,75,56,0.08)] relative overflow-hidden group">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <h3 className="text-xl sm:text-2xl font-bold text-[#2b4b38] mb-6">Envíanos un Mensaje Directo</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-[#2b4b38] mb-1.5">
@@ -519,7 +542,7 @@ export function NosotrosPage() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Ej. Juan Pérez - Constructora SAC"
-                    className="w-full px-4 py-3 rounded-xl border border-[#E8E2D5] bg-white text-[#2b4b38] text-sm focus:outline-none focus:border-[#fa9b0c]"
+                    className="w-full px-4 py-3.5 rounded-xl border border-[#2b4b38]/15 bg-[#FAFBF9] text-[#2b4b38] text-sm focus:outline-none focus:bg-white focus:border-[#fa9b0c] transition-all"
                   />
                 </div>
 
@@ -534,7 +557,7 @@ export function NosotrosPage() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="contacto@tuempresa.com"
-                    className="w-full px-4 py-3 rounded-xl border border-[#E8E2D5] bg-white text-[#2b4b38] text-sm focus:outline-none focus:border-[#fa9b0c]"
+                    className="w-full px-4 py-3.5 rounded-xl border border-[#2b4b38]/15 bg-[#FAFBF9] text-[#2b4b38] text-sm focus:outline-none focus:bg-white focus:border-[#fa9b0c] transition-all"
                   />
                 </div>
 
@@ -546,7 +569,7 @@ export function NosotrosPage() {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-[#E8E2D5] bg-white text-[#2b4b38] text-sm focus:outline-none focus:border-[#fa9b0c]"
+                    className="w-full px-4 py-3.5 rounded-xl border border-[#2b4b38]/15 bg-[#FAFBF9] text-[#2b4b38] text-sm focus:outline-none focus:bg-white focus:border-[#fa9b0c] transition-all"
                   >
                     <option value="Derecho Tributario">Derecho Tributario & Fiscalizaciones SUNAT</option>
                     <option value="Derecho Laboral">Derecho Laboral & Inspecciones SUNAFIL</option>
@@ -567,7 +590,7 @@ export function NosotrosPage() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Describe brevemente tu caso, requerimiento o consulta..."
-                    className="w-full px-4 py-3 rounded-xl border border-[#E8E2D5] bg-white text-[#2b4b38] text-sm focus:outline-none focus:border-[#fa9b0c]"
+                    className="w-full px-4 py-3.5 rounded-xl border border-[#2b4b38]/15 bg-[#FAFBF9] text-[#2b4b38] text-sm focus:outline-none focus:bg-white focus:border-[#fa9b0c] transition-all"
                   />
                 </div>
 
