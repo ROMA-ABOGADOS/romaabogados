@@ -14,24 +14,23 @@ const oswald = Oswald({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://romaabogados.pe"),
-  title: "ROMAABOGADOS | Estudio Jurídico, Asesoría Tributaria y Contabilidad en Perú",
+  title: "ROMA & ABOGADOS | Firma Especializada en Asesoría Tributaria, Laboral y Empresarial",
   description:
-    "ROMAABOGADOS: Especialistas en derecho corporativo, asesoría tributaria, contabilidad integral, constitución de empresas y defensa jurídica ante fiscalizaciones de SUNAT. Consultoría gratuita.",
+    "ROMA & ABOGADOS: Soluciones jurídicas eficientes y estratégicas. Especialistas en Derecho Tributario, Laboral, Outsourcing Contable y Derecho Empresarial en el Perú.",
   keywords: [
-    "ROMAABOGADOS",
+    "ROMA & ABOGADOS",
     "Roma Abogados",
-    "estudio de abogados Lima",
-    "asesoría tributaria Perú",
-    "contabilidad Lima",
+    "derecho tributario",
+    "derecho laboral",
+    "outsourcing contable",
+    "derecho empresarial",
     "defensa SUNAT",
-    "constitución de empresas",
-    "derecho corporativo",
-    "fiscalización tributaria",
-    "planillas Perú",
-    "cartas inductivas SUNAT",
-    "cobranza coactiva",
+    "inspecciones SUNAFIL",
+    "Tribunal Fiscal",
+    "contrataciones OSCE",
+    "estudio juridico Lima",
   ],
-  authors: [{ name: "ROMAABOGADOS" }],
+  authors: [{ name: "ROMA & ABOGADOS" }],
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48" },

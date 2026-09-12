@@ -42,21 +42,21 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Brand Colors - Official ROMAABOGADOS (Corporate Forest Green, Warm Gold/Beige & Clean Cream) */
-  --color-navy: #183D2F;
-  --color-navy-light: #22523F;
-  --color-navy-dark: #112C22;
-  --color-purple: #C5A572;
-  --color-purple-light: #D8BA8A;
-  --color-emerald: #C5A572;
-  --color-emerald-light: #D8BA8A;
-  --color-emerald-dark: #A3834E;
+  /* Brand Colors - Official ROMA & ABOGADOS (Image 2 Palette: #2b4b38, #42604e, #fa9b0c, #eda340, #FFFFFF) */
+  --color-navy: #2b4b38;
+  --color-navy-light: #42604e;
+  --color-navy-dark: #1e3527;
+  --color-purple: #fa9b0c;
+  --color-purple-light: #eda340;
+  --color-emerald: #fa9b0c;
+  --color-emerald-light: #eda340;
+  --color-emerald-dark: #d98205;
   --color-whatsapp: #25D366;
   --color-urgent: #DC2626;
-  --color-gold: #C5A572;
-  --color-gold-light: #E5D2B3;
-  --color-beige: #FAF8F5;
-  --color-beige-dark: #F3EFE6;
+  --color-gold: #fa9b0c;
+  --color-gold-light: #eda340;
+  --color-beige: #FAFBF9;
+  --color-beige-dark: #F0F3EF;
 }
 
 :root {
@@ -121,12 +121,12 @@ body {
   }
   /* Custom selection color — visible on light AND dark backgrounds */
   ::selection {
-    background: rgba(197, 165, 114, 0.45);
-    color: #112C22;
+    background: rgba(250, 155, 12, 0.45);
+    color: #1e3527;
   }
   ::-moz-selection {
-    background: rgba(197, 165, 114, 0.45);
-    color: #112C22;
+    background: rgba(250, 155, 12, 0.45);
+    color: #1e3527;
   }
 }
 
@@ -149,7 +149,7 @@ img, svg {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #002350;
+  background-color: #2b4b38;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,7 +161,7 @@ img, svg {
   width: 45px;
   height: 45px;
   border: 4px solid rgba(255, 255, 255, 0.1);
-  border-top-color: #008775;
+  border-top-color: #fa9b0c;
   border-radius: 50%;
   animation: spinPreloader 0.8s linear infinite;
 }
@@ -180,14 +180,16 @@ img, svg {
    HEADER: Transparent over Hero → White on Scroll (premium contrast)
    ═══════════════════════════════════════════════════════════════════════ */
 .header-hero {
-  background: transparent !important;
-  border-bottom: none !important;
+  background: #2b4b38 !important;
+  border-bottom: 1px solid rgba(250, 155, 12, 0.18) !important;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out !important;
 }
 
 .header-scrolled {
   background: #ffffff !important;
-  box-shadow: 0 1px 12px rgba(0, 35, 80, 0.08);
-  border-bottom: 1px solid rgba(0, 35, 80, 0.06) !important;
+  box-shadow: 0 2px 16px rgba(43, 75, 56, 0.08) !important;
+  border-bottom: 1px solid rgba(43, 75, 56, 0.08) !important;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out !important;
 }
 
 /* ─── BRAND LOGO FIXED — Anti-crop global rules (all pages, PC + Mobile) ─── */
@@ -226,7 +228,7 @@ img, svg {
 /* Custom scrollbar — ROMAABOGADOS brand colors (all devices) */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #002350 #f8fafc;
+  scrollbar-color: #2b4b38 #FAFBF9;
 }
 
 *::-webkit-scrollbar {
@@ -234,26 +236,26 @@ img, svg {
 }
 
 *::-webkit-scrollbar-track {
-  background: #FAF8F5;
+  background: #FAFBF9;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #183D2F;
+  background: #2b4b38;
   border-radius: 10px;
   border: none;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: #C5A572;
+  background: #fa9b0c;
 }
 
 /* ── Founder Presentation Section ── */
 .founder-presentation-bg {
-  background: linear-gradient(180deg, #FAF8F5 0%, #F5F1E8 100%);
+  background: linear-gradient(180deg, #FAFBF9 0%, #F0F3EF 100%);
 }
 
 .founder-gradient-text {
-  background: linear-gradient(135deg, #183D2F 0%, #C5A572 100%);
+  background: linear-gradient(135deg, #2b4b38 0%, #fa9b0c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -320,7 +322,7 @@ img, svg {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #183D2F, #C5A572, #D8BA8A);
+  background: linear-gradient(135deg, #2b4b38, #fa9b0c, #eda340);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -328,19 +330,19 @@ img, svg {
 
 /* Hero gradient overlay */
 .hero-gradient {
-  background: linear-gradient(135deg, #183D2F 0%, #112C22 40%, #22523F 100%);
+  background: linear-gradient(135deg, #2b4b38 0%, #1e3527 50%, #42604e 100%);
 }
 
 /* ─── SERVICE CARDS — Premium Redesign ─── */
 .service-card {
-  border-left: 4px solid #C5A572 !important;
-  box-shadow: 0 10px 25px rgba(24, 61, 47, 0.05) !important;
+  border-left: 4px solid #fa9b0c !important;
+  box-shadow: 0 10px 25px rgba(43, 75, 56, 0.06) !important;
   transition: all 0.3s ease-in-out !important;
 }
 
 .service-card:hover {
   transform: translateY(-5px) !important;
-  box-shadow: 0 15px 35px rgba(24, 61, 47, 0.12) !important;
+  box-shadow: 0 15px 35px rgba(43, 75, 56, 0.12) !important;
 }
 
 /* Icon container — integrated seal */
@@ -348,8 +350,8 @@ img, svg {
   width: 45px !important;
   height: 45px !important;
   min-width: 45px !important;
-  background: #FAF8F5 !important;
-  border: 1.5px solid #183D2F !important;
+  background: #FAFBF9 !important;
+  border: 1.5px solid #2b4b38 !important;
   border-radius: 10px !important;
   display: flex !important;
   align-items: center !important;
@@ -358,12 +360,12 @@ img, svg {
 }
 
 .service-card:hover .service-card-icon {
-  background: #183D2F !important;
-  border-color: #183D2F !important;
+  background: #2b4b38 !important;
+  border-color: #2b4b38 !important;
 }
 
 .service-card:hover .service-card-icon svg {
-  color: #C5A572 !important;
+  color: #fa9b0c !important;
 }
 
 /* Ver detalles — styled micro-button */
@@ -375,16 +377,16 @@ img, svg {
   border-radius: 8px;
   font-weight: 600;
   font-size: 16px;
-  color: #183D2F;
-  background: rgba(197, 165, 114, 0.12);
-  border-bottom: 2px solid #C5A572;
+  color: #2b4b38;
+  background: rgba(250, 155, 12, 0.12);
+  border-bottom: 2px solid #fa9b0c;
   transition: all 0.2s ease-in-out;
 }
 
 .service-card-link:hover {
-  background: rgba(197, 165, 114, 0.22);
-  border-bottom-color: #C5A572;
-  color: #112C22;
+  background: rgba(250, 155, 12, 0.22);
+  border-bottom-color: #fa9b0c;
+  color: #1e3527;
   transform: translateX(2px);
 }
 
@@ -425,7 +427,7 @@ img, svg {
 
 .benefit-item-title {
   font-size: 23px !important;
-  color: #183D2F !important;
+  color: #2b4b38 !important;
   font-weight: 600 !important;
   margin-bottom: 6px !important;
   line-height: 1.3 !important;
@@ -433,7 +435,7 @@ img, svg {
 
 .benefit-item-desc {
   font-size: 17px !important;
-  color: #364A41 !important;
+  color: #42604e !important;
   line-height: 1.5 !important;
   margin: 0 !important;
 }
@@ -464,14 +466,14 @@ html.mobile-menu-open .whatsapp-float {
 }
 
 .drawer-nav-active {
-  background-color: rgba(197, 165, 114, 0.15) !important;
-  color: #183D2F !important;
+  background-color: rgba(250, 155, 12, 0.15) !important;
+  color: #2b4b38 !important;
   border-radius: 8px;
 }
 
 /* Pricing card highlight */
 .pricing-recommended {
-  border: 2px solid #C5A572;
+  border: 2px solid #fa9b0c;
   position: relative;
   overflow: visible;
 }
@@ -483,7 +485,7 @@ html.mobile-menu-open .whatsapp-float {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #C5A572, #D8BA8A);
+  background: linear-gradient(90deg, #fa9b0c, #eda340);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
@@ -514,8 +516,11 @@ html.mobile-menu-open .whatsapp-float {
   height: 100%;
   z-index: 0;
   overflow: hidden;
-  /* Fallback color matches brand while image loads */
-  background-color: #112C22;
+  background-color: #1e3527;
+  background-image: 
+    radial-gradient(circle at 85% 20%, rgba(250, 155, 12, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 15% 80%, rgba(66, 96, 78, 0.25) 0%, transparent 50%),
+    linear-gradient(135deg, #1e3527 0%, #2b4b38 60%, #15251b 100%);
 }
 
 .hero-photo-bg::before {
@@ -525,41 +530,13 @@ html.mobile-menu-open .whatsapp-float {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Default: mobile vertical image, face centered in upper area */
-  background-image: url('/jhon-hero-movil.webp');
-  background-size: cover;
-  background-position: center 25%;
-  background-repeat: no-repeat;
-  animation: hero-ken-burns 25s ease-in-out infinite;
-}
-
-/* Tablet+ (768px+): start transitioning image position */
-@media (min-width: 768px) {
-  .hero-photo-bg::before {
-    background-position: center 20%;
-  }
-}
-
-/* Desktop (1024px+): horizontal image, face framed on right side — lower position for full face + hair */
-@media (min-width: 1024px) {
-  .hero-photo-bg::before {
-    background-image: url('/jhon-hero-oficina.webp');
-    background-position: right 12% top 22%;
-    filter: brightness(0.88) contrast(1.02); /* Fusiona la iluminación del retrato con la oficina nocturna */
-  }
-}
-
-/* Ultra-wide screens: keep face visible with margin */
-@media (min-width: 1440px) {
-  .hero-photo-bg::before {
-    background-position: right 15% top 20%;
-  }
+  background: 
+    radial-gradient(ellipse at 80% 30%, rgba(250, 155, 12, 0.08) 0%, transparent 50%),
+    linear-gradient(135deg, #1e3527 0%, #2b4b38 60%, #15251b 100%);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
    HERO SLIDER — Dynamic crossfade backgrounds (5 slides)
-   Each slide positioned absolutely, opacity-controlled crossfade (0.8s).
-   Ken Burns subtle zoom animation on active slides.
    ═══════════════════════════════════════════════════════════════════════ */
 .hero-slide-bg {
   position: absolute;
@@ -568,9 +545,11 @@ html.mobile-menu-open .whatsapp-float {
   width: 100%;
   height: 100%;
   z-index: 0;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  background-color: #112C22;
+  background-color: #1e3527;
+  background-image: 
+    radial-gradient(circle at 85% 25%, rgba(250, 155, 12, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 20% 75%, rgba(66, 96, 78, 0.25) 0%, transparent 50%),
+    linear-gradient(145deg, #1e3527 0%, #2b4b38 50%, #15251b 100%);
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
   will-change: opacity;
@@ -580,53 +559,40 @@ html.mobile-menu-open .whatsapp-float {
   opacity: 1;
 }
 
-/* Desktop positioning — face framed on right side */
+/* Slide 0: Tributario */
 .hero-slide-bg[data-slide="0"] {
-  background-position: right 12% top 22% !important;
-  filter: brightness(0.88) contrast(1.02);
+  background-image: 
+    radial-gradient(circle at 80% 25%, rgba(250, 155, 12, 0.16) 0%, transparent 50%),
+    radial-gradient(circle at 20% 75%, rgba(66, 96, 78, 0.3) 0%, transparent 50%),
+    linear-gradient(145deg, #1e3527 0%, #2b4b38 55%, #15251b 100%);
 }
+/* Slide 1: Laboral */
 .hero-slide-bg[data-slide="1"] {
-  background-position: right 8% top 15% !important;
-  filter: brightness(0.85) contrast(1.02);
+  background-image: 
+    radial-gradient(circle at 75% 30%, rgba(237, 163, 64, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 25% 70%, rgba(43, 75, 56, 0.35) 0%, transparent 50%),
+    linear-gradient(145deg, #182c20 0%, #2b4b38 50%, #15251b 100%);
 }
+/* Slide 2: Contable */
 .hero-slide-bg[data-slide="2"] {
-  background-position: right 10% top 18% !important;
-  filter: brightness(0.85) contrast(1.02);
+  background-image: 
+    radial-gradient(circle at 80% 20%, rgba(250, 155, 12, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 15% 85%, rgba(66, 96, 78, 0.25) 0%, transparent 50%),
+    linear-gradient(145deg, #1e3527 0%, #244131 55%, #132118 100%);
 }
+/* Slide 3: Empresarial */
 .hero-slide-bg[data-slide="3"] {
-  background-position: right 8% top 15% !important;
-  filter: brightness(0.85) contrast(1.02);
+  background-image: 
+    radial-gradient(circle at 70% 35%, rgba(250, 155, 12, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 30% 65%, rgba(66, 96, 78, 0.3) 0%, transparent 50%),
+    linear-gradient(145deg, #1e3527 0%, #2b4b38 50%, #15251b 100%);
 }
+/* Slide 4: Quiénes Somos */
 .hero-slide-bg[data-slide="4"] {
-  background-position: right 10% top 15% !important;
-  filter: brightness(0.85) contrast(1.02);
-}
-
-/* Active slides get Ken Burns */
-.hero-slide-bg.hero-slide-active {
-  animation: hero-ken-burns 25s ease-in-out infinite;
-}
-
-/* Ultra-wide screens */
-@media (min-width: 1440px) {
-  .hero-slide-bg[data-slide="0"] { background-position: right 15% top 20% !important; }
-  .hero-slide-bg[data-slide="1"] { background-position: right 12% top 14% !important; }
-  .hero-slide-bg[data-slide="2"] { background-position: right 13% top 16% !important; }
-  .hero-slide-bg[data-slide="3"] { background-position: right 12% top 14% !important; }
-  .hero-slide-bg[data-slide="4"] { background-position: right 13% top 14% !important; }
-}
-
-/* Mobile positioning — face visible at 70% right */
-@media (max-width: 768px) {
-  .hero-slide-bg[data-slide="0"] {
-    background-image: url('/jhon-hero-movil.webp') !important;
-    background-position: center 25% !important;
-    filter: none !important;
-  }
-  .hero-slide-bg[data-slide="1"] { background-position: 70% 15% !important; filter: none !important; }
-  .hero-slide-bg[data-slide="2"] { background-position: 70% 15% !important; filter: none !important; }
-  .hero-slide-bg[data-slide="3"] { background-position: 70% 15% !important; filter: none !important; }
-  .hero-slide-bg[data-slide="4"] { background-position: 70% 15% !important; filter: none !important; }
+  background-image: 
+    radial-gradient(circle at 85% 25%, rgba(237, 163, 64, 0.16) 0%, transparent 50%),
+    radial-gradient(circle at 15% 75%, rgba(43, 75, 56, 0.35) 0%, transparent 50%),
+    linear-gradient(145deg, #1c3224 0%, #2b4b38 55%, #132118 100%);
 }
 
 /* ─── Progress bar — 4s linear fill ─── */
@@ -656,8 +622,7 @@ html.mobile-menu-open .whatsapp-float {
   }
 }
 
-/* ─── Layer 1: Brand overlay ─── */
-/* Mobile: vertical gradient — dark top (text) → translucent bottom (Jhon visible) */
+/* Mobile: vertical gradient */
 .hero-brand-overlay {
   position: absolute;
   top: 0;
@@ -667,33 +632,21 @@ html.mobile-menu-open .whatsapp-float {
   z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(18, 48, 36, 0.95) 0%,
-    rgba(18, 48, 36, 0.70) 45%,
-    rgba(24, 61, 47, 0.35) 100%
+    rgba(30, 53, 39, 0.95) 0%,
+    rgba(43, 75, 56, 0.70) 50%,
+    rgba(30, 53, 39, 0.90) 100%
   );
   pointer-events: none;
 }
 
-/* Tablet+: gradually reduce bottom darkness so Jhon is more visible */
-@media (min-width: 768px) {
-  .hero-brand-overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(18, 48, 36, 0.92) 0%,
-      rgba(18, 48, 36, 0.60) 45%,
-      rgba(24, 61, 47, 0.25) 100%
-    );
-  }
-}
-
-/* Desktop: horizontal gradient — dark left (text) → nearly transparent right (Jhon vivid) */
+/* Desktop: horizontal gradient */
 @media (min-width: 1024px) {
   .hero-brand-overlay {
     background: linear-gradient(
       90deg,
-      rgba(18, 48, 36, 0.95) 0%,
-      rgba(18, 48, 36, 0.65) 38%,
-      rgba(24, 61, 47, 0.10) 100%
+      rgba(30, 53, 39, 0.96) 0%,
+      rgba(43, 75, 56, 0.75) 55%,
+      rgba(30, 53, 39, 0.50) 100%
     ) !important;
   }
 }
@@ -1093,7 +1046,7 @@ span.text-emerald.uppercase {
 }
 
 .footer-credits a {
-  color: #C5A572 !important;
+  color: #fa9b0c !important;
   text-decoration: none !important;
   font-weight: 600 !important;
   transition: color 0.2s ease-in-out !important;

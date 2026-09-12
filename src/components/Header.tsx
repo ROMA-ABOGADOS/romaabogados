@@ -4,16 +4,16 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone, Scale } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { useWhatsAppStore } from "@/lib/whatsapp";
-import Image from "next/image";
 
 const navItems = [
   { label: "Inicio", href: "/" },
-  { label: "Constitución", href: "/constitucion-de-empresas" },
-  { label: "Contabilidad", href: "/contabilidad-tributacion" },
-  { label: "Asesoría Tributaria", href: "/defensa-tributaria-sunat" },
-  { label: "Nosotros", href: "/nosotros-contacto" },
+  { label: "Derecho Tributario", href: "/defensa-tributaria-sunat" },
+  { label: "Derecho Laboral", href: "/derecho-laboral" },
+  { label: "Outsourcing Contable", href: "/contabilidad-tributacion" },
+  { label: "Derecho Empresarial", href: "/constitucion-de-empresas" },
+  { label: "Quiénes Somos", href: "/nosotros-contacto" },
 ];
 
 export function Header() {
@@ -24,7 +24,7 @@ export function Header() {
 
   useEffect(() => {
     function handleScroll() {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 40);
     }
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
@@ -57,88 +57,72 @@ export function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-300 ease-in-out ${
           scrolled
-            ? "header-scrolled"
-            : "header-hero"
+            ? "header-scrolled bg-white/98 shadow-md"
+            : "header-hero bg-[#2b4b38] border-b border-[#fa9b0c]/15"
         }`}
       >
-        {/* Brand gradient line — smooth 4px with GPU compositing */}
+        {/* Brand gradient line */}
         <div
-          className={`w-full h-[4px] transition-opacity duration-300 ${
-            scrolled ? "opacity-100" : "opacity-0"
-          }`}
+          className="w-full h-[3.5px] transition-opacity duration-300"
           style={{
-            background: 'linear-gradient(90deg, #183D2F 0%, #C5A572 50%, #22523F 100%)',
-            willChange: 'opacity',
-            transform: 'translateZ(0)',
+            background: 'linear-gradient(90deg, #2b4b38 0%, #fa9b0c 50%, #42604e 100%)',
           }}
         />
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="navbar-brand-fixed">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between py-2 sm:py-2.5">
 
-            {/* ── Logo: ROMAABOGADOS ── */}
-            <Link href="/" className="flex items-center shrink-0 relative z-10 py-1 group">
-              <div className="flex items-center gap-3">
-                <div
-                  className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center transition-all duration-300 shadow-sm ${
-                    scrolled
-                      ? "bg-[#183D2F] text-[#C5A572] group-hover:bg-[#22523F]"
-                      : "bg-white/10 text-[#C5A572] backdrop-blur-md border border-white/20 group-hover:bg-white/20"
-                  }`}
-                >
-                  <Scale className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
-                <div className="flex flex-col">
-                  <span
-                    className={`font-black text-lg sm:text-xl md:text-2xl tracking-tight leading-none transition-colors duration-300 ${
-                      scrolled ? "text-[#183D2F]" : "text-white"
-                    }`}
-                  >
-                    ROMA<span className="text-[#C5A572]">ABOGADOS</span>
-                  </span>
-                  <span
-                    className={`text-[9px] sm:text-[10px] uppercase font-bold tracking-[0.22em] mt-1 transition-colors duration-300 ${
-                      scrolled ? "text-[#C5A572]" : "text-white/80"
-                    }`}
-                  >
-                    Estudio Jurídico & Tributario
-                  </span>
-                </div>
-              </div>
+            {/* ── Logo Principal: ROMA & ABOGADOS (Crossfade sincronizado 300ms) ── */}
+            <Link
+              href="/"
+              className="relative flex items-center shrink-0 z-10 group h-10 sm:h-11 md:h-12 w-[180px] sm:w-[220px] md:w-[250px]"
+            >
+              {/* Logo sobre fondo verde (letras blancas + dorado) */}
+              <img
+                src="/logo-verde.png"
+                alt="ROMA & ABOGADOS - Tributario, Laboral & Empresarial"
+                className={`absolute inset-0 h-full w-auto object-contain transition-opacity duration-300 ease-in-out ${
+                  scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
+                }`}
+              />
+              {/* Logo sobre fondo blanco (letras oscuras + dorado) */}
+              <img
+                src="/logo.png"
+                alt="ROMA & ABOGADOS - Tributario, Laboral & Empresarial"
+                className={`absolute inset-0 h-full w-auto object-contain transition-opacity duration-300 ease-in-out ${
+                  scrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+                }`}
+              />
             </Link>
 
             {/* ── Desktop Nav ── */}
-            <nav className="hidden lg:flex items-center gap-0.5">
+            <nav className="hidden xl:flex items-center gap-1">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative px-3 py-2 text-[15px] font-bold tracking-wide transition-colors duration-200 rounded-md ${
+                  className={`relative px-3 py-2 text-[14px] font-bold tracking-wide transition-colors duration-300 rounded-md ${
                     scrolled
                       ? isActive(item.href)
-                        ? "text-[#183D2F]"
-                        : "text-[#183D2F]/80 hover:text-[#C5A572]"
+                        ? "text-[#2b4b38]"
+                        : "text-[#2b4b38]/80 hover:text-[#fa9b0c]"
                       : isActive(item.href)
-                        ? "text-[#C5A572]"
-                        : "text-white/85 hover:text-[#C5A572]"
+                        ? "text-[#fa9b0c]"
+                        : "text-white/90 hover:text-[#fa9b0c]"
                   }`}
                 >
                   {item.label}
                   {isActive(item.href) && (
-                    <span
-                      className={`absolute bottom-0 left-3 right-3 h-[2px] rounded-full transition-colors duration-300 ${
-                        scrolled ? "bg-[#C5A572]" : "bg-[#C5A572]"
-                      }`}
-                    />
+                    <span className="absolute bottom-0 left-3 right-3 h-[2px] rounded-full bg-[#fa9b0c]" />
                   )}
                 </Link>
               ))}
               <button
                 onClick={() => openModal()}
-                className={`ml-2 px-5 py-2.5 rounded-lg text-[14px] font-bold tracking-wide transition-all duration-200 ${
+                className={`ml-2 px-4 py-2.5 rounded-xl text-[13px] font-bold tracking-wide transition-all duration-300 shadow-sm hover:shadow-md ${
                   scrolled
-                    ? "bg-[#183D2F] hover:bg-[#22523F] text-[#FAF8F5] shadow-sm hover:shadow-md border border-[#C5A572]/40"
-                    : "bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white border border-white/25"
+                    ? "bg-[#2b4b38] hover:bg-[#1e3527] text-white border border-[#fa9b0c]/40"
+                    : "bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] shadow-lg shadow-[#fa9b0c]/25 active:scale-[0.98]"
                 }`}
               >
                 Consultoría Gratuita
@@ -148,17 +132,17 @@ export function Header() {
             {/* ── Mobile Hamburger ── */}
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className={`lg:hidden relative z-10 flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-200 ${
+              className={`xl:hidden relative z-10 flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-300 ${
                 scrolled
-                  ? "text-[#183D2F] hover:bg-[#183D2F]/5 active:bg-[#183D2F]/10"
-                  : "text-white hover:bg-white/10 active:bg-white/20"
+                  ? "text-[#2b4b38] hover:bg-[#2b4b38]/5"
+                  : "text-white hover:bg-white/10"
               }`}
               aria-label="Menú de navegación"
             >
               {isMobileOpen ? (
-                <X className="w-5 h-5" strokeWidth={2} />
+                <X className="w-6 h-6" strokeWidth={2.5} />
               ) : (
-                <Menu className="w-5 h-5" strokeWidth={2} />
+                <Menu className="w-6 h-6" strokeWidth={2.5} />
               )}
             </button>
           </div>
@@ -174,7 +158,7 @@ export function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 lg:hidden"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] xl:hidden"
               onClick={() => setIsMobileOpen(false)}
             />
 
@@ -183,26 +167,18 @@ export function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 w-[280px] max-w-[80vw] bg-white z-50 lg:hidden flex flex-col shadow-2xl"
+              className="fixed top-0 right-0 bottom-0 w-[300px] max-w-[85vw] bg-white z-[70] xl:hidden flex flex-col shadow-2xl"
             >
               {/* Drawer Header */}
-              <div className="navbar-brand-fixed px-4 border-b border-[#E8E2D5] shrink-0 flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#183D2F] text-[#C5A572] flex items-center justify-center shadow-sm">
-                    <Scale className="w-4 h-4" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="font-black text-base text-[#183D2F] tracking-tight leading-none">
-                      ROMA<span className="text-[#C5A572]">ABOGADOS</span>
-                    </span>
-                    <span className="text-[8px] uppercase font-bold text-[#C5A572] tracking-wider mt-0.5">
-                      Estudio Jurídico
-                    </span>
-                  </div>
-                </div>
+              <div className="px-4 py-3 border-b border-[#E8E2D5] shrink-0 flex items-center justify-between bg-[#FAFBF9]">
+                <img
+                  src="/logo.png"
+                  alt="ROMA & ABOGADOS"
+                  className="h-9 w-auto object-contain max-w-[200px]"
+                />
                 <button
                   onClick={() => setIsMobileOpen(false)}
-                  className="w-9 h-9 flex items-center justify-center rounded-lg text-[#183D2F] hover:bg-gray-100 transition-colors"
+                  className="w-9 h-9 flex items-center justify-center rounded-lg text-[#2b4b38] hover:bg-gray-100 transition-colors"
                   aria-label="Cerrar menú"
                 >
                   <X className="w-5 h-5" />
@@ -210,16 +186,16 @@ export function Header() {
               </div>
 
               {/* Drawer Nav */}
-              <nav className="flex-1 overflow-y-auto px-3 py-3">
+              <nav className="flex-1 overflow-y-auto px-3 py-4 space-y-1">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMobileOpen(false)}
-                    className={`flex items-center px-4 py-3 rounded-lg text-[15px] font-semibold transition-colors drawer-nav-link ${
+                    className={`flex items-center px-4 py-3 rounded-xl text-[15px] font-bold transition-colors ${
                       isActive(item.href)
-                        ? "drawer-nav-active"
-                        : "text-[#183D2F]/80 hover:bg-[#183D2F]/[0.05] hover:text-[#183D2F]"
+                        ? "bg-[#fa9b0c]/15 text-[#2b4b38] border-l-4 border-[#fa9b0c]"
+                        : "text-[#2b4b38]/80 hover:bg-[#2b4b38]/[0.05] hover:text-[#2b4b38]"
                     }`}
                   >
                     {item.label}
@@ -228,18 +204,18 @@ export function Header() {
               </nav>
 
               {/* Drawer Footer */}
-              <div className="px-4 pb-4 pt-2 border-t border-[#E8E2D5] shrink-0 space-y-2">
+              <div className="px-4 pb-6 pt-3 border-t border-[#E8E2D5] shrink-0 space-y-2.5 bg-[#FAFBF9]">
                 <button
                   onClick={() => { setIsMobileOpen(false); openModal(); }}
-                  className="w-full bg-[#183D2F] hover:bg-[#22523F] text-[#FAF8F5] py-3 rounded-lg text-[15px] font-bold transition-colors border border-[#C5A572]/40"
+                  className="w-full bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] py-3.5 rounded-xl text-[15px] font-bold transition-all shadow-md shadow-[#fa9b0c]/25"
                 >
                   Consultoría Gratuita
                 </button>
                 <a
                   href="tel:+51943366950"
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-lg text-[14px] font-medium text-[#183D2F]/80 hover:bg-gray-50 transition-colors"
+                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-[14px] font-semibold text-[#2b4b38] hover:bg-white transition-colors"
                 >
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-4 h-4 text-[#fa9b0c]" />
                   +51 943 366 950
                 </a>
               </div>

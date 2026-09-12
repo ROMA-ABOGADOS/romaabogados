@@ -1,81 +1,165 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { SiteLayout } from "@/components/SiteLayout";
 import { motion } from "framer-motion";
 import {
-  Target, Eye, CheckCircle2, Monitor, Award, Users, MessageCircle,
-  ChevronRight, Mail, MapPin, Clock, Send, ArrowRight, Shield
+  Shield, CheckCircle2, Award, ChevronRight, MessageCircle, ArrowRight,
+  Send, Phone, Mail, MapPin, Scale, Briefcase, Calculator, Building2,
+  Users, Star, BookOpen
 } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useScrollSlug } from "@/hooks/use-scroll-slug";
-import { useWhatsAppStore, services } from "@/lib/whatsapp";
+import { useWhatsAppStore } from "@/lib/whatsapp";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SectionDivider } from "@/components/SectionDivider";
 import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
-import { useState } from "react";
-import { useSanityDocument } from "@/sanity/useSanity";
-import { pageNosotrosQuery } from "@/sanity/queries";
-import { getSanityImageUrl } from "@/sanity/image";
 
-const columns = [
+/* ════════════════════════════════════════════════════════════════
+   EQUIPO LEGAL Y CONSULTORES — ROMA & ABOGADOS
+   ════════════════════════════════════════════════════════════════ */
+
+interface TeamMember {
+  name: string;
+  role: string;
+  area: string;
+  education: string;
+  experience: string;
+  highlights: string[];
+}
+
+const teamMembers: TeamMember[] = [
   {
-    icon: Target,
-    title: "Misión",
-    description:
-      "Brindar soluciones jurídicas, tributarias y contables de excelencia que protejan el patrimonio de nuestros clientes y aseguren la estabilidad jurídica y financiera de sus negocios. Trabajamos con transparencia, rigurosidad técnica y un compromiso ético inquebrantable.",
+    name: "Roberto Marca",
+    role: "Socio Principal",
+    area: "Derecho Tributario & Dirección General",
+    education: "Abogado por la Pontificia Universidad Católica del Perú (PUCP). Especialista en Derecho Tributario por la Universidad de Lima.",
+    experience: "Exintegrante del Tribunal Fiscal y de la SUNAT. Más de 12 años liderando asesorías fiscales de alta complejidad.",
+    highlights: [
+      "Pontificia Universidad Católica del Perú (PUCP)",
+      "Exfuncionario del Tribunal Fiscal y SUNAT",
+      "+12 Años de trayectoria tributaria y fiscal",
+    ],
   },
   {
-    icon: Eye,
-    title: "Visión",
-    description:
-      "Consolidarnos como el estudio jurídico y tributario de referencia en el Perú, reconocido por nuestra solvencia técnica, visión estratégica e innovación en la defensa patrimonial y el crecimiento corporativo.",
+    name: "Estefanía Pineda",
+    role: "Asociada Senior",
+    area: "Derecho Tributario & Litigio Fiscal",
+    education: "Abogada especialista en litigio tributario. Maestría en Tributación y Política Fiscal.",
+    experience: "Extensa trayectoria en defensa ante fiscalizaciones SUNAT, recursos contenciosos ante el Tribunal Fiscal y demandas judiciales.",
+    highlights: [
+      "Maestría en Tributación y Política Fiscal",
+      "Especialista en Reclamaciones y Apelaciones TF",
+      "Defensa en Fiscalizaciones Complejas",
+    ],
+  },
+  {
+    name: "David Corthorn",
+    role: "Asociado",
+    area: "Derecho Laboral & Relaciones Laborales",
+    education: "Abogado especialista en relaciones laborales individuales y colectivas.",
+    experience: "Experto en inspecciones ante SUNAFIL, auditorías de compliance laboral, comités SST y litigios laborales orales bajo la NLPT.",
+    highlights: [
+      "Especialista en Inspecciones SUNAFIL",
+      "Auditorías de Compliance Laboral y SST",
+      "Patrocinio en la Nueva Ley Procesal del Trabajo",
+    ],
+  },
+  {
+    name: "Alonso Silva",
+    role: "Asociado",
+    area: "Derecho Corporativo & Societario",
+    education: "Abogado corporativo con especialización en derecho mercantil.",
+    experience: "Amplia experiencia en constitución de empresas, fusiones, adquisiciones, reorganizaciones societarias y gobierno corporativo.",
+    highlights: [
+      "Constitución y Reorganización de Sociedades",
+      "Due Diligence Legal y Compra-Venta de Empresas",
+      "Contratos Mercantiles y Convenios Parasociales",
+    ],
+  },
+  {
+    name: "Richard Agapito",
+    role: "Consultor Senior",
+    area: "Contrataciones con el Estado & Derecho Administrativo",
+    education: "Especialista en Contrataciones Públicas y Gestión Estatal.",
+    experience: "Asesor en licitaciones del Estado (OSCE/RNP), absolución de consultas, apelaciones ante el Tribunal del OSCE y arbitrajes estatales.",
+    highlights: [
+      "Especialista RNP y Tribunal del OSCE",
+      "Licitaciones Públicas y Adjudicaciones",
+      "Procedimientos ante INDECOPI y Reguladores",
+    ],
+  },
+  {
+    name: "Rafael Huaranga",
+    role: "Consultor Senior",
+    area: "Contabilidad & Auditoría Tributaria",
+    education: "Contador Público Colegiado con postgrado en Auditoría Tributaria y NIIF.",
+    experience: "Lidera la supervisión técnica de los servicios de outsourcing contable, implementación del SIRE y planeamiento fiscal.",
+    highlights: [
+      "Contador Público Colegiado (CPC)",
+      "Especialista en Normas NIIF y Sistema SIRE",
+      "Auditoría Contable y Liquidación de Planillas",
+    ],
+  },
+  {
+    name: "Willian Balvin Guevara",
+    role: "Abogado Consultor",
+    area: "Derecho Civil & Litigios Comerciales",
+    education: "Abogado litigante con especialidad en derecho civil patrimonial.",
+    experience: "Especialista en contratos comerciales, saneamiento inmobiliario, desalojos y litigios ante las Cortes Superiores de Justicia.",
+    highlights: [
+      "Litigios Civiles y Comerciales",
+      "Saneamiento Inmobiliario y Estudio de Títulos",
+      "Garantías Hipotecarias y Mobiliarias",
+    ],
   },
 ];
 
-const values = [
-  { label: "Honestidad", description: "Transparencia total en cada proceso, decisión y reporte entregado a nuestros clientes." },
-  { label: "Compromiso", description: "Nos dedicamos al 100% a cada caso. Tu estabilidad jurídica y tributaria es nuestra prioridad." },
-  { label: "Innovación Tecnológica", description: "Utilizamos software y herramientas digitales avanzadas para una gestión ágil y eficiente." },
-  { label: "Especialización Permanente", description: "Nuestro equipo se capacita constantemente para dominar los últimos cambios normativos." },
-  { label: "Orientación al Resultado", description: "Buscamos optimizar tu situación legal y tributaria garantizando estricto apego a la ley." },
-  { label: "Accesibilidad", description: "Atención personalizada y estratégica para empresas de todos los sectores y tamaños." },
+const firmValues = [
+  {
+    title: "Excelencia",
+    desc: "Máximo estándar de calidad y rigurosidad técnica en cada informe, recurso contencioso o asesoría corporativa.",
+  },
+  {
+    title: "Integridad",
+    desc: "Actuamos con transparencia, ética inquebrantable y confidencialidad absoluta en todos los asuntos encomendados.",
+  },
+  {
+    title: "Compromiso",
+    desc: "Asumimos los objetivos de nuestros clientes como propios, blindando sus intereses con tenacidad jurídica.",
+  },
+  {
+    title: "Innovación",
+    desc: "Soluciones jurídicas modernas, eficientes y adaptadas a un entorno empresarial y tributario dinámico.",
+  },
+  {
+    title: "Trabajo en Equipo",
+    desc: "Enfoque multidisciplinario que integra abogados y contadores para abordar contingencias complejas con éxito.",
+  },
 ];
 
-const credentials = [
-  { icon: Monitor, label: "Software contable y legal de última generación" },
-  { icon: Award, label: "Equipo especializado y multidisciplinario" },
-  { icon: Users, label: "Atención personalizada y dedicada" },
-  { icon: CheckCircle2, label: "Licencias y certificaciones actualizadas" },
-];
-
-const contactInfo = [
-  { icon: MessageCircle, title: "WhatsApp", detail: "+51 943 366 950", description: "Respuesta inmediata", color: "text-whatsapp", bg: "bg-whatsapp/10" },
-  { icon: Mail, title: "Email", detail: "contacto@romaabogados.pe", description: "Respuesta en 24h", color: "text-navy", bg: "bg-navy/10" },
-  { icon: MapPin, title: "Ubicación", detail: "Lima, Perú", description: "Atención virtual y presencial", color: "text-purple", bg: "bg-purple/10" },
-  { icon: Clock, title: "Horario", detail: "Lun - Vie: 8:00 - 18:00", description: "Sáb: 9:00 - 13:00", color: "text-emerald", bg: "bg-emerald/10" },
+const testimonials = [
+  {
+    name: "Isaac Picon",
+    role: "Gerente General, Constructora & Inmobiliaria IP S.A.C.",
+    text: "Roma Abogados logró anular una resolución de determinación de SUNAT por más de S/ 450,000 en el Tribunal Fiscal. Su rigor técnico y claridad estratégica marcaron la diferencia. Son el respaldo legal de confianza para nuestra empresa.",
+  },
+  {
+    name: "Dalton Vilchez",
+    role: "Director Ejecutivo, Corporación Logística del Centro",
+    text: "Teníamos una fiscalización laboral de SUNAFIL con riesgo de multas millonarias. El equipo de Roma Abogados asumió la defensa de forma inmediata y logró archivar el proceso. Su rapidez y conocimiento del procedimiento fueron impecables.",
+  },
+  {
+    name: "Juan Reyna",
+    role: "Gerente de Operaciones, Retail & Distribución Reyna S.A.C.",
+    text: "Contratamos el servicio integrado de Outsourcing Contable y asesoría tributaria permanente. Desde entonces, nuestras declaraciones están impecables, implementamos el SIRE sin contratiempos y tenemos la tranquilidad de contar con blindaje jurídico ante cualquier duda.",
+  },
 ];
 
 export function NosotrosPage() {
   useScrollSlug();
-  const { ref: aboutRef, isVisible: aboutVisible } = useScrollAnimation(0.1);
-  const { ref: credRef, isVisible: credVisible } = useScrollAnimation(0.1);
   const { openModal } = useWhatsAppStore();
-  const [formData, setFormData] = useState({ name: "", email: "", service: "", message: "" });
-  const sanityDoc = useSanityDocument<any>(pageNosotrosQuery, null);
-
-  const heroImageSrc = sanityDoc?.heroImage
-    ? getSanityImageUrl(sanityDoc.heroImage, "/jhon-nosotros.webp")
-    : "/jhon-nosotros.webp";
-
-  const heroSubtitle =
-    sanityDoc?.heroSubtitle ||
-    "Transparencia, solvencia jurídica y resultados medibles. Conoce al estudio que protege y respalda el crecimiento de tu empresa en Perú.";
-
-  const missionText = sanityDoc?.mission || columns[0].description;
-  const visionText = sanityDoc?.vision || columns[1].description;
-  const activeValues =
-    sanityDoc?.values && sanityDoc.values.length > 0 ? sanityDoc.values : values;
+  const [formData, setFormData] = useState({ name: "", email: "", service: "General", message: "" });
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -83,280 +167,419 @@ export function NosotrosPage() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const serviceName = services.find((s) => s.name === formData.service)?.name || formData.service || "General";
-    const message = `Hola *ROMA ABOGADOS*.\n\nNombre: ${formData.name}\nEmail: ${formData.email}\nServicio: ${serviceName}\nMensaje: ${formData.message}`;
+    const message = `Hola *ROMA & ABOGADOS*.\n\nNombre: ${formData.name}\nEmail: ${formData.email}\nServicio de interés: ${formData.service}\nMensaje: ${formData.message}`;
     const url = `https://api.whatsapp.com/send?phone=51943366950&text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   }
 
   return (
     <SiteLayout>
-      {/* ═══ SUBPAGE HERO — Responsive Layout ═══ */}
-      <section id="hero" className="relative w-full min-h-screen min-h-[100dvh] flex items-center overflow-hidden bg-[#112C22] pt-[100px] pb-12">
-        {/* Background image layer */}
-        <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
-          <img
-            src={heroImageSrc}
-            alt="Especialista Roma Abogados"
-            className="w-full h-full object-cover object-[center_15%] md:object-[60%_20%] lg:object-[70%_22%] xl:object-[75%_20%] scale-105 brightness-[0.40] md:brightness-100"
+      {/* ═══ HERO SECTION ═══ */}
+      <section id="quienes-somos" className="relative w-full min-h-[85vh] flex items-center overflow-hidden bg-[#2b4b38] pt-[120px] pb-16">
+        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38] z-30" />
+
+        {/* Ambient mesh */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#42604e]/25 rounded-full blur-[120px]" />
+          <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-[#fa9b0c]/15 rounded-full blur-[120px]" />
+          <div
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
+              backgroundSize: "32px 32px",
+            }}
           />
-          <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#112C22] via-[#112C22]/80 to-transparent w-full md:w-[70%] lg:w-[60%] z-10"></div>
-          <div className="block md:hidden absolute inset-0 bg-gradient-to-b from-[#112C22]/90 via-[#112C22]/60 to-[#0B1E17] z-10"></div>
         </div>
-        {/* Content — same container as homepage */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="w-full max-w-xl md:max-w-2xl lg:max-w-3xl flex flex-col justify-center text-left">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
-            {/* Breadcrumb */}
-            <Link href="/" className="inline-flex items-center gap-1 text-white/50 hover:text-white/75 text-[13px] transition-colors">
-              Inicio <ChevronRight className="w-4 h-4" /> Nosotros
-            </Link>
-            {/* H1 */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="hero-h1 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white leading-tight tracking-tight mt-5"
-            >
-              ROMA <span className="text-[#C5A572]">ABOGADOS</span>
-            </motion.h1>
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="hero-subtitle mt-5 text-[15px] sm:text-[17px] lg:text-[18px] text-[#f8fafc]/80 max-w-lg leading-relaxed font-light"
-            >
-              {heroSubtitle}
-            </motion.p>
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="hero-ctas mt-8 flex flex-col sm:flex-row gap-3.5"
-            >
-              <button
-                onClick={() => openModal()}
-                className="inline-flex items-center justify-center gap-2.5 bg-[#C5A572] hover:bg-[#B39360] text-[#112C22] px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-bold transition-all shadow-lg shadow-[#C5A572]/25 hover:shadow-xl active:scale-[0.98]"
-              >
-                Consultoría Gratuita
-                <ArrowRight className="w-4 h-4" />
-              </button>
-              <a
-                href="mailto:contacto@romaabogados.pe"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-semibold transition-all backdrop-blur-sm"
-              >
-                <Mail className="w-4 h-4" />
-                Escríbenos
-              </a>
-            </motion.div>
-            {/* Trust badges */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.45 }}
-              className="hero-trust mt-8 flex flex-wrap gap-x-6 gap-y-2.5 text-white/45 text-xs sm:text-sm"
-            >
-              {[
-                "+21,000 empresas",
-                "Transparencia total",
-                "Resultados comprobados"
-              ].map((badge) => (
-                <span key={badge} className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C5A572]" />
-                  {badge}
+
+        {/* Content */}
+        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="max-w-3xl flex flex-col justify-center text-left">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
+              {/* Breadcrumb */}
+              <Link href="/" className="inline-flex items-center gap-1 text-white/60 hover:text-white text-[13px] transition-colors">
+                Inicio <ChevronRight className="w-4 h-4" /> Quiénes Somos
+              </Link>
+
+              {/* Badge */}
+              <div className="mt-4">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#fa9b0c] text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
+                  <Shield className="w-3.5 h-3.5" />
+                  Firma Jurídica y Empresarial en el Perú
                 </span>
-              ))}
+              </div>
+
+              {/* H1 */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="hero-h1 text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight mt-4"
+              >
+                ROMA & <span className="text-[#fa9b0c]">ABOGADOS</span>
+              </motion.h1>
+
+              {/* Subtitle */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="hero-subtitle mt-5 text-[16px] sm:text-[18px] text-[#FAFBF9]/85 max-w-2xl leading-relaxed font-light"
+              >
+                Somos una firma de profesionales especializada en asesoría tributaria, laboral y empresarial. Te brindamos soluciones jurídicas eficientes y estratégicas para proteger y potenciar tu negocio.
+              </motion.p>
+
+              {/* CTAs */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="hero-ctas mt-8 flex flex-col sm:flex-row gap-4"
+              >
+                <button
+                  onClick={() => openModal(null)}
+                  className="inline-flex items-center justify-center gap-2.5 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-7 py-4 rounded-xl text-[15px] sm:text-base font-bold transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Contactar con la Firma
+                </button>
+                <a
+                  href="#equipo-legal"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-7 py-4 rounded-xl text-[15px] sm:text-base font-semibold transition-all backdrop-blur-sm"
+                >
+                  Conocer a Nuestros Especialistas
+                </a>
+              </motion.div>
+
+              {/* Trust badges */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.45 }}
+                className="hero-trust mt-8 flex flex-wrap gap-x-6 gap-y-2.5 text-white/65 text-xs sm:text-sm"
+              >
+                {[
+                  "Liderazgo PUCP",
+                  "Ex Tribunal Fiscal & SUNAT",
+                  "Ética y Confidencialidad",
+                ].map((badge) => (
+                  <span key={badge} className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#fa9b0c]" />
+                    {badge}
+                  </span>
+                ))}
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
-        </div>
-        {/* Scroll down indicator */}
+
         <ScrollDownIndicator />
       </section>
 
-      {/* Mission & Vision */}
-      <SectionDivider from="#112C22" to="#FAF8F5" />
-      <section id="mision-vision" className="py-20 lg:py-28 bg-[#FAF8F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={aboutRef} className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block text-[#C5A572] font-semibold text-sm tracking-wider uppercase mb-4">Quiénes Somos</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#183D2F]">
-              Nuestro propósito es <span className="text-[#C5A572]">tu tranquilidad</span>
-            </h2>
-          </div>
-
+      {/* ═══ MISIÓN, VISIÓN Y VALORES ═══ */}
+      <SectionDivider from="#1e3527" to="#FAFBF9" />
+      <section className="py-20 lg:py-28 bg-[#FAFBF9]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {columns.map((col, i) => {
-              const Icon = col.icon;
-              return (
-                <motion.div
-                  key={col.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={aboutVisible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.1 * (i + 1) }}
-                  className="bg-white rounded-2xl p-8 border border-[#E8E2D5] shadow-sm"
-                >
-                  <div className="w-12 h-12 bg-[#183D2F]/10 rounded-xl flex items-center justify-center mb-5">
-                    <Icon className="w-6 h-6 text-[#183D2F]" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#183D2F] mb-4">{col.title}</h3>
-                  <p className="text-[#364A41] leading-relaxed">
-                    {i === 0 ? missionText : visionText}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Values */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={aboutVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <h3 className="text-2xl font-bold text-[#183D2F] mb-8 text-center">Nuestros Valores</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {activeValues.map((v: any, i: number) => (
-                <ScrollReveal
-                  key={v.label}
-                  delay={0.05 * i}
-                  duration={0.4}
-                  y={20}
-                  className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[#E8E2D5] hover:shadow-sm transition-all"
-                >
-                  <CheckCircle2 className="w-5 h-5 text-[#C5A572] mt-0.5 shrink-0" />
-                  <div>
-                    <span className="text-sm font-bold text-[#183D2F]">{v.label}</span>
-                    <p className="text-xs text-[#364A41] mt-1 leading-relaxed">{v.description}</p>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Credentials */}
-      <SectionDivider from="#FAF8F5" to="#FAF8F5" />
-      <section id="credenciales" className="py-20 lg:py-28 bg-[#FAF8F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div ref={credRef} className="bg-[#183D2F] rounded-2xl p-8 lg:p-12 relative overflow-hidden shadow-xl">
-            <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#C5A572]/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[#22523F]/30 rounded-full blur-3xl" />
-            <div className="relative">
-              <motion.h3
-                initial={{ opacity: 0, y: 20 }}
-                animate={credVisible ? { opacity: 1, y: 0 } : {}}
-                className="text-2xl font-bold text-white mb-8 text-center"
-              >
-                ¿En qué nos respaldamos?
-              </motion.h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {credentials.map((cred, i) => {
-                  const Icon = cred.icon;
-                  return (
-                    <motion.div
-                      key={cred.label}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={credVisible ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.5, delay: 0.1 * (i + 1) }}
-                      className="flex flex-col items-center text-center p-6 rounded-xl bg-white/5 border border-white/10"
-                    >
-                      <div className="w-14 h-14 bg-[#C5A572]/20 rounded-xl flex items-center justify-center mb-4">
-                        <Icon className="w-7 h-7 text-[#C5A572]" />
-                      </div>
-                      <p className="text-white/90 text-sm font-medium">{cred.label}</p>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form */}
-      <SectionDivider from="#FAF8F5" to="#FAF8F5" />
-      <section id="contacto" className="py-20 lg:py-28 bg-[#FAF8F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block text-[#C5A572] font-semibold text-sm tracking-wider uppercase mb-4">Contacto</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#183D2F]">
-              Hablemos
-            </h2>
-            <p className="mt-4 text-lg text-[#364A41]">
-              Estamos listos para ayudarte. Envíanos un mensaje y recibe asesoría personalizada.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
-            <ScrollReveal
-              x={-30}
-              duration={0.6}
-              className="lg:col-span-3 bg-white rounded-2xl border border-[#E8E2D5] p-6 lg:p-8 shadow-sm"
-            >
-              <h3 className="text-xl font-bold text-[#183D2F] mb-6">Envíanos un mensaje</h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-[#183D2F]">Nombre completo *</label>
-                  <input name="name" value={formData.name} onChange={handleChange} required placeholder="Tu nombre"
-                    className="w-full h-10 rounded-lg border border-[#E8E2D5] bg-[#FAF8F5] px-3 text-sm text-[#183D2F] focus:outline-none focus:ring-2 focus:ring-[#C5A572]/50 focus:border-[#C5A572] transition-all" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-[#183D2F]">Email</label>
-                    <input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="tu@email.com"
-                      className="w-full h-10 rounded-lg border border-[#E8E2D5] bg-[#FAF8F5] px-3 text-sm text-[#183D2F] focus:outline-none focus:ring-2 focus:ring-[#C5A572]/50 focus:border-[#C5A572] transition-all" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-[#183D2F]">Servicio</label>
-                    <select name="service" value={formData.service} onChange={handleChange}
-                      className="w-full h-10 rounded-lg border border-[#E8E2D5] bg-[#FAF8F5] px-3 text-sm text-[#183D2F] focus:outline-none focus:ring-2 focus:ring-[#C5A572]/50 focus:border-[#C5A572] transition-all">
-                      <option value="">-- Seleccionar --</option>
-                      {services.map((s) => (<option key={s.id} value={s.name}>{s.name}</option>))}
-                    </select>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-[#183D2F]">Mensaje</label>
-                  <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Cuéntanos sobre tu necesidad..." rows={4}
-                    className="w-full rounded-lg border border-[#E8E2D5] bg-[#FAF8F5] px-3 py-2 text-sm text-[#183D2F] focus:outline-none focus:ring-2 focus:ring-[#C5A572]/50 focus:border-[#C5A572] transition-all resize-none" />
-                </div>
-                <button type="submit" className="w-full flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp/90 text-white py-3.5 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-                  <Send className="w-5 h-5" /> Enviar por WhatsApp
-                </button>
-              </form>
+            {/* Misión */}
+            <ScrollReveal className="bg-white p-8 sm:p-10 rounded-2xl border border-[#E8E2D5] shadow-sm">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-3 py-1 rounded-full mb-4 inline-block">
+                Propósito
+              </span>
+              <h3 className="text-2xl font-bold text-[#2b4b38] mb-4">Nuestra Misión</h3>
+              <p className="text-[#42604e] text-base leading-relaxed">
+                Brindar asesoría jurídica y empresarial de la más alta calidad, con soluciones estratégicas, innovadoras y personalizadas que protejan los intereses de nuestros clientes y promuevan su crecimiento sostenible.
+              </p>
             </ScrollReveal>
 
-            <ScrollReveal
-              x={30}
-              duration={0.6}
-              delay={0.2}
-              className="lg:col-span-2 space-y-4"
-            >
-              {contactInfo.map((info) => {
-                const Icon = info.icon;
-                return (
-                  <div key={info.title} className="bg-white rounded-xl border border-[#E8E2D5] p-5 hover:shadow-md transition-all">
-                    <div className="flex items-start gap-4">
-                      <div className={`w-12 h-12 bg-[#183D2F]/10 rounded-xl flex items-center justify-center shrink-0`}>
-                        <Icon className={`w-5 h-5 text-[#183D2F]`} />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-[#183D2F] text-sm">{info.title}</h4>
-                        <p className="text-[#183D2F] font-bold mt-0.5">{info.detail}</p>
-                        <p className="text-xs text-[#364A41] mt-0.5">{info.description}</p>
-                      </div>
+            {/* Visión */}
+            <ScrollReveal delay={0.15} className="bg-white p-8 sm:p-10 rounded-2xl border border-[#E8E2D5] shadow-sm">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-3 py-1 rounded-full mb-4 inline-block">
+                Aspiración
+              </span>
+              <h3 className="text-2xl font-bold text-[#2b4b38] mb-4">Nuestra Visión</h3>
+              <p className="text-[#42604e] text-base leading-relaxed">
+                Ser reconocidos como el estudio jurídico líder en asesoría tributaria, laboral y empresarial en el Perú, destacando por nuestra excelencia profesional, ética y compromiso con el éxito de nuestros clientes.
+              </p>
+            </ScrollReveal>
+          </div>
+
+          {/* Valores */}
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
+              Principios Rectores
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#2b4b38]">
+              Nuestros Valores
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {firmValues.map((v, i) => (
+              <ScrollReveal
+                key={v.title}
+                delay={0.08 * i}
+                className="bg-white p-6 rounded-2xl border border-[#E8E2D5] shadow-sm"
+              >
+                <div className="w-10 h-10 rounded-xl bg-[#fa9b0c]/15 flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-5 h-5 text-[#2b4b38]" />
+                </div>
+                <h4 className="font-bold text-[#2b4b38] text-lg mb-2">{v.title}</h4>
+                <p className="text-[#42604e] text-sm leading-relaxed">{v.desc}</p>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ EQUIPO LEGAL & CONSULTORES ═══ */}
+      <SectionDivider from="#FAFBF9" to="#ffffff" />
+      <section id="equipo-legal" className="py-20 lg:py-28 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
+                Profesionales de Alto Nivel
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b4b38]">
+                Nuestro Equipo Legal y Consultores
+              </h2>
+              <p className="mt-4 text-base sm:text-lg text-[#42604e] leading-relaxed">
+                Abogados y consultores con destacada trayectoria académica, experiencia previa en entidades del Estado y visión empresarial práctica.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {teamMembers.map((member, idx) => (
+              <ScrollReveal
+                key={member.name}
+                delay={0.08 * idx}
+                className={`p-7 sm:p-9 rounded-2xl border ${idx === 0 ? "border-[#fa9b0c]/50 bg-[#FAFBF9] shadow-md" : "border-[#E8E2D5] bg-white shadow-sm"} flex flex-col justify-between`}
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-4 mb-4">
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-3 py-1 rounded-full">
+                        {member.role}
+                      </span>
+                      <h3 className="text-2xl font-bold text-[#2b4b38] mt-2">
+                        {member.name}
+                      </h3>
+                      <p className="text-sm font-semibold text-[#42604e] mt-0.5">
+                        {member.area}
+                      </p>
+                    </div>
+                    <div className="w-14 h-14 rounded-2xl bg-[#2b4b38]/10 flex items-center justify-center shrink-0">
+                      <Scale className="w-7 h-7 text-[#2b4b38]" />
                     </div>
                   </div>
-                );
-              })}
-              <button onClick={() => openModal()} className="w-full bg-[#183D2F] hover:bg-[#22523F] text-[#FAF8F5] rounded-xl p-5 flex items-center justify-center gap-3 font-semibold transition-all shadow-md hover:shadow-lg border border-[#C5A572]/40">
-                <MessageCircle className="w-5 h-5 text-[#C5A572]" /> Consultoría Gratuita
-              </button>
-            </ScrollReveal>
+
+                  <p className="text-xs font-bold text-[#2b4b38] uppercase tracking-wide mb-1">Formación y Trayectoria</p>
+                  <p className="text-sm text-[#42604e] leading-relaxed mb-3">{member.education}</p>
+                  <p className="text-sm text-[#42604e] leading-relaxed mb-6">{member.experience}</p>
+
+                  <div className="pt-4 border-t border-[#E8E2D5] space-y-2">
+                    {member.highlights.map((hl) => (
+                      <div key={hl} className="flex items-center gap-2 text-xs font-semibold text-[#2b4b38]">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#fa9b0c] shrink-0" />
+                        <span>{hl}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-6 mt-6 border-t border-[#E8E2D5]">
+                  <button
+                    onClick={() => openModal(null)}
+                    className="w-full inline-flex items-center justify-center gap-2 bg-[#2b4b38] hover:bg-[#1e3527] text-white py-3 rounded-xl text-sm font-bold transition-all shadow-sm"
+                  >
+                    Agendar reunión con {member.name.split(" ")[0]}
+                    <ArrowRight className="w-4 h-4 text-[#fa9b0c]" />
+                  </button>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ TESTIMONIOS ═══ */}
+      <SectionDivider from="#ffffff" to="#FAFBF9" />
+      <section className="py-20 lg:py-28 bg-[#FAFBF9]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
+              Casos Reales
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#2b4b38]">
+              Testimonios de Clientes
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((t, i) => (
+              <ScrollReveal
+                key={t.name}
+                delay={0.1 * i}
+                className="bg-white p-7 rounded-2xl border border-[#E8E2D5] shadow-sm flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex gap-1 mb-4">
+                    {Array.from({ length: 5 }).map((_, j) => (
+                      <Star key={j} className="w-4 h-4 fill-[#fa9b0c] text-[#fa9b0c]" />
+                    ))}
+                  </div>
+                  <p className="text-[#1e3527] text-sm leading-relaxed italic mb-6">
+                    &ldquo;{t.text}&rdquo;
+                  </p>
+                </div>
+                <div className="pt-4 border-t border-[#E8E2D5]">
+                  <h4 className="font-bold text-[#2b4b38] text-base">{t.name}</h4>
+                  <p className="text-xs text-[#42604e] mt-0.5 font-medium">{t.role}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ FORMULARIO DE CONTACTO DIRECTO ═══ */}
+      <SectionDivider from="#FAFBF9" to="#ffffff" />
+      <section id="contacto-directo" className="py-20 lg:py-28 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
+                Canales de Atención
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#2b4b38] leading-tight mb-5">
+                Conversemos Sobre las Necesidades de tu Empresa
+              </h2>
+              <p className="text-[#42604e] text-base sm:text-lg leading-relaxed mb-8">
+                Envíanos tu consulta legal, tributaria o contable. Evaluamos tu situación y te brindamos una propuesta estratégica adaptada a tus objetivos.
+              </p>
+
+              <div className="space-y-5">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#fa9b0c]/15 flex items-center justify-center shrink-0">
+                    <Phone className="w-6 h-6 text-[#2b4b38]" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-[#42604e] font-medium">WhatsApp / Teléfono</p>
+                    <a
+                      href="tel:+51943366950"
+                      className="text-base font-bold text-[#2b4b38] hover:text-[#fa9b0c] transition-colors inline-block"
+                      title="Llamar a ROMA & ABOGADOS"
+                    >
+                      +51 943 366 950
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#fa9b0c]/15 flex items-center justify-center shrink-0">
+                    <Mail className="w-6 h-6 text-[#2b4b38]" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-[#42604e] font-medium">Correo Electrónico</p>
+                    <a
+                      href="mailto:contacto@romaabogados.pe"
+                      className="text-base font-bold text-[#2b4b38] hover:text-[#fa9b0c] transition-colors inline-block"
+                      title="Enviar correo a ROMA & ABOGADOS"
+                    >
+                      contacto@romaabogados.pe
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#fa9b0c]/15 flex items-center justify-center shrink-0">
+                    <MapPin className="w-6 h-6 text-[#2b4b38]" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-[#42604e] font-medium">Ubicación</p>
+                    <p className="text-base font-bold text-[#2b4b38]">Lima, Perú (Atención a Nivel Nacional)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Form */}
+            <div className="p-8 sm:p-10 rounded-2xl bg-[#FAFBF9] border border-[#E8E2D5] shadow-md">
+              <h3 className="text-xl font-bold text-[#2b4b38] mb-6">Envíanos un Mensaje Directo</h3>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-[#2b4b38] mb-1.5">
+                    Nombre o Empresa *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Ej. Juan Pérez - Constructora SAC"
+                    className="w-full px-4 py-3 rounded-xl border border-[#E8E2D5] bg-white text-[#2b4b38] text-sm focus:outline-none focus:border-[#fa9b0c]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-[#2b4b38] mb-1.5">
+                    Correo Electrónico *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="contacto@tuempresa.com"
+                    className="w-full px-4 py-3 rounded-xl border border-[#E8E2D5] bg-white text-[#2b4b38] text-sm focus:outline-none focus:border-[#fa9b0c]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-[#2b4b38] mb-1.5">
+                    Área de Interés *
+                  </label>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-[#E8E2D5] bg-white text-[#2b4b38] text-sm focus:outline-none focus:border-[#fa9b0c]"
+                  >
+                    <option value="Derecho Tributario">Derecho Tributario & Fiscalizaciones SUNAT</option>
+                    <option value="Derecho Laboral">Derecho Laboral & Inspecciones SUNAFIL</option>
+                    <option value="Outsourcing Contable">Outsourcing Contable, SIRE & Planillas</option>
+                    <option value="Derecho Empresarial">Derecho Empresarial & Contrataciones OSCE</option>
+                    <option value="General">Consulta General / Reunión con Socio Principal</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-[#2b4b38] mb-1.5">
+                    Detalle de tu Consulta *
+                  </label>
+                  <textarea
+                    name="message"
+                    required
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Describe brevemente tu caso, requerimiento o consulta..."
+                    className="w-full px-4 py-3 rounded-xl border border-[#E8E2D5] bg-white text-[#2b4b38] text-sm focus:outline-none focus:border-[#fa9b0c]"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] py-4 rounded-xl text-base font-bold transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
+                >
+                  <Send className="w-4 h-4" />
+                  Enviar Consulta por WhatsApp
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>

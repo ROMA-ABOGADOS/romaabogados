@@ -24,7 +24,7 @@ type CtaConfig =
   | { text: string; type: "scroll" };
 
 interface SlideData {
-  img: string;
+  id: string;
   badge: string;
   h1: React.ReactNode;
   subtitle: string;
@@ -35,110 +35,116 @@ interface SlideData {
 
 const slides: SlideData[] = [
   {
-    img: "/jhon-hero-oficina.webp",
-    badge: "Estudio Jurídico & Tributario en Perú",
+    id: "firma",
+    badge: "Firma Especializada en Asesoría Jurídica y Empresarial",
     h1: (
       <>
-        Protegemos tu{" "}
-        <span className="text-[#C5A572]">Empresa.</span>{" "}
+        Soluciones Jurídicas{" "}
         <br className="hidden sm:block" />
-        Aseguramos tu{" "}
-        <span className="text-[#C5A572]">Patrimonio.</span>
+        <span className="text-[#fa9b0c]">Estratégicas y Eficientes.</span>
       </>
     ),
     subtitle:
-      "Asesoría legal, tributaria y contable de excelencia. Cero multas SUNAT. Seguridad jurídica total con ROMA ABOGADOS.",
-    cta1: { text: "Consultoría Gratuita →", type: "whatsapp", serviceId: null },
+      "Especialistas en Derecho Tributario, Laboral y Empresarial. Protegemos el valor de tu empresa y garantizamos seguridad jurídica con el más alto rigor técnico.",
+    cta1: { text: "Consultar Especialista →", type: "whatsapp", serviceId: null },
     cta2: { text: "Nuestros Servicios", type: "scroll" },
-    badges: ["Sin compromiso", "Respuesta inmediata", "Personalizado"],
+    badges: ["Rigor Técnico PUCP", "Respuesta Inmediata", "Soluciones a Medida"],
   },
   {
-    img: "/jhon-constitucion.webp",
-    badge: "Constitución de Empresas",
+    id: "tributario",
+    badge: "Derecho Tributario & Defensa Fiscal",
     h1: (
       <>
-        Constituye tu Empresa.{" "}
+        Defensa Tributaria{" "}
         <br className="hidden sm:block" />
-        <span className="text-[#C5A572]">Precios a Consultar.</span>
+        Ante <span className="text-[#fa9b0c]">SUNAT y Tribunal Fiscal.</span>
       </>
     ),
     subtitle:
-      "Formaliza tu negocio sin estrés, colas ni trámites complicados. Incluye Notaría y SUNARP.",
+      "Consultoría fiscal preventiva, atención experta a cartas inductivas, fiscalizaciones, recursos de apelación y suspensión de cobranzas coactivas.",
     cta1: {
-      text: "Constituir Empresa Ahora",
-      type: "link",
-      href: "/constitucion-de-empresas",
-    },
-    cta2: {
-      text: "Ver Paquetes",
-      type: "link",
-      href: "/constitucion-de-empresas",
-    },
-    badges: ["Notaría incluida", "SUNARP garantizado", "RUC + Clave SOL"],
-  },
-  {
-    img: "/jhon-contabilidad.webp",
-    badge: "Contabilidad Integral",
-    h1: (
-      <>
-        Tu Contabilidad en Regla.{" "}
-        <br className="hidden sm:block" />
-        <span className="text-[#C5A572]">Sin multas de SUNAT.</span>
-      </>
-    ),
-    subtitle:
-      "Nos encargamos de tus declaraciones mensuales, libros electrónicos, SIRE y planillas.",
-    cta1: { text: "Evaluar mi Régimen MYPE", type: "whatsapp", serviceId: 4 },
-    cta2: {
-      text: "Planes Mensuales",
-      type: "link",
-      href: "/contabilidad-tributacion",
-    },
-    badges: ["Declaraciones mensuales", "Libros electrónicos", "Planilla laboral"],
-  },
-  {
-    img: "/jhon-defensa.webp",
-    badge: "Defensa Tributaria Urgente",
-    h1: (
-      <>
-        Escudo Legal y Tributario{" "}
-        <br className="hidden sm:block" />
-        Ante <span className="text-[#C5A572]">Fiscalizaciones.</span>
-      </>
-    ),
-    subtitle:
-      "Atención urgente de cartas inductivas, cobranzas coactivas y auditorías de SUNAT.",
-    cta1: { text: "Detener Fiscalización Ya", type: "whatsapp", serviceId: 5 },
-    cta2: {
-      text: "Casos de Defensa",
+      text: "Defensa Tributaria Ya",
       type: "link",
       href: "/defensa-tributaria-sunat",
     },
-    badges: ["Atención urgente", "Cartas inductivas", "Cobranza coactiva"],
+    cta2: {
+      text: "Conocer Servicios",
+      type: "link",
+      href: "/defensa-tributaria-sunat",
+    },
+    badges: ["Exintegrantes TF & SUNAT", "Cartas Inductivas", "Cobranza Coactiva"],
   },
   {
-    img: "/jhon-nosotros.webp",
-    badge: "Estudio Jurídico Roma Abogados",
+    id: "laboral",
+    badge: "Derecho Laboral & Inspecciones SUNAFIL",
     h1: (
       <>
-        Especialistas Jurídicos con{" "}
+        Gestión Preventiva y{" "}
         <br className="hidden sm:block" />
-        <span className="text-[#C5A572]">Sólido Respaldo Legal.</span>
+        <span className="text-[#fa9b0c]">Defensa Laboral Estratégica.</span>
       </>
     ),
     subtitle:
-      "Rigurosidad legal, estrategia tributaria y resultados reales respaldando el crecimiento de empresas en el Perú.",
+      "Auditorías laborales de compliance, SST, prevención de contingencias, descargos ante SUNAFIL y defensa judicial bajo la Nueva Ley Procesal del Trabajo.",
     cta1: {
-      text: "Agendar Reunión",
+      text: "Asesoría Laboral",
       type: "link",
-      href: "/nosotros-contacto",
+      href: "/derecho-laboral",
     },
     cta2: {
-      text: "Conocer el Estudio",
+      text: "Ver Casos Laborales",
       type: "link",
-      href: "/nosotros-contacto",
+      href: "/derecho-laboral",
     },
-    badges: ["Asesoría Integral", "Transparencia total", "Resultados comprobados"],
+    badges: ["Inspecciones SUNAFIL", "Auditorías de Cumplimiento", "Litigios Laborales"],
+  },
+  {
+    id: "contable",
+    badge: "Outsourcing Contable & Tributario",
+    h1: (
+      <>
+        Contabilidad Integral con{" "}
+        <br className="hidden sm:block" />
+        <span className="text-[#fa9b0c]">Blindaje Legal Permanente.</span>
+      </>
+    ),
+    subtitle:
+      "Teneduría contable, determinación mensual de tributos, implementación del SIRE y liquidación de planillas PLAME respaldadas por firmas aliadas de primer nivel.",
+    cta1: {
+      text: "Planes de Outsourcing",
+      type: "link",
+      href: "/contabilidad-tributacion",
+    },
+    cta2: {
+      text: "Ver Detalles",
+      type: "link",
+      href: "/contabilidad-tributacion",
+    },
+    badges: ["Implementación SIRE", "Libros Electrónicos", "Alianzas Estratégicas"],
+  },
+  {
+    id: "empresarial",
+    badge: "Derecho Empresarial, Civil & OSCE",
+    h1: (
+      <>
+        Derecho Corporativo,{" "}
+        <br className="hidden sm:block" />
+        Contratos y <span className="text-[#fa9b0c]">Licitaciones del Estado.</span>
+      </>
+    ),
+    subtitle:
+      "Constitución de sociedades (SAC, SRL, EIRL), reorganizaciones societarias, contratos civiles/comerciales y asesoría en contrataciones públicas con OSCE.",
+    cta1: {
+      text: "Asesoría Corporativa",
+      type: "link",
+      href: "/constitucion-de-empresas",
+    },
+    cta2: {
+      text: "Ver Áreas de Práctica",
+      type: "link",
+      href: "/constitucion-de-empresas",
+    },
+    badges: ["Gobierno Corporativo", "Contratos Comerciales", "Registro RNP / OSCE"],
   },
 ];
 
@@ -162,7 +168,7 @@ function CounterItem({
         {count}
         {suffix}
       </span>
-      <p className="text-white/60 text-xs sm:text-sm mt-1 font-medium">{label}</p>
+      <p className="text-white/70 text-xs sm:text-sm mt-1 font-medium">{label}</p>
     </div>
   );
 }
@@ -178,7 +184,7 @@ function CtaButton({
   const { openModal } = useWhatsAppStore();
 
   const basePrimary =
-    "inline-flex items-center justify-center gap-2.5 bg-[#C5A572] hover:bg-[#B39360] text-[#112C22] px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-bold transition-all shadow-lg shadow-[#C5A572]/25 hover:shadow-xl active:scale-[0.98]";
+    "inline-flex items-center justify-center gap-2.5 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-bold transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]";
   const baseSecondary =
     "inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-7 py-4 sm:px-8 sm:py-4 rounded-xl text-[15px] sm:text-base font-semibold transition-all backdrop-blur-sm";
   const cls = variant === "primary" ? basePrimary : baseSecondary;
@@ -223,26 +229,25 @@ export function Hero() {
     }
     return sanityHome.heroSlides.map((s: any, idx: number) => {
       const fallback = slides[idx % slides.length];
-      const img = s.image ? getSanityImageUrl(s.image, fallback.img) : fallback.img;
       const h1 = (
         <>
           {s.titlePart1 || fallback.badge}{" "}
-          {s.titleHighlight1 && <span className="text-[#C5A572]">{s.titleHighlight1}</span>}{" "}
+          {s.titleHighlight1 && <span className="text-[#fa9b0c]">{s.titleHighlight1}</span>}{" "}
           {s.titlePart2 && (
             <>
               <br className="hidden sm:block" />
               {s.titlePart2}{" "}
             </>
           )}
-          {s.titleHighlight2 && <span className="text-[#C5A572]">{s.titleHighlight2}</span>}
+          {s.titleHighlight2 && <span className="text-[#fa9b0c]">{s.titleHighlight2}</span>}
         </>
       );
       return {
-        img,
+        id: `sanity-slide-${idx}`,
         badge: s.badge || fallback.badge,
         h1,
         subtitle: s.subtitle || fallback.subtitle,
-        cta1: s.cta1Link === "#whatsapp" ? { text: s.cta1Text || "Consultoría Gratuita →", type: "whatsapp", serviceId: null } : { text: s.cta1Text || "Consultar", type: "link", href: s.cta1Link || "#" },
+        cta1: s.cta1Link === "#whatsapp" ? { text: s.cta1Text || "Consultar Especialista →", type: "whatsapp", serviceId: null } : { text: s.cta1Text || "Consultar", type: "link", href: s.cta1Link || "#" },
         cta2: s.cta2Link === "#servicios" ? { text: s.cta2Text || "Nuestros Servicios", type: "scroll" } : { text: s.cta2Text || "Ver más", type: "link", href: s.cta2Link || "#" },
         badges: s.badges || fallback.badges,
       };
@@ -274,10 +279,9 @@ export function Hero() {
       {/* ═══ LAYER 0 — Slide Backgrounds (crossfade) ═══ */}
       {slides.map((s, index) => (
         <div
-          key={s.img}
+          key={s.id}
           className={`hero-slide-bg${index === active ? " hero-slide-active" : ""}`}
           data-slide={index}
-          style={{ backgroundImage: `url(${s.img})` }}
           aria-hidden={index !== active}
         />
       ))}
@@ -287,10 +291,10 @@ export function Hero() {
 
       {/* ═══ LAYER 2 — Decorative Blurs + Dot Pattern ═══ */}
       <div className="hero-decor-layer">
-        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#183D2F]/30 rounded-full blur-[100px]" />
-        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-[#C5A572]/15 rounded-full blur-[100px]" />
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#42604e]/30 rounded-full blur-[100px]" />
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-[#fa9b0c]/15 rounded-full blur-[100px]" />
         <div
-          className="absolute inset-0 opacity-[0.025]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage:
               "radial-gradient(circle, white 1px, transparent 1px)",
@@ -316,8 +320,8 @@ export function Hero() {
               transition={{ duration: 0.5 }}
               className="hero-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2"
             >
-              <Shield className="w-3.5 h-3.5 text-[#C5A572]" />
-              <span className="text-white/85 text-xs sm:text-sm font-medium tracking-wide">
+              <Shield className="w-3.5 h-3.5 text-[#fa9b0c]" />
+              <span className="text-white/90 text-xs sm:text-sm font-medium tracking-wide">
                 {slide.badge}
               </span>
             </motion.div>
@@ -337,7 +341,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="hero-subtitle mt-6 text-[15px] sm:text-[17px] lg:text-[18px] text-[#f8fafc]/80 max-w-lg leading-relaxed font-light"
+              className="hero-subtitle mt-6 text-[15px] sm:text-[17px] lg:text-[18px] text-[#FAFBF9]/85 max-w-lg leading-relaxed font-light"
             >
               {slide.subtitle}
             </motion.p>
@@ -358,11 +362,11 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.45 }}
-              className="hero-trust mt-7 flex flex-wrap gap-x-5 gap-y-2 text-white/45 text-xs sm:text-sm"
+              className="hero-trust mt-7 flex flex-wrap gap-x-5 gap-y-2 text-white/60 text-xs sm:text-sm"
             >
               {slide.badges.map((badge) => (
                 <span key={badge} className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C5A572]" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#fa9b0c]" />
                   {badge}
                 </span>
               ))}
@@ -378,9 +382,9 @@ export function Hero() {
           className="hero-counters mt-14 lg:mt-20 grid grid-cols-3 gap-3 sm:gap-6 hero-text-col"
         >
           {[
-            { value: 408, suffix: "+", label: "Empresas Formalizadas" },
-            { value: 1, suffix: "M+", label: "en Multas Evitadas" },
-            { value: 98, suffix: "%", label: "de Satisfacción" },
+            { value: 12, suffix: "+", label: "Años de Trayectoria" },
+            { value: 15, suffix: "M+", label: "S/ en Contingencias Anuladas" },
+            { value: 99, suffix: "%", label: "Resoluciones Favorables" },
           ].map((item) => (
             <div
               key={item.label}
@@ -404,7 +408,7 @@ export function Hero() {
             onClick={() => setActive(index)}
             className={`transition-all duration-300 cursor-pointer ${
               index === active
-                ? "w-8 h-2.5 bg-[#C5A572] rounded-full"
+                ? "w-8 h-2.5 bg-[#fa9b0c] rounded-full"
                 : "w-2.5 h-2.5 bg-white/35 hover:bg-white/60 rounded-full"
             }`}
             aria-label={`Diapositiva ${index + 1}`}
@@ -416,7 +420,7 @@ export function Hero() {
       <div className="absolute bottom-0 left-0 right-0 z-30 h-[3px] bg-white/[0.08]">
         <div
           key={`progress-${active}-${isPaused ? "p" : "r"}`}
-          className={`hero-progress-fill h-full bg-gradient-to-r from-[#C5A572] to-[#E5D2B3] ${isPaused ? "paused" : ""}`}
+          className={`hero-progress-fill h-full bg-gradient-to-r from-[#fa9b0c] to-[#eda340] ${isPaused ? "paused" : ""}`}
         />
       </div>
 

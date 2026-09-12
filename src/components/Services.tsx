@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Building2, Calculator, Shield, Users, TrendingUp } from "lucide-react";
+import { Scale, Briefcase, Calculator, Building2, Users } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -12,38 +12,38 @@ import { homePageQuery } from "@/sanity/queries";
 
 const serviceCards = [
   {
-    icon: Building2,
-    title: "Constitución de Empresas",
-    description: "Formaliza tu negocio con paquetes flexibles. SAC, EIRL, SRL. Incluye minuta, partida, RUC y Clave SOL.",
-    href: "/constitucion-de-empresas",
-    serviceId: 1,
-  },
-  {
-    icon: Calculator,
-    title: "Contabilidad Integral",
-    description: "Tercerización contable completa. Libros electrónicos, SIRE, planillas y declaraciones mensuales.",
-    href: "/contabilidad-tributacion",
-    serviceId: 4,
-  },
-  {
-    icon: Shield,
-    title: "Asesoría Tributaria",
-    description: "Atención urgente de cartas inductivas, fiscalizaciones y cobranzas coactivas de SUNAT.",
+    icon: Scale,
+    title: "Derecho Tributario",
+    description: "Consultoría preventiva, fiscalizaciones SUNAT, reclamaciones, apelaciones ante el Tribunal Fiscal y levantamiento de cobranzas coactivas.",
     href: "/defensa-tributaria-sunat",
     serviceId: 5,
   },
   {
-    icon: Users,
-    title: "Planillas y Laboral",
-    description: "Administración de planillas, T-REGISTRO, PDT 601 y cumplimiento laboral total.",
-    href: "/contabilidad-tributacion#planillas-laboral",
+    icon: Briefcase,
+    title: "Derecho Laboral",
+    description: "Auditorías de compliance laboral, comités SST, defensa en comparecencias e inspecciones SUNAFIL y patrocinio en litigios laborales.",
+    href: "/derecho-laboral",
     serviceId: 8,
   },
   {
-    icon: TrendingUp,
-    title: "Asesoría al Inversionista",
-    description: "Orientación integral para inversores nacionales y extranjeros. Planificación fiscal estratégica.",
-    href: "/defensa-tributaria-sunat#asesoria-inversionista",
+    icon: Calculator,
+    title: "Outsourcing Contable",
+    description: "Gestión contable integral, libros electrónicos, implementación SIRE, procesamiento de planillas PLAME y determinación de impuestos.",
+    href: "/contabilidad-tributacion",
+    serviceId: 4,
+  },
+  {
+    icon: Building2,
+    title: "Derecho Empresarial",
+    description: "Constitución de empresas, derecho corporativo, reorganizaciones societarias, contratos mercantiles y contrataciones con el Estado (OSCE/RNP).",
+    href: "/constitucion-de-empresas",
+    serviceId: 1,
+  },
+  {
+    icon: Users,
+    title: "Quiénes Somos & Equipo Legal",
+    description: "Firma legal y empresarial liderada por Roberto Marca (PUCP, ex Tribunal Fiscal y SUNAT) con un equipo de especialistas de primer nivel.",
+    href: "/nosotros-contacto",
     serviceId: 9,
   },
 ];
@@ -53,11 +53,11 @@ export function Services() {
   const sanityHome = useSanityDocument<any>(homePageQuery, null);
 
   const servicesSection = sanityHome?.servicesSection;
-  const badge = servicesSection?.badge || "Nuestros Servicios";
-  const title = servicesSection?.title || "¿Por qué elegir ROMA ABOGADOS?";
+  const badge = servicesSection?.badge || "Áreas de Práctica";
+  const title = servicesSection?.title || "¿Por qué elegir ROMA & ABOGADOS?";
   const subtitle =
     servicesSection?.subtitle ||
-    "Soluciones integrales para proteger tu patrimonio y hacer crecer tu negocio con tranquilidad.";
+    "Soluciones jurídicas eficientes, estratégicas y personalizadas para proteger tu patrimonio y potenciar tu negocio con seguridad total.";
 
   const activeServices = (servicesSection?.servicesList && servicesSection.servicesList.length > 0)
     ? servicesSection.servicesList.map((s: any, idx: number) => ({
@@ -67,14 +67,14 @@ export function Services() {
     : serviceCards;
 
   return (
-    <section id="servicios" className="py-20 lg:py-28 bg-[#FAF8F5]">
+    <section id="servicios" className="py-20 lg:py-28 bg-[#FAFBF9]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref} className="text-center max-w-3xl mx-auto mb-16">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="inline-block text-[#C5A572] font-semibold text-sm tracking-wider uppercase mb-4"
+            className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-4"
           >
             {badge}
           </motion.span>
@@ -82,7 +82,7 @@ export function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#183D2F]"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b4b38]"
           >
             {title}
           </motion.h2>
@@ -90,7 +90,7 @@ export function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-4 text-lg text-[#364A41]"
+            className="mt-4 text-lg text-[#42604e]"
           >
             {subtitle}
           </motion.p>
@@ -106,13 +106,13 @@ export function Services() {
                 duration={0.7}
                 threshold={0.05}
               >
-                <Link href={card.href} className="service-card bg-white rounded-2xl p-6 lg:p-8 block cursor-pointer group border border-[#E8E2D5]">
-                  <div className="service-card-icon mb-5">
-                    <Icon className="w-5 h-5 text-[#183D2F]" />
+                <Link href={card.href} className="service-card bg-white rounded-2xl p-6 lg:p-8 block cursor-pointer group border border-[#E8E2D5] hover:border-[#fa9b0c]/50 transition-all shadow-sm hover:shadow-md">
+                  <div className="service-card-icon mb-5 w-12 h-12 rounded-xl bg-[#fa9b0c]/15 flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-[#2b4b38] group-hover:text-[#fa9b0c] transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#183D2F] mb-3">{card.title}</h3>
-                  <p className="text-[#364A41] leading-relaxed mb-5">{card.description}</p>
-                  <span className="service-card-link">
+                  <h3 className="text-xl font-bold text-[#2b4b38] mb-3 group-hover:text-[#fa9b0c] transition-colors">{card.title}</h3>
+                  <p className="text-[#42604e] leading-relaxed mb-5 text-[15px]">{card.description}</p>
+                  <span className="service-card-link inline-flex items-center gap-1.5 text-sm font-bold text-[#fa9b0c] group-hover:translate-x-1 transition-transform">
                     Ver detalles
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

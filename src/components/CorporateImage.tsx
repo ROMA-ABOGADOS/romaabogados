@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
    single component to ensure visual consistency and premium feel.
 
    Props:
-     src        — Image path (e.g. "/jhon-constitucion.webp")
+     src        — Image path (e.g. "/logo.png")
      alt        — Accessible description
      height     — Height preset: "sm" (280px) | "md" (340px) | "lg" (420px) | "xl" (520px)
      objectPos  — CSS object-position (default: "top")

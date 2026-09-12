@@ -4,42 +4,37 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 
-// Rotating notification messages — each with a different intent
+// Rotating notification messages — ROMA & ABOGADOS
 const NOTIFICATIONS = [
   {
-    title: "ROMAABOGADOS",
-    message: "¿Necesitas ayuda con tu empresa? Conversemos ahora",
+    title: "ROMA & ABOGADOS",
+    message: "¿Necesitas asesoría legal o tributaria para tu empresa? Conversemos ahora.",
     time: "ahora",
   },
   {
-    title: "Constitución de Empresas",
-    message: "Formaliza tu negocio desde S/ 380. ¡Consulta gratis!",
+    title: "Defensa Tributaria SUNAT",
+    message: "Atención inmediata en fiscalizaciones, esquelas y levantamiento de embargos.",
     time: "hace 1 min",
   },
   {
-    title: "¿Inconvenientes con SUNAT?",
-    message: "Te defendemos de fiscalizaciones y cobranzas coactivas",
+    title: "Derecho Laboral & SUNAFIL",
+    message: "Auditorías de compliance, SST y comparecencias ante SUNAFIL.",
     time: "hace 3 min",
   },
   {
-    title: "Contabilidad Integral",
-    message: "Terceriza tus libros y declara a tiempo. Desde S/ 350/mes",
+    title: "Outsourcing Contable",
+    message: "Gestión contable integral, cumplimiento SIRE y nóminas PLAME con blindaje legal.",
     time: "hace 5 min",
   },
   {
-    title: "Asesoría Tributaria",
-    message: "Evita multas. Consultoría gratuita sin compromiso",
+    title: "Derecho Empresarial",
+    message: "Constitución de sociedades, contratos mercantiles y licitaciones OSCE.",
     time: "hace 8 min",
   },
   {
-    title: "Planillas y Laboral",
-    message: "Nosotros manejamos tu planilla. Tú creces tu negocio",
+    title: "Consultoría Estratégica",
+    message: "Conversemos directamente por WhatsApp con nuestro equipo de especialistas.",
     time: "hace 10 min",
-  },
-  {
-    title: "Cotización Inmediata",
-    message: "Solicita tu cotización personalizada por WhatsApp",
-    time: "hace 12 min",
   },
 ];
 
@@ -197,10 +192,10 @@ export function WhatsAppButton() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 10 }}
             transition={{ duration: 0.2 }}
-            className="absolute bottom-1/2 right-[68px] translate-y-1/2 bg-[#002350] text-white px-4 py-2 rounded-xl text-sm font-medium shadow-lg whitespace-nowrap pointer-events-none hidden sm:block"
+            className="absolute bottom-1/2 right-[68px] translate-y-1/2 bg-[#2b4b38] text-white px-4 py-2 rounded-xl text-sm font-medium shadow-lg whitespace-nowrap pointer-events-none hidden sm:block border border-[#fa9b0c]/30"
           >
-            ¿Necesitas ayuda?
-            <div className="absolute top-1/2 -right-2 -translate-y-1/2 w-2 h-2 bg-[#002350] rotate-45" />
+            ROMA & ABOGADOS — ¿En qué podemos asesorarte?
+            <div className="absolute top-1/2 -right-2 -translate-y-1/2 w-2 h-2 bg-[#2b4b38] rotate-45" />
           </motion.div>
         )}
       </AnimatePresence>

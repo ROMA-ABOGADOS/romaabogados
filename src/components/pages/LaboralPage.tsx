@@ -4,11 +4,10 @@ import Link from "next/link";
 import { SiteLayout } from "@/components/SiteLayout";
 import { motion } from "framer-motion";
 import {
-  AlertTriangle, Shield, Gavel, MessageCircle, Clock, ArrowRight,
-  ChevronRight, CheckCircle2, FileWarning, FileText, Scale, Zap,
-  TrendingUp, Building2, BookOpen, AlertOctagon, HelpCircle
+  Briefcase, Shield, Gavel, MessageCircle, Clock, ArrowRight,
+  ChevronRight, CheckCircle2, FileText, Scale, Zap, Globe,
+  AlertTriangle, Users, HeartHandshake, FileCheck
 } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useScrollSlug } from "@/hooks/use-scroll-slug";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -16,129 +15,128 @@ import { SectionDivider } from "@/components/SectionDivider";
 import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
 
 /* ════════════════════════════════════════════════════════════════
-   DERECHO TRIBUTARIO — 5 EJES DE ESPECIALIZACIÓN
+   DERECHO LABORAL — 5 EJES DE ESPECIALIZACIÓN
    ════════════════════════════════════════════════════════════════ */
 
-const taxPillars = [
+const laborPillars = [
   {
-    icon: Scale,
-    title: "1. Consultoría y Planeamiento Tributario",
+    icon: FileText,
+    title: "1. Consultoría Laboral Preventiva",
     badge: "Preventivo",
     description:
-      "Diseño e implementación de estrategias tributarias seguras para optimizar la carga impositiva dentro del estricto marco de la ley.",
+      "Estructuración sólida de la relación laboral para prevenir contingencias, demandas y sanciones administrativas.",
     items: [
-      "Diagnóstico tributario preventivo y auditorías fiscales",
-      "Planeamiento tributario nacional e internacional",
-      "Asesoría en tributación sectorial (minería, construcción, retail, tecnología, etc.)",
-      "Asesoría en precios de transferencia y operaciones vinculadas",
-      "Opiniones legales e informes tributarios especializados",
-      "Regímenes especiales y beneficios tributarios",
+      "Redacción y revisión de contratos de trabajo (indeterminado, sujetos a modalidad, tiempo parcial, teletrabajo)",
+      "Elaboración de convenios de prácticas preprofesionales y profesionales",
+      "Diseño e implementación de políticas internas, reglamentos internos de trabajo (RIT) y códigos de conducta",
+      "Asesoría en regímenes laborales especiales (construcción civil, agrario, minero, exportación no tradicional)",
+      "Consultoría en compensaciones, beneficios sociales, utilidades y remuneraciones integrales",
+      "Asesoría en tercerización e intermediación laboral (auditoría de contratistas y proveedores)",
     ],
   },
   {
     icon: Shield,
-    title: "2. Procedimientos ante la SUNAT",
-    badge: "Administrativo",
+    title: "2. Gestión de Riesgos y Compliance Laboral",
+    badge: "Auditoría & SST",
     description:
-      "Acompañamiento técnico y legal de principio a fin en todo tipo de requerimientos e inspecciones tributarias.",
+      "Verificación exhaustiva del cumplimiento de la normativa laboral, de seguridad y de convivencia en el centro laboral.",
     items: [
-      "Asistencia y defensa en procedimientos de fiscalización definitiva y parcial",
-      "Atención y respuesta a cartas inductivas, esquelas de citación y requerimientos",
-      "Elaboración y sustento de recursos de reclamación contra resoluciones de determinación y de multa",
-      "Solicitudes de devolución de pagos indebidos o en exceso, y saldo a favor del exportador",
-      "Procedimientos de queja ante el Tribunal Fiscal por actuaciones irregulares de SUNAT",
+      "Auditorías laborales integrales (compliance laboral preventivo)",
+      "Asesoría en desvinculaciones laborales individuales y ceses colectivos (despidos justificados, mutuo disenso)",
+      "Asesoría en Seguridad y Salud en el Trabajo (SST): comités paritarios, reglamentos, protocolos y fiscalizaciones",
+      "Implementación de políticas y comités para la prevención y sanción del hostigamiento sexual laboral (Ley N° 27942)",
+    ],
+  },
+  {
+    icon: AlertTriangle,
+    title: "3. Procedimientos ante SUNAFIL y MTPE",
+    badge: "Defensa Inspectiva",
+    description:
+      "Defensa técnica inmediata ante fiscalizaciones de la Superintendencia Nacional de Fiscalización Laboral.",
+    items: [
+      "Asistencia y defensa técnica en comparecencias y actuaciones inspectivas de SUNAFIL",
+      "Elaboración de descargos fundamentados frente a actas de infracción y resoluciones de multa",
+      "Recursos de reconsideración, apelación y revisión ante el Tribunal de Fiscalización Laboral (TFL)",
+      "Patrocinio en audiencias de conciliación laboral ante el Ministerio de Trabajo (MTPE)",
     ],
   },
   {
     icon: Gavel,
-    title: "3. Procedimientos Contencioso-Tributarios",
-    badge: "Tribunal Fiscal",
-    description:
-      "Defensa técnica en segunda instancia administrativa, respaldada por especialistas que integraron el Tribunal Fiscal.",
-    items: [
-      "Elaboración e interposición de recursos de apelación ante el Tribunal Fiscal",
-      "Asistencia y sustentación de informes orales ante el Tribunal Fiscal",
-      "Seguimiento exhaustivo de expedientes en apelación y quejas",
-    ],
-  },
-  {
-    icon: Building2,
-    title: "4. Procesos Judiciales Contencioso-Administrativos",
+    title: "4. Litigios y Procesos Judiciales Laborales",
     badge: "Poder Judicial",
     description:
-      "Patrocinio judicial de alta especialización frente a resoluciones adversas de la administración pública.",
+      "Patrocinio judicial estratégico bajo las reglas orales de la Nueva Ley Procesal del Trabajo (NLPT).",
     items: [
-      "Demandas contencioso-administrativas contra resoluciones del Tribunal Fiscal",
-      "Medidas cautelares tributarias para suspender la cobranza y proteger el patrimonio",
-      "Recursos de casación ante la Corte Suprema de Justicia de la República",
-      "Procesos de amparo en materia tributaria ante el Tribunal Constitucional",
+      "Patrocinio y defensa en procesos laborales ordinarios y abreviados (Ley N° 29497)",
+      "Defensa frente a demandas por despido incausado, fraudulento o nulo, e indemnización por despido arbitrario",
+      "Procesos por reclamo de beneficios sociales, horas extras e indemnización por daños y perjuicios laborales",
+      "Negociación y resolución de conflictos colectivos de trabajo (arbitrajes y convenios colectivos)",
     ],
   },
   {
-    icon: AlertOctagon,
-    title: "5. Cobranza Coactiva y Embargos",
-    badge: "Urgencias",
+    icon: Globe,
+    title: "5. Gestión Migratoria para Empresas",
+    badge: "Extranjería",
     description:
-      "Acción legal inmediata para detener embargos de cuentas bancarias y salvaguardar la liquidez de tu empresa.",
+      "Tramitación legal integral para la incorporación de talento y directivos extranjeros a tu planilla en el Perú.",
     items: [
-      "Suspensión y levantamiento de medidas cautelares previas y embargos coactivos",
-      "Asesoría y gestión en fraccionamientos y aplazamientos tributarios (Art. 36 C.T.)",
-      "Quejas ante el Tribunal Fiscal por infracciones en el procedimiento de cobranza coactiva",
-      "Prescripción tributaria de deudas y multas",
+      "Tramitación de visas de trabajo, calidades migratorias (trabajador residente, designado) y prórrogas ante MIGRACIONES",
+      "Contratación de trabajadores extranjeros: aprobación de contratos ante el MTPE",
+      "Cumplimiento y cálculo de porcentajes limitativos de personal y remuneraciones extranjeras",
     ],
   },
 ];
 
 const urgentSituations = [
   {
-    icon: FileWarning,
-    title: "Cartas Inductivas y Esquelas",
-    description: "SUNAT detectó presuntas inconsistencias en tus declaraciones tributarias o cruces de información. No responder a tiempo puede derivar en multas severas y fiscalización.",
-    urgency: "Plazo de 10 días hábiles. Defensa inmediata.",
-    serviceId: 5,
+    icon: AlertTriangle,
+    title: "Inspección o Comparecencia de SUNAFIL",
+    description: "Recibiste una orden de inspección o una citación a comparecencia. No asistir o no presentar la información requerida constituye una infracción muy grave con multas acumulativas.",
+    urgency: "Atención urgente en < 24 horas.",
+    serviceId: 8,
   },
   {
-    icon: Shield,
-    title: "Fiscalización Parcial o Definitiva",
-    description: "Auditoría en marcha por parte de SUNAT. Un requerimiento no atendido debidamente genera reparos millonarios y cierre de requerimientos con deuda.",
-    urgency: "Acompañamiento desde el primer día.",
-    serviceId: 6,
+    icon: Gavel,
+    title: "Demanda Laboral Notificada (NLPT)",
+    description: "Tu empresa ha sido demandada por despido, indemnización o cobro de beneficios. Los plazos de contestación en la Nueva Ley Procesal son muy breves.",
+    urgency: "Plazo de contestación perentorio.",
+    serviceId: 8,
   },
   {
-    icon: AlertOctagon,
-    title: "Cobranza Coactiva y Retención de Cuentas",
-    description: "Resoluciones de Ejecución Coactiva (REC) y embargos en cuentas bancarias. Presentamos recursos de suspensión y queja ante el Tribunal Fiscal.",
-    urgency: "Suspensión de embargo en 24-48 horas.",
-    serviceId: 7,
+    icon: HeartHandshake,
+    title: "Desvinculación Compleja o Cese de Personal",
+    description: "Necesitas desvincular trabajadores o ejecutar un mutuo disenso sin riesgo de posteriores demandas por despido incausado o indemnizaciones accesorias.",
+    urgency: "Blindaje contractual inmediato.",
+    serviceId: 8,
   },
   {
-    icon: TrendingUp,
-    title: "Incremento Patrimonial No Justificado",
-    description: "Notificaciones dirigidas a socios, directores o personas naturales con inconsistencias patrimoniales entre ingresos bancarios y DJ anuales.",
-    urgency: "Sustentación técnica documentaria.",
-    serviceId: 11,
+    icon: FileCheck,
+    title: "Implementación Obligatoria de Comité SST / Hostigamiento",
+    description: "Cumplimiento obligatorio para empresas con más de 20 trabajadores. Evita sanciones severas de SUNAFIL implementando la documentación reglamentaria.",
+    urgency: "Adecuación integral a la norma.",
+    serviceId: 8,
   },
 ];
 
 const whyUs = [
-  { icon: Zap, text: "Atención inmediata: respuesta inicial y análisis de plazos en menos de 1 hora." },
-  { icon: Shield, text: "Liderado por exintegrantes del Tribunal Fiscal y de la SUNAT." },
-  { icon: Scale, text: "Rigor técnico respaldado por la Pontificia Universidad Católica del Perú (PUCP)." },
-  { icon: CheckCircle2, text: "Más de S/ 15 Millones de contingencias desvirtuadas con éxito comprobado." },
+  { icon: Shield, text: "Enfoque 100% preventivo que blinda a tu empresa antes de que surja la contingencia." },
+  { icon: Zap, text: "Respuesta inmediata para comparecencias ante inspectores de SUNAFIL en Lima y a nivel nacional." },
+  { icon: Scale, text: "Dominio procesal de la Nueva Ley Procesal del Trabajo con alto porcentaje de resoluciones favorables." },
+  { icon: CheckCircle2, text: "Equipo especializado liderado por abogados laboralistas de la PUCP con amplia experiencia corporativa." },
 ];
 
-export function DefensaPage() {
+export function LaboralPage() {
   useScrollSlug();
   const { openModal } = useWhatsAppStore();
 
   return (
     <SiteLayout>
-      {/* ═══ SUBPAGE HERO — Clean High-End Corporate Green #2b4b38 ═══ */}
-      <section id="defensa-tributaria" className="relative w-full min-h-[85vh] flex items-center overflow-hidden bg-[#2b4b38] pt-[120px] pb-16">
-        {/* Top urgency accent line */}
+      {/* ═══ SUBPAGE HERO ═══ */}
+      <section id="derecho-laboral" className="relative w-full min-h-[85vh] flex items-center overflow-hidden bg-[#2b4b38] pt-[120px] pb-16">
+        {/* Top accent line */}
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38] z-30" />
-        
-        {/* Subtle decorative mesh */}
+
+        {/* Decorative ambient mesh */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#42604e]/25 rounded-full blur-[120px]" />
           <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-[#fa9b0c]/15 rounded-full blur-[120px]" />
@@ -151,20 +149,20 @@ export function DefensaPage() {
           />
         </div>
 
-        {/* Content */}
+        {/* Hero Content */}
         <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl flex flex-col justify-center text-left">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
               {/* Breadcrumb */}
               <Link href="/" className="inline-flex items-center gap-1 text-white/60 hover:text-white text-[13px] transition-colors">
-                Inicio <ChevronRight className="w-4 h-4" /> Derecho Tributario
+                Inicio <ChevronRight className="w-4 h-4" /> Derecho Laboral
               </Link>
 
               {/* Badge */}
               <div className="mt-4">
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#fa9b0c] text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
-                  <Shield className="w-3.5 h-3.5" />
-                  Defensa Fiscal & Consultoría Estratégica
+                  <Briefcase className="w-3.5 h-3.5" />
+                  Asesoría Preventiva & Defensa ante SUNAFIL
                 </span>
               </div>
 
@@ -175,8 +173,8 @@ export function DefensaPage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="hero-h1 text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight mt-4"
               >
-                Derecho Tributario y{" "}
-                <span className="text-[#fa9b0c]">Defensa Frente a SUNAT</span>
+                Derecho Laboral y{" "}
+                <span className="text-[#fa9b0c]">Compliance Empresarial</span>
               </motion.h1>
 
               {/* Subtitle */}
@@ -186,7 +184,7 @@ export function DefensaPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="hero-subtitle mt-5 text-[16px] sm:text-[18px] text-[#FAFBF9]/85 max-w-2xl leading-relaxed font-light"
               >
-                Consultoría preventiva, fiscalizaciones definitivas y parciales, reclamaciones, apelaciones ante el Tribunal Fiscal, medidas cautelares y levantamiento urgente de embargos coactivos.
+                Asesoría preventiva, compliance laboral, defensa técnica en inspecciones de SUNAFIL, patrocinio judicial en litigios laborales y gestión migratoria empresarial.
               </motion.p>
 
               {/* CTAs */}
@@ -197,17 +195,17 @@ export function DefensaPage() {
                 className="hero-ctas mt-8 flex flex-col sm:flex-row gap-4"
               >
                 <button
-                  onClick={() => openModal(2)}
+                  onClick={() => openModal(7)}
                   className="inline-flex items-center justify-center gap-2.5 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-7 py-4 rounded-xl text-[15px] sm:text-base font-bold transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  Atención Inmediata de Caso
+                  Consultar Abogado Laboralista
                 </button>
                 <a
-                  href="#ejes-tributarios"
+                  href="#ejes-laborales"
                   className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-7 py-4 rounded-xl text-[15px] sm:text-base font-semibold transition-all backdrop-blur-sm"
                 >
-                  Conocer Áreas de Práctica
+                  Ver Áreas de Práctica
                 </a>
               </motion.div>
 
@@ -219,9 +217,9 @@ export function DefensaPage() {
                 className="hero-trust mt-8 flex flex-wrap gap-x-6 gap-y-2.5 text-white/65 text-xs sm:text-sm"
               >
                 {[
-                  "Ex Tribunal Fiscal & SUNAT",
-                  "Respuesta en < 1 hora",
-                  "Blindaje Patrimonial",
+                  "Defensa Inmediata SUNAFIL",
+                  "Compliance Laboral",
+                  "Nueva Ley Procesal del Trabajo",
                 ].map((badge) => (
                   <span key={badge} className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#fa9b0c]" />
@@ -233,30 +231,29 @@ export function DefensaPage() {
           </div>
         </div>
 
-        {/* Scroll down indicator */}
         <ScrollDownIndicator />
       </section>
 
-      {/* ═══ SECTION: 5 EJES DE ESPECIALIZACIÓN TRIBUTARIA ═══ */}
+      {/* ═══ SECTION: 5 EJES DE ESPECIALIZACIÓN LABORAL ═══ */}
       <SectionDivider from="#2b4b38" to="#FAFBF9" />
-      <section id="ejes-tributarios" className="py-20 lg:py-28 bg-[#FAFBF9]">
+      <section id="ejes-laborales" className="py-20 lg:py-28 bg-[#FAFBF9]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
-                Alcance Profesional
+                Cobertura Especializada
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b4b38]">
-                Nuestros 5 Ejes de Práctica Tributaria
+                Nuestros 5 Ejes de Práctica Laboral
               </h2>
               <p className="mt-4 text-base sm:text-lg text-[#42604e] leading-relaxed">
-                Acompañamiento especializado para empresas en todas las etapas del procedimiento tributario y fiscal.
+                Desde la prevención y contratación estratégica hasta la defensa litigiosa ante el Poder Judicial y autoridades administrativas.
               </p>
             </div>
           </ScrollReveal>
 
           <div className="space-y-8">
-            {taxPillars.map((pillar, idx) => {
+            {laborPillars.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
                 <ScrollReveal
@@ -298,7 +295,7 @@ export function DefensaPage() {
 
                     <div className="shrink-0 flex flex-col justify-center">
                       <button
-                        onClick={() => openModal(5)}
+                        onClick={() => openModal(8)}
                         className="inline-flex items-center justify-center gap-2 bg-[#2b4b38] hover:bg-[#1e3527] text-white px-6 py-3.5 rounded-xl font-bold text-sm transition-all shadow-sm hover:shadow-md"
                       >
                         Consultar sobre este servicio
@@ -313,20 +310,20 @@ export function DefensaPage() {
         </div>
       </section>
 
-      {/* ═══ SECTION: CASOS DE ATENCIÓN URGENTE ═══ */}
+      {/* ═══ SECTION: CASOS CRÍTICOS Y SUNAFIL ═══ */}
       <SectionDivider from="#FAFBF9" to="#ffffff" />
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
-                Urgencias Fiscales
+                Urgencias Laborales
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#2b4b38]">
-                Atención Inmediata de Requerimientos SUNAT
+                Atención Inmediata de Contingencias y SUNAFIL
               </h2>
               <p className="mt-3 text-base sm:text-lg text-[#42604e]">
-                No dejes vencer los plazos. Cada día es determinante para el éxito de tu defensa jurídica.
+                Intervenimos de manera oportuna para evitar multas de cientos de miles de soles o juicios laborales desfavorables.
               </p>
             </div>
           </ScrollReveal>
@@ -373,10 +370,10 @@ export function DefensaPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
-              Ventaja Técnica
+              Garantía Profesional
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#2b4b38]">
-              ¿Por Qué Confiar tu Defensa en ROMA & ABOGADOS?
+              ¿Por Qué Confiar tu Gestión Laboral en ROMA & ABOGADOS?
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -404,26 +401,26 @@ export function DefensaPage() {
 
       {/* ═══ CTA SECTION ═══ */}
       <SectionDivider from="#FAFBF9" to="#2b4b38" />
-      <section id="atencion-inmediata" className="py-20 lg:py-28 bg-[#2b4b38] text-center text-white relative overflow-hidden">
+      <section id="consulta-laboral" className="py-20 lg:py-28 bg-[#2b4b38] text-center text-white relative overflow-hidden">
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            El Tiempo es Determinante Frente a SUNAT
+            Protege a tu Empresa Frente a Conflictos Laborales
           </h2>
           <p className="text-white/80 mb-8 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Una pronta respuesta estructurada con rigor técnico marca la diferencia entre anular una resolución o enfrentar multas y cobranzas coactivas.
+            Una auditoría laboral preventiva y contratos bien estructurados eliminan hasta un 95% de las contingencias con trabajadores y SUNAFIL.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => openModal(5)}
+              onClick={() => openModal(8)}
               className="inline-flex items-center justify-center gap-2 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-8 py-4 rounded-xl text-base font-bold transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
             >
-              <MessageCircle className="w-5 h-5" /> Atender mi Caso Ahora
+              <MessageCircle className="w-5 h-5" /> Consultar por WhatsApp
             </button>
             <Link
-              href="/derecho-laboral"
+              href="/contabilidad-tributacion"
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-8 py-4 rounded-xl text-base font-semibold transition-all backdrop-blur-sm"
             >
-              Conocer Asesoría Laboral
+              Ver Outsourcing Contable y Planillas
             </Link>
           </div>
         </div>
