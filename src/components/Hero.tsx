@@ -250,6 +250,7 @@ export function Hero() {
         cta1: s.cta1Link === "#whatsapp" ? { text: s.cta1Text || "Consultar Especialista →", type: "whatsapp", serviceId: null } : { text: s.cta1Text || "Consultar", type: "link", href: s.cta1Link || "#" },
         cta2: s.cta2Link === "#servicios" ? { text: s.cta2Text || "Nuestros Servicios", type: "scroll" } : { text: s.cta2Text || "Ver más", type: "link", href: s.cta2Link || "#" },
         badges: s.badges || fallback.badges,
+        lawyer: fallback.lawyer,
       };
     });
   }, [sanityHome]);
@@ -303,9 +304,9 @@ export function Hero() {
         />
       </div>
 
-      {/* ═══ LAYER 20 — Content (animated per slide) ═══ */}
-      <div className="hero-content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-36 sm:pt-40 md:pt-44 lg:pt-48 pb-16 sm:pb-20">
-        <div className="hero-text-col">
+      {/* ═══ LAYER 20 — Content (Full-Width Authority Layout) ═══ */}
+      <div className="hero-content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-36 sm:pt-40 md:pt-44 lg:pt-48 pb-16 sm:pb-20 relative z-20">
+        <div className="max-w-4xl flex flex-col justify-center">
           {/* Animated text wrapper — key re-triggers entrance animation */}
           <motion.div
             key={`slide-text-${active}`}
@@ -331,7 +332,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="hero-h1 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white leading-tight tracking-tight"
+              className="hero-h1 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] tracking-tight"
             >
               {slide.h1}
             </motion.h1>
@@ -341,7 +342,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="hero-subtitle mt-6 text-[15px] sm:text-[17px] lg:text-[18px] text-[#FAFBF9]/85 max-w-lg leading-relaxed font-light"
+              className="hero-subtitle mt-6 text-[16px] sm:text-[18px] lg:text-[19px] text-[#FAFBF9]/85 max-w-3xl leading-relaxed font-light"
             >
               {slide.subtitle}
             </motion.p>
@@ -372,32 +373,32 @@ export function Hero() {
               ))}
             </motion.div>
           </motion.div>
-        </div>
 
-        {/* ═══ COUNTERS — Fixed authority anchors (don't rotate) ═══ */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.55 }}
-          className="hero-counters mt-10 sm:mt-12 lg:mt-14 grid grid-cols-3 gap-3 sm:gap-6 hero-text-col"
-        >
-          {[
-            { value: 12, suffix: "+", label: "Años de Trayectoria" },
-            { value: 15, suffix: "M+", label: "S/ en Contingencias Anuladas" },
-            { value: 99, suffix: "%", label: "Resoluciones Favorables" },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="bg-white/[0.06] backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-center"
-            >
-              <CounterItem
-                value={item.value}
-                suffix={item.suffix}
-                label={item.label}
-              />
-            </div>
-          ))}
-        </motion.div>
+          {/* ═══ COUNTERS — Fixed authority anchors (don't rotate) ═══ */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.55 }}
+            className="hero-counters mt-12 lg:mt-16 grid grid-cols-3 gap-3 sm:gap-6 max-w-3xl w-full"
+          >
+            {[
+              { value: 12, suffix: "+", label: "Años de Trayectoria" },
+              { value: 15, suffix: "M+", label: "S/ en Contingencias Anuladas" },
+              { value: 99, suffix: "%", label: "Resoluciones Favorables" },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="bg-white/[0.06] backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-5 text-center"
+              >
+                <CounterItem
+                  value={item.value}
+                  suffix={item.suffix}
+                  label={item.label}
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
 
       {/* ═══ NAVIGATION DOTS — Bottom left ═══ */}

@@ -47,6 +47,12 @@ export function Header() {
 
   function isActive(href: string) {
     if (href === "/") return pathname === "/";
+    if (href === "/defensa-tributaria-sunat") {
+      return pathname.startsWith("/defensa-tributaria");
+    }
+    if (href === "/nosotros-contacto") {
+      return pathname.startsWith("/nosotros");
+    }
     return pathname.startsWith(href);
   }
 
@@ -75,6 +81,11 @@ export function Header() {
             {/* ── Logo Principal: ROMA & ABOGADOS (Crossfade sincronizado 300ms) ── */}
             <Link
               href="/"
+              onClick={() => {
+                if (pathname === "/") {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
               className="relative flex items-center shrink-0 z-10 group h-10 sm:h-11 md:h-12 w-[180px] sm:w-[220px] md:w-[250px]"
             >
               {/* Logo sobre fondo verde (letras blancas + dorado) */}
@@ -101,6 +112,11 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={() => {
+                    if (isActive(item.href)) {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }
+                  }}
                   className={`relative px-3 py-2 text-[14px] font-bold tracking-wide transition-colors duration-300 rounded-md ${
                     scrolled
                       ? isActive(item.href)
@@ -191,7 +207,12 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    onClick={() => setIsMobileOpen(false)}
+                    onClick={() => {
+                      setIsMobileOpen(false);
+                      if (isActive(item.href)) {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
+                    }}
                     className={`flex items-center px-4 py-3 rounded-xl text-[15px] font-bold transition-colors ${
                       isActive(item.href)
                         ? "bg-[#fa9b0c]/15 text-[#2b4b38] border-l-4 border-[#fa9b0c]"

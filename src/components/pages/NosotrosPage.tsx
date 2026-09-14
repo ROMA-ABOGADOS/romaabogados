@@ -26,6 +26,7 @@ interface TeamMember {
   education: string;
   experience: string;
   highlights: string[];
+  image?: string;
 }
 
 const teamMembers: TeamMember[] = [
@@ -33,6 +34,7 @@ const teamMembers: TeamMember[] = [
     name: "Roberto Marca",
     role: "Socio Principal",
     area: "Derecho Tributario & Dirección General",
+    image: "/images/team/roberto-marca.webp",
     education: "Abogado por la Pontificia Universidad Católica del Perú (PUCP). Especialista en Derecho Tributario por la Universidad de Lima.",
     experience: "Exintegrante del Tribunal Fiscal y de la SUNAT. Más de 12 años liderando asesorías fiscales de alta complejidad.",
     highlights: [
@@ -45,6 +47,7 @@ const teamMembers: TeamMember[] = [
     name: "Estefanía Pineda",
     role: "Asociada Senior",
     area: "Derecho Tributario & Litigio Fiscal",
+    image: "/images/team/estefania-pineda.webp",
     education: "Abogada especialista en litigio tributario. Maestría en Tributación y Política Fiscal.",
     experience: "Extensa trayectoria en defensa ante fiscalizaciones SUNAT, recursos contenciosos ante el Tribunal Fiscal y demandas judiciales.",
     highlights: [
@@ -57,6 +60,7 @@ const teamMembers: TeamMember[] = [
     name: "David Corthorn",
     role: "Asociado",
     area: "Derecho Laboral & Relaciones Laborales",
+    image: "/images/team/david-corthorn.webp",
     education: "Abogado especialista en relaciones laborales individuales y colectivas.",
     experience: "Experto en inspecciones ante SUNAFIL, auditorías de compliance laboral, comités SST y litigios laborales orales bajo la NLPT.",
     highlights: [
@@ -66,10 +70,11 @@ const teamMembers: TeamMember[] = [
     ],
   },
   {
-    name: "Alonso Silva",
-    role: "Asociado",
+    name: "Mariana Silva",
+    role: "Asociada",
     area: "Derecho Corporativo & Societario",
-    education: "Abogado corporativo con especialización en derecho mercantil.",
+    image: "/images/team/abogada-asociada.webp",
+    education: "Abogada corporativa con especialización en derecho mercantil.",
     experience: "Amplia experiencia en constitución de empresas, fusiones, adquisiciones, reorganizaciones societarias y gobierno corporativo.",
     highlights: [
       "Constitución y Reorganización de Sociedades",
@@ -196,9 +201,10 @@ export function NosotrosPage() {
           />
         </div>
 
+
         {/* Content */}
         <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-3xl flex flex-col justify-center text-left">
+          <div className="max-w-4xl flex flex-col justify-center text-left">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
               {/* Breadcrumb */}
               <div className="mb-4 sm:mb-5">
@@ -220,7 +226,7 @@ export function NosotrosPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="hero-h1 text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-white leading-[1.2] tracking-tight mb-5 sm:mb-6"
+                className="hero-h1 text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-white leading-[1.18] tracking-tight mb-5 sm:mb-6"
               >
                 ROMA & <span className="text-[#fa9b0c]">ABOGADOS</span>
               </motion.h1>
@@ -230,7 +236,7 @@ export function NosotrosPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="hero-subtitle mb-8 sm:mb-10 text-[16px] sm:text-[18px] text-[#FAFBF9]/85 max-w-2xl leading-relaxed font-light"
+                className="hero-subtitle mb-8 sm:mb-10 text-[16px] sm:text-[18px] lg:text-[19px] text-[#FAFBF9]/85 max-w-3xl leading-relaxed font-light"
               >
                 Somos una firma de profesionales especializada en asesoría tributaria, laboral y empresarial. Te brindamos soluciones jurídicas eficientes y estratégicas para proteger y potenciar tu negocio.
               </motion.p>
@@ -395,6 +401,21 @@ export function NosotrosPage() {
                       <Scale className="w-7 h-7 text-[#2b4b38] group-hover:text-[#fa9b0c] transition-colors duration-300" />
                     </div>
                   </div>
+
+                  {/* Lawyer Image - Immediately below the name */}
+                  {member.image && (
+                    <div className="mb-6 rounded-2xl overflow-hidden border border-[#2b4b38]/10 bg-gradient-to-b from-[#FAFBF9] to-[#efe9e2] shadow-sm relative group-hover:border-[#fa9b0c]/40 group-hover:shadow-md transition-all duration-300">
+                      <div className="aspect-[4/3] w-full overflow-hidden relative">
+                        <img
+                          src={member.image}
+                          alt={`${member.role} ${member.name} - ROMA & ABOGADOS`}
+                          className="w-full h-full object-cover object-[center_10%] transform group-hover:scale-103 transition-transform duration-500 ease-out"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+                      </div>
+                    </div>
+                  )}
 
                   <p className="text-xs font-bold text-[#2b4b38] uppercase tracking-wide mb-1.5">Formación y Trayectoria</p>
                   <p className="text-sm text-[#42604e] leading-relaxed mb-3">{member.education}</p>

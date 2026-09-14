@@ -741,10 +741,10 @@ html.mobile-menu-open .whatsapp-float {
   }
 }
 
-/* ─── Desktop: text constrained to left column ─── */
+/* ─── Desktop: text column in grid ─── */
 @media (min-width: 1024px) {
   .hero-text-col {
-    max-width: 55%;
+    max-width: 100%;
   }
 }
 

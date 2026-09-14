@@ -136,9 +136,10 @@ export function ConstitucionPage() {
           />
         </div>
 
+
         {/* Content */}
         <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-3xl flex flex-col justify-center text-left">
+          <div className="max-w-4xl flex flex-col justify-center text-left">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
               {/* Breadcrumb */}
               <div className="mb-4 sm:mb-5">
@@ -160,7 +161,7 @@ export function ConstitucionPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="hero-h1 text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-white leading-[1.2] tracking-tight mb-5 sm:mb-6"
+                className="hero-h1 text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-white leading-[1.18] tracking-tight mb-5 sm:mb-6"
               >
                 Derecho Empresarial y{" "}
                 <span className="text-[#fa9b0c]">Corporativo</span>
@@ -171,7 +172,7 @@ export function ConstitucionPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="hero-subtitle mb-8 sm:mb-10 text-[16px] sm:text-[18px] text-[#FAFBF9]/85 max-w-2xl leading-relaxed font-light"
+                className="hero-subtitle mb-8 sm:mb-10 text-[16px] sm:text-[18px] lg:text-[19px] text-[#FAFBF9]/85 max-w-3xl leading-relaxed font-light"
               >
                 Constitución de sociedades, reorganizaciones societarias, contratos mercantiles, derecho administrativo y licitaciones públicas con el Estado bajo la Ley de Contrataciones.
               </motion.p>

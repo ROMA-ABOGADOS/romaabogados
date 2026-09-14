@@ -13,38 +13,7 @@ import { useEffect } from "react";
  */
 
 export function useScrollSlug() {
-  useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-
-    if (sections.length === 0) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Find the topmost visible section
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-
-        if (visible.length > 0) {
-          const slug = visible[0].target.id;
-          if (slug) {
-            const url = `${window.location.pathname}#${slug}`;
-            if (window.location.href !== window.location.origin + url) {
-              window.history.replaceState(null, "", url);
-            }
-          }
-        }
-      },
-      {
-        // Trigger when 25 % of the section is visible
-        threshold: 0.25,
-        // Extend observation area slightly above viewport
-        rootMargin: "0px 0px -10% 0px",
-      }
-    );
-
-    sections.forEach((s) => observer.observe(s));
-
-    return () => observer.disconnect();
-  }, []);
+  // Disabled: Calling window.history.replaceState during scroll wipes out Next.js 16
+  // internal navigation state (__NA / __PRIVATE_NEXTJS_INTERNALS_TREE), causing Link navigation
+  // to freeze or fail to transition between routes.
 }
