@@ -23,16 +23,16 @@ export const services: Service[] = [
   { id: 9, name: "Litigios Laborales y Procesos Judiciales (NLPT)", category: "Derecho Laboral", price: "Atención especializada", priceNum: 0 },
   { id: 10, name: "Gestión Migratoria para Empresas (Visas / MIGRACIONES)", category: "Derecho Laboral", price: "Propuesta a medida", priceNum: 0 },
 
-  // Outsourcing Contable
-  { id: 11, name: "Outsourcing Contable Integral y Cumplimiento SIRE", category: "Outsourcing Contable", price: "Propuesta mensual", priceNum: 0 },
-  { id: 12, name: "Gestión de Planillas, PLAME y Beneficios Laborales", category: "Outsourcing Contable", price: "Propuesta mensual", priceNum: 0 },
-  { id: 13, name: "Declaraciones Juradas (DJ SUNAT) y Libros Electrónicos", category: "Outsourcing Contable", price: "Propuesta a medida", priceNum: 0 },
-
   // Derecho Empresarial
-  { id: 14, name: "Constitución de Empresas (S.A.C., S.R.L., E.I.R.L.)", category: "Derecho Empresarial", price: "Asesoría integral", priceNum: 0 },
-  { id: 15, name: "Reorganización Societaria, Fusiones y Due Diligence", category: "Derecho Empresarial", price: "Propuesta a medida", priceNum: 0 },
-  { id: 16, name: "Contratos Civiles y Mercantiles", category: "Derecho Empresarial", price: "Propuesta a medida", priceNum: 0 },
-  { id: 17, name: "Contrataciones con el Estado y Registro RNP / OSCE", category: "Derecho Empresarial", price: "Asesoría estratégica", priceNum: 0 },
+  { id: 11, name: "Constitución de Empresas (S.A.C., S.R.L., E.I.R.L.)", category: "Derecho Empresarial", price: "Asesoría integral", priceNum: 0 },
+  { id: 12, name: "Reorganización Societaria, Fusiones y Due Diligence", category: "Derecho Empresarial", price: "Propuesta a medida", priceNum: 0 },
+  { id: 13, name: "Contratos Civiles y Mercantiles", category: "Derecho Empresarial", price: "Propuesta a medida", priceNum: 0 },
+  { id: 14, name: "Gobierno Corporativo y Cumplimiento Societario", category: "Derecho Empresarial", price: "Propuesta a medida", priceNum: 0 },
+
+  // Outsourcing Contable
+  { id: 15, name: "Outsourcing Contable Integral y Declaraciones SUNAT", category: "Outsourcing Contable", price: "Propuesta mensual", priceNum: 0 },
+  { id: 16, name: "Gestión de Planillas, PLAME y Beneficios Laborales", category: "Outsourcing Contable", price: "Propuesta mensual", priceNum: 0 },
+  { id: 17, name: "Auditoría Financiera y Libros Contables Electrónicos", category: "Outsourcing Contable", price: "Propuesta a medida", priceNum: 0 },
 
   // General
   { id: 18, name: "Consulta Jurídica Integral / Otra Consulta", category: "General", price: "Atención personalizada", priceNum: 0 },
@@ -69,5 +69,5 @@ ${notes.trim() ? `💬 *Consulta:* ${notes.trim()}\n` : ""}
 Solicito una consulta legal y propuesta estratégica.`;
 
   const encodedMessage = encodeURIComponent(message);
-  return `https://api.whatsapp.com/send?phone=51943366950&text=${encodedMessage}`;
+  return `https://api.whatsapp.com/send?phone=51905454792&text=${encodedMessage}`;
 }

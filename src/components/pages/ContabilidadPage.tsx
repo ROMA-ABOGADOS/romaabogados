@@ -23,16 +23,13 @@ const contablePillars = [
   {
     icon: Calculator,
     title: "1. Gestión Contable y Tributaria Integral",
-    badge: "Contabilidad & SIRE",
+    badge: "Contabilidad & Impuestos",
     description:
       "Teneduría ordenada y determinación oportuna de tributos para garantizar cero multas y cumplimiento tributario impecable.",
     items: [
-      "Teneduría de libros y registros contables (físicos y electrónicos - SLE-PLE)",
-      "Determinación y liquidación mensual de impuestos (IGV, Renta mensual, ITAN, etc.)",
-      "Elaboración y presentación de declaraciones juradas mensuales y anuales ante SUNAT",
-      "Elaboración de estados financieros periódicos y de cierre anual bajo normas NIIF",
-      "Análisis de cuentas, conciliaciones bancarias y control patrimonial de activos",
-      "Implementación, validación y gestión del Sistema Integrado de Registros Electrónicos (SIRE)",
+      "Teneduría de libros contables físicos y electrónicos (SLE-PLE) con conciliaciones periódicas",
+      "Determinación y liquidación mensual de impuestos (IGV, Renta, ITAN) y Declaración Jurada Anual SUNAT",
+      "Elaboración de estados financieros de balance y gestión bajo normas NIIF para la gerencia",
     ],
   },
   {
@@ -42,18 +39,16 @@ const contablePillars = [
     description:
       "Liquidación exacta de nóminas y cumplimiento riguroso de aportes y contribuciones de seguridad social.",
     items: [
-      "Elaboración y procesamiento de planillas de sueldos y salarios (frecuencia quincenal y mensual)",
-      "Cálculo de beneficios sociales: gratificaciones, CTS, vacaciones, utilidades y liquidaciones de cese",
-      "Declaración y pago del PLAME / T-Registro (Planilla Mensual de Pagos SUNAT)",
-      "Declaración y pago de contribuciones y aportes sociales: ESSALUD, ONP, AFP (declaración vía AFPnet), Senati y SCTR",
-      "Emisión de boletas de pago electrónicas y certificados de retención de rentas de quinta categoría",
+      "Elaboración y procesamiento de planillas de sueldos, salarios y emisión de boletas electrónicas",
+      "Cálculo riguroso de beneficios sociales: gratificaciones, CTS, vacaciones y liquidaciones de cese",
+      "Declaración y pago mensual de obligaciones laborales: PLAME, T-Registro, ESSALUD y AFPnet",
     ],
   },
 ];
 
 const stats = [
   { value: "500+", label: "Declaraciones Presentadas a Tiempo" },
-  { value: "100%", label: "Cumplimiento SIRE de SUNAT" },
+  { value: "100%", label: "Cumplimiento Tributario y Laboral" },
   { value: "0", label: "Contingencias por Retraso" },
 ];
 
@@ -73,11 +68,12 @@ export function ContabilidadPage() {
 
   return (
     <SiteLayout>
-      {/* ═══ SUBPAGE HERO — Full-Bleed Corporate Green #2b4b38 ═══ */}
-      <section id="outsourcing-contable" className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#2b4b38] pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-20 sm:pb-24">
-        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38] z-30" />
+      {/* ═══ SUBPAGE HERO — Full-Bleed Corporate Green #1e3527 ═══ */}
+      <section id="contabilidad-tributaria" className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#1e3527] pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-20 sm:pb-24">
+        {/* Top accent line */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent z-30" />
 
-        {/* Ambient mesh */}
+        {/* Decorative ambient mesh */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#42604e]/25 rounded-full blur-[120px]" />
           <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-[#fa9b0c]/15 rounded-full blur-[120px]" />
@@ -93,85 +89,117 @@ export function ContabilidadPage() {
 
         {/* Hero Content */}
         <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-4xl flex flex-col justify-center text-left">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
-              {/* Breadcrumb */}
-              <div className="mb-4 sm:mb-5">
-                <Link href="/" className="inline-flex items-center gap-1.5 text-white/70 hover:text-[#fa9b0c] text-[13px] sm:text-[14px] font-medium transition-colors">
-                  Inicio <ChevronRight className="w-3.5 h-3.5 text-[#fa9b0c]" /> Outsourcing Contable
-                </Link>
-              </div>
+          <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
+            {/* LEFT: Text and CTAs */}
+            <div className="lg:col-span-7 flex flex-col justify-center text-left">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
+                {/* Breadcrumb */}
+                <div className="mb-4 sm:mb-5">
+                  <Link href="/" className="inline-flex items-center gap-1.5 text-white/70 hover:text-[#fa9b0c] text-[13px] sm:text-[14px] font-medium transition-colors">
+                    Inicio <ChevronRight className="w-3.5 h-3.5 text-[#fa9b0c]" /> Outsourcing Contable
+                  </Link>
+                </div>
 
-              {/* Badge */}
-              <div className="mb-4 sm:mb-5">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-[#fa9b0c] text-xs sm:text-[13px] font-bold uppercase tracking-wider backdrop-blur-sm shadow-sm">
-                  <Calculator className="w-4 h-4 text-[#fa9b0c]" />
-                  Contabilidad Integral & Planillas con Respaldo Legal
-                </span>
-              </div>
-
-              {/* H1 */}
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="hero-h1 text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-white leading-[1.18] tracking-tight mb-5 sm:mb-6"
-              >
-                Outsourcing Contable y{" "}
-                <span className="text-[#fa9b0c]">Tributación Integral</span>
-              </motion.h1>
-
-              {/* Subtitle */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="hero-subtitle mb-8 sm:mb-10 text-[16px] sm:text-[18px] lg:text-[19px] text-[#FAFBF9]/85 max-w-3xl leading-relaxed font-light"
-              >
-                Teneduría de libros, liquidación mensual de impuestos, implementación SIRE, procesamiento de planillas PLAME y emisión de estados financieros con supervisión legal permanente.
-              </motion.p>
-
-              {/* CTAs */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="hero-ctas mt-8 flex flex-col sm:flex-row gap-4"
-              >
-                <button
-                  onClick={() => openModal(11)}
-                  className="inline-flex items-center justify-center gap-2.5 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-7 py-4 rounded-xl text-[15px] sm:text-base font-bold transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  Cotizar Outsourcing Contable
-                </button>
-                <a
-                  href="#ejes-contables"
-                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-7 py-4 rounded-xl text-[15px] sm:text-base font-semibold transition-all backdrop-blur-sm"
-                >
-                  Ver Alcance de Servicios
-                </a>
-              </motion.div>
-
-              {/* Trust badges */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.45 }}
-                className="hero-trust mt-8 flex flex-wrap gap-x-6 gap-y-2.5 text-white/65 text-xs sm:text-sm"
-              >
-                {[
-                  "Implementación SIRE",
-                  "Planillas PLAME / T-Registro",
-                  "Blindaje Jurídico Permanente",
-                ].map((badge) => (
-                  <span key={badge} className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#fa9b0c]" />
-                    {badge}
+                {/* Badge */}
+                <div className="mb-4 sm:mb-5">
+                  <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#fa9b0c] text-xs font-bold uppercase tracking-[0.15em] backdrop-blur-sm">
+                    <Calculator className="w-3.5 h-3.5 text-[#fa9b0c]" />
+                    Supervisión Técnica & Respaldo Jurídico
                   </span>
-                ))}
+                </div>
+
+                {/* H1 - Estudio Ugaz Editorial Serif */}
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  className="hero-h1 font-serif font-normal text-4xl sm:text-5xl lg:text-[58px] text-white leading-[1.12] tracking-tight mb-5 sm:mb-6"
+                >
+                  Outsourcing Contable & <span className="text-[#fa9b0c]">Tributario</span>
+                </motion.h1>
+
+                {/* Subtitle */}
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="hero-subtitle mb-8 sm:mb-10 text-[16px] sm:text-[18px] lg:text-[19px] text-[#FAFBF9]/85 max-w-2xl leading-relaxed font-light"
+                >
+                  Gestión contable integral, liquidación mensual de impuestos, procesamiento de planillas PLAME y emisión de estados financieros con supervisión y respaldo legal permanente.
+                </motion.p>
+
+                {/* CTAs */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="hero-ctas mt-8 flex flex-col sm:flex-row gap-4"
+                >
+                  <button
+                    onClick={() => openModal(11)}
+                    className="inline-flex items-center justify-center gap-2.5 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-8 py-4 rounded-xl text-sm sm:text-base font-bold tracking-wide transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    Agendar una Consulta
+                  </button>
+                  <a
+                    href="#ejes-contables"
+                    className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 border border-white/30 text-white px-8 py-4 rounded-xl text-sm sm:text-base font-semibold tracking-wide transition-all backdrop-blur-sm"
+                  >
+                    Ver Alcance del Servicio
+                  </a>
+                </motion.div>
+
+                {/* Trust badges */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.45 }}
+                  className="hero-trust mt-8 flex flex-wrap gap-x-6 gap-y-2.5 text-white/70 text-xs sm:text-sm"
+                >
+                  {[
+                    "Libros y Declaraciones SUNAT",
+                    "Planillas PLAME / T-Registro",
+                    "Supervisión Legal Permanente",
+                  ].map((badge) => (
+                    <span key={badge} className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#fa9b0c]" />
+                      {badge}
+                    </span>
+                  ))}
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </div>
+
+            {/* RIGHT: Referential Card */}
+            <div className="hidden lg:block lg:col-span-5">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="relative bg-white/10 backdrop-blur-md rounded-3xl p-4 border border-white/20 shadow-2xl shadow-black/30 group"
+              >
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+                  <img
+                    src="/images/hero/dr-roberto-marca-side.webp"
+                    alt="Outsourcing Contable y Tributario - ROMA & ABOGADOS"
+                    className="w-full h-full object-cover object-[center_15%]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1e3527]/90 via-[#1e3527]/20 to-transparent" />
+                  <div className="absolute bottom-5 left-5 right-5 text-left">
+                    <span className="inline-block px-3 py-1 rounded-full bg-[#fa9b0c] text-[#1e3527] text-xs font-bold uppercase tracking-wider mb-2">
+                      Control Financiero & Tributario
+                    </span>
+                    <h3 className="text-white font-bold text-xl leading-snug">
+                      Precisión Contable con Blindaje Legal
+                    </h3>
+                    <p className="text-white/80 text-xs mt-0.5">
+                      Cumplimiento SUNAT, libros electrónicos y auditoría preventiva
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
 
@@ -179,13 +207,13 @@ export function ContabilidadPage() {
       </section>
 
       {/* ═══ STATS BAR ═══ */}
-      <section className="py-12 bg-[#2b4b38] border-b border-white/10">
+      <section className="py-12 bg-[#1e3527] border-t border-b border-white/10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={statsRef} className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             {stats.map((s) => (
               <div key={s.label}>
-                <p className="text-3xl sm:text-4xl font-bold text-[#fa9b0c] mb-1">{s.value}</p>
-                <p className="text-white/80 text-sm font-medium">{s.label}</p>
+                <p className="font-serif text-3xl sm:text-4xl font-normal text-[#fa9b0c] mb-1">{s.value}</p>
+                <p className="text-white/80 text-xs sm:text-sm font-medium tracking-wide">{s.label}</p>
               </div>
             ))}
           </div>
@@ -193,22 +221,21 @@ export function ContabilidadPage() {
       </section>
 
       {/* ═══ STRATEGIC ALLIANCE CALLOUT ═══ */}
-      <SectionDivider from="#2b4b38" to="#FAFBF9" />
-      <section className="py-14 bg-[#FAFBF9]">
+      <section className="py-16 bg-[#FAFBF9]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-10 rounded-3xl bg-white shadow-[0_12px_40px_-5px_rgba(43,75,56,0.08)] hover:shadow-[0_20px_50px_-5px_rgba(43,75,56,0.14)] transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start gap-6 relative overflow-hidden group">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="w-14 h-14 flex items-center justify-center text-[#fa9b0c] group-hover:scale-110 transition-all duration-300 shrink-0">
+          <div className="p-8 sm:p-10 rounded-2xl bg-white border border-[#2b4b38]/10 hover:border-[#fa9b0c]/40 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start gap-6 relative group">
+            <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="w-14 h-14 flex items-center justify-center text-[#fa9b0c] group-hover:scale-105 transition-all duration-300 shrink-0">
               <Handshake className="w-10 h-10" />
             </div>
             <div>
-              <span className="inline-block text-[#fa9b0c] font-bold text-xs uppercase tracking-wider mb-2">
+              <span className="inline-block text-[#fa9b0c] font-bold text-xs uppercase tracking-[0.2em] mb-2">
                 Alianza Estratégica
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#2b4b38] mb-3">
+              <h3 className="font-serif text-2xl font-normal text-[#2b4b38] mb-3">
                 Convenios con Firmas Contables Especializadas
               </h3>
-              <p className="text-[#42604e] text-[15px] leading-relaxed">
+              <p className="text-[#42604e] text-[15px] leading-relaxed font-light">
                 Para los servicios de Outsourcing Contable, <strong>ROMA & ABOGADOS</strong> cuenta con convenios de asociación con reconocidas firmas especializadas en contabilidad y auditoría. De esta manera, garantizamos una supervisión técnica con respaldo legal permanente, brindando a tu empresa un servicio integrado de contabilidad con blindaje jurídico.
               </p>
             </div>
@@ -217,15 +244,14 @@ export function ContabilidadPage() {
       </section>
 
       {/* ═══ 2 PILARES DEL OUTSOURCING ═══ */}
-      <SectionDivider from="#FAFBF9" to="#ffffff" />
-      <section id="ejes-contables" className="py-20 lg:py-28 bg-white">
+      <section id="ejes-contables" className="py-24 lg:py-32 bg-white border-t border-[#2b4b38]/10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
+              <span className="inline-block text-[#fa9b0c] font-bold text-xs tracking-[0.2em] uppercase mb-3">
                 Cobertura Integral
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b4b38]">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#2b4b38] leading-[1.18]">
                 Nuestros Pilares de Outsourcing
               </h2>
               <p className="mt-4 text-base sm:text-lg text-[#42604e] leading-relaxed">
@@ -234,7 +260,7 @@ export function ContabilidadPage() {
             </div>
           </ScrollReveal>
 
-          <div className="space-y-10">
+          <div className="space-y-6">
             {contablePillars.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
@@ -242,25 +268,25 @@ export function ContabilidadPage() {
                   key={pillar.title}
                   delay={0.1 * idx}
                   duration={0.6}
-                  className="bg-white rounded-3xl shadow-[0_10px_35px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_22px_45px_-5px_rgba(43,75,56,0.13)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden p-8 sm:p-10 relative group"
+                  className="bg-[#FAFBF9] rounded-2xl border border-[#2b4b38]/10 hover:border-[#fa9b0c]/40 hover:shadow-xl transition-all duration-300 overflow-hidden p-8 sm:p-10 relative group"
                 >
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
                     <div className="flex-1">
                       <div className="flex items-center gap-4 mb-3">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#2b4b38] group-hover:text-[#fa9b0c] group-hover:scale-110 transition-all duration-300 shrink-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#2b4b38] group-hover:text-[#fa9b0c] group-hover:scale-105 transition-all duration-300 shrink-0">
                           <Icon className="w-8 h-8" />
                         </div>
                         <div>
-                          <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-2.5 py-0.5 rounded-full">
+                          <span className="text-[11px] font-bold uppercase tracking-widest text-[#fa9b0c] bg-[#fa9b0c]/10 px-2.5 py-0.5 rounded-full">
                             {pillar.badge}
                           </span>
-                          <h3 className="text-xl sm:text-2xl font-bold text-[#2b4b38] mt-1">
+                          <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#2b4b38] mt-1">
                             {pillar.title}
                           </h3>
                         </div>
                       </div>
-                      <p className="text-[#42604e] text-[15px] leading-relaxed mb-6 pl-0 sm:pl-16">
+                      <p className="text-[#42604e] text-[15px] leading-relaxed mb-6 pl-0 sm:pl-16 font-light">
                         {pillar.description}
                       </p>
 
@@ -279,10 +305,10 @@ export function ContabilidadPage() {
                     <div className="shrink-0 flex flex-col justify-center lg:pt-2">
                       <button
                         onClick={() => openModal(4)}
-                        className="inline-flex items-center justify-center gap-2 bg-[#2b4b38] hover:bg-[#fa9b0c] text-white hover:text-[#1e3527] px-6 py-3.5 rounded-xl font-bold text-sm transition-all shadow-sm hover:shadow-md"
+                        className="inline-flex items-center justify-center gap-2 bg-[#2b4b38] hover:bg-[#1e3527] text-white px-6 py-3.5 rounded-xl font-semibold text-sm tracking-wide transition-all shadow-sm hover:shadow-md"
                       >
-                        Solicitar propuesta
-                        <ArrowRight className="w-4 h-4 text-[#fa9b0c] group-hover:text-[#1e3527]" />
+                        Agendar una Consulta
+                        <ArrowRight className="w-4 h-4 text-[#fa9b0c]" />
                       </button>
                     </div>
                   </div>
@@ -294,14 +320,13 @@ export function ContabilidadPage() {
       </section>
 
       {/* ═══ VENTAJAS / BENEFICIOS ═══ */}
-      <SectionDivider from="#ffffff" to="#FAFBF9" />
-      <section className="py-20 lg:py-28 bg-[#FAFBF9]">
+      <section className="py-24 lg:py-32 bg-[#FAFBF9] border-t border-[#2b4b38]/10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
+            <span className="inline-block text-[#fa9b0c] font-bold text-xs tracking-[0.2em] uppercase mb-3">
               Por Qué Elegirnos
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2b4b38]">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#2b4b38] leading-[1.18]">
               Beneficios de Nuestro Servicio Integrado
             </h2>
           </div>
@@ -312,13 +337,12 @@ export function ContabilidadPage() {
                 key={i}
                 delay={0.08 * i}
                 duration={0.4}
-                className="flex items-center gap-5 p-7 rounded-3xl bg-white shadow-[0_8px_30px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_18px_40px_-5px_rgba(43,75,56,0.12)] hover:-translate-y-1.5 transition-all duration-300 group relative overflow-hidden"
+                className="flex items-center gap-5 p-7 rounded-2xl bg-white border border-[#2b4b38]/10 hover:border-[#fa9b0c]/40 hover:shadow-lg transition-all duration-300 group relative"
               >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="shrink-0 flex items-center justify-center">
-                  <CheckCircle2 className="w-7 h-7 text-[#fa9b0c] group-hover:scale-115 transition-transform duration-300" />
+                  <CheckCircle2 className="w-6 h-6 text-[#fa9b0c] group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <span className="text-[#2b4b38] font-semibold text-[15px] sm:text-base leading-relaxed">
+                <span className="text-[#2b4b38] font-medium text-[15px] sm:text-base leading-relaxed">
                   {b}
                 </span>
               </ScrollReveal>
@@ -328,25 +352,27 @@ export function ContabilidadPage() {
       </section>
 
       {/* ═══ CTA FINAL ═══ */}
-      <SectionDivider from="#FAFBF9" to="#2b4b38" />
-      <section id="propuesta-contable" className="py-20 lg:py-28 bg-[#2b4b38] text-center text-white relative overflow-hidden">
+      <section id="propuesta-contable" className="py-24 lg:py-32 bg-[#1e3527] text-center text-white relative overflow-hidden">
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-[#fa9b0c] text-xs font-bold uppercase tracking-[0.2em] mb-4 backdrop-blur-sm">
+            Gestión Financiera
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal mb-6 text-white leading-[1.18] max-w-3xl mx-auto">
             ¿Listo para Ordenar la Contabilidad de tu Empresa?
           </h2>
-          <p className="text-white/80 mb-8 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/80 mb-10 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-light">
             Solicita una evaluación personalizada de tu régimen tributario y una propuesta de outsourcing contable adaptada a tu volumen de operaciones.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => openModal(11)}
-              className="inline-flex items-center justify-center gap-2 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-8 py-4 rounded-xl text-base font-bold transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2.5 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-8 py-4 rounded-xl text-sm sm:text-base font-bold tracking-wide transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
             >
-              <MessageCircle className="w-5 h-5" /> Cotización por WhatsApp
+              <MessageCircle className="w-5 h-5" /> Agendar una Consulta
             </button>
             <Link
               href="/defensa-tributaria-sunat"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-8 py-4 rounded-xl text-base font-semibold transition-all backdrop-blur-sm"
+              className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 border border-white/30 text-white px-8 py-4 rounded-xl text-sm sm:text-base font-semibold tracking-wide transition-all backdrop-blur-sm"
             >
               ¿Fiscalizaciones SUNAT? Ver Defensa Tributaria
             </Link>

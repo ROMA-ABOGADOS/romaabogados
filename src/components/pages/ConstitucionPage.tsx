@@ -22,17 +22,13 @@ const corporatePillars = [
   {
     icon: Building2,
     title: "1. Derecho Corporativo y Societario",
-    badge: "Sociedades & Gobierno",
+    badge: "Sociedades & Fusiones",
     description:
-      "Acompañamos el ciclo de vida societario integral de tu empresa, desde la constitución hasta reorganizaciones de alta envergadura.",
+      "Acompañamiento en el ciclo de vida societario integral, desde la constitución hasta fusiones de alta complejidad.",
     items: [
-      "Constitución de sociedades (S.A., S.A.C., S.R.L., S.A.A., E.I.R.L.) y sucursales de empresas extranjeras",
-      "Elaboración y modificación integral de estatutos sociales, aumentos y reducciones de capital",
-      "Reorganizaciones societarias complejas: fusiones, escisiones, transformaciones y reorganizaciones simples",
-      "Asesoría a directorios y juntas generales de accionistas (actas, convocatorias y acuerdos societarios)",
-      "Due diligence legal y societario en procesos de compra, venta o absorción de empresas",
-      "Acuerdos de accionistas (convenios parasociales), protocolos familiares y gobierno corporativo",
-      "Disolución, liquidación y extinción formal de sociedades",
+      "Constitución de sociedades (SAC, SRL, EIRL) y sucursales extranjeras",
+      "Modificación de estatutos, aumentos de capital y reorganizaciones societarias",
+      "Due diligence legal y societario para compra y venta de empresas",
     ],
   },
   {
@@ -40,29 +36,23 @@ const corporatePillars = [
     title: "2. Derecho Civil y Contratos Mercantiles",
     badge: "Contratos & Inmuebles",
     description:
-      "Blindaje patrimonial en negociaciones comerciales, transferencias patrimoniales y litigios de naturaleza civil.",
+      "Blindaje patrimonial en negociaciones comerciales, contratos de alto valor y protección contractual.",
     items: [
-      "Elaboración y revisión de contratos civiles y mercantiles (arrendamiento, compraventa, mutuo, fianza, garantías mobiliarias e hipotecas)",
-      "Saneamiento físico-legal de inmuebles, transferencias inmobiliarias, habilitaciones urbanas y estudios de títulos",
-      "Patrocinio en litigios civiles: desalojos, cobro de deudas comerciales, resolución y rescisión de contratos",
-      "Indemnización por daños y perjuicios (responsabilidad civil contractual y extracontractual)",
-      "Procesos no contenciosos: prescripción adquisitiva de dominio, rectificación de áreas y sucesión intestada",
-      "Ejecución de garantías hipotecarias y mobiliarias ante el Poder Judicial",
+      "Elaboración y revisión de contratos comerciales, mercantiles y de fianza",
+      "Saneamiento físico-legal de inmuebles y estudio de títulos",
+      "Patrocinio en controversias civiles, comerciales y garantías hipotecarias",
     ],
   },
   {
-    icon: Landmark,
-    title: "3. Derecho Administrativo y Contrataciones con el Estado",
-    badge: "OSCE & Reguladores",
+    icon: Shield,
+    title: "3. Gobierno Corporativo y Protocolos",
+    badge: "Gobierno Corporativo",
     description:
-      "Asesoría regulatoria frente a entidades estatales y patrocinio experto en procesos de licitación pública ante el OSCE.",
+      "Estructuración de órganos de administración, convenios parasociales y lineamientos de gobierno empresarial.",
     items: [
-      "Procedimientos administrativos sancionadores ante organismos reguladores (INDECOPI, OSIPTEL, OSINERGMIN, OEFA, SUNASS)",
-      "Obtención de licencias de funcionamiento, autorizaciones sectoriales y permisos municipales",
-      "Inscripción y actualización en el Registro Nacional de Proveedores (RNP - OSCE)",
-      "Elaboración de propuestas técnicas, consultas y observaciones a bases de licitaciones públicas y concursos",
-      "Recursos de apelación ante el Tribunal de Contrataciones del Estado (OSCE)",
-      "Solución de controversias derivadas de contratos estatales: conciliaciones y arbitrajes con el Estado",
+      "Acuerdos de socios, convenios parasociales y protocolos familiares",
+      "Asesoría jurídica a directorios y juntas generales de accionistas",
+      "Cumplimiento corporativo preventivo y prevención de conflictos internos",
     ],
   },
 ];
@@ -100,8 +90,8 @@ const faqs = [
     a: "Para personas naturales se requiere DNI o carné de extranjería de los socios y sus cónyuges (si aplica), nombre elegido para la reserva preferencial ante SUNARP y definición del objeto social y capital aportado.",
   },
   {
-    q: "¿En qué consiste la inscripción en el RNP del OSCE?",
-    a: "El Registro Nacional de Proveedores (RNP) es administrado por el OSCE y es un requisito indispensable para que cualquier empresa pueda contratar con el Estado peruano en bienes, servicios, consultorías u obras.",
+    q: "¿Por qué es importante un convenio parasocial o acuerdo de socios?",
+    a: "Permite regular derechos de adquisición preferente, mecanismos para resolver empates en votaciones y reglas claras de salida o sucesión antes de que se presenten discrepancias.",
   },
   {
     q: "¿Qué es un due diligence legal?",
@@ -119,11 +109,12 @@ export function ConstitucionPage() {
 
   return (
     <SiteLayout>
-      {/* ═══ SUBPAGE HERO — Full-Bleed Corporate Green #2b4b38 ═══ */}
-      <section id="derecho-empresarial" className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#2b4b38] pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-20 sm:pb-24">
-        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38] z-30" />
+      {/* ═══ SUBPAGE HERO — Full-Bleed Corporate Green #1e3527 ═══ */}
+      <section id="derecho-empresarial" className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#1e3527] pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-20 sm:pb-24">
+        {/* Top accent line */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent z-30" />
 
-        {/* Ambient mesh */}
+        {/* Decorative ambient mesh */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#42604e]/25 rounded-full blur-[120px]" />
           <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-[#fa9b0c]/15 rounded-full blur-[120px]" />
@@ -136,88 +127,118 @@ export function ConstitucionPage() {
           />
         </div>
 
-
         {/* Content */}
         <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-4xl flex flex-col justify-center text-left">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
-              {/* Breadcrumb */}
-              <div className="mb-4 sm:mb-5">
-                <Link href="/" className="inline-flex items-center gap-1.5 text-white/70 hover:text-[#fa9b0c] text-[13px] sm:text-[14px] font-medium transition-colors">
-                  Inicio <ChevronRight className="w-3.5 h-3.5 text-[#fa9b0c]" /> Derecho Empresarial
-                </Link>
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div className="lg:col-span-7 flex flex-col justify-center text-left">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
+                {/* Breadcrumb */}
+                <div className="mb-4 sm:mb-5">
+                  <Link href="/" className="inline-flex items-center gap-1.5 text-white/70 hover:text-[#fa9b0c] text-[13px] sm:text-[14px] font-medium transition-colors">
+                    Inicio <ChevronRight className="w-3.5 h-3.5 text-[#fa9b0c]" /> Derecho Empresarial
+                  </Link>
+                </div>
 
-              {/* Badge */}
-              <div className="mb-4 sm:mb-5">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-[#fa9b0c] text-xs sm:text-[13px] font-bold uppercase tracking-wider backdrop-blur-sm shadow-sm">
-                  <Building2 className="w-4 h-4 text-[#fa9b0c]" />
-                  Derecho Corporativo, Civil & Contrataciones OSCE
-                </span>
-              </div>
-
-              {/* H1 */}
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="hero-h1 text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-white leading-[1.18] tracking-tight mb-5 sm:mb-6"
-              >
-                Derecho Empresarial y{" "}
-                <span className="text-[#fa9b0c]">Corporativo</span>
-              </motion.h1>
-
-              {/* Subtitle */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="hero-subtitle mb-8 sm:mb-10 text-[16px] sm:text-[18px] lg:text-[19px] text-[#FAFBF9]/85 max-w-3xl leading-relaxed font-light"
-              >
-                Constitución de sociedades, reorganizaciones societarias, contratos mercantiles, derecho administrativo y licitaciones públicas con el Estado bajo la Ley de Contrataciones.
-              </motion.p>
-
-              {/* CTAs */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="hero-ctas mt-8 flex flex-col sm:flex-row gap-4"
-              >
-                <button
-                  onClick={() => openModal(14)}
-                  className="inline-flex items-center justify-center gap-2.5 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-7 py-4 rounded-xl text-[15px] sm:text-base font-bold transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  Asesoría Empresarial Inmediata
-                </button>
-                <a
-                  href="#ejes-empresariales"
-                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/25 text-white px-7 py-4 rounded-xl text-[15px] sm:text-base font-semibold transition-all backdrop-blur-sm"
-                >
-                  Ver Áreas de Práctica
-                </a>
-              </motion.div>
-
-              {/* Trust badges */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.45 }}
-                className="hero-trust mt-8 flex flex-wrap gap-x-6 gap-y-2.5 text-white/65 text-xs sm:text-sm"
-              >
-                {[
-                  "SUNARP & Notaría",
-                  "Licitaciones OSCE / RNP",
-                  "Contratos Comerciales",
-                ].map((badge) => (
-                  <span key={badge} className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#fa9b0c]" />
-                    {badge}
+                {/* Badge */}
+                <div className="mb-4 sm:mb-5">
+                  <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#fa9b0c] text-xs font-bold uppercase tracking-[0.15em] backdrop-blur-sm">
+                    <Building2 className="w-3.5 h-3.5 text-[#fa9b0c]" />
+                    Derecho Corporativo & Estructuración Societaria
                   </span>
-                ))}
+                </div>
+
+                {/* H1 - Estudio Ugaz Editorial Serif */}
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  className="hero-h1 font-serif font-normal text-4xl sm:text-5xl lg:text-[58px] text-white leading-[1.12] tracking-tight mb-5 sm:mb-6"
+                >
+                  Derecho Corporativo & <span className="text-[#fa9b0c]">Empresarial</span>
+                </motion.h1>
+
+                {/* Subtitle */}
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="hero-subtitle mb-8 sm:mb-10 text-[16px] sm:text-[18px] lg:text-[19px] text-[#FAFBF9]/85 max-w-2xl leading-relaxed font-light"
+                >
+                  Constitución de sociedades (SAC, SRL, EIRL), estructuración societaria, contratos comerciales y gobierno corporativo integral.
+                </motion.p>
+
+                {/* CTAs */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="hero-ctas mt-8 flex flex-col sm:flex-row gap-4"
+                >
+                  <button
+                    onClick={() => openModal(11)}
+                    className="inline-flex items-center justify-center gap-2.5 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-8 py-4 rounded-xl text-sm sm:text-base font-bold tracking-wide transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    Agendar una Consulta
+                  </button>
+                  <a
+                    href="#ejes-empresariales"
+                    className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 border border-white/30 text-white px-8 py-4 rounded-xl text-sm sm:text-base font-semibold tracking-wide transition-all backdrop-blur-sm"
+                  >
+                    Conocer Ejes de Práctica
+                  </a>
+                </motion.div>
+
+                {/* Trust badges */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.45 }}
+                  className="hero-trust mt-8 flex flex-wrap gap-x-6 gap-y-2.5 text-white/70 text-xs sm:text-sm"
+                >
+                  {[
+                    "SUNARP & Notaría",
+                    "Gobierno Corporativo",
+                    "Contratos Comerciales",
+                  ].map((badge) => (
+                    <span key={badge} className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#fa9b0c]" />
+                      {badge}
+                    </span>
+                  ))}
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </div>
+
+            {/* RIGHT: Referential Corporate Card */}
+            <div className="hidden lg:block lg:col-span-5">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="relative bg-white/10 backdrop-blur-md rounded-3xl p-4 border border-white/20 shadow-2xl shadow-black/30 group"
+              >
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+                  <img
+                    src="/images/hero/dr-roberto-marca-hero.webp"
+                    alt="Derecho Empresarial y Corporativo - ROMA & ABOGADOS"
+                    className="w-full h-full object-cover object-[center_15%]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1e3527]/90 via-[#1e3527]/20 to-transparent" />
+                  <div className="absolute bottom-5 left-5 right-5 text-left">
+                    <span className="inline-block px-3 py-1 rounded-full bg-[#fa9b0c] text-[#1e3527] text-xs font-bold uppercase tracking-wider mb-2">
+                      Área Corporativa & Mercantil
+                    </span>
+                    <h3 className="text-white font-bold text-xl leading-snug">
+                      Seguridad y Visión Societaria
+                    </h3>
+                    <p className="text-white/80 text-xs mt-0.5">
+                      Formalización, Reorganización & Blindaje Patrimonial
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
 
@@ -225,15 +246,14 @@ export function ConstitucionPage() {
       </section>
 
       {/* ═══ 3 PILARES DEL DERECHO EMPRESARIAL ═══ */}
-      <SectionDivider from="#2b4b38" to="#FAFBF9" />
-      <section id="ejes-empresariales" className="py-20 lg:py-28 bg-[#FAFBF9]">
+      <section id="ejes-empresariales" className="py-24 lg:py-32 bg-[#FAFBF9]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
+              <span className="inline-block text-[#fa9b0c] font-bold text-xs tracking-[0.2em] uppercase mb-3">
                 Especialización Corporativa
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b4b38]">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#2b4b38] leading-[1.18]">
                 Nuestras Áreas de Práctica Empresarial
               </h2>
               <p className="mt-4 text-base sm:text-lg text-[#42604e] leading-relaxed">
@@ -242,7 +262,7 @@ export function ConstitucionPage() {
             </div>
           </ScrollReveal>
 
-          <div className="space-y-10">
+          <div className="space-y-6">
             {corporatePillars.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
@@ -250,25 +270,25 @@ export function ConstitucionPage() {
                   key={pillar.title}
                   delay={0.08 * idx}
                   duration={0.6}
-                  className="bg-white rounded-3xl shadow-[0_10px_35px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_22px_45px_-5px_rgba(43,75,56,0.13)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden p-8 sm:p-10 relative group"
+                  className="bg-white rounded-2xl border border-[#2b4b38]/10 hover:border-[#fa9b0c]/40 hover:shadow-xl transition-all duration-300 overflow-hidden p-8 sm:p-10 relative group"
                 >
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
                     <div className="flex-1">
                       <div className="flex items-center gap-4 mb-3">
-                        <div className="w-12 h-12 flex items-center justify-center text-[#2b4b38] group-hover:text-[#fa9b0c] group-hover:scale-110 transition-all duration-300 shrink-0">
+                        <div className="w-12 h-12 flex items-center justify-center text-[#2b4b38] group-hover:text-[#fa9b0c] group-hover:scale-105 transition-all duration-300 shrink-0">
                           <Icon className="w-8 h-8" />
                         </div>
                         <div>
-                          <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-2.5 py-0.5 rounded-full">
+                          <span className="text-[11px] font-bold uppercase tracking-widest text-[#fa9b0c] bg-[#fa9b0c]/10 px-2.5 py-0.5 rounded-full">
                             {pillar.badge}
                           </span>
-                          <h3 className="text-xl sm:text-2xl font-bold text-[#2b4b38] mt-1">
+                          <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#2b4b38] mt-1">
                             {pillar.title}
                           </h3>
                         </div>
                       </div>
-                      <p className="text-[#42604e] text-[15px] leading-relaxed mb-6 pl-0 sm:pl-16">
+                      <p className="text-[#42604e] text-[15px] leading-relaxed mb-6 pl-0 sm:pl-16 font-light">
                         {pillar.description}
                       </p>
 
@@ -287,10 +307,10 @@ export function ConstitucionPage() {
                     <div className="shrink-0 flex flex-col justify-center lg:pt-2">
                       <button
                         onClick={() => openModal(1)}
-                        className="inline-flex items-center justify-center gap-2 bg-[#2b4b38] hover:bg-[#fa9b0c] text-white hover:text-[#1e3527] px-6 py-3.5 rounded-xl font-bold text-sm transition-all shadow-sm hover:shadow-md"
+                        className="inline-flex items-center justify-center gap-2 bg-[#2b4b38] hover:bg-[#1e3527] text-white px-6 py-3.5 rounded-xl font-semibold text-sm tracking-wide transition-all shadow-sm hover:shadow-md"
                       >
-                        Consultar este servicio
-                        <ArrowRight className="w-4 h-4 text-[#fa9b0c] group-hover:text-[#1e3527]" />
+                        Consultar servicio
+                        <ArrowRight className="w-4 h-4 text-[#fa9b0c]" />
                       </button>
                     </div>
                   </div>
@@ -302,17 +322,16 @@ export function ConstitucionPage() {
       </section>
 
       {/* ═══ MODALIDADES SOCIETARIAS EN EL PERÚ ═══ */}
-      <SectionDivider from="#FAFBF9" to="#ffffff" />
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-24 lg:py-32 bg-white border-t border-[#2b4b38]/10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
+            <span className="inline-block text-[#fa9b0c] font-bold text-xs tracking-[0.2em] uppercase mb-3">
               Vehículos Societarios
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2b4b38]">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#2b4b38] leading-[1.18]">
               Tipos de Empresas que Estructuramos
             </h2>
-            <p className="mt-3 text-base text-[#42604e]">
+            <p className="mt-4 text-base text-[#42604e] leading-relaxed">
               Te orientamos en la elección del tipo societario más conveniente para tu modelo de negocio y régimen tributario.
             </p>
           </div>
@@ -322,21 +341,21 @@ export function ConstitucionPage() {
               <ScrollReveal
                 key={ent.type}
                 delay={0.08 * i}
-                className="p-8 rounded-3xl bg-white shadow-[0_10px_30px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_22px_45px_-5px_rgba(43,75,56,0.14)] hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group"
+                className="p-8 rounded-2xl bg-[#FAFBF9] border border-[#2b4b38]/10 hover:border-[#fa9b0c]/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative group"
               >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div>
-                  <span className="text-3xl font-black text-[#2b4b38] group-hover:text-[#fa9b0c] transition-colors block mb-1.5">{ent.type}</span>
-                  <p className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-2.5 py-1 rounded-full inline-block mb-3">{ent.recommended}</p>
-                  <h4 className="font-bold text-[#2b4b38] text-base mb-2">{ent.name}</h4>
-                  <p className="text-[#42604e] text-sm leading-relaxed mb-6">{ent.desc}</p>
+                  <span className="font-serif text-3xl font-normal text-[#2b4b38] group-hover:text-[#fa9b0c] transition-colors block mb-1.5">{ent.type}</span>
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-[#fa9b0c] bg-[#fa9b0c]/10 px-2.5 py-0.5 rounded-full inline-block mb-3">{ent.recommended}</p>
+                  <h4 className="font-serif text-lg font-normal text-[#2b4b38] mb-2">{ent.name}</h4>
+                  <p className="text-[#42604e] text-sm leading-relaxed mb-6 font-light">{ent.desc}</p>
                 </div>
                 <button
                   onClick={() => openModal(1)}
-                  className="inline-flex items-center gap-1.5 text-sm font-bold text-[#2b4b38] group-hover:text-[#fa9b0c] transition-colors pt-3 border-t border-[#2b4b38]/10 w-full justify-between"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#2b4b38] hover:text-[#fa9b0c] transition-colors pt-4 border-t border-[#2b4b38]/10 w-full justify-between"
                 >
                   <span>Constituir modalidad</span>
-                  <ArrowRight className="w-4 h-4 text-[#fa9b0c] group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3.5 h-3.5 text-[#fa9b0c] group-hover:translate-x-1 transition-transform" />
                 </button>
               </ScrollReveal>
             ))}
@@ -345,14 +364,13 @@ export function ConstitucionPage() {
       </section>
 
       {/* ═══ FAQS ═══ */}
-      <SectionDivider from="#ffffff" to="#FAFBF9" />
-      <section className="py-20 lg:py-28 bg-[#FAFBF9]">
+      <section className="py-24 lg:py-32 bg-[#FAFBF9] border-t border-[#2b4b38]/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
+            <span className="inline-block text-[#fa9b0c] font-bold text-xs tracking-[0.2em] uppercase mb-3">
               Dudas Habituales
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2b4b38]">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#2b4b38] leading-[1.18]">
               Preguntas Frecuentes
             </h2>
           </div>
@@ -361,14 +379,14 @@ export function ConstitucionPage() {
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className="bg-white p-7 sm:p-8 rounded-3xl shadow-[0_8px_25px_-4px_rgba(43,75,56,0.05)] hover:shadow-[0_16px_35px_-4px_rgba(43,75,56,0.11)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
+                className="bg-white p-7 sm:p-8 rounded-2xl border border-[#2b4b38]/10 hover:border-[#fa9b0c]/40 hover:shadow-lg transition-all duration-300 relative group"
               >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <h3 className="font-bold text-[#2b4b38] text-lg mb-2 flex items-start gap-3">
-                  <HelpCircle className="w-6 h-6 text-[#fa9b0c] shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
+                <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <h3 className="font-serif text-xl font-normal text-[#2b4b38] mb-2.5 flex items-start gap-3">
+                  <HelpCircle className="w-5 h-5 text-[#fa9b0c] shrink-0 mt-1" />
                   {faq.q}
                 </h3>
-                <p className="text-[#42604e] text-sm sm:text-base leading-relaxed pl-9">
+                <p className="text-[#42604e] text-sm sm:text-base leading-relaxed pl-8 font-light">
                   {faq.a}
                 </p>
               </div>
@@ -378,25 +396,27 @@ export function ConstitucionPage() {
       </section>
 
       {/* ═══ CTA FINAL ═══ */}
-      <SectionDivider from="#FAFBF9" to="#2b4b38" />
-      <section id="asesoria-corporativa" className="py-20 lg:py-28 bg-[#2b4b38] text-center text-white relative overflow-hidden">
+      <section id="asesoria-corporativa" className="py-24 lg:py-32 bg-[#1e3527] text-center text-white relative overflow-hidden">
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-[#fa9b0c] text-xs font-bold uppercase tracking-[0.2em] mb-4 backdrop-blur-sm">
+            Estructuración Corporativa
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal mb-6 text-white leading-[1.18] max-w-3xl mx-auto">
             Estructura y Protege tu Empresa con Especialistas
           </h2>
-          <p className="text-white/80 mb-8 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/80 mb-10 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-light">
             Desde la formalización inicial hasta la negociación de grandes contratos mercantiles y licitaciones del Estado.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => openModal(14)}
-              className="inline-flex items-center justify-center gap-2 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-8 py-4 rounded-xl text-base font-bold transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2.5 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-8 py-4 rounded-xl text-sm sm:text-base font-bold tracking-wide transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
             >
               <MessageCircle className="w-5 h-5" /> Consultar por WhatsApp
             </button>
             <Link
               href="/nosotros-contacto"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-8 py-4 rounded-xl text-base font-semibold transition-all backdrop-blur-sm"
+              className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 border border-white/30 text-white px-8 py-4 rounded-xl text-sm sm:text-base font-semibold tracking-wide transition-all backdrop-blur-sm"
             >
               Conocer al Equipo Legal
             </Link>

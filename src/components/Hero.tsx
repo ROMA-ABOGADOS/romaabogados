@@ -46,7 +46,7 @@ const slides: SlideData[] = [
     ),
     subtitle:
       "Especialistas en Derecho Tributario, Laboral y Empresarial. Protegemos el valor de tu empresa y garantizamos seguridad jurídica con el más alto rigor técnico.",
-    cta1: { text: "Consultar Especialista →", type: "whatsapp", serviceId: null },
+    cta1: { text: "Agendar una Consulta →", type: "whatsapp", serviceId: null },
     cta2: { text: "Nuestros Servicios", type: "scroll" },
     badges: ["Rigor Técnico PUCP", "Respuesta Inmediata", "Soluciones a Medida"],
   },
@@ -99,41 +99,17 @@ const slides: SlideData[] = [
     badges: ["Inspecciones SUNAFIL", "Auditorías de Cumplimiento", "Litigios Laborales"],
   },
   {
-    id: "contable",
-    badge: "Outsourcing Contable & Tributario",
-    h1: (
-      <>
-        Contabilidad Integral con{" "}
-        <br className="hidden sm:block" />
-        <span className="text-[#fa9b0c]">Blindaje Legal Permanente.</span>
-      </>
-    ),
-    subtitle:
-      "Teneduría contable, determinación mensual de tributos, implementación del SIRE y liquidación de planillas PLAME respaldadas por firmas aliadas de primer nivel.",
-    cta1: {
-      text: "Planes de Outsourcing",
-      type: "link",
-      href: "/contabilidad-tributacion",
-    },
-    cta2: {
-      text: "Ver Detalles",
-      type: "link",
-      href: "/contabilidad-tributacion",
-    },
-    badges: ["Implementación SIRE", "Libros Electrónicos", "Alianzas Estratégicas"],
-  },
-  {
     id: "empresarial",
-    badge: "Derecho Empresarial, Civil & OSCE",
+    badge: "Derecho Empresarial & Corporativo",
     h1: (
       <>
         Derecho Corporativo,{" "}
         <br className="hidden sm:block" />
-        Contratos y <span className="text-[#fa9b0c]">Licitaciones del Estado.</span>
+        Constitución y <span className="text-[#fa9b0c]">Contratos Estratégicos.</span>
       </>
     ),
     subtitle:
-      "Constitución de sociedades (SAC, SRL, EIRL), reorganizaciones societarias, contratos civiles/comerciales y asesoría en contrataciones públicas con OSCE.",
+      "Constitución de sociedades (SAC, SRL, EIRL), reorganizaciones societarias, contratos mercantiles y asesoría legal integral para empresas.",
     cta1: {
       text: "Asesoría Corporativa",
       type: "link",
@@ -144,7 +120,31 @@ const slides: SlideData[] = [
       type: "link",
       href: "/constitucion-de-empresas",
     },
-    badges: ["Gobierno Corporativo", "Contratos Comerciales", "Registro RNP / OSCE"],
+    badges: ["Gobierno Corporativo", "Contratos Comerciales", "Constitución de Sociedades"],
+  },
+  {
+    id: "contable",
+    badge: "Outsourcing Contable & Tributario",
+    h1: (
+      <>
+        Contabilidad Integral con{" "}
+        <br className="hidden sm:block" />
+        <span className="text-[#fa9b0c]">Blindaje Legal Permanente.</span>
+      </>
+    ),
+    subtitle:
+      "Teneduría contable, determinación mensual de tributos, libros electrónicos y liquidación de planillas PLAME con supervisión técnica especializada.",
+    cta1: {
+      text: "Planes de Outsourcing",
+      type: "link",
+      href: "/contabilidad-tributacion",
+    },
+    cta2: {
+      text: "Ver Detalles",
+      type: "link",
+      href: "/contabilidad-tributacion",
+    },
+    badges: ["Declaraciones SUNAT", "Libros Electrónicos", "Planillas PLAME"],
   },
 ];
 
@@ -273,7 +273,7 @@ export function Hero() {
 
   return (
     <section
-      className="relative flex overflow-hidden hero-fade-top"
+      className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#1e3527] hero-fade-top"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -332,7 +332,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="hero-h1 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] tracking-tight"
+              className="hero-h1 font-serif font-normal text-4xl sm:text-5xl lg:text-[62px] text-white leading-[1.12] tracking-tight"
             >
               {slide.h1}
             </motion.h1>
@@ -342,7 +342,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="hero-subtitle mt-6 text-[16px] sm:text-[18px] lg:text-[19px] text-[#FAFBF9]/85 max-w-3xl leading-relaxed font-light"
+              className="hero-subtitle mt-6 text-[16px] sm:text-[18px] lg:text-[19px] text-[#FAFBF9]/90 max-w-3xl leading-relaxed font-light"
             >
               {slide.subtitle}
             </motion.p>

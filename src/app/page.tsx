@@ -35,99 +35,100 @@ function LeadershipPresentation() {
   const sanityHome = useSanityDocument<any>(homePageQuery, null);
   const founder = sanityHome?.founder;
 
-  const title = founder?.title || "Roberto Marca";
-  const subtitle = founder?.subtitle || "SOCIO PRINCIPAL | ROMA & ABOGADOS";
   const quote =
     founder?.quote ||
     "Brindamos soluciones jurídicas eficientes y estratégicas con el más alto rigor técnico para proteger y potenciar tu negocio.";
-  const sectionTitle =
-    founder?.sectionTitle || "Liderazgo y Respaldo Jurídico Especializado";
-  const sectionSubtitle =
-    founder?.sectionSubtitle ||
-    "ROMA ABOGADOS es una firma de profesionales especializada en asesoría tributaria, laboral y empresarial. Combinamos experiencia en organismos del Estado con visión de negocios.";
-
-  const credentials = [
-    "Abogado por la Pontificia Universidad Católica del Perú (PUCP)",
-    "Especialista en Derecho Tributario por la Universidad de Lima",
-    "Exintegrante del Tribunal Fiscal y de la SUNAT",
-    "Más de 12 años liderando asesorías fiscales de alta complejidad",
-  ];
 
   return (
-    <section id="socio-principal" className="py-20 lg:py-28 bg-[#FAFBF9]">
+    <section id="socio-principal" className="py-24 lg:py-32 bg-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* LEFT: Institutional Card */}
-          <ScrollReveal x={-30} duration={0.7} className="flex flex-col items-center text-center w-full">
-            <div className="w-full max-w-md bg-white rounded-3xl p-8 sm:p-10 shadow-[0_15px_45px_-10px_rgba(43,75,56,0.12)] relative overflow-hidden group">
-              <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#2b4b38] via-[#fa9b0c] to-[#2b4b38]" />
-              
-              {/* Shield Icon Badge */}
-              <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center text-[#fa9b0c] group-hover:scale-110 transition-transform duration-300">
-                <Scale className="w-14 h-14" />
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* LEFT: Full Editorial Executive Portrait */}
+          <ScrollReveal x={-30} duration={0.7} className="lg:col-span-5 w-full">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-[#1e3527] border border-[#2b4b38]/20 group">
+              <div className="aspect-[3/4] w-full relative overflow-hidden">
+                <img
+                  src="/images/hero/hero-subpages-roberto.webp"
+                  alt="Dr. Roberto Marca - Socio Principal ROMA & ABOGADOS"
+                  className="w-full h-full object-cover object-[center_12%] transform group-hover:scale-102 transition-transform duration-700 ease-out"
+                />
+                {/* Elegant dark vignette gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#15251b] via-[#15251b]/40 to-transparent" />
+                
+                {/* Subtle top gold accent */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent" />
 
-              <span className="inline-block px-4 py-1.5 rounded-full bg-[#fa9b0c]/15 text-[#2b4b38] text-xs font-bold uppercase tracking-wider mb-3">
-                Dirección Legal & Tributaria
-              </span>
-
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#2b4b38] tracking-tight leading-tight">
-                {title}
-              </h3>
-              <p className="text-[#fa9b0c] font-bold text-xs sm:text-sm tracking-[0.1em] uppercase mt-2">
-                {subtitle}
-              </p>
-
-              <div className="my-6 border-t border-[#2b4b38]/10" />
-
-              <p className="text-[#42604e] text-base italic leading-relaxed">
-                &ldquo;{quote}&rdquo;
-              </p>
-
-              <div className="mt-6 pt-6 border-t border-[#2b4b38]/10 flex items-center justify-center gap-2 text-xs text-[#2b4b38]/80 font-medium">
-                <Award className="w-4 h-4 text-[#fa9b0c]" />
-                <span>Pontificia Universidad Católica del Perú (PUCP)</span>
+                {/* Overlay Caption at bottom of photo */}
+                <div className="absolute bottom-6 left-6 right-6 text-left">
+                  <span className="inline-block px-3 py-1 rounded-full bg-[#fa9b0c] text-[#1e3527] text-xs font-bold uppercase tracking-wider mb-2">
+                    Socio Principal
+                  </span>
+                  <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-tight">
+                    Roberto Marca
+                  </h3>
+                  <p className="text-white/80 text-xs sm:text-sm mt-1 leading-relaxed">
+                    Exintegrante del Tribunal Fiscal y de la SUNAT. Abogado por la Pontificia Universidad Católica del Perú (PUCP).
+                  </p>
+                </div>
               </div>
             </div>
           </ScrollReveal>
 
-          {/* RIGHT: Credentials + Action Buttons */}
-          <ScrollReveal x={30} duration={0.7} className="flex flex-col items-center lg:items-start text-center lg:text-left w-full">
-            <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
-              ¿Quiénes Somos?
+          {/* RIGHT: Institutional Authority (Estudio Ugaz Style) */}
+          <ScrollReveal x={30} duration={0.7} className="lg:col-span-7 flex flex-col justify-center text-left">
+            <span className="inline-block text-[#fa9b0c] font-bold text-xs tracking-[0.2em] uppercase mb-3">
+              Acerca de la Firma • Liderazgo
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#2b4b38] leading-tight mb-4">
-              {sectionTitle}
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2b4b38] leading-[1.18] mb-6">
+              Excelencia Jurídica y Visión de Negocios
             </h2>
-            <p className="text-[#42604e] text-base sm:text-lg leading-relaxed mb-6 max-w-lg">
-              {sectionSubtitle}
+
+            {/* Editorial Quote */}
+            <blockquote className="border-l-2 border-[#fa9b0c] pl-5 italic text-[#2b4b38]/90 font-serif text-lg sm:text-xl mb-6 leading-relaxed">
+              &ldquo;{quote}&rdquo;
+            </blockquote>
+
+            <p className="text-[#42604e] text-base leading-relaxed mb-8">
+              ROMA & ABOGADOS es una firma de profesionales especializada en asesoría tributaria, laboral y empresarial. Combinamos la experiencia en organismos del Estado con una visión corporativa ágil y estratégica para blindar las operaciones de su empresa.
             </p>
 
-            {/* Bullet points of credentials */}
-            <ul className="space-y-3.5 mb-8 text-left w-full max-w-lg">
-              {credentials.map((cred) => (
-                <li key={cred} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#fa9b0c] shrink-0 mt-0.5" />
-                  <span className="text-[#2b4b38] font-semibold text-sm sm:text-base">
-                    {cred}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            {/* 2 Strategic Pillars (Ugaz Style) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+              <div className="p-5 rounded-xl bg-[#FAFBF9] border border-[#2b4b38]/10 hover:border-[#fa9b0c]/30 transition-colors">
+                <div className="flex items-center gap-2 mb-2 text-[#2b4b38]">
+                  <Scale className="w-5 h-5 text-[#fa9b0c]" />
+                  <h4 className="font-serif text-lg font-normal text-[#2b4b38]">Rigor Fiscal y SUNAT</h4>
+                </div>
+                <p className="text-xs text-[#42604e] leading-relaxed">
+                  Defensa especializada en fiscalizaciones complejas y litigios ante el Tribunal Fiscal.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-xl bg-[#FAFBF9] border border-[#2b4b38]/10 hover:border-[#fa9b0c]/30 transition-colors">
+                <div className="flex items-center gap-2 mb-2 text-[#2b4b38]">
+                  <Shield className="w-5 h-5 text-[#fa9b0c]" />
+                  <h4 className="font-serif text-lg font-normal text-[#2b4b38]">Blindaje Corporativo</h4>
+                </div>
+                <p className="text-xs text-[#42604e] leading-relaxed">
+                  Auditorías laborales SUNAFIL, comités SST y formalización societaria integral.
+                </p>
+              </div>
+            </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3.5 w-full max-w-md">
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <button
                 type="button"
                 onClick={() => openModal(null)}
-                className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-[#2b4b38] hover:bg-[#1e3527] text-white px-6 py-3.5 rounded-xl text-[15px] font-bold transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2.5 bg-[#2b4b38] hover:bg-[#1e3527] text-white px-7 py-4 rounded-xl text-sm font-semibold tracking-wide transition-all shadow-md hover:shadow-lg active:scale-[0.98]"
               >
                 <Phone className="w-4 h-4 text-[#fa9b0c]" />
-                Consulta Inmediata
+                Agendar una Consulta
               </button>
               <Link
                 href="/nosotros-contacto"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white hover:bg-[#FAFBF9] text-[#2b4b38] border border-[#2b4b38]/15 hover:border-[#fa9b0c] px-6 py-3.5 rounded-xl text-[15px] font-semibold transition-all shadow-sm"
+                className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-[#FAFBF9] text-[#2b4b38] border border-[#2b4b38]/20 hover:border-[#fa9b0c] px-7 py-4 rounded-xl text-sm font-semibold tracking-wide transition-all"
               >
                 Conocer al Equipo Legal
                 <ArrowRight className="w-4 h-4 text-[#fa9b0c]" />
@@ -141,257 +142,7 @@ function LeadershipPresentation() {
 }
 
 /* ════════════════════════════════════════════════════════════════
-   SECTION 1: 4 PRACTICE PILLARS OVERVIEW
-   ════════════════════════════════════════════════════════════════ */
-function PillarsOverview() {
-  const pillars = [
-    {
-      title: "Derecho Tributario",
-      badge: "Defensa & Planeamiento",
-      desc: "Fiscalizaciones SUNAT, cartas inductivas, apelaciones ante el Tribunal Fiscal, cobranzas coactivas y demandas judiciales contencioso-administrativas.",
-      link: "/defensa-tributaria-sunat",
-      icon: Scale,
-    },
-    {
-      title: "Derecho Laboral",
-      badge: "Preventivo & SUNAFIL",
-      desc: "Auditorías de cumplimiento (compliance laboral), SST, prevención y sanción de hostigamiento, defensa inspectiva SUNAFIL y litigios laborales.",
-      link: "/derecho-laboral",
-      icon: Briefcase,
-    },
-    {
-      title: "Outsourcing Contable",
-      badge: "SIRE & Planillas",
-      desc: "Gestión contable integral, liquidación mensual de impuestos, libros electrónicos, SIRE y procesamiento de planillas PLAME con supervisión legal.",
-      link: "/contabilidad-tributacion",
-      icon: FileText,
-    },
-    {
-      title: "Derecho Empresarial",
-      badge: "Corporativo & OSCE",
-      desc: "Constitución de sociedades (SAC, SRL, EIRL), reorganizaciones societarias, contratos comerciales, derecho administrativo y licitaciones OSCE.",
-      link: "/constitucion-de-empresas",
-      icon: Building2,
-    },
-  ];
-
-  return (
-    <section className="py-20 lg:py-28 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
-              Especialización Jurídica
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2b4b38]">
-              Cobertura Legal Integral para Empresas
-            </h2>
-            <p className="mt-4 text-base sm:text-lg text-[#42604e] leading-relaxed">
-              Un enfoque multidisciplinario donde tributación, derecho laboral y corporativo se integran para blindar las operaciones de tu negocio.
-            </p>
-          </div>
-        </ScrollReveal>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {pillars.map((p, i) => {
-            const Icon = p.icon;
-            return (
-              <ScrollReveal key={p.title} delay={0.1 * i} duration={0.6}>
-                <div className="bg-[#FAFBF9] rounded-3xl p-8 sm:p-10 shadow-[0_10px_30px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_22px_45px_-5px_rgba(43,75,56,0.13)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full group relative overflow-hidden">
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 flex items-center justify-center text-[#fa9b0c] group-hover:scale-115 transition-transform duration-300">
-                        <Icon className="w-8 h-8" />
-                      </div>
-                      <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-3 py-1 rounded-full">
-                        {p.badge}
-                      </span>
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#2b4b38] mb-3 group-hover:text-[#1e3527] transition-colors">
-                      {p.title}
-                    </h3>
-                    <p className="text-[#42604e] text-[15px] leading-relaxed mb-6">
-                      {p.desc}
-                    </p>
-                  </div>
-                  <Link
-                    href={p.link}
-                    className="inline-flex items-center gap-2 text-sm font-bold text-[#2b4b38] group-hover:text-[#fa9b0c] transition-colors pt-4 border-t border-[#2b4b38]/10"
-                  >
-                    Explorar área de práctica
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </ScrollReveal>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ════════════════════════════════════════════════════════════════
-   SECTION 2: INSTITUTIONAL AUTHORITY & TRUST
-   ════════════════════════════════════════════════════════════════ */
-function AuthorityTrust() {
-  const values = [
-    {
-      title: "Excelencia y Rigor Técnico",
-      desc: "Máximo estándar de calidad y sustento jurídico en cada informe, recurso contencioso o planificación fiscal.",
-    },
-    {
-      title: "Integridad y Confidencialidad",
-      desc: "Actuamos con transparencia absoluta, ética inquebrantable y reserva profesional en cada asunto encomendado.",
-    },
-    {
-      title: "Compromiso con el Negocio",
-      desc: "Asumimos los objetivos de nuestros clientes como propios, protegiendo su patrimonio ante cualquier eventualidad.",
-    },
-    {
-      title: "Innovación y Soluciones Ágiles",
-      desc: "Respuestas legales adaptadas al entorno corporativo contemporáneo y a la constante evolución normativa del Perú.",
-    },
-  ];
-
-  return (
-    <section id="valores-institucionales" className="py-20 lg:py-28 bg-[#FAFBF9]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <ScrollReveal x={-30} duration={0.7}>
-            <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
-              Valores Institucionales
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2b4b38] leading-tight mb-5">
-              Por Qué las Empresas Eligen a{" "}
-              <span className="text-[#fa9b0c]">ROMA & ABOGADOS</span>
-            </h2>
-            <p className="text-[#42604e] text-base sm:text-lg leading-relaxed mb-8">
-              En un entorno regulatorio exigente donde las decisiones de SUNAT, SUNAFIL y otros entes estatales pueden poner en riesgo la continuidad de tu empresa, contar con abogados y contadores de alto nivel técnico es la mejor inversión para tu seguridad patrimonial.
-            </p>
-            <div className="p-6 rounded-2xl bg-[#2b4b38] text-white flex items-start gap-4">
-              <Shield className="w-8 h-8 text-[#fa9b0c] shrink-0 mt-1" />
-              <div>
-                <h4 className="font-bold text-lg mb-1">Blindaje Jurídico Permanente</h4>
-                <p className="text-white/80 text-sm leading-relaxed">
-                  Asesoría estratégica preventiva para que tu empresa crezca sin sobresaltos ni multas innecesarias.
-                </p>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal x={30} duration={0.7} className="w-full">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 sm:gap-8">
-              {values.map((v) => (
-                <div
-                  key={v.title}
-                  className="group relative pl-5 border-l-2 border-[#fa9b0c]/40 hover:border-[#fa9b0c] transition-all py-1"
-                >
-                  <div className="flex items-center gap-2 mb-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#fa9b0c] shrink-0" />
-                    <h3 className="font-bold text-[#2b4b38] text-base sm:text-lg group-hover:text-[#fa9b0c] transition-colors">
-                      {v.title}
-                    </h3>
-                  </div>
-                  <p className="text-[#42604e] text-sm leading-relaxed font-normal">
-                    {v.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ════════════════════════════════════════════════════════════════
-   SECTION 3: COMPANY FORMATION & CORPORATE SUPPORT
-   ════════════════════════════════════════════════════════════════ */
-function CompanyFormation() {
-  const benefits = [
-    {
-      icon: Shield,
-      title: "Patrimonio Blindado y Seguro",
-      description:
-        "Separación legal efectiva entre el patrimonio personal y los recursos de la empresa ante cualquier contingencia.",
-    },
-    {
-      icon: Building2,
-      title: "Licitaciones con el Estado y RNP",
-      description:
-        "Estructuramos tu empresa para participar en procesos de compras públicas y licitaciones ante el OSCE.",
-    },
-    {
-      icon: Handshake,
-      title: "Acceso a Créditos y Alianzas Corporativas",
-      description:
-        "Facilidad para acceder al sistema financiero formal y suscribir acuerdos comerciales de alto valor.",
-    },
-  ];
-
-  return (
-    <section id="derecho-corporativo" className="py-20 lg:py-28 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal>
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
-              Derecho Corporativo y Societario
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2b4b38] leading-tight mb-4">
-              Constitución de Empresas y{" "}
-              <span className="text-[#fa9b0c]">Estructuración Societaria</span>
-            </h2>
-            <p className="text-[#42604e] text-base sm:text-lg leading-relaxed">
-              Formaliza tu negocio de manera ágil y con total respaldo legal. Elaboración de minuta, estatutos a medida, inscripción en SUNARP, RUC y Clave SOL sin complicaciones.
-            </p>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.15}>
-          <div className="text-center mb-14">
-            <Link
-              href="/constitucion-de-empresas"
-              className="inline-flex items-center gap-2 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-8 sm:px-10 py-4 rounded-xl text-base sm:text-lg font-bold transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
-            >
-              Constituir Empresa Ahora
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </ScrollReveal>
-
-        <div className="max-w-3xl mx-auto space-y-6">
-          {benefits.map((benefit, i) => {
-            const Icon = benefit.icon;
-            return (
-              <ScrollReveal key={benefit.title} delay={0.1 * i} duration={0.6}>
-                <div className="benefit-item-immersive flex flex-row items-center gap-5 p-6 rounded-3xl bg-white shadow-[0_8px_30px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_18px_40px_-5px_rgba(43,75,56,0.12)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="benefit-icon-pin w-12 h-12 shrink-0 flex items-center justify-center text-[#fa9b0c] group-hover:scale-115 transition-transform duration-300">
-                    <Icon className="w-8 h-8" />
-                  </div>
-                  <div className="benefit-text-block pt-0.5">
-                    <h3 className="benefit-item-title text-[18px] font-bold text-[#2b4b38] mb-1 group-hover:text-[#1e3527] transition-colors">
-                      {benefit.title}
-                    </h3>
-                    <p className="benefit-item-desc text-[15px] text-[#42604e] leading-relaxed m-0">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ════════════════════════════════════════════════════════════════
-   SECTION 4: REAL CLIENT TESTIMONIALS
+   SECTION: REAL CLIENT TESTIMONIALS
    ════════════════════════════════════════════════════════════════ */
 const testimonials = [
   {
@@ -416,19 +167,19 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section id="testimonios" className="py-20 lg:py-28 bg-[#FAFBF9]">
+    <section id="testimonios" className="py-24 lg:py-32 bg-[#FAFBF9] border-t border-[#2b4b38]/10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
-              Testimonios de Clientes
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block text-[#fa9b0c] font-bold text-xs tracking-[0.2em] uppercase mb-3">
+              Casos Reales • Testimonios
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2b4b38]">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2b4b38] font-normal leading-[1.18]">
               Empresas que Confían en{" "}
               <span className="text-[#fa9b0c]">Nuestra Firma</span>
             </h2>
-            <p className="mt-3 text-[#42604e] text-base sm:text-lg">
-              Casos reales de éxito y protección jurídica efectiva en los sectores construcción, logística y comercio.
+            <p className="mt-4 text-[#42604e] text-base sm:text-lg leading-relaxed">
+              Resultados verificados y protección jurídica estratégica en los sectores inmobiliario, logística y comercio corporativo.
             </p>
           </div>
         </ScrollReveal>
@@ -436,27 +187,27 @@ function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((t, i) => (
             <ScrollReveal key={t.name} delay={0.1 * i} duration={0.6}>
-              <div className="bg-white rounded-3xl p-8 sm:p-9 h-full shadow-[0_10px_30px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_22px_45px_-5px_rgba(43,75,56,0.13)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="bg-white rounded-2xl p-8 sm:p-9 h-full border border-[#2b4b38]/10 hover:border-[#fa9b0c]/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative group">
+                <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div>
                   {/* Stars */}
-                  <div className="flex gap-1 mb-4">
+                  <div className="flex gap-1 mb-5">
                     {Array.from({ length: t.stars }).map((_, j) => (
                       <Star
                         key={j}
-                        className="w-5 h-5 fill-[#fa9b0c] text-[#fa9b0c]"
+                        className="w-4 h-4 fill-[#fa9b0c] text-[#fa9b0c]"
                       />
                     ))}
                   </div>
-                  <p className="text-[#1e3527] leading-relaxed mb-6 italic text-[15px]">
+                  <blockquote className="text-[#2b4b38]/90 font-serif italic leading-relaxed mb-8 text-base sm:text-[17px]">
                     &ldquo;{t.text}&rdquo;
-                  </p>
+                  </blockquote>
                 </div>
-                <div className="pt-4 border-t border-[#2b4b38]/10">
-                  <h4 className="text-[#2b4b38] font-bold text-base">
+                <div className="pt-5 border-t border-[#2b4b38]/10">
+                  <h4 className="font-serif text-lg font-normal text-[#2b4b38]">
                     {t.name}
                   </h4>
-                  <p className="text-[#42604e] text-xs font-medium mt-0.5">
+                  <p className="text-[#42604e] text-xs font-medium mt-1 leading-snug">
                     {t.role}
                   </p>
                 </div>
@@ -470,65 +221,7 @@ function Testimonials() {
 }
 
 /* ════════════════════════════════════════════════════════════════
-   SECTION 5: AUTHORITY METRICS
-   ════════════════════════════════════════════════════════════════ */
-const metrics = [
-  {
-    value: "12+",
-    label: "Años de Trayectoria",
-    subtext: "Liderando asesorías fiscales y corporativas",
-  },
-  {
-    value: "S/ 15M+",
-    label: "Contingencias Desvirtuadas",
-    subtext: "En Tribunal Fiscal y SUNAT",
-  },
-  {
-    value: "500+",
-    label: "Empresas Asesoradas",
-    subtext: "En materia tributaria, laboral y societaria",
-  },
-  {
-    value: "100%",
-    label: "Respaldo Técnico Especializado",
-    subtext: "PUCP, exintegrantes TF y SUNAT",
-  },
-];
-
-function AuthorityMetrics() {
-  return (
-    <section id="cifras-autoridad" className="py-20 lg:py-28 bg-[#2b4b38] relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <ScrollReveal>
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-              Cifras que Respaldan{" "}
-              <span className="text-[#fa9b0c]">Nuestra Trayectoria</span>
-            </h2>
-            <p className="text-white/75 mt-3 text-base">
-              Rigor técnico y experiencia jurídica protegiendo el patrimonio de nuestros clientes.
-            </p>
-          </div>
-        </ScrollReveal>
-
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {metrics.map((m) => (
-            <ScrollReveal key={m.label} className="text-center">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#fa9b0c] mb-2 font-mono">
-                {m.value}
-              </div>
-              <div className="text-white font-bold text-sm sm:text-base mb-1">{m.label}</div>
-              <div className="text-white/60 text-xs sm:text-sm">{m.subtext}</div>
-            </ScrollReveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ════════════════════════════════════════════════════════════════
-   SECTION 6: LEGAL BLOG & ARTICLES
+   SECTION: LEGAL BLOG & ARTICLES (Estudio Ugaz Publication Style)
    ════════════════════════════════════════════════════════════════ */
 function ActualidadTributaria() {
   const articles = [
@@ -546,25 +239,25 @@ function ActualidadTributaria() {
     },
     {
       tag: "Contabilidad",
-      title: "Implementación del Sistema SIRE de SUNAT sin Contingencias",
-      desc: "Cómo validar registros de compras y ventas electrónicos para evitar inconsistencias y multas tributarias.",
-      date: "Actualización Normativa",
+      title: "Cierre Contable y Cumplimiento Tributario Preventivo",
+      desc: "Estrategias contables bajo NIIF y conciliaciones periódicas para asegurar cero contingencias ante SUNAT.",
+      date: "Gestión Corporativa",
     },
   ];
 
   return (
-    <section id="actualidad-juridica" className="py-20 lg:py-28 bg-[#FAFBF9]">
+    <section id="actualidad-juridica" className="py-24 lg:py-32 bg-white border-t border-[#2b4b38]/10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3">
-              Conocimiento Especializado
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block text-[#fa9b0c] font-bold text-xs tracking-[0.2em] uppercase mb-3">
+              Análisis y Opinión Legal
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2b4b38]">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2b4b38] font-normal leading-[1.18]">
               Actualidad Tributaria y Empresarial
             </h2>
-            <p className="text-[#42604e] mt-3 text-base sm:text-lg">
-              Análisis técnico y criterios legales emitidos por el Tribunal Fiscal, SUNAT y el Poder Judicial.
+            <p className="text-[#42604e] mt-4 text-base sm:text-lg leading-relaxed">
+              Criterios técnicos, resoluciones del Tribunal Fiscal y jurisprudencia clave para la toma de decisiones.
             </p>
           </div>
         </ScrollReveal>
@@ -572,29 +265,29 @@ function ActualidadTributaria() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {articles.map((art, i) => (
             <ScrollReveal key={art.title} delay={0.1 * i} duration={0.6}>
-              <div className="bg-white p-8 rounded-3xl shadow-[0_10px_30px_-5px_rgba(43,75,56,0.06)] hover:shadow-[0_22px_45px_-5px_rgba(43,75,56,0.13)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full relative overflow-hidden group">
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="bg-[#FAFBF9] p-8 sm:p-9 rounded-2xl border border-[#2b4b38]/10 hover:border-[#fa9b0c]/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full relative group">
+                <div className="absolute top-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-3 py-1 rounded-full inline-block mb-4">
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-[#fa9b0c] bg-[#fa9b0c]/10 px-3 py-1 rounded-full inline-block mb-4">
                     {art.tag}
                   </span>
-                  <h3 className="text-lg font-bold text-[#2b4b38] mb-2 leading-snug group-hover:text-[#1e3527] transition-colors">
+                  <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#2b4b38] mb-3 leading-snug group-hover:text-[#fa9b0c] transition-colors">
                     {art.title}
                   </h3>
                   <p className="text-[#42604e] text-sm leading-relaxed mb-6">
                     {art.desc}
                   </p>
                 </div>
-                <div className="flex items-center justify-between text-xs text-[#2b4b38]/70 pt-4 border-t border-[#2b4b38]/10">
+                <div className="flex items-center justify-between text-xs text-[#2b4b38]/70 pt-5 border-t border-[#2b4b38]/10">
                   <span className="flex items-center gap-1.5 font-medium">
                     <BookOpen className="w-3.5 h-3.5 text-[#fa9b0c]" />
                     {art.date}
                   </span>
                   <Link
                     href="/defensa-tributaria-sunat"
-                    className="font-bold text-[#fa9b0c] hover:underline inline-flex items-center gap-1"
+                    className="font-semibold text-[#fa9b0c] hover:underline inline-flex items-center gap-1"
                   >
-                    Consultar →
+                    Consultar Especialidad →
                   </Link>
                 </div>
               </div>
@@ -607,43 +300,43 @@ function ActualidadTributaria() {
 }
 
 /* ════════════════════════════════════════════════════════════════
-   SECTION 7: HIGH CONVERSION CTA
+   SECTION 7: HIGH CONVERSION CTA (Estudio Ugaz Authority Banner)
    ════════════════════════════════════════════════════════════════ */
 function HighConversionCTA() {
   const { openModal } = useWhatsAppStore();
 
   return (
-    <section id="contacto-estrategico" className="py-20 lg:py-28 relative overflow-hidden bg-[#2b4b38]">
-      {/* Decorative blurs */}
-      <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#fa9b0c]/15 rounded-full blur-3xl" />
-      <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-[#42604e]/30 rounded-full blur-3xl" />
+    <section id="contacto-estrategico" className="py-24 lg:py-32 relative overflow-hidden bg-[#1e3527] text-white">
+      {/* Subtle background blurs */}
+      <div className="absolute -top-24 -right-24 w-80 h-80 bg-[#fa9b0c]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-[#42604e]/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <ScrollReveal>
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-[#fa9b0c] text-xs font-bold uppercase tracking-wider mb-4 backdrop-blur-sm">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-[#fa9b0c] text-xs font-bold uppercase tracking-[0.2em] mb-4 backdrop-blur-sm">
             Atención Rápida y Personalizada
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-white leading-tight mb-6 max-w-3xl mx-auto">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-white leading-[1.18] mb-6 max-w-3xl mx-auto">
             ¿Requieres Asesoría Tributaria, Laboral o Empresarial Especializada?
           </h2>
-          <p className="text-white/80 text-base sm:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-            Nuestro equipo de abogados y contadores está listo para analizar tu caso y ofrecerte una estrategia legal sólida con resultados comprobados.
+          <p className="text-white/80 text-base sm:text-lg mb-10 max-w-2xl mx-auto leading-relaxed font-light">
+            Nuestro equipo de abogados y contadores está listo para analizar tu caso con estricta confidencialidad y diseñar una estrategia jurídica sólida.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => openModal()}
-              className="inline-flex items-center justify-center gap-2 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-7 sm:px-9 py-4 rounded-xl text-[15px] sm:text-lg font-bold transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98] w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2.5 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-8 py-4 rounded-xl text-sm sm:text-base font-bold tracking-wide transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98] w-full sm:w-auto"
             >
               <MessageCircle className="w-5 h-5" />
-              CONSULTAR POR WHATSAPP
+              Consultar por WhatsApp
             </button>
-            <Link
-              href="/nosotros-contacto"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border-2 border-white/30 text-white px-7 sm:px-9 py-4 rounded-xl text-[15px] sm:text-lg font-bold transition-all backdrop-blur-sm w-full sm:w-auto"
+            <button
+              onClick={() => openModal()}
+              className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 border border-white/30 text-white px-8 py-4 rounded-xl text-sm sm:text-base font-semibold tracking-wide transition-all backdrop-blur-sm w-full sm:w-auto"
             >
-              <Calendar className="w-5 h-5 text-[#fa9b0c]" />
-              AGENDAR UNA REUNIÓN
-            </Link>
+              <Calendar className="w-4 h-4 text-[#fa9b0c]" />
+              Agendar una Consulta
+            </button>
           </div>
         </ScrollReveal>
       </div>
@@ -659,36 +352,20 @@ export default function Home() {
   return (
     <SiteLayout>
       <Hero />
-      <SectionDivider from="#2b4b38" to="#FAFBF9" />
 
       {/* Leadership: Roberto Marca & ROMA ABOGADOS */}
       <LeadershipPresentation />
 
-      {/* Services Overview */}
+      {/* Services Overview - 4 Practice Areas */}
       <Services />
-
-      {/* Pillars Overview */}
-      <PillarsOverview />
-
-      {/* Authority & Trust */}
-      <AuthorityTrust />
-
-      {/* Corporate & Formation */}
-      <CompanyFormation />
 
       {/* Real Testimonials */}
       <Testimonials />
 
-      {/* Authority Metrics */}
-      <SectionDivider from="#FAFBF9" to="#2b4b38" />
-      <AuthorityMetrics />
-      <SectionDivider from="#2b4b38" to="#FAFBF9" />
-
-      {/* Actualidad Tributaria */}
+      {/* Actualidad Jurídica */}
       <ActualidadTributaria />
 
       {/* Final CTA */}
-      <SectionDivider from="#FAFBF9" to="#2b4b38" />
       <HighConversionCTA />
     </SiteLayout>
   );

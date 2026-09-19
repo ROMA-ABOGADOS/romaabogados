@@ -2,11 +2,27 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Preloader } from "@/components/Preloader";
-import { Oswald } from "next/font/google";
+import { Oswald, DM_Serif_Display, Montserrat } from "next/font/google";
 
-// Oswald — condensada gótica, idéntica a News Gothic BT, misma que villamares.com.pe
+// Oswald — condensada gótica secundaria
 const oswald = Oswald({
   variable: "--font-oswald",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+// DM Serif Display — tipografía editorial formal para títulos jurídicos (estilo Estudio Ugaz / Molina López)
+const dmSerif = DM_Serif_Display({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
+
+// Montserrat — tipografía limpia, moderna y altamente legible para textos corporativos
+const montserrat = Montserrat({
+  variable: "--font-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
@@ -27,7 +43,7 @@ export const metadata: Metadata = {
     "defensa SUNAT",
     "inspecciones SUNAFIL",
     "Tribunal Fiscal",
-    "contrataciones OSCE",
+    "derecho corporativo",
     "estudio juridico Lima",
   ],
   authors: [{ name: "ROMA & ABOGADOS" }],
@@ -78,7 +94,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <body className={`${oswald.variable} antialiased bg-background text-foreground`}>
+      <body className={`${montserrat.variable} ${dmSerif.variable} ${oswald.variable} font-sans antialiased bg-background text-foreground`}>
         <Preloader />
         {children}
         <Toaster />

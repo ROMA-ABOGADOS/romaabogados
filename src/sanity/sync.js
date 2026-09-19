@@ -1,4 +1,4 @@
-﻿const { createClient } = require('@sanity/client');
+const { createClient } = require('@sanity/client');
 
 const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'hu6m2960',
@@ -17,8 +17,8 @@ async function syncAll() {
     _type: 'siteSettings',
     brandName: 'ROMAABOGADOS',
     tagline: 'Estudio Jurídico & Tributario',
-    phone: '+51 943 366 950',
-    whatsapp: '51943366950',
+    phone: '+51 905 454 792',
+    whatsapp: '51905454792',
     email: 'contacto@romaabogados.pe',
     address: 'Lima, Perú',
     schedule: 'Lun - Vie: 8:00 - 18:00 / Sáb: 9:00 - 13:00',
@@ -39,7 +39,7 @@ async function syncAll() {
         titlePart2: 'Aseguramos tu',
         titleHighlight2: 'Patrimonio.',
         subtitle: 'Asesoría legal, tributaria y contable de excelencia. Cero multas SUNAT. Seguridad jurídica total con ROMA ABOGADOS.',
-        cta1Text: 'Consultoría Gratuita →',
+        cta1Text: 'Agendar una Consulta →',
         cta1Link: '#whatsapp',
         cta2Text: 'Nuestros Servicios',
         cta2Link: '#servicios',

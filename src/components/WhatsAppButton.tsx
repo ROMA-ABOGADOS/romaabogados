@@ -22,13 +22,13 @@ const NOTIFICATIONS = [
     time: "hace 3 min",
   },
   {
-    title: "Outsourcing Contable",
-    message: "Gestión contable integral, cumplimiento SIRE y nóminas PLAME con blindaje legal.",
+    title: "Derecho Empresarial",
+    message: "Constitución de sociedades, gobierno corporativo y contratos mercantiles.",
     time: "hace 5 min",
   },
   {
-    title: "Derecho Empresarial",
-    message: "Constitución de sociedades, contratos mercantiles y licitaciones OSCE.",
+    title: "Outsourcing Contable",
+    message: "Gestión contable integral y nóminas PLAME con blindaje jurídico permanente.",
     time: "hace 8 min",
   },
   {

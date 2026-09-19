@@ -11,8 +11,8 @@ const navItems = [
   { label: "Inicio", href: "/" },
   { label: "Derecho Tributario", href: "/defensa-tributaria-sunat" },
   { label: "Derecho Laboral", href: "/derecho-laboral" },
-  { label: "Outsourcing Contable", href: "/contabilidad-tributacion" },
   { label: "Derecho Empresarial", href: "/constitucion-de-empresas" },
+  { label: "Outsourcing Contable", href: "/contabilidad-tributacion" },
   { label: "Quiénes Somos", href: "/nosotros-contacto" },
 ];
 
@@ -63,8 +63,8 @@ export function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-300 ease-in-out ${
           scrolled
-            ? "header-scrolled bg-white/98 shadow-md"
-            : "header-hero bg-[#2b4b38] border-b border-[#fa9b0c]/15"
+            ? "header-scrolled bg-white/95 backdrop-blur-md border-b border-[#2b4b38]/10 shadow-[0_4px_25px_rgba(0,0,0,0.05)]"
+            : "header-hero bg-[#1e3527]/95 backdrop-blur-md border-b border-white/10"
         }`}
       >
         {/* Brand gradient line */}
@@ -141,7 +141,7 @@ export function Header() {
                     : "bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] shadow-lg shadow-[#fa9b0c]/25 active:scale-[0.98]"
                 }`}
               >
-                Consultoría Gratuita
+                Agendar una Consulta
               </button>
             </nav>
 
@@ -230,14 +230,14 @@ export function Header() {
                   onClick={() => { setIsMobileOpen(false); openModal(); }}
                   className="w-full bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] py-3.5 rounded-xl text-[15px] font-bold transition-all shadow-md shadow-[#fa9b0c]/25"
                 >
-                  Consultoría Gratuita
+                  Agendar una Consulta
                 </button>
                 <a
-                  href="tel:+51943366950"
+                  href="tel:+51905454792"
                   className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-[14px] font-semibold text-[#2b4b38] hover:bg-white transition-colors"
                 >
                   <Phone className="w-4 h-4 text-[#fa9b0c]" />
-                  +51 943 366 950
+                  +51 905 454 792
                 </a>
               </div>
             </motion.div>

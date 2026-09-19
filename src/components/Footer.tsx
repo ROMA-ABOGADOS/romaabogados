@@ -7,8 +7,8 @@ const quickLinks = [
   { label: "Inicio", href: "/" },
   { label: "Derecho Tributario", href: "/defensa-tributaria-sunat" },
   { label: "Derecho Laboral", href: "/derecho-laboral" },
-  { label: "Outsourcing Contable", href: "/contabilidad-tributacion" },
   { label: "Derecho Empresarial", href: "/constitucion-de-empresas" },
+  { label: "Outsourcing Contable", href: "/contabilidad-tributacion" },
   { label: "Quiénes Somos", href: "/nosotros-contacto" },
 ];
 
@@ -17,10 +17,10 @@ const serviceLinks = [
   { label: "Fiscalizaciones y Defensa SUNAT", href: "/defensa-tributaria-sunat#ejes-tributarios" },
   { label: "Cobranza Coactiva y Embargos", href: "/defensa-tributaria-sunat#ejes-tributarios" },
   { label: "Derecho Laboral & SUNAFIL", href: "/derecho-laboral#ejes-laborales" },
-  { label: "Outsourcing Contable & SIRE", href: "/contabilidad-tributacion#ejes-contables" },
-  { label: "Gestión de Planillas PLAME", href: "/contabilidad-tributacion#ejes-contables" },
   { label: "Derecho Corporativo & Societario", href: "/constitucion-de-empresas#ejes-empresariales" },
-  { label: "Contrataciones con el Estado (OSCE)", href: "/constitucion-de-empresas#ejes-empresariales" },
+  { label: "Constitución y Formalización de Empresas", href: "/constitucion-de-empresas#ejes-empresariales" },
+  { label: "Outsourcing Contable Integral", href: "/contabilidad-tributacion#ejes-contables" },
+  { label: "Gestión de Planillas PLAME", href: "/contabilidad-tributacion#ejes-contables" },
 ];
 
 const socialLinks = [
@@ -109,12 +109,12 @@ export function Footer() {
             </h4>
             <div className="space-y-2.5 text-sm text-white/80 mb-6">
               <a
-                href="tel:+51943366950"
+                href="tel:+51905454792"
                 className="flex items-center gap-2 font-semibold text-white hover:text-[#fa9b0c] transition-colors"
                 title="Llamar a ROMA & ABOGADOS"
               >
                 <Phone className="w-4 h-4 text-[#fa9b0c] shrink-0" />
-                +51 943 366 950
+                +51 905 454 792
               </a>
               <a
                 href="mailto:contacto@romaabogados.pe"

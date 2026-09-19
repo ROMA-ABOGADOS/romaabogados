@@ -79,7 +79,7 @@ export function WhatsAppModal() {
                   </div>
                   <div>
                     <h3 className="font-bold text-white text-lg leading-snug">Consulta Legal y Tributaria</h3>
-                    <p className="text-white/80 text-xs sm:text-sm">ROMA & ABOGADOS • +51 943 366 950</p>
+                    <p className="text-white/80 text-xs sm:text-sm">ROMA & ABOGADOS • +51 905 454 792</p>
                   </div>
                 </div>
                 <button
@@ -176,7 +176,7 @@ export function WhatsAppModal() {
                 </Button>
 
                 <p className="text-xs text-center text-gray-500">
-                  Se abrirá WhatsApp directamente con el número oficial <strong className="text-[#2b4b38]">+51 943 366 950</strong> y su consulta prellenada.
+                  Se abrirá WhatsApp directamente con el número oficial <strong className="text-[#2b4b38]">+51 905 454 792</strong> y su consulta prellenada.
                 </p>
               </div>
             </div>

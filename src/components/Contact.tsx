@@ -10,7 +10,7 @@ const contactInfo = [
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    detail: "+51 943 366 950",
+    detail: "+51 905 454 792",
     description: "Respuesta inmediata",
     color: "text-whatsapp",
     bg: "bg-whatsapp/10",
@@ -68,7 +68,7 @@ Email: ${formData.email}
 Servicio de interés: ${serviceName}
 Mensaje: ${formData.message}`;
 
-    const url = `https://api.whatsapp.com/send?phone=51943366950&text=${encodeURIComponent(message)}`;
+    const url = `https://api.whatsapp.com/send?phone=51905454792&text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   }
 
@@ -211,7 +211,7 @@ Mensaje: ${formData.message}`;
               className="w-full bg-navy hover:bg-navy-light text-white rounded-xl p-5 flex items-center justify-center gap-3 font-semibold transition-all shadow-md hover:shadow-lg"
             >
               <MessageCircle className="w-5 h-5" />
-              Consultoría Gratuita
+              Agendar una Consulta
             </button>
           </motion.div>
         </div>

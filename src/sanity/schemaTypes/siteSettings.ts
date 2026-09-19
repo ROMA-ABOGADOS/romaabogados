@@ -21,13 +21,13 @@ export const siteSettings = defineType({
       name: 'phone',
       title: 'Teléfono Principal',
       type: 'string',
-      initialValue: '+51 943 366 950',
+      initialValue: '+51 905 454 792',
     }),
     defineField({
       name: 'whatsapp',
       title: 'Número de WhatsApp (solo números con código país)',
       type: 'string',
-      initialValue: '51943366950',
+      initialValue: '51905454792',
     }),
     defineField({
       name: 'email',
