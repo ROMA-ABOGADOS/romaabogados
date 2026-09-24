@@ -64,7 +64,7 @@ export function Header() {
         className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-300 ease-in-out ${
           scrolled
             ? "header-scrolled bg-white/95 backdrop-blur-md border-b border-[#2b4b38]/10 shadow-[0_4px_25px_rgba(0,0,0,0.05)]"
-            : "header-hero bg-[#1e3527]/95 backdrop-blur-md border-b border-white/10"
+            : "header-hero bg-black/20 backdrop-blur-md border-b border-white/10"
         }`}
       >
         {/* Brand gradient line */}
@@ -88,11 +88,11 @@ export function Header() {
               }}
               className="relative flex items-center shrink-0 z-10 group h-10 sm:h-11 md:h-12 w-[180px] sm:w-[220px] md:w-[250px]"
             >
-              {/* Logo sobre fondo verde (letras blancas + dorado) */}
+              {/* Logo sobre fondo oscuro/video (letras blancas + dorado, fondo transparente) */}
               <img
-                src="/logo-verde.png"
+                src="/logo-white.png"
                 alt="ROMA & ABOGADOS - Tributario, Laboral & Empresarial"
-                className={`absolute inset-0 h-full w-auto object-contain transition-opacity duration-300 ease-in-out ${
+                className={`absolute inset-0 h-full w-auto object-contain object-left transition-opacity duration-300 ease-in-out ${
                   scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
                 }`}
               />
@@ -100,7 +100,7 @@ export function Header() {
               <img
                 src="/logo.png"
                 alt="ROMA & ABOGADOS - Tributario, Laboral & Empresarial"
-                className={`absolute inset-0 h-full w-auto object-contain transition-opacity duration-300 ease-in-out ${
+                className={`absolute inset-0 h-full w-auto object-contain object-left transition-opacity duration-300 ease-in-out ${
                   scrolled ? "opacity-100" : "opacity-0 pointer-events-none"
                 }`}
               />

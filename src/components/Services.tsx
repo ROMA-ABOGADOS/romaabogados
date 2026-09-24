@@ -1,113 +1,70 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Scale, Briefcase, Calculator, Building2, ArrowRight, CheckCircle2 } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { Scale, Briefcase, Building2, Calculator, ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { useSanityDocument } from "@/sanity/useSanity";
-import { homePageQuery } from "@/sanity/queries";
 
 const serviceCards = [
   {
     icon: Scale,
-    title: "DERECHO TRIBUTARIO",
-    badge: "Defensa & Planeamiento Fiscal",
-    description: "Defensa especializada ante fiscalizaciones de SUNAT, cartas inductivas y recursos en el Tribunal Fiscal.",
-    points: [
-      "Atención a fiscalizaciones y cartas inductivas SUNAT",
-      "Apelaciones y quejas ante el Tribunal Fiscal",
-      "Suspensión legal de cobranzas coactivas y embargos",
-    ],
+    title: "Derecho Tributario",
+    tag: "SUNAT & Tribunal Fiscal",
+    image: "/images/areas/tributario.webp",
+    description:
+      "Defensa especializada ante fiscalizaciones de SUNAT, cartas inductivas, apelaciones y suspensión de cobranzas coactivas.",
     href: "/defensa-tributaria-sunat",
-    serviceId: 5,
   },
   {
     icon: Briefcase,
-    title: "DERECHO LABORAL",
-    badge: "Preventivo & SUNAFIL",
-    description: "Auditorías de cumplimiento laboral y patrocinio legal preventivo para blindar la relación con tus colaboradores.",
-    points: [
-      "Compliance laboral, comités SST y reglamentos",
-      "Inspecciones y comparecencias ante la SUNAFIL",
-      "Defensa en litigios laborales bajo la NLPT",
-    ],
+    title: "Derecho Laboral",
+    tag: "SUNAFIL & Compliance",
+    image: "/images/areas/laboral.webp",
+    description:
+      "Auditorías preventivas de cumplimiento laboral, comités SST, comparecencias ante SUNAFIL y defensa judicial en la NLPT.",
     href: "/derecho-laboral",
-    serviceId: 8,
   },
   {
     icon: Building2,
-    title: "DERECHO EMPRESARIAL",
-    badge: "Corporativo & Societario",
-    description: "Estructuración jurídica integral, formalización societaria y gobierno corporativo para decisiones seguras.",
-    points: [
-      "Constitución ágil de empresas (SAC, SRL, EIRL)",
-      "Contratos comerciales y reorganizaciones societarias",
-      "Blindaje patrimonial y acuerdos de accionistas",
-    ],
+    title: "Derecho Corporativo",
+    tag: "Sociedades & Contratos",
+    image: "/images/areas/empresarial.webp",
+    description:
+      "Constitución estratégica de sociedades (SAC, SRL, EIRL), redacción de contratos mercantiles y gobierno corporativo.",
     href: "/constitucion-de-empresas",
-    serviceId: 1,
   },
   {
     icon: Calculator,
-    title: "OUTSOURCING CONTABLE",
-    badge: "Planillas & Tributación",
-    description: "Gestión contable integral y nóminas laborales bajo estricta supervisión técnica y respaldo jurídico permanente.",
-    points: [
-      "Teneduría de libros contables y conciliaciones bancarias",
-      "Liquidación mensual de impuestos y DJ Anual SUNAT",
-      "Elaboración de planillas PLAME, T-Registro y boletas",
-    ],
+    title: "Outsourcing Contable",
+    tag: "Planillas & Gestión Fiscal",
+    image: "/images/areas/contabilidad.webp",
+    description:
+      "Gestión contable integral, liquidación mensual de impuestos, libros electrónicos y planillas PLAME con supervisión legal.",
     href: "/contabilidad-tributacion",
-    serviceId: 4,
   },
 ];
 
 export function Services() {
-  const { ref, isVisible } = useScrollAnimation(0.05);
-  const sanityHome = useSanityDocument<any>(homePageQuery, null);
-
-  const servicesSection = sanityHome?.servicesSection;
-  const badge = servicesSection?.badge || "Áreas de Práctica";
-  const title =
-    servicesSection?.title && servicesSection.title !== "¿Por qué elegir ROMA & ABOGADOS?"
-      ? servicesSection.title
-      : "Especialización Jurídica y Empresarial";
-  const subtitle =
-    servicesSection?.subtitle ||
-    "Soluciones jurídicas y contables estratégicas para proteger el patrimonio y asegurar la continuidad operativa de tu empresa.";
-
   return (
-    <section id="servicios" className="py-20 lg:py-28 bg-[#FAFBF9]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={ref} className="text-center max-w-3xl mx-auto mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
-            className="inline-block text-[#fa9b0c] font-bold text-sm tracking-wider uppercase mb-3"
-          >
-            {badge}
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b4b38]"
-          >
-            {title}
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-4 text-base sm:text-lg text-[#42604e] leading-relaxed"
-          >
-            {subtitle}
-          </motion.p>
-        </div>
+    <section id="areas" className="py-20 lg:py-28 bg-[#FAFBF9] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header — Clean & Minimalist */}
+        <ScrollReveal>
+          <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
+            <span className="inline-block text-[#fa9b0c] font-bold text-xs tracking-[0.22em] uppercase mb-3">
+              Especialistas en cada área legal
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#2b4b38] leading-[1.18]">
+              Nuestras Áreas
+            </h2>
+            <div className="w-16 h-0.5 bg-[#fa9b0c] mx-auto mt-4 mb-4" />
+            <p className="text-[#42604e] text-sm sm:text-base leading-relaxed font-light">
+              Soluciones jurídicas y contables estratégicas diseñadas para blindar y potenciar las operaciones de tu empresa.
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-7 lg:gap-8">
+        {/* 4 Cards Grid — Minimalist, Clean, Background Images via CSS (no broken image icons) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
           {serviceCards.map((card, i) => {
             const Icon = card.icon;
             return (
@@ -119,48 +76,66 @@ export function Services() {
               >
                 <Link
                   href={card.href}
-                  className="service-card bg-white rounded-2xl p-8 sm:p-9 flex flex-col justify-between h-full cursor-pointer group border border-[#2b4b38]/10 hover:border-[#fa9b0c]/40 shadow-[0_8px_30px_-5px_rgba(43,75,56,0.05)] hover:shadow-[0_20px_45px_-5px_rgba(43,75,56,0.12)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+                  className="group relative h-[420px] sm:h-[450px] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-end border border-[#2b4b38]/15 bg-[#192f21] block"
+                  style={{
+                    backgroundImage: `url(${card.image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
                 >
-                  {/* Subtle top gold line on hover */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Dark Gradient Overlay for perfect readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0e1a11] via-[#14261a]/80 to-black/30 group-hover:via-[#102015]/88 transition-colors duration-500" />
 
-                  <div>
-                    <div className="flex items-center justify-between mb-5">
-                      <div className="w-12 h-12 rounded-xl bg-[#2b4b38]/5 flex items-center justify-center text-[#2b4b38] group-hover:bg-[#fa9b0c]/15 group-hover:text-[#fa9b0c] transition-all duration-300">
-                        <Icon className="w-6 h-6" strokeWidth={1.8} />
-                      </div>
-                      <span className="text-xs font-semibold uppercase tracking-wider text-[#fa9b0c] bg-[#fa9b0c]/10 px-3 py-1 rounded-full">
-                        {card.badge}
+                  {/* Top Subtle Gold Accent Line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+
+                  {/* Top Circle Icon Badge */}
+                  <div className="absolute top-6 right-6 z-20">
+                    <div className="w-12 h-12 rounded-full bg-[#1e3527]/90 backdrop-blur-md border border-white/20 flex items-center justify-center text-[#fa9b0c] shadow-lg group-hover:bg-[#fa9b0c] group-hover:text-[#1e3527] group-hover:scale-105 transition-all duration-300">
+                      <Icon className="w-5 h-5" strokeWidth={1.8} />
+                    </div>
+                  </div>
+
+                  {/* Content Container — Minimalist & Clean */}
+                  <div className="relative z-10 p-6 sm:p-7 flex flex-col justify-end">
+                    {/* Tag badge */}
+                    <div className="mb-2">
+                      <span className="inline-block px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[#fa9b0c] text-[11px] font-bold uppercase tracking-wider">
+                        {card.tag}
                       </span>
                     </div>
 
-                    <h3 className="font-serif text-2xl font-normal text-[#2b4b38] mb-2.5 group-hover:text-[#1e3527] transition-colors">
+                    {/* Area Title */}
+                    <h3 className="font-serif text-2xl text-white font-normal leading-snug mb-2.5 group-hover:text-[#fa9b0c] transition-colors">
                       {card.title}
                     </h3>
-                    <p className="text-[#42604e] leading-relaxed text-[14.5px] mb-5">
+
+                    {/* Short Strategic 1-sentence Description */}
+                    <p className="text-white/85 text-xs sm:text-[13px] leading-relaxed font-light mb-5">
                       {card.description}
                     </p>
 
-                    <ul className="space-y-2 mb-6 pt-4 border-t border-[#2b4b38]/10">
-                      {card.points.map((pt) => (
-                        <li key={pt} className="flex items-start gap-2.5 text-[13.5px] text-[#2b4b38] font-medium leading-snug">
-                          <CheckCircle2 className="w-4 h-4 text-[#fa9b0c] shrink-0 mt-0.5" />
-                          <span>{pt}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="pt-4 border-t border-[#2b4b38]/10 flex items-center justify-between">
-                    <span className="text-sm font-semibold text-[#2b4b38] group-hover:text-[#fa9b0c] transition-colors inline-flex items-center gap-1.5">
-                      Conocer Especialidad
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
-                    </span>
+                    {/* Action link */}
+                    <div className="pt-3 border-t border-white/15 flex items-center gap-2 text-xs font-semibold text-[#fa9b0c] group-hover:text-white transition-colors">
+                      <span>Conocer Especialidad</span>
+                      <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1.5 transition-transform" />
+                    </div>
                   </div>
                 </Link>
               </ScrollReveal>
             );
           })}
+        </div>
+
+        {/* Bottom Button */}
+        <div className="mt-12 sm:mt-14 text-center">
+          <Link
+            href="/nosotros-contacto"
+            className="inline-flex items-center justify-center gap-2.5 bg-[#2b4b38] hover:bg-[#1e3527] text-white px-7 py-3.5 rounded-xl text-sm font-semibold tracking-wide transition-all shadow-md hover:shadow-lg active:scale-[0.98] border border-[#2b4b38]/20"
+          >
+            <span>Conoce Todas Nuestras Áreas</span>
+            <ArrowRight className="w-4 h-4 text-[#fa9b0c]" />
+          </Link>
         </div>
       </div>
     </section>

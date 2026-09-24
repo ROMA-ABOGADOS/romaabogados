@@ -43,7 +43,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-5 group">
               <img
-                src="/logo-verde.png"
+                src="/logo-footer.png"
                 alt="ROMA & ABOGADOS"
                 className="h-12 w-auto object-contain"
               />

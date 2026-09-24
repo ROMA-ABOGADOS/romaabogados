@@ -555,10 +555,10 @@ html.mobile-menu-open .whatsapp-float {
   height: 100%;
   z-index: 0;
   background-color: #1e3527;
-  background-image: 
-    radial-gradient(circle at 85% 25%, rgba(250, 155, 12, 0.14) 0%, transparent 45%),
-    radial-gradient(circle at 20% 75%, rgba(66, 96, 78, 0.25) 0%, transparent 50%),
-    linear-gradient(145deg, #1e3527 0%, #2b4b38 50%, #15251b 100%);
+  background-image: url('/images/hero/roma-hero-desk-clean.webp');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
   will-change: opacity;
@@ -568,40 +568,21 @@ html.mobile-menu-open .whatsapp-float {
   opacity: 1;
 }
 
-/* Slide 0: Tributario */
+/* Slide backgrounds with subtle color grading */
 .hero-slide-bg[data-slide="0"] {
-  background-image: 
-    radial-gradient(circle at 80% 25%, rgba(250, 155, 12, 0.16) 0%, transparent 50%),
-    radial-gradient(circle at 20% 75%, rgba(66, 96, 78, 0.3) 0%, transparent 50%),
-    linear-gradient(145deg, #1e3527 0%, #2b4b38 55%, #15251b 100%);
+  background-image: url('/images/hero/roma-hero-desk-clean.webp');
 }
-/* Slide 1: Laboral */
 .hero-slide-bg[data-slide="1"] {
-  background-image: 
-    radial-gradient(circle at 75% 30%, rgba(237, 163, 64, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 25% 70%, rgba(43, 75, 56, 0.35) 0%, transparent 50%),
-    linear-gradient(145deg, #182c20 0%, #2b4b38 50%, #15251b 100%);
+  background-image: url('/images/hero/roma-hero-desk-clean.webp');
 }
-/* Slide 2: Contable */
 .hero-slide-bg[data-slide="2"] {
-  background-image: 
-    radial-gradient(circle at 80% 20%, rgba(250, 155, 12, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 15% 85%, rgba(66, 96, 78, 0.25) 0%, transparent 50%),
-    linear-gradient(145deg, #1e3527 0%, #244131 55%, #132118 100%);
+  background-image: url('/images/hero/roma-hero-desk-clean.webp');
 }
-/* Slide 3: Empresarial */
 .hero-slide-bg[data-slide="3"] {
-  background-image: 
-    radial-gradient(circle at 70% 35%, rgba(250, 155, 12, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 30% 65%, rgba(66, 96, 78, 0.3) 0%, transparent 50%),
-    linear-gradient(145deg, #1e3527 0%, #2b4b38 50%, #15251b 100%);
+  background-image: url('/images/hero/roma-hero-desk-clean.webp');
 }
-/* Slide 4: Quiénes Somos */
 .hero-slide-bg[data-slide="4"] {
-  background-image: 
-    radial-gradient(circle at 85% 25%, rgba(237, 163, 64, 0.16) 0%, transparent 50%),
-    radial-gradient(circle at 15% 75%, rgba(43, 75, 56, 0.35) 0%, transparent 50%),
-    linear-gradient(145deg, #1c3224 0%, #2b4b38 55%, #132118 100%);
+  background-image: url('/images/hero/roma-hero-desk-clean.webp');
 }
 
 /* ─── Progress bar — 4s linear fill ─── */
