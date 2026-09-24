@@ -8,14 +8,27 @@ export function Hero() {
 
   return (
     <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-end items-center overflow-hidden bg-[#101e14] text-white">
-      {/* ═══ Background Video (WebM + MP4) Remastered 1080p — PROTAGONISTA ═══ */}
+      {/* ═══ Background Video Mobile (Vertical 9:16) ═══ */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster="/videos/hero-poster-mobile.webp"
+        className="absolute inset-0 w-full h-full object-cover z-0 block md:hidden"
+      >
+        <source src="/videos/hero-roma-mobile.webm" type="video/webm" />
+        <source src="/videos/hero-roma-mobile.mp4" type="video/mp4" />
+      </video>
+
+      {/* ═══ Background Video Desktop (Horizontal 16:9) ═══ */}
       <video
         autoPlay
         loop
         muted
         playsInline
         poster="/videos/hero-poster.webp"
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute inset-0 w-full h-full object-cover z-0 hidden md:block"
       >
         <source src="/videos/hero-roma.webm" type="video/webm" />
         <source src="/videos/hero-roma.mp4" type="video/mp4" />
