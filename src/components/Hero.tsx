@@ -31,13 +31,18 @@ export function Hero() {
       }
     };
 
-    startVideo(mobileVideoRef.current);
-    startVideo(desktopVideoRef.current);
+    // Only start the active video depending on viewport to optimize bandwidth and decoder
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+    if (isMobile) {
+      startVideo(mobileVideoRef.current);
+    } else {
+      startVideo(desktopVideoRef.current);
+    }
   }, []);
 
   return (
     <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-end items-center overflow-hidden bg-[#101e14] text-white">
-      {/* ═══ Background Video Mobile (Vertical 9:16 / 9:20) ═══ */}
+      {/* ═══ Background Video Mobile (Vertical 9:16 / 9:20 Remastered) ═══ */}
       <video
         ref={mobileVideoRef}
         autoPlay
@@ -48,11 +53,10 @@ export function Hero() {
         poster="/videos/hero-poster-mobile.webp"
         className="absolute inset-0 w-full h-full object-cover z-0 block md:hidden"
       >
-        <source src="/videos/hero-roma-mobile.webm" type="video/webm" />
-        <source src="/videos/hero-roma-mobile.mp4" type="video/mp4" />
+        <source src="/videos/hero-roma-mobile.mp4?v=4" type="video/mp4" />
       </video>
 
-      {/* ═══ Background Video Desktop (Horizontal 16:9) ═══ */}
+      {/* ═══ Background Video Desktop (Horizontal 16:9 Remastered) ═══ */}
       <video
         ref={desktopVideoRef}
         autoPlay
@@ -63,8 +67,8 @@ export function Hero() {
         poster="/videos/hero-poster.webp"
         className="absolute inset-0 w-full h-full object-cover z-0 hidden md:block"
       >
-        <source src="/videos/hero-roma.webm" type="video/webm" />
-        <source src="/videos/hero-roma.mp4" type="video/mp4" />
+        <source src="/videos/hero-roma.mp4?v=4" type="video/mp4" />
+        <source src="/videos/hero-roma.webm?v=4" type="video/webm" />
       </video>
 
       {/* ═══ Invisible SEO Anchor (Google & Accessibility) ═══ */}
