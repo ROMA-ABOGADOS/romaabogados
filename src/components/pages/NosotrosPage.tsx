@@ -23,9 +23,10 @@ interface TeamMember {
   name: string;
   role: string;
   area: string;
-  education: string;
-  experience: string;
-  highlights: string[];
+  education?: string;
+  experience?: string;
+  bullets?: string[];
+  highlights?: string[];
   image?: string;
 }
 
@@ -45,28 +46,25 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Estefanía Pineda",
-    role: "Asociada Senior",
-    area: "Derecho Tributario & Litigio Fiscal",
+    role: "Abogada Asociada",
+    area: "Derecho Procesal · Derecho Constitucional · Derecho Civil",
     image: "/images/team/estefania-pineda.webp",
-    education: "Abogada especialista en litigio tributario. Maestría en Tributación y Política Fiscal.",
-    experience: "Extensa trayectoria en defensa ante fiscalizaciones SUNAT, recursos contenciosos ante el Tribunal Fiscal y demandas judiciales.",
-    highlights: [
-      "Maestría en Tributación y Política Fiscal",
-      "Especialista en Reclamaciones y Apelaciones TF",
-      "Defensa en Fiscalizaciones Complejas",
+    bullets: [
+      "Abogada del Colegio de Abogados de Lima, egresada de la Universidad San Martín de Porres (USMP) con Especialidad en Derecho Civil y Patrimonial.",
+      "Amplia experiencia de más de 6 años en el patrocinio de controversias tributarios, civiles, constitucionales y comerciales (judiciales y extrajudiciales).",
+      "Desempeño específico en el área Procesal Tributario, Civil, análisis de controversias y solución de conflictos, redacción de demandas y todo tipo de escritos judiciales (etapa judicial) y extrajudiciales (etapa conciliatoria), así como el manejo de plataformas del Poder Judicial.",
     ],
   },
   {
     name: "Alonso Silva",
-    role: "Asociado",
-    area: "Derecho Laboral & Relaciones Laborales",
+    role: "Egresado de Derecho",
+    area: "Derecho Tributario · Derecho Empresarial",
     image: "/images/team/alonso-silva.webp",
-    education: "Abogado especialista en relaciones laborales y normativa de trabajo.",
-    experience: "Experto en inspecciones ante SUNAFIL, auditorías de compliance laboral, comités SST y litigios laborales orales bajo la NLPT.",
-    highlights: [
-      "Especialista en Inspecciones SUNAFIL",
-      "Auditorías de Compliance Laboral y SST",
-      "Patrocinio en la Nueva Ley Procesal del Trabajo",
+    bullets: [
+      "Egresado de Derecho Empresarial de la Facultad de Derecho de la Universidad de San Martín de Porres, con especialidad en Derecho Tributario y Derecho Aduanero, experiencia en resolución de controversias y litigios tributarios en sede administrativa y judicial.",
+      "Pertenece al Décimo Superior de su promoción y actualmente es Ayudante de Cátedra en el curso de Jurisprudencia Tributaria del ciclo 11 de la Especialidad de Derecho Empresarial de la USMP.",
+      "Miembro del Centro de Estudios en Derecho Administrativo (CEDA) y del Centro de Estudios de Comercio Exterior y Derecho Aduanero (CECEDA) de la Universidad de San Martín de Porres, habiendo publicado investigaciones como parte del primero en diversas materias vinculados a controversias administrativas y judiciales.",
+      "Reconocimientos por parte de la Universidad de San Martín de Porres por la realización de un trabajo de investigación en el 2024 y del Foro Iberoamericano de Derecho Administrativo (FIDA), participante del II Semillero Internacional de Derecho Administrativo realizado en San José de Costa Rica.",
     ],
   },
   {
@@ -401,18 +399,37 @@ export function NosotrosPage() {
                     </div>
                   )}
 
-                  <p className="text-xs font-bold text-[#2b4b38] uppercase tracking-wider mb-1.5">Formación y Trayectoria</p>
-                  <p className="text-sm text-[#42604e] leading-relaxed mb-3 font-light">{member.education}</p>
-                  <p className="text-sm text-[#42604e] leading-relaxed mb-6 font-light">{member.experience}</p>
+                  <p className="text-xs font-bold text-[#2b4b38] uppercase tracking-wider mb-2.5">Formación y Trayectoria</p>
+                  {member.bullets && member.bullets.length > 0 ? (
+                    <div className="space-y-3 mb-4">
+                      {member.bullets.map((bullet, bi) => (
+                        <div key={bi} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#42604e] leading-relaxed font-light">
+                          <CheckCircle2 className="w-4 h-4 text-[#fa9b0c] shrink-0 mt-0.5" />
+                          <span>{bullet}</span>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <>
+                      {member.education && (
+                        <p className="text-sm text-[#42604e] leading-relaxed mb-3 font-light">{member.education}</p>
+                      )}
+                      {member.experience && (
+                        <p className="text-sm text-[#42604e] leading-relaxed mb-6 font-light">{member.experience}</p>
+                      )}
+                    </>
+                  )}
 
-                  <div className="pt-4 border-t border-[#2b4b38]/10 space-y-2.5">
-                    {member.highlights.map((hl) => (
-                      <div key={hl} className="flex items-center gap-2.5 text-xs font-medium text-[#2b4b38]">
-                        <CheckCircle2 className="w-4 h-4 text-[#fa9b0c] shrink-0" />
-                        <span>{hl}</span>
-                      </div>
-                    ))}
-                  </div>
+                  {member.highlights && member.highlights.length > 0 && (
+                    <div className="pt-4 border-t border-[#2b4b38]/10 space-y-2.5">
+                      {member.highlights.map((hl) => (
+                        <div key={hl} className="flex items-center gap-2.5 text-xs font-medium text-[#2b4b38]">
+                          <CheckCircle2 className="w-4 h-4 text-[#fa9b0c] shrink-0" />
+                          <span>{hl}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </ScrollReveal>
             ))}

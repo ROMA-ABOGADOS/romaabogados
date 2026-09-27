@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -18,14 +18,37 @@ const navItems = [
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const pathname = usePathname();
   const { openModal } = useWhatsAppStore();
+  const lastScrollYRef = useRef(0);
 
   useEffect(() => {
     function handleScroll() {
-      setIsScrolled(window.scrollY > 40);
+      const currentScrollY = window.scrollY;
+      const lastScrollY = lastScrollYRef.current;
+      const isScrollingDown = currentScrollY > lastScrollY;
+      const diff = Math.abs(currentScrollY - lastScrollY);
+
+      setIsScrolled(currentScrollY > 60);
+
+      if (currentScrollY <= 40) {
+        // En la parte superior siempre visible
+        setIsVisible(true);
+      } else if (diff > 8) {
+        if (isScrollingDown && currentScrollY > 120) {
+          // Al hacer scroll hacia abajo, ocultar menú
+          setIsVisible(false);
+        } else if (!isScrollingDown) {
+          // Al subir scroll, reaparecer menú
+          setIsVisible(true);
+        }
+      }
+
+      lastScrollYRef.current = currentScrollY;
     }
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
@@ -56,20 +79,29 @@ export function Header() {
     return pathname.startsWith(href);
   }
 
+  const isHomePage = pathname === "/";
   const scrolled = isScrolled;
+  // En el inicio (hero) se oculta el logo para no duplicar con el video; al hacer scroll aparece
+  const showLogo = !isHomePage || scrolled;
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-all duration-300 ease-in-out ${
+          isVisible || isMobileOpen ? "translate-y-0" : "-translate-y-full"
+        } ${
           scrolled
             ? "header-scrolled bg-white/95 backdrop-blur-md border-b border-[#2b4b38]/10 shadow-[0_4px_25px_rgba(0,0,0,0.05)]"
-            : "header-hero bg-black/20 backdrop-blur-md border-b border-white/10"
+            : isHomePage
+              ? "header-hero bg-transparent border-b border-transparent shadow-none"
+              : "header-hero bg-black/20 backdrop-blur-md border-b border-white/10"
         }`}
       >
-        {/* Brand gradient line */}
+        {/* Línea de acento institucional */}
         <div
-          className="w-full h-[3.5px] transition-opacity duration-300"
+          className={`w-full h-[3px] transition-opacity duration-300 ${
+            !scrolled && isHomePage ? "opacity-0" : "opacity-100"
+          }`}
           style={{
             background: 'linear-gradient(90deg, #2b4b38 0%, #fa9b0c 50%, #42604e 100%)',
           }}
@@ -78,7 +110,7 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-2 sm:py-2.5">
 
-            {/* ── Logo Principal: ROMA & ABOGADOS (Crossfade sincronizado 300ms) ── */}
+            {/* ── Logo Principal: Oculto en el hero de Inicio para no duplicar, visible al scroll ── */}
             <Link
               href="/"
               onClick={() => {
@@ -86,9 +118,13 @@ export function Header() {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }
               }}
-              className="relative flex items-center shrink-0 z-10 group h-10 sm:h-11 md:h-12 w-[180px] sm:w-[220px] md:w-[250px]"
+              className={`relative flex items-center shrink-0 z-10 group h-10 sm:h-11 md:h-12 w-[180px] sm:w-[220px] md:w-[250px] transition-all duration-300 ease-in-out ${
+                showLogo
+                  ? "opacity-100 scale-100 pointer-events-auto"
+                  : "opacity-0 scale-95 pointer-events-none"
+              }`}
             >
-              {/* Logo sobre fondo oscuro/video (letras blancas + dorado, fondo transparente) */}
+              {/* Logo sobre fondo oscuro/video */}
               <img
                 src="/logo-white.png"
                 alt="ROMA & ABOGADOS - Tributario, Laboral & Empresarial"
@@ -96,7 +132,7 @@ export function Header() {
                   scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
                 }`}
               />
-              {/* Logo sobre fondo blanco (letras oscuras + dorado) */}
+              {/* Logo sobre fondo blanco */}
               <img
                 src="/logo.png"
                 alt="ROMA & ABOGADOS - Tributario, Laboral & Empresarial"
@@ -106,7 +142,7 @@ export function Header() {
               />
             </Link>
 
-            {/* ── Desktop Nav ── */}
+            {/* ── Desktop Nav (Elementos resaltados en rojo) ── */}
             <nav className="hidden xl:flex items-center gap-1">
               {navItems.map((item) => (
                 <Link
@@ -123,8 +159,8 @@ export function Header() {
                         ? "text-[#2b4b38]"
                         : "text-[#2b4b38]/80 hover:text-[#fa9b0c]"
                       : isActive(item.href)
-                        ? "text-[#fa9b0c]"
-                        : "text-white/90 hover:text-[#fa9b0c]"
+                        ? "text-[#fa9b0c] drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
+                        : "text-white/95 hover:text-[#fa9b0c] drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
                   }`}
                 >
                   {item.label}
@@ -138,7 +174,7 @@ export function Header() {
                 className={`ml-2 px-4 py-2.5 rounded-xl text-[13px] font-bold tracking-wide transition-all duration-300 shadow-sm hover:shadow-md ${
                   scrolled
                     ? "bg-[#2b4b38] hover:bg-[#1e3527] text-white border border-[#fa9b0c]/40"
-                    : "bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] shadow-lg shadow-[#fa9b0c]/25 active:scale-[0.98]"
+                    : "bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] shadow-lg shadow-black/40 hover:scale-105 active:scale-[0.98] cursor-pointer"
                 }`}
               >
                 Agendar una Consulta
@@ -151,7 +187,7 @@ export function Header() {
               className={`xl:hidden relative z-10 flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-300 ${
                 scrolled
                   ? "text-[#2b4b38] hover:bg-[#2b4b38]/5"
-                  : "text-white hover:bg-white/10"
+                  : "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] hover:bg-white/10"
               }`}
               aria-label="Menú de navegación"
             >

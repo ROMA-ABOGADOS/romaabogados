@@ -1,19 +1,50 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useWhatsAppStore } from "@/lib/whatsapp";
 import { MessageCircle, ArrowDown } from "lucide-react";
 
 export function Hero() {
   const { openModal } = useWhatsAppStore();
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const startVideo = (video: HTMLVideoElement | null) => {
+      if (!video) return;
+      video.defaultMuted = true;
+      video.muted = true;
+      video.playsInline = true;
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          const resume = () => {
+            video.play().catch(() => {});
+            window.removeEventListener("touchstart", resume);
+            window.removeEventListener("click", resume);
+            window.removeEventListener("scroll", resume);
+          };
+          window.addEventListener("touchstart", resume, { once: true, passive: true });
+          window.addEventListener("click", resume, { once: true, passive: true });
+          window.addEventListener("scroll", resume, { once: true, passive: true });
+        });
+      }
+    };
+
+    startVideo(mobileVideoRef.current);
+    startVideo(desktopVideoRef.current);
+  }, []);
 
   return (
     <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-end items-center overflow-hidden bg-[#101e14] text-white">
-      {/* ═══ Background Video Mobile (Vertical 9:16) ═══ */}
+      {/* ═══ Background Video Mobile (Vertical 9:16 / 9:20) ═══ */}
       <video
+        ref={mobileVideoRef}
         autoPlay
         loop
         muted
         playsInline
+        preload="auto"
         poster="/videos/hero-poster-mobile.webp"
         className="absolute inset-0 w-full h-full object-cover z-0 block md:hidden"
       >
@@ -23,10 +54,12 @@ export function Hero() {
 
       {/* ═══ Background Video Desktop (Horizontal 16:9) ═══ */}
       <video
+        ref={desktopVideoRef}
         autoPlay
         loop
         muted
         playsInline
+        preload="auto"
         poster="/videos/hero-poster.webp"
         className="absolute inset-0 w-full h-full object-cover z-0 hidden md:block"
       >

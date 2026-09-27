@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, ArrowUp, Video, Phone, Mail, MapPin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, ArrowUp, Phone, Mail, MapPin } from "lucide-react";
 
 const quickLinks = [
   { label: "Inicio", href: "/" },
@@ -20,15 +20,22 @@ const serviceLinks = [
   { label: "Derecho Corporativo & Societario", href: "/constitucion-de-empresas#ejes-empresariales" },
   { label: "Constitución y Formalización de Empresas", href: "/constitucion-de-empresas#ejes-empresariales" },
   { label: "Outsourcing Contable Integral", href: "/contabilidad-tributacion#ejes-contables" },
-  { label: "Gestión de Planillas PLAME", href: "/contabilidad-tributacion#ejes-contables" },
 ];
 
 const socialLinks = [
   { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
   { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
   { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Video, href: "https://tiktok.com", label: "TikTok" },
+  { icon: TikTokIcon, href: "https://tiktok.com", label: "TikTok" },
 ];
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.49 6.27 6.27 0 0 0 1.88-4.49V8.78a8.28 8.28 0 0 0 4.84 1.55v-3.5a4.84 4.84 0 0 1-.95-.14z" />
+    </svg>
+  );
+}
 
 export function Footer() {
   function scrollToTop() {
@@ -41,18 +48,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-5 group">
+            <Link href="/" className="inline-block mb-4 group">
               <img
                 src="/logo-footer.png"
                 alt="ROMA & ABOGADOS"
                 className="h-12 w-auto object-contain"
               />
             </Link>
-            <p className="text-white/80 text-sm leading-relaxed">
-              Firma de profesionales especializada en asesoría tributaria, laboral y empresarial. 
-              Soluciones jurídicas eficientes, estratégicas y con más de 12 años de trayectoria comprobada.
-            </p>
-            <div className="mt-4 pt-3 border-t border-white/15 space-y-1.5">
+            <div className="pt-2 border-t border-white/15 space-y-1.5">
               <p className="text-white/60 text-xs uppercase tracking-wider font-semibold">Estudio Jurídico Especializado</p>
               <a
                 href="mailto:contacto@romaabogados.pe"
@@ -128,7 +131,6 @@ export function Footer() {
                 <MapPin className="w-4 h-4 text-[#fa9b0c] shrink-0" />
                 Lima, Perú (Atención Nacional)
               </div>
-              <p className="text-xs text-white/60 pt-1">Lunes a Viernes: 8:30 am - 6:30 pm</p>
             </div>
 
             <h4 className="font-bold text-xs uppercase tracking-wider text-[#fa9b0c] mb-3">
