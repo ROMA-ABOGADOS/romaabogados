@@ -63,10 +63,9 @@ export function generateWhatsAppURL(
   const message = `Hola *ROMA & ABOGADOS*.
 
 ⚖️ *Servicio de interés:* ${serviceName}
-📋 *Modalidad:* ${servicePrice}
 👤 *Nombre / Empresa:* ${name}
 ${notes.trim() ? `💬 *Consulta:* ${notes.trim()}\n` : ""}
-Solicito una consulta legal y propuesta estratégica.`;
+Solicito una asesoría tributaria.`;
 
   const encodedMessage = encodeURIComponent(message);
   return `https://api.whatsapp.com/send?phone=51905454792&text=${encodedMessage}`;

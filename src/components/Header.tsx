@@ -118,7 +118,7 @@ export function Header() {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }
               }}
-              className={`relative flex items-center shrink-0 z-10 group h-10 sm:h-11 md:h-12 w-[180px] sm:w-[220px] md:w-[250px] transition-all duration-300 ease-in-out ${
+              className={`relative flex items-center shrink-0 z-10 group h-11 sm:h-12 md:h-14 w-[200px] sm:w-[240px] md:w-[280px] transition-all duration-300 ease-in-out ${
                 showLogo
                   ? "opacity-100 scale-100 pointer-events-auto"
                   : "opacity-0 scale-95 pointer-events-none"

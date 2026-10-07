@@ -3,12 +3,10 @@
 import { SiteLayout } from "@/components/SiteLayout";
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
-import { ExperienciaComprobada } from "@/components/home/ExperienciaComprobada";
 import { AcercaDeNosotros } from "@/components/home/AcercaDeNosotros";
 import { PublicacionesRecientes } from "@/components/home/PublicacionesRecientes";
-import { FraseInstitucional } from "@/components/home/FraseInstitucional";
-import { NuestrasNoticias } from "@/components/home/NuestrasNoticias";
-import { SolicitarAsesoriaBanner } from "@/components/home/SolicitarAsesoriaBanner";
+import { TestimoniosHome } from "@/components/home/TestimoniosHome";
+import { UgazAsesoriaBanner } from "@/components/home/UgazAsesoriaBanner";
 import { useScrollSlug } from "@/hooks/use-scroll-slug";
 
 export default function Home() {
@@ -16,29 +14,23 @@ export default function Home() {
 
   return (
     <SiteLayout>
-      {/* 1. BANNER / SLIDER — Estudio Ugaz #banner ui-slider */}
+      {/* 1. HERO — Video Banner */}
       <Hero />
 
-      {/* 2. NUESTRAS ÁREAS — Estudio Ugaz ui-section--our-area with photographic cards & circular badges */}
+      {/* 2. NUESTRAS ÁREAS — Photographic cards */}
       <Services />
 
-      {/* 3. EXPERIENCIA COMPROBADA — Estudio Ugaz ui-section--experience with 4 big metric counters */}
-      <ExperienciaComprobada />
-
-      {/* 4. ACERCA DE NOSOTROS — Estudio Ugaz ui-section--about-us with partner portrait, Misión & Visión */}
+      {/* 3. ACERCA DE NOSOTROS — Partner portrait & authority text */}
       <AcercaDeNosotros />
 
-      {/* 5. PUBLICACIONES RECIENTES — Estudio Ugaz ui-section--publications with photographic editorial cards */}
+      {/* 4. PUBLICACIONES RECIENTES — 3 editorial publications */}
       <PublicacionesRecientes />
 
-      {/* 6. FRASE INSTITUCIONAL — Estudio Ugaz ui-sentence banner */}
-      <FraseInstitucional />
+      {/* 5. TESTIMONIOS — Updated client reviews */}
+      <TestimoniosHome />
 
-      {/* 7. NUESTRAS NOTICIAS & JURISPRUDENCIA — Estudio Ugaz ui-section--our-notices */}
-      <NuestrasNoticias />
-
-      {/* 8. SOLICITAR ASESORÍA — Estudio Ugaz ui-section--question */}
-      <SolicitarAsesoriaBanner />
+      {/* 6. SOLICITAR ASESORÍA — Estudio Ugaz inspired banner */}
+      <UgazAsesoriaBanner />
     </SiteLayout>
   );
 }

@@ -6,60 +6,53 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 
 const articles = [
   {
-    image: "/images/areas/tributario.jpg",
-    tag: "Derecho Tributario",
-    date: "15 de Septiembre",
-    title: "Fiscalizaciones Definitivas vs. Parciales de SUNAT: Estrategias de Defensa",
-    desc: "Análisis de plazos perentorios, requerimientos de fehaciencia y presentación de quejas ante el Tribunal Fiscal.",
+    image: "/images/areas/tributario.webp",
+    tag: "Código Tributario",
+    date: "Resolución del Tribunal Fiscal",
+    title: "CÓDIGO TRIBUTARIO",
+    desc: "Criterios vinculantes sobre plazos de fiscalización, notificación electrónica y prescripción tributaria.",
     href: "/defensa-tributaria-sunat",
   },
   {
-    image: "/images/areas/laboral.jpg",
-    tag: "Derecho Laboral",
-    date: "26 de Agosto",
-    title: "Inspecciones SUNAFIL: Protocolos de Cumplimiento, Comités y SST",
-    desc: "Obligaciones esenciales en materia de seguridad y salud en el trabajo para prevenir sanciones económicas severas.",
-    href: "/derecho-laboral",
+    image: "/images/areas/laboral.webp",
+    tag: "Impuesto a la Renta",
+    date: "Criterios Jurisprudenciales",
+    title: "RENTA",
+    desc: "Principio de causalidad, deducción de gastos empresariales, fehaciencia y bancarización ante SUNAT.",
+    href: "/defensa-tributaria-sunat",
   },
   {
-    image: "/images/areas/empresarial.jpg",
-    tag: "Derecho Corporativo",
-    date: "12 de Agosto",
-    title: "Reorganizaciones Societarias y Blindaje Patrimonial para Accionistas",
-    desc: "Claves jurídicas en fusiones, escisiones y convenios societarios para resguardar la gobernanza corporativa.",
-    href: "/constitucion-de-empresas",
-  },
-  {
-    image: "/images/areas/contabilidad.jpg",
-    tag: "Contabilidad & NIIF",
-    date: "31 de Julio",
-    title: "Cierre Contable Preventivo y Conciliación Fiscal de Causalidad",
-    desc: "Estrategias de teneduría y soporte documental bajo NIIF para evitar reparos de SUNAT en la DJ Anual.",
-    href: "/contabilidad-tributacion",
+    image: "/images/areas/empresarial.webp",
+    tag: "Impuesto General a las Ventas",
+    date: "Análisis Normativo",
+    title: "IGV",
+    desc: "Operaciones no reales, crédito fiscal y tratamiento de exportación de servicios y detracciones.",
+    href: "/defensa-tributaria-sunat",
   },
 ];
 
 export function PublicacionesRecientes() {
   return (
-    <section id="publicaciones" className="py-24 lg:py-32 bg-[#FAFBF9] relative overflow-hidden">
+    <section id="publicaciones" className="py-20 lg:py-24 bg-[#FAFBF9] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal>
-          <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
             <span className="inline-block text-[#fa9b0c] font-bold text-xs sm:text-sm tracking-[0.22em] uppercase mb-3">
               Análisis y opinión
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#2b4b38] leading-[1.18]">
               Publicaciones Recientes
             </h2>
-            <p className="mt-4 text-[#42604e] text-base sm:text-lg leading-relaxed font-light">
-              Criterios técnicos, resoluciones vinculantes y análisis estratégico para la toma de decisiones empresariales.
+            <div className="w-16 h-0.5 bg-[#fa9b0c] mx-auto mt-4 mb-4" />
+            <p className="mt-2 text-[#42604e] text-base sm:text-lg leading-relaxed font-light">
+              Criterios técnicos, resoluciones vinculantes y análisis tributario estratégico para la toma de decisiones empresariales.
             </p>
           </div>
         </ScrollReveal>
 
-        {/* 4 Cards Grid - Estudio Ugaz publication style */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
+        {/* 3 Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {articles.map((art, i) => (
             <ScrollReveal key={art.title} delay={0.08 * i} duration={0.6}>
               <Link

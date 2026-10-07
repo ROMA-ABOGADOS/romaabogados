@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Award, Compass, Target } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export function AcercaDeNosotros() {
@@ -29,20 +29,20 @@ export function AcercaDeNosotros() {
                 {/* Bottom Card Identity Info */}
                 <div className="absolute bottom-6 left-6 right-6 text-left">
                   <span className="inline-block px-3 py-1 rounded-full bg-[#fa9b0c] text-[#1e3527] text-xs font-bold uppercase tracking-wider mb-2">
-                    Dirección Legal & Tributaria
+                    Socio Principal
                   </span>
                   <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-tight">
                     Dr. Roberto Marca
                   </h3>
-                  <p className="text-white/80 text-xs sm:text-sm mt-1 leading-relaxed font-light">
-                    Exintegrante del Tribunal Fiscal y de la SUNAT. Especialista en litigación tributaria por la Pontificia Universidad Católica del Perú (PUCP).
+                  <p className="text-white/80 text-xs sm:text-sm mt-1 font-light">
+                    Socio Principal & Fundador
                   </p>
                 </div>
               </div>
             </div>
           </ScrollReveal>
 
-          {/* RIGHT: Text Content with Misión & Visión (Estudio Ugaz ui-about-us style) */}
+          {/* RIGHT: Text Content without Misión & Visión */}
           <ScrollReveal x={30} duration={0.7} className="lg:col-span-7 flex flex-col justify-center text-left">
             <span className="inline-block text-[#fa9b0c] font-bold text-xs tracking-[0.22em] uppercase mb-3">
               somos expertos en lo que hacemos
@@ -51,40 +51,16 @@ export function AcercaDeNosotros() {
               Acerca de nosotros
             </h2>
 
-            <p className="text-[#42604e] text-base sm:text-lg leading-relaxed mb-8 font-light">
-              Firma legal y contable especializada en asesoría tributaria, laboral y empresarial. Nuestra trayectoria directa en el Tribunal Fiscal y la SUNAT garantiza respaldo técnico y máxima seguridad jurídica.
-            </p>
-
-            {/* Misión & Visión items (Minimalist Estudio Ugaz layout) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
-              {/* Misión */}
-              <div className="p-5 sm:p-6 rounded-2xl bg-[#FAFBF9] border border-[#2b4b38]/10 hover:border-[#fa9b0c]/30 transition-all duration-300">
-                <div className="flex items-center gap-2.5 mb-2">
-                  <div className="w-9 h-9 rounded-xl bg-[#2b4b38]/5 flex items-center justify-center text-[#fa9b0c]">
-                    <Target className="w-4 h-4" />
-                  </div>
-                  <h3 className="font-serif text-lg font-normal text-[#2b4b38]">Misión</h3>
-                </div>
-                <p className="text-xs sm:text-sm text-[#42604e] leading-relaxed font-light">
-                  Brindar soluciones jurídicas estratégicas con el más alto rigor técnico para proteger el patrimonio y crecimiento empresarial.
-                </p>
-              </div>
-
-              {/* Visión */}
-              <div className="p-5 sm:p-6 rounded-2xl bg-[#FAFBF9] border border-[#2b4b38]/10 hover:border-[#fa9b0c]/30 transition-all duration-300">
-                <div className="flex items-center gap-2.5 mb-2">
-                  <div className="w-9 h-9 rounded-xl bg-[#2b4b38]/5 flex items-center justify-center text-[#fa9b0c]">
-                    <Compass className="w-4 h-4" />
-                  </div>
-                  <h3 className="font-serif text-lg font-normal text-[#2b4b38]">Visión</h3>
-                </div>
-                <p className="text-xs sm:text-sm text-[#42604e] leading-relaxed font-light">
-                  Ser la firma referente en defensa tributaria y laboral en el Perú, con disciplina, ética y excelencia académica PUCP.
-                </p>
-              </div>
+            <div className="space-y-4 text-[#42604e] text-base sm:text-lg leading-relaxed font-light mb-8">
+              <p>
+                Firma legal y contable especializada en asesoría tributaria, laboral y empresarial. Ofrecemos soluciones integrales y de alto impacto para proteger el patrimonio y crecimiento de empresas y personas naturales.
+              </p>
+              <p>
+                Bajo la dirección del <strong>Dr. Roberto Marca</strong>, exintegrante del Tribunal Fiscal y de la SUNAT, especialista en litigación tributaria por la Pontificia Universidad Católica del Perú (PUCP), nuestro equipo combina experiencia directa en los órganos resolutivos con un riguroso estándar técnico.
+              </p>
             </div>
 
-            {/* Bottom Button "Conoce al staff" (Estudio Ugaz Style) */}
+            {/* Bottom Button "Conoce al staff" */}
             <div className="pt-2">
               <Link
                 href="/nosotros-contacto#equipo-legal"

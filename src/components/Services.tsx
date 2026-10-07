@@ -25,7 +25,7 @@ const serviceCards = [
   },
   {
     icon: Building2,
-    title: "Derecho Corporativo",
+    title: "Derecho Empresarial",
     tag: "Sociedades & Contratos",
     image: "/images/areas/empresarial.webp",
     description:
@@ -56,10 +56,7 @@ export function Services() {
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#2b4b38] leading-[1.18]">
               Nuestras Áreas
             </h2>
-            <div className="w-16 h-0.5 bg-[#fa9b0c] mx-auto mt-4 mb-4" />
-            <p className="text-[#42604e] text-sm sm:text-base leading-relaxed font-light">
-              Soluciones jurídicas y contables estratégicas diseñadas para blindar y potenciar las operaciones de tu empresa.
-            </p>
+            <div className="w-16 h-0.5 bg-[#fa9b0c] mx-auto mt-4" />
           </div>
         </ScrollReveal>
 
@@ -130,7 +127,7 @@ export function Services() {
         {/* Bottom Button */}
         <div className="mt-12 sm:mt-14 text-center">
           <Link
-            href="/nosotros-contacto"
+            href="/defensa-tributaria-sunat"
             className="inline-flex items-center justify-center gap-2.5 bg-[#2b4b38] hover:bg-[#1e3527] text-white px-7 py-3.5 rounded-xl text-sm font-semibold tracking-wide transition-all shadow-md hover:shadow-lg active:scale-[0.98] border border-[#2b4b38]/20"
           >
             <span>Conoce Todas Nuestras Áreas</span>

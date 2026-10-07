@@ -13,13 +13,11 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  { label: "Consultoría y Planeamiento Tributario", href: "/defensa-tributaria-sunat#ejes-tributarios" },
-  { label: "Fiscalizaciones y Defensa SUNAT", href: "/defensa-tributaria-sunat#ejes-tributarios" },
-  { label: "Cobranza Coactiva y Embargos", href: "/defensa-tributaria-sunat#ejes-tributarios" },
-  { label: "Derecho Laboral & SUNAFIL", href: "/derecho-laboral#ejes-laborales" },
-  { label: "Derecho Corporativo & Societario", href: "/constitucion-de-empresas#ejes-empresariales" },
-  { label: "Constitución y Formalización de Empresas", href: "/constitucion-de-empresas#ejes-empresariales" },
-  { label: "Outsourcing Contable Integral", href: "/contabilidad-tributacion#ejes-contables" },
+  { label: "Derecho Tributario & SUNAT", href: "/defensa-tributaria-sunat#lineas-de-servicio" },
+  { label: "Derecho Laboral & SUNAFIL", href: "/derecho-laboral#lineas-de-servicio" },
+  { label: "Derecho Empresarial & Sociedades", href: "/constitucion-de-empresas#lineas-de-servicio" },
+  { label: "Outsourcing Contable Integral", href: "/contabilidad-tributacion#lineas-de-servicio" },
+  { label: "Quiénes Somos & Equipo Legal", href: "/nosotros-contacto#equipo-legal" },
 ];
 
 const socialLinks = [
