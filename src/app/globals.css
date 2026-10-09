@@ -189,8 +189,9 @@ img, svg {
    HEADER: Transparent over Hero → White on Scroll (premium contrast)
    ═══════════════════════════════════════════════════════════════════════ */
 .header-hero {
-  background: #2b4b38 !important;
-  border-bottom: 1px solid rgba(250, 155, 12, 0.18) !important;
+  background: transparent !important;
+  border-bottom: 1px solid transparent !important;
+  box-shadow: none !important;
   transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out !important;
 }
 

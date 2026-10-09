@@ -223,17 +223,27 @@ Solicito una asesoría tributaria.`;
 
   return (
     <SiteLayout>
-      {/* ═══ HERO SECTION: DR. ROBERTO MARCA FADE INTEGRATED (CORRECCIÓN 22) ═══ */}
+      {/* ═══ HERO SECTION: 100% Full-Bleed — DR. ROBERTO MARCA (CORRECCIÓN 22) ═══ */}
       <section
         id="quienes-somos"
-        className="relative w-full min-h-[90vh] flex flex-col justify-center overflow-hidden bg-[#1e3527] pt-32 sm:pt-36 md:pt-40 pb-16 sm:pb-20"
+        className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#0e1d14] pt-28 sm:pt-32 md:pt-36 pb-20 sm:pb-24"
+        style={{
+          backgroundImage: "url(/images/hero/nosotros-boardroom.webp)",
+          backgroundSize: "cover",
+          backgroundPosition: "center 35%",
+        }}
       >
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent z-30" />
+        {/* Full-bleed background overlays for crisp contrast & image visibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a150e]/95 via-[#0e1d14]/85 to-[#0e1d14]/65" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0e1d14] via-transparent to-black/60" />
+
+        {/* Top vignette for transparent header contrast */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/60 via-black/20 to-transparent z-10 pointer-events-none" />
 
         {/* Ambient mesh */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#42604e]/25 rounded-full blur-[120px]" />
-          <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-[#fa9b0c]/15 rounded-full blur-[120px]" />
+          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#42604e]/20 rounded-full blur-[120px]" />
+          <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-[#fa9b0c]/10 rounded-full blur-[120px]" />
         </div>
 
         {/* Content with integrated portrait fade on right */}
@@ -321,24 +331,29 @@ Solicito una asesoría tributaria.`;
               </motion.div>
             </div>
 
-            {/* RIGHT: Dr. Roberto Marca Portrait with Gradient Fade (Corrección 22 Reference) */}
-            <div className="lg:col-span-5 relative flex justify-center lg:justify-end mt-8 lg:mt-0">
-              <div className="relative w-full max-w-[420px] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-t from-[#122217] to-[#1e3527]/40 border border-white/10 group">
-                <img
-                  src="/images/hero/hero-subpages-roberto.webp"
-                  alt="Dr. Roberto Marca - ROMA & ABOGADOS"
-                  className="w-full h-auto max-h-[520px] object-cover object-[center_10%] transform group-hover:scale-103 transition-transform duration-700 ease-out"
-                />
-                {/* Soft gradient blend at the bottom and sides */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1e3527] via-[#1e3527]/30 to-transparent pointer-events-none" />
-                <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#1e3527] to-transparent pointer-events-none hidden lg:block" />
+            {/* RIGHT: Dr. Roberto Marca Cutout with Natural Fade (Corrección 22 Reference) */}
+            <div className="lg:col-span-5 relative flex justify-center lg:justify-end items-end mt-8 lg:mt-0">
+              <div className="relative w-full max-w-[440px] flex flex-col items-center lg:items-end">
+                {/* Ambient soft gold/emerald glow behind Roberto */}
+                <div className="absolute top-1/4 right-1/4 w-[280px] h-[280px] bg-[#fa9b0c]/15 rounded-full blur-3xl pointer-events-none" />
+                
+                {/* Cutout Image with bottom dissolve fade */}
+                <div className="relative w-full overflow-hidden">
+                  <img
+                    src="/images/hero/roberto-side-cutout.webp"
+                    alt="Dr. Roberto Marca - Socio Principal ROMA & ABOGADOS"
+                    className="w-full h-auto max-h-[540px] object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.7)]"
+                  />
+                  {/* Bottom fade into section floor */}
+                  <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#0e1d14] via-[#0e1d14]/70 to-transparent pointer-events-none" />
+                </div>
 
-                {/* Bottom identification tag */}
-                <div className="absolute bottom-6 left-6 right-6 text-left z-10">
-                  <span className="inline-block px-3 py-1 rounded-full bg-[#fa9b0c] text-[#1e3527] text-[11px] font-bold uppercase tracking-wider mb-1.5">
+                {/* Elegant Glass Floating Badge */}
+                <div className="relative -mt-10 sm:-mt-12 w-full max-w-[340px] bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-4.5 shadow-2xl text-left z-20">
+                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#fa9b0c] text-[#1e3527] text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-1">
                     Socio Principal
                   </span>
-                  <h3 className="font-serif text-2xl text-white font-normal leading-tight">
+                  <h3 className="font-serif text-lg sm:text-xl text-white font-normal leading-tight">
                     Dr. Roberto Marca
                   </h3>
                   <p className="text-white/80 text-xs font-light mt-0.5">

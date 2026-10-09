@@ -92,15 +92,13 @@ export function Header() {
         } ${
           scrolled
             ? "header-scrolled bg-white/95 backdrop-blur-md border-b border-[#2b4b38]/10 shadow-[0_4px_25px_rgba(0,0,0,0.05)]"
-            : isHomePage
-              ? "header-hero bg-transparent border-b border-transparent shadow-none"
-              : "header-hero bg-black/20 backdrop-blur-md border-b border-white/10"
+            : "header-hero bg-transparent border-b border-transparent shadow-none"
         }`}
       >
         {/* Línea de acento institucional */}
         <div
           className={`w-full h-[3px] transition-opacity duration-300 ${
-            !scrolled && isHomePage ? "opacity-0" : "opacity-100"
+            !scrolled ? "opacity-0" : "opacity-100"
           }`}
           style={{
             background: 'linear-gradient(90deg, #2b4b38 0%, #fa9b0c 50%, #42604e 100%)',

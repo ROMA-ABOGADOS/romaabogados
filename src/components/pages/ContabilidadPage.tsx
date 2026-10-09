@@ -48,22 +48,22 @@ export function ContabilidadPage() {
 
   return (
     <SiteLayout>
-      {/* ═══ SUBPAGE HERO — Full-Bleed Background Image & Editorial Overlay ═══ */}
+      {/* ═══ SUBPAGE HERO — 100% Full-Bleed Background Image & Editorial Overlay ═══ */}
       <section
         id="contabilidad-tributaria"
-        className="relative w-full min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-center overflow-hidden pt-32 sm:pt-36 md:pt-40 pb-20 sm:pb-24 bg-[#122217]"
+        className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden pt-28 sm:pt-32 md:pt-36 pb-20 sm:pb-24 bg-[#122217]"
         style={{
           backgroundImage: "url(/images/areas/contabilidad.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        {/* Dark Vignette Overlay for perfect readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1810]/95 via-[#122217]/90 to-[#122217]/80" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#122217] via-transparent to-black/40" />
-
-        {/* Top Gold Accent Line */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent z-30" />
+        {/* Full-bleed background overlays for crisp contrast & image visibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a150e]/95 via-[#0e1d14]/85 to-[#0e1d14]/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0e1d14] via-transparent to-black/50" />
+        
+        {/* Top vignette for transparent header contrast */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/60 via-black/20 to-transparent z-10 pointer-events-none" />
 
         {/* Content */}
         <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center sm:text-left">
