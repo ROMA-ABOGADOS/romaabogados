@@ -161,25 +161,6 @@ export function DefensaPage() {
                 Ver Líneas de Servicio
               </a>
             </motion.div>
-
-            {/* Trust badges */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.45 }}
-              className="hero-trust mt-8 flex flex-wrap gap-x-6 gap-y-2.5 text-white/75 text-xs sm:text-sm"
-            >
-              {[
-                "Ex Tribunal Fiscal & SUNAT",
-                "Especialistas PUCP",
-                "Blindaje Patrimonial",
-              ].map((badge) => (
-                <span key={badge} className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#fa9b0c]" />
-                  {badge}
-                </span>
-              ))}
-            </motion.div>
           </motion.div>
         </div>
 
@@ -230,9 +211,6 @@ export function DefensaPage() {
                           </h3>
                         </div>
                       </div>
-                      <p className="text-[#42604e] text-[15px] leading-relaxed mb-5 pl-0 sm:pl-16 font-light">
-                        {pillar.description}
-                      </p>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-4 border-t border-[#2b4b38]/10 sm:ml-16">
                         {pillar.items.map((item) => (
@@ -259,35 +237,6 @@ export function DefensaPage() {
                 </ScrollReveal>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ CLEAN CTA SECTION ═══ */}
-      <section className="py-20 bg-[#1e3527] text-center text-white relative overflow-hidden">
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-[#fa9b0c] text-xs font-bold uppercase tracking-[0.2em] mb-4 backdrop-blur-sm">
-            Atención Especializada
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal mb-6 text-white leading-[1.18] max-w-3xl mx-auto">
-            ¿Requieres Asistencia Técnica en Derecho Tributario?
-          </h2>
-          <p className="text-white/80 mb-10 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-light">
-            Evaluamos tu notificación de SUNAT, carta inductiva o expediente contencioso con la máxima confidencialidad y rigor técnico.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => openModal(2)}
-              className="inline-flex items-center justify-center gap-2.5 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-8 py-4 rounded-xl text-sm sm:text-base font-bold tracking-wide transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
-            >
-              <MessageCircle className="w-5 h-5" /> Agendar Consulta Tributaria
-            </button>
-            <Link
-              href="/derecho-laboral"
-              className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 border border-white/30 text-white px-8 py-4 rounded-xl text-sm sm:text-base font-semibold tracking-wide transition-all backdrop-blur-sm"
-            >
-              Conocer Derecho Laboral
-            </Link>
           </div>
         </div>
       </section>

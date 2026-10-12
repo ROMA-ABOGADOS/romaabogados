@@ -103,14 +103,9 @@ export function Services() {
                     </div>
 
                     {/* Area Title */}
-                    <h3 className="font-serif text-2xl text-white font-normal leading-snug mb-2.5 group-hover:text-[#fa9b0c] transition-colors">
+                    <h3 className="font-serif text-2xl text-white font-normal leading-snug mb-4 group-hover:text-[#fa9b0c] transition-colors">
                       {card.title}
                     </h3>
-
-                    {/* Short Strategic 1-sentence Description */}
-                    <p className="text-white/85 text-xs sm:text-[13px] leading-relaxed font-light mb-5">
-                      {card.description}
-                    </p>
 
                     {/* Action link */}
                     <div className="pt-3 border-t border-white/15 flex items-center gap-2 text-xs font-semibold text-[#fa9b0c] group-hover:text-white transition-colors">

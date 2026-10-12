@@ -6,26 +6,20 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 
 const articles = [
   {
-    image: "/images/areas/tributario.webp",
-    tag: "Código Tributario",
-    date: "Resolución del Tribunal Fiscal",
+    image: "/images/publications/codigo-tributario.webp",
     title: "CÓDIGO TRIBUTARIO",
     desc: "Criterios vinculantes sobre plazos de fiscalización, notificación electrónica y prescripción tributaria.",
     href: "/defensa-tributaria-sunat",
   },
   {
-    image: "/images/areas/laboral.webp",
-    tag: "Impuesto a la Renta",
-    date: "Criterios Jurisprudenciales",
-    title: "RENTA",
+    image: "/images/publications/impuesto-renta.webp",
+    title: "IMPUESTO A LA RENTA",
     desc: "Principio de causalidad, deducción de gastos empresariales, fehaciencia y bancarización ante SUNAT.",
     href: "/defensa-tributaria-sunat",
   },
   {
-    image: "/images/areas/empresarial.webp",
-    tag: "Impuesto General a las Ventas",
-    date: "Análisis Normativo",
-    title: "IGV",
+    image: "/images/publications/igv.webp",
+    title: "IMPUESTO GENERAL A LAS VENTAS",
     desc: "Operaciones no reales, crédito fiscal y tratamiento de exportación de servicios y detracciones.",
     href: "/defensa-tributaria-sunat",
   },
@@ -67,33 +61,27 @@ export function PublicacionesRecientes() {
                 />
 
                 {/* Dark Vignette Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0e1c13] via-[#15271a]/80 to-black/35 group-hover:via-[#15271a]/90 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0e1c13] via-[#15271a]/85 to-black/35 group-hover:via-[#15271a]/90 transition-colors duration-500" />
 
                 {/* Top Subtle Gold Accent Line */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 
                 {/* Information Layer */}
                 <div className="relative z-10 p-6 sm:p-7 flex flex-col justify-end h-full">
-                  {/* Tag badge */}
-                  <div className="mb-2">
-                    <span className="inline-block px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[#fa9b0c] text-[11px] font-bold uppercase tracking-wider">
-                      {art.tag}
+                  {/* Category Pill Tag */}
+                  <div className="mb-3">
+                    <span className="inline-block px-3 py-1 rounded-full bg-[#fa9b0c]/20 border border-[#fa9b0c]/30 text-[#fa9b0c] text-[10px] sm:text-[11px] font-bold uppercase tracking-wider backdrop-blur-sm">
+                      Publicación Especializada
                     </span>
                   </div>
 
-                  {/* Date */}
-                  <span className="text-white/70 text-xs flex items-center gap-1.5 mb-2 font-light">
-                    <Calendar className="w-3.5 h-3.5 text-[#fa9b0c]" />
-                    {art.date}
-                  </span>
-
-                  {/* Title */}
-                  <h3 className="font-serif text-xl sm:text-[21px] text-white font-normal leading-snug mb-3 group-hover:text-[#fa9b0c] transition-colors">
+                  {/* Enriched Prominent Title (previously blue box badge) */}
+                  <h3 className="font-serif text-2xl sm:text-[26px] text-white font-normal leading-tight mb-3 group-hover:text-[#fa9b0c] transition-colors">
                     {art.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-white/80 text-xs leading-relaxed font-light mb-4 line-clamp-2">
+                  <p className="text-white/85 text-xs sm:text-[13px] leading-relaxed font-light mb-4 line-clamp-3">
                     {art.desc}
                   </p>
 

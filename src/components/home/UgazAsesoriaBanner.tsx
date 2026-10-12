@@ -20,12 +20,12 @@ export function UgazAsesoriaBanner() {
               {/* Left Image (Estudio Ugaz Style) */}
               <div className="lg:col-span-5 relative h-72 sm:h-80 lg:h-96 w-full overflow-hidden bg-gradient-to-t from-[#1e3527] to-[#2b4b38]/90">
                 <img
-                  src="/images/team/abogada-asociada.webp"
+                  src="/images/team/judith-palomino.webp"
                   alt="Asesora Legal ROMA & ABOGADOS"
-                  className="w-full h-full object-cover object-[center_15%]"
+                  className="w-full h-full object-cover object-[center_10%]"
                 />
                 {/* Subtle gradient blend to the right */}
-                <div className="hidden lg:block absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent" />
+                <div className="hidden lg:block absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-white to-transparent" />
                 <div className="lg:hidden absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white to-transparent" />
               </div>
 

@@ -69,7 +69,7 @@ const teamMembers: TeamMember[] = [
     name: "David Corthon",
     role: "Asociado",
     area: "Derecho Laboral & Relaciones Laborales",
-    image: "/images/team/david-corthorn.webp",
+    image: "", // Corrección 9: se asignará foto individual al proveerse en Drive
     education: "Abogado especialista en relaciones laborales individuales y colectivas.",
     experience: "Experto en inspecciones ante SUNAFIL, auditorías de compliance laboral, comités SST y litigios laborales orales bajo la NLPT.",
     highlights: [
@@ -110,7 +110,7 @@ const teamMembers: TeamMember[] = [
     name: "Richard Agapito",
     role: "Consultor Senior",
     area: "Contrataciones con el Estado & OSCE",
-    image: "/images/team/abogado-1-2.webp",
+    image: "", // Corrección 9: se asignará foto individual al proveerse en Drive
     education: "Especialista en Contrataciones Públicas y Gestión Estatal.",
     experience: "Asesor en licitaciones del Estado (OSCE/RNP), absolución de consultas, apelaciones ante el Tribunal del OSCE y arbitrajes estatales.",
     highlights: [
@@ -124,7 +124,7 @@ const teamMembers: TeamMember[] = [
     name: "Rafael Huaranga",
     role: "Consultor Senior",
     area: "Contabilidad & Auditoría Tributaria",
-    image: "/images/team/abogado-1.webp",
+    image: "", // Corrección 9: Sin foto oficial
     education: "Contador Público Colegiado con postgrado en Auditoría Tributaria y NIIF.",
     experience: "Lidera la supervisión técnica de los servicios de outsourcing contable, determinación mensual de tributos y auditoría financiera.",
     highlights: [
@@ -138,13 +138,27 @@ const teamMembers: TeamMember[] = [
     name: "William Valdivia",
     role: "Abogado Consultor",
     area: "Derecho Civil & Litigios Comerciales",
-    image: "/images/team/dr-roberto-2.webp",
+    image: "", // Corrección 9: Sin foto oficial
     education: "Abogado litigante con especialidad en derecho civil patrimonial.",
     experience: "Especialista en contratos comerciales, saneamiento inmobiliario, desalojos y litigios ante las Cortes Superiores de Justicia.",
     highlights: [
       "Litigios Civiles y Comerciales",
       "Saneamiento Inmobiliario y Estudio de Títulos",
       "Garantías Hipotecarias y Contratos",
+    ],
+  },
+  {
+    id: "delila",
+    name: "Delila Ronceros",
+    role: "Consultora Legal",
+    area: "Derecho Corporativo & Cumplimiento",
+    image: "", // Corrección 9: Se integrará foto del Drive
+    education: "Abogada especialista en derecho corporativo, societario y cumplimiento empresarial preventivo.",
+    experience: "Asesoría estratégica en derecho empresarial, redacción contractual, reestructuraciones y gobierno societario.",
+    highlights: [
+      "Derecho Corporativo y Societario",
+      "Contratos Mercantiles y Acuerdos de Inversión",
+      "Cumplimiento y Regulación Empresarial",
     ],
   },
 ];
@@ -175,21 +189,21 @@ const tiktokVideos = [
     title: "¿Estás listo para esta fiscalización de SUNAT?",
     views: "58K vistas",
     tag: "SUNAT & Defensa",
-    url: "https://www.tiktok.com/@romaabogados.pe",
+    url: "https://www.tiktok.com/@RobertoDefensaTributaria",
   },
   {
     id: 2,
     title: "Perdiste ante el Tribunal Fiscal: cómo evitar el embargo coactivo",
     views: "72K vistas",
     tag: "Tribunal Fiscal",
-    url: "https://www.tiktok.com/@romaabogados.pe",
+    url: "https://www.tiktok.com/@RobertoDefensaTributaria",
   },
   {
     id: 3,
     title: "Inspecciones SUNAFIL: errores graves en contratos de trabajo",
     views: "44K vistas",
     tag: "Laboral & SUNAFIL",
-    url: "https://www.tiktok.com/@romaabogados.pe",
+    url: "https://www.tiktok.com/@RobertoDefensaTributaria",
   },
 ];
 
@@ -228,14 +242,14 @@ Solicito una asesoría tributaria.`;
         id="quienes-somos"
         className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#0e1d14] pt-28 sm:pt-32 md:pt-36 pb-20 sm:pb-24"
         style={{
-          backgroundImage: "url(/images/hero/nosotros-boardroom.webp)",
+          backgroundImage: "url(/images/hero/nosotros-natural.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center 35%",
         }}
       >
-        {/* Full-bleed background overlays for crisp contrast & image visibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a150e]/95 via-[#0e1d14]/85 to-[#0e1d14]/65" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0e1d14] via-transparent to-black/60" />
+        {/* Full-bleed background overlays for crisp natural contrast (Corrección 8) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1c13]/85 via-[#0d1c13]/55 to-[#0d1c13]/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0e1d14] via-transparent to-black/35" />
 
         {/* Top vignette for transparent header contrast */}
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/60 via-black/20 to-transparent z-10 pointer-events-none" />
@@ -268,12 +282,12 @@ Solicito una asesoría tributaria.`;
                   </span>
                 </div>
 
-                {/* H1 */}
+                {/* H1 (Corrección 8: más grande) */}
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="hero-h1 font-serif font-normal text-4xl sm:text-5xl lg:text-[60px] text-white leading-[1.12] tracking-tight mb-5 sm:mb-6"
+                  className="hero-h1 font-serif font-normal text-5xl sm:text-6xl lg:text-[76px] text-white leading-[1.08] tracking-tight mb-5 sm:mb-6"
                 >
                   ROMA & <span className="text-[#fa9b0c]">ABOGADOS</span>
                 </motion.h1>
@@ -293,7 +307,7 @@ Solicito una asesoría tributaria.`;
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="hero-ctas flex flex-col sm:flex-row gap-4 mb-8"
+                  className="hero-ctas flex flex-col sm:flex-row gap-4"
                 >
                   <button
                     onClick={() => openModal(null)}
@@ -309,31 +323,12 @@ Solicito una asesoría tributaria.`;
                     Conocer al Equipo Legal
                   </a>
                 </motion.div>
-
-                {/* Trust badges */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.45 }}
-                  className="hero-trust flex flex-wrap gap-x-6 gap-y-2.5 text-white/70 text-xs sm:text-sm"
-                >
-                  {[
-                    "Liderazgo PUCP",
-                    "Ex Tribunal Fiscal & SUNAT",
-                    "Ética y Confidencialidad",
-                  ].map((badge) => (
-                    <span key={badge} className="flex items-center gap-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#fa9b0c]" />
-                      {badge}
-                    </span>
-                  ))}
-                </motion.div>
               </motion.div>
             </div>
 
-            {/* RIGHT: Dr. Roberto Marca Cutout with Natural Fade (Corrección 22 Reference) */}
+            {/* RIGHT: Dr. Roberto Marca Cutout with Natural Fade (Corrección 8: sin tarjeta flotante) */}
             <div className="lg:col-span-5 relative flex justify-center lg:justify-end items-end mt-8 lg:mt-0">
-              <div className="relative w-full max-w-[440px] flex flex-col items-center lg:items-end">
+              <div className="relative w-full max-w-[460px] flex flex-col items-center lg:items-end">
                 {/* Ambient soft gold/emerald glow behind Roberto */}
                 <div className="absolute top-1/4 right-1/4 w-[280px] h-[280px] bg-[#fa9b0c]/15 rounded-full blur-3xl pointer-events-none" />
                 
@@ -342,23 +337,10 @@ Solicito una asesoría tributaria.`;
                   <img
                     src="/images/hero/roberto-side-cutout.webp"
                     alt="Dr. Roberto Marca - Socio Principal ROMA & ABOGADOS"
-                    className="w-full h-auto max-h-[540px] object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.7)]"
+                    className="w-full h-auto max-h-[580px] object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.6)]"
                   />
                   {/* Bottom fade into section floor */}
                   <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#0e1d14] via-[#0e1d14]/70 to-transparent pointer-events-none" />
-                </div>
-
-                {/* Elegant Glass Floating Badge */}
-                <div className="relative -mt-10 sm:-mt-12 w-full max-w-[340px] bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-4.5 shadow-2xl text-left z-20">
-                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#fa9b0c] text-[#1e3527] text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-1">
-                    Socio Principal
-                  </span>
-                  <h3 className="font-serif text-lg sm:text-xl text-white font-normal leading-tight">
-                    Dr. Roberto Marca
-                  </h3>
-                  <p className="text-white/80 text-xs font-light mt-0.5">
-                    Exintegrante del Tribunal Fiscal y de la SUNAT • PUCP
-                  </p>
                 </div>
               </div>
             </div>
@@ -456,8 +438,8 @@ Solicito una asesoría tributaria.`;
             </div>
           </ScrollReveal>
 
-          {/* Grid de 4 columnas (2 filas = 8 integrantes exactos) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Grid de 3 columnas (3 filas = 9 integrantes) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {teamMembers.map((member) => {
               const isFlipped = !!flippedCards[member.id];
 
@@ -469,7 +451,7 @@ Solicito una asesoría tributaria.`;
                 >
                   <AnimatePresence initial={false} mode="wait">
                     {!isFlipped ? (
-                      /* ── FRENTE DE LA TARJETA: FOTO ELEGANTE + DATOS BÁSICOS ── */
+                      /* ── FRENTE DE LA TARJETA: FOTO ELEGANTE O MONOGRAMA INSTITUCIONAL ── */
                       <motion.div
                         key="front"
                         initial={{ opacity: 0 }}
@@ -478,15 +460,41 @@ Solicito una asesoría tributaria.`;
                         transition={{ duration: 0.25 }}
                         className="absolute inset-0 flex flex-col justify-end"
                       >
-                        {/* Foto de fondo */}
-                        <img
-                          src={member.image}
-                          alt={`${member.name} - ${member.role}`}
-                          className="absolute inset-0 w-full h-full object-cover object-[center_12%] transform group-hover:scale-105 transition-transform duration-500 ease-out"
-                        />
+                        {/* Foto de fondo o Monograma Institucional (Corrección 9) */}
+                        {member.image ? (
+                          <>
+                            <img
+                              src={member.image}
+                              alt={`${member.name} - ${member.role}`}
+                              className="absolute inset-0 w-full h-full object-cover object-[center_12%] transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                            />
+                            {/* Degradado oscuro para lectura perfecta */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0e1a11] via-[#14261a]/70 to-transparent group-hover:via-[#14261a]/80 transition-colors" />
+                          </>
+                        ) : (
+                          <div className="absolute inset-0 bg-gradient-to-b from-[#183122] via-[#112318] to-[#0c1811] flex flex-col items-center justify-center p-6 text-center">
+                            {/* Watermark sutil de la balanza jurídica */}
+                            <div className="absolute inset-0 opacity-[0.05] pointer-events-none flex items-center justify-center">
+                              <Scale className="w-56 h-56 text-[#fa9b0c]" />
+                            </div>
 
-                        {/* Degradado oscuro para lectura perfecta */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0e1a11] via-[#14261a]/70 to-transparent group-hover:via-[#14261a]/80 transition-colors" />
+                            {/* Monograma de alta distinción ejecutiva */}
+                            <div className="relative z-10 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-[#244530] to-[#122419] border-2 border-[#fa9b0c]/40 shadow-2xl flex items-center justify-center group-hover:scale-110 group-hover:border-[#fa9b0c] transition-all duration-300">
+                              <span className="font-serif text-3xl sm:text-4xl font-bold text-[#fa9b0c] tracking-wider">
+                                {member.name.replace(/^Dr\.\s+/, "").split(" ").map(n => n[0]).slice(0, 2).join("")}
+                              </span>
+                            </div>
+
+                            <div className="relative z-10 mt-4">
+                              <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#fa9b0c]/80">
+                                ROMA & ABOGADOS
+                              </span>
+                            </div>
+
+                            {/* Degradado inferior para legibilidad */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0e1a11] via-transparent to-transparent pointer-events-none" />
+                          </div>
+                        )}
 
                         {/* Línea dorada superior */}
                         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fa9b0c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -670,12 +678,12 @@ Solicito una asesoría tributaria.`;
 
           <div className="mt-10 text-center">
             <a
-              href="https://www.tiktok.com/@romaabogados.pe"
+              href="https://www.tiktok.com/@RobertoDefensaTributaria"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#2b4b38] hover:text-[#fa9b0c] transition-colors"
             >
-              <span>Síguenos en @romaabogados.pe</span>
+              <span>Síguenos en @Roberto Defensa Tributaria</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>

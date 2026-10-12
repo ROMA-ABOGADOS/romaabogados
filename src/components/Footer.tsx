@@ -24,7 +24,7 @@ const socialLinks = [
   { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
   { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
   { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: TikTokIcon, href: "https://tiktok.com", label: "TikTok" },
+  { icon: TikTokIcon, href: "https://www.tiktok.com/@RobertoDefensaTributaria", label: "TikTok" },
 ];
 
 function TikTokIcon({ className }: { className?: string }) {
