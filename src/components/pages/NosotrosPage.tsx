@@ -182,28 +182,31 @@ const firmValues = [
   },
 ];
 
-/* TIKTOK HIGHLIGHTS (RECOMENDACIÓN) */
+/* TIKTOK HIGHLIGHTS OFICIALES — DR. ROBERTO MARCA */
 const tiktokVideos = [
   {
     id: 1,
-    title: "¿Estás listo para esta fiscalización de SUNAT?",
-    views: "58K vistas",
+    title: "¿Tienes problemas con SUNAT y no sabes cómo defenderte?",
+    views: "26.6K vistas",
     tag: "SUNAT & Defensa",
-    url: "https://www.tiktok.com/@RobertoDefensaTributaria",
+    url: "https://www.tiktok.com/@roberto.i.defensa/video/7605276648237255943",
+    cover: "/images/tiktok/tiktok-video-1.webp",
   },
   {
     id: 2,
-    title: "Perdiste ante el Tribunal Fiscal: cómo evitar el embargo coactivo",
-    views: "72K vistas",
-    tag: "Tribunal Fiscal",
-    url: "https://www.tiktok.com/@RobertoDefensaTributaria",
+    title: "Le ganamos a SUNAT: S/ 30 Millones y 3 inmuebles embargados",
+    views: "4.1K vistas",
+    tag: "Tribunal Fiscal & Éxito",
+    url: "https://www.tiktok.com/@roberto.i.defensa/video/7686636332273388821",
+    cover: "/images/tiktok/tiktok-video-2.webp",
   },
   {
     id: 3,
-    title: "Inspecciones SUNAFIL: errores graves en contratos de trabajo",
-    views: "44K vistas",
-    tag: "Laboral & SUNAFIL",
-    url: "https://www.tiktok.com/@RobertoDefensaTributaria",
+    title: "Operaciones No Reales: cómo evitar una deuda impagable ante SUNAT",
+    views: "197K vistas",
+    tag: "Fiscalización & Renta",
+    url: "https://www.tiktok.com/@roberto.i.defensa/video/7644670983701318933",
+    cover: "/images/tiktok/tiktok-video-3.webp",
   },
 ];
 
@@ -240,16 +243,16 @@ Solicito una asesoría tributaria.`;
       {/* ═══ HERO SECTION: 100% Full-Bleed — DR. ROBERTO MARCA (CORRECCIÓN 22) ═══ */}
       <section
         id="quienes-somos"
-        className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#0e1d14] pt-28 sm:pt-32 md:pt-36 pb-0"
+        className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-between overflow-hidden bg-[#0e1d14] pt-28 sm:pt-32 md:pt-36 pb-0"
         style={{
           backgroundImage: "url(/images/hero/nosotros-natural.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center 35%",
         }}
       >
-        {/* Full-bleed background overlays for crisp natural contrast (Corrección 8) */}
+        {/* Full-bleed background overlays for crisp natural contrast (sin franja negra al piso) */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0d1c13]/85 via-[#0d1c13]/55 to-[#0d1c13]/25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0e1d14] via-transparent to-black/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-black/35" />
 
         {/* Top vignette for transparent header contrast */}
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/60 via-black/20 to-transparent z-10 pointer-events-none" />
@@ -260,23 +263,23 @@ Solicito una asesoría tributaria.`;
           <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-[#fa9b0c]/10 rounded-full blur-[120px]" />
         </div>
 
-        {/* Content with integrated portrait fade on right */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto pb-16 sm:pb-20 lg:pb-12">
+        {/* Content with integrated portrait */}
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto pt-2 sm:pt-4 lg:pt-0 pb-0 lg:pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* LEFT: Text & Authority */}
             <div className="lg:col-span-7 flex flex-col justify-center text-left lg:py-16">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
                 {/* Breadcrumb */}
-                <div className="mb-4 sm:mb-5">
+                <div className="mb-3 sm:mb-5">
                   <Link href="/" className="inline-flex items-center gap-1.5 text-white/70 hover:text-[#fa9b0c] text-[13px] sm:text-[14px] font-medium transition-colors">
                     Inicio <ChevronRight className="w-3.5 h-3.5 text-[#fa9b0c]" /> Quiénes Somos
                   </Link>
                 </div>
 
                 {/* Badge */}
-                <div className="mb-4 sm:mb-5">
-                  <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#fa9b0c] text-xs font-bold uppercase tracking-[0.15em] backdrop-blur-sm">
+                <div className="mb-3 sm:mb-5">
+                  <span className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#fa9b0c] text-xs font-bold uppercase tracking-[0.15em] backdrop-blur-sm">
                     <Shield className="w-3.5 h-3.5 text-[#fa9b0c]" />
                     Firma Jurídica y Empresarial en el Perú
                   </span>
@@ -287,7 +290,7 @@ Solicito una asesoría tributaria.`;
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="hero-h1 font-serif font-normal text-5xl sm:text-6xl lg:text-[76px] text-white leading-[1.08] tracking-tight mb-5 sm:mb-6"
+                  className="hero-h1 font-serif font-normal text-4xl sm:text-6xl lg:text-[76px] text-white leading-[1.08] tracking-tight mb-4 sm:mb-6"
                 >
                   ROMA & <span className="text-[#fa9b0c]">ABOGADOS</span>
                 </motion.h1>
@@ -297,7 +300,7 @@ Solicito una asesoría tributaria.`;
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="hero-subtitle mb-8 text-[16px] sm:text-[18px] text-[#FAFBF9]/85 max-w-2xl leading-relaxed font-light"
+                  className="hero-subtitle mb-6 sm:mb-8 text-[15px] sm:text-[18px] text-[#FAFBF9]/85 max-w-2xl leading-relaxed font-light"
                 >
                   Somos una firma de profesionales especializada en asesoría tributaria, laboral y empresarial. Te brindamos soluciones jurídicas eficientes y estratégicas para proteger y potenciar tu negocio.
                 </motion.p>
@@ -307,18 +310,18 @@ Solicito una asesoría tributaria.`;
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="hero-ctas flex flex-col sm:flex-row gap-4"
+                  className="hero-ctas flex flex-col sm:flex-row gap-3 sm:gap-4"
                 >
                   <button
                     onClick={() => openModal(null)}
-                    className="inline-flex items-center justify-center gap-2.5 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-8 py-4 rounded-xl text-sm sm:text-base font-bold tracking-wide transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
+                    className="inline-flex items-center justify-center gap-2.5 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold tracking-wide transition-all shadow-lg shadow-[#fa9b0c]/25 hover:shadow-xl active:scale-[0.98]"
                   >
                     <MessageCircle className="w-5 h-5" />
                     Agendar una Consulta
                   </button>
                   <a
                     href="#equipo-legal"
-                    className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 border border-white/30 text-white px-8 py-4 rounded-xl text-sm sm:text-base font-semibold tracking-wide transition-all backdrop-blur-sm"
+                    className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 border border-white/30 text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-semibold tracking-wide transition-all backdrop-blur-sm"
                   >
                     Conocer al Equipo Legal
                   </a>
@@ -329,13 +332,13 @@ Solicito una asesoría tributaria.`;
             {/* Spacer for desktop 5 columns so grid preserves spacing */}
             <div className="hidden lg:block lg:col-span-5 pointer-events-none" aria-hidden="true" />
 
-            {/* Mobile / Tablet: Dr. Roberto below CTAs */}
-            <div className="block lg:hidden mt-8 flex justify-center items-end">
-              <div className="relative w-full max-w-[340px] sm:max-w-[400px]">
+            {/* Mobile / Tablet Dr. Roberto: 100% al ras del pie del hero full bleed */}
+            <div className="block lg:hidden mt-6 sm:mt-8 w-full flex justify-center items-end -mb-px">
+              <div className="relative w-full max-w-[340px] sm:max-w-[420px] flex justify-center items-end">
                 <img
                   src="/images/hero/roberto-side-cutout.webp"
                   alt="Dr. Roberto Marca - Socio Principal ROMA & ABOGADOS"
-                  className="w-full h-auto object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.6)]"
+                  className="w-full h-auto max-h-[50vh] sm:max-h-[56vh] object-contain object-bottom drop-shadow-[0_15px_30px_rgba(0,0,0,0.55)] block select-none"
                 />
               </div>
             </div>
@@ -343,21 +346,24 @@ Solicito una asesoría tributaria.`;
           </div>
         </div>
 
-        {/* DESKTOP HERO CUTOUT: Dr. Roberto Marca - 100% Flush to Bottom Edge (Al ras del término de la hoja) */}
+        {/* DESKTOP HERO CUTOUT: Dr. Roberto Marca - Más Grande y 100% Al ras del pie del hero */}
         <div className="hidden lg:flex absolute bottom-0 inset-x-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 justify-end items-end pointer-events-none z-20 overflow-visible">
-          <div className="relative w-full max-w-[480px] xl:max-w-[540px] 2xl:max-w-[580px] flex justify-end items-end">
+          <div className="relative w-full max-w-[540px] xl:max-w-[620px] 2xl:max-w-[680px] flex justify-end items-end">
             {/* Ambient soft gold glow behind Roberto */}
-            <div className="absolute top-1/4 right-1/4 w-[360px] h-[360px] bg-[#fa9b0c]/12 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-1/4 right-1/4 w-[380px] h-[380px] bg-[#fa9b0c]/12 rounded-full blur-3xl pointer-events-none" />
             
             <img
               src="/images/hero/roberto-side-cutout.webp"
               alt="Dr. Roberto Marca - Socio Principal ROMA & ABOGADOS"
-              className="w-full h-auto max-h-[76vh] xl:max-h-[82vh] 2xl:max-h-[86vh] object-contain object-bottom drop-shadow-[0_25px_45px_rgba(0,0,0,0.7)] block select-none pointer-events-auto"
+              className="w-full h-auto max-h-[82vh] xl:max-h-[88vh] 2xl:max-h-[92vh] object-contain object-bottom drop-shadow-[-20px_10px_35px_rgba(0,0,0,0.45)] block select-none pointer-events-auto"
             />
           </div>
         </div>
 
-        <ScrollDownIndicator />
+        {/* Scroll down indicator - Only on desktop where it doesn't overlap Dr. Roberto */}
+        <div className="hidden lg:block">
+          <ScrollDownIndicator />
+        </div>
       </section>
 
       {/* ═══ MISIÓN, VISIÓN Y 3 VALORES (CORRECCIÓN 23) ═══ */}
@@ -645,9 +651,9 @@ Solicito una asesoría tributaria.`;
                   {/* Video Mockup Thumbnail */}
                   <div className="aspect-[9/12] w-full relative overflow-hidden bg-gradient-to-b from-[#1e3527] to-[#0e1a11]">
                     <img
-                      src="/images/hero/hero-subpages-roberto.webp"
+                      src={video.cover}
                       alt={video.title}
-                      className="w-full h-full object-cover object-[center_12%] opacity-80 group-hover:scale-105 group-hover:opacity-95 transition-all duration-500"
+                      className="w-full h-full object-cover object-center opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-500"
                     />
 
                     {/* Gradient overlay */}
@@ -687,12 +693,12 @@ Solicito una asesoría tributaria.`;
 
           <div className="mt-10 text-center">
             <a
-              href="https://www.tiktok.com/@RobertoDefensaTributaria"
+              href="https://www.tiktok.com/@roberto.i.defensa"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#2b4b38] hover:text-[#fa9b0c] transition-colors"
             >
-              <span>Síguenos en @Roberto Defensa Tributaria</span>
+              <span>Síguenos en @roberto.i.defensa</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
