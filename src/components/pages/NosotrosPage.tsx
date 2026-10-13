@@ -43,7 +43,7 @@ const teamMembers: TeamMember[] = [
     name: "Dr. Roberto Marca",
     role: "Socio Principal",
     area: "Derecho Tributario & Dirección General",
-    image: "/images/team/roberto-marca.webp",
+    image: "/images/team/roberto-marca-portrait.webp",
     education: "Abogado por la Pontificia Universidad Católica del Perú (PUCP). Especialista en Derecho Tributario por la Universidad de Lima.",
     experience: "Exintegrante del Tribunal Fiscal y de la SUNAT. Más de 12 años liderando defensas y asesorías fiscales de alta complejidad.",
     highlights: [
@@ -69,7 +69,7 @@ const teamMembers: TeamMember[] = [
     name: "David Corthon",
     role: "Asociado",
     area: "Derecho Laboral & Relaciones Laborales",
-    image: "", // Corrección 9: se asignará foto individual al proveerse en Drive
+    image: "/images/team/david-corthorn.webp",
     education: "Abogado especialista en relaciones laborales individuales y colectivas.",
     experience: "Experto en inspecciones ante SUNAFIL, auditorías de compliance laboral, comités SST y litigios laborales orales bajo la NLPT.",
     highlights: [
@@ -92,11 +92,25 @@ const teamMembers: TeamMember[] = [
     ],
   },
   {
+    id: "delila",
+    name: "Delila Ronceros",
+    role: "Egresada de Derecho",
+    area: "Derecho Corporativo & Cumplimiento",
+    image: "/images/team/delila-ronceros.webp",
+    education: "Egresada de la Facultad de Derecho con especialización en derecho corporativo, societario y cumplimiento empresarial preventivo.",
+    experience: "Asesoría estratégica en derecho empresarial, redacción contractual, reestructuraciones y gobierno societario.",
+    highlights: [
+      "Derecho Corporativo y Societario",
+      "Contratos Mercantiles y Acuerdos de Inversión",
+      "Cumplimiento y Regulación Empresarial",
+    ],
+  },
+  {
     id: "judith",
     name: "Judith Palomino",
     role: "Administración",
     area: "Área Administrativa & Gestión Institucional",
-    image: "/images/team/judith-palomino.webp",
+    image: "/images/team/judith-palomino-portrait.webp",
     education: "Especialista en administración corporativa y gestión institucional del estudio.",
     experience: "Lidera la administración del estudio, seguimiento de requerimientos, soporte a expedientes y enlace directo con clientes.",
     highlights: [
@@ -110,7 +124,7 @@ const teamMembers: TeamMember[] = [
     name: "Richard Agapito",
     role: "Consultor Senior",
     area: "Contrataciones con el Estado & OSCE",
-    image: "", // Corrección 9: se asignará foto individual al proveerse en Drive
+    image: "/images/team/richard-agapito.webp",
     education: "Especialista en Contrataciones Públicas y Gestión Estatal.",
     experience: "Asesor en licitaciones del Estado (OSCE/RNP), absolución de consultas, apelaciones ante el Tribunal del OSCE y arbitrajes estatales.",
     highlights: [
@@ -122,13 +136,13 @@ const teamMembers: TeamMember[] = [
   {
     id: "rafael",
     name: "Rafael Huaranga",
-    role: "Consultor Senior",
+    role: "Abogado Asociado",
     area: "Contabilidad & Auditoría Tributaria",
-    image: "", // Corrección 9: Sin foto oficial
-    education: "Contador Público Colegiado con postgrado en Auditoría Tributaria y NIIF.",
-    experience: "Lidera la supervisión técnica de los servicios de outsourcing contable, determinación mensual de tributos y auditoría financiera.",
+    image: "", // Sin foto oficial, monograma institucional
+    education: "Abogado y Contador Público Colegiado con postgrado en Auditoría Tributaria y NIIF.",
+    experience: "Lidera la supervisión técnica y legal de controversias tributarias, determinación de tributos y auditoría financiera.",
     highlights: [
-      "Contador Público Colegiado (CPC)",
+      "Abogado y Contador Público Colegiado",
       "Especialista en Normas NIIF y Tributación",
       "Auditoría Contable y Planillas PLAME",
     ],
@@ -138,27 +152,13 @@ const teamMembers: TeamMember[] = [
     name: "William Valdivia",
     role: "Abogado Consultor",
     area: "Derecho Civil & Litigios Comerciales",
-    image: "", // Corrección 9: Sin foto oficial
+    image: "", // Sin foto oficial, monograma institucional
     education: "Abogado litigante con especialidad en derecho civil patrimonial.",
     experience: "Especialista en contratos comerciales, saneamiento inmobiliario, desalojos y litigios ante las Cortes Superiores de Justicia.",
     highlights: [
       "Litigios Civiles y Comerciales",
       "Saneamiento Inmobiliario y Estudio de Títulos",
       "Garantías Hipotecarias y Contratos",
-    ],
-  },
-  {
-    id: "delila",
-    name: "Delila Ronceros",
-    role: "Consultora Legal",
-    area: "Derecho Corporativo & Cumplimiento",
-    image: "", // Corrección 9: Se integrará foto del Drive
-    education: "Abogada especialista en derecho corporativo, societario y cumplimiento empresarial preventivo.",
-    experience: "Asesoría estratégica en derecho empresarial, redacción contractual, reestructuraciones y gobierno societario.",
-    highlights: [
-      "Derecho Corporativo y Societario",
-      "Contratos Mercantiles y Acuerdos de Inversión",
-      "Cumplimiento y Regulación Empresarial",
     ],
   },
 ];
@@ -240,7 +240,7 @@ Solicito una asesoría tributaria.`;
       {/* ═══ HERO SECTION: 100% Full-Bleed — DR. ROBERTO MARCA (CORRECCIÓN 22) ═══ */}
       <section
         id="quienes-somos"
-        className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#0e1d14] pt-28 sm:pt-32 md:pt-36 pb-20 sm:pb-24"
+        className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-[#0e1d14] pt-28 sm:pt-32 md:pt-36 pb-0"
         style={{
           backgroundImage: "url(/images/hero/nosotros-natural.webp)",
           backgroundSize: "cover",
@@ -261,11 +261,11 @@ Solicito una asesoría tributaria.`;
         </div>
 
         {/* Content with integrated portrait fade on right */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto pb-16 sm:pb-20 lg:pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* LEFT: Text & Authority */}
-            <div className="lg:col-span-7 flex flex-col justify-center text-left">
+            <div className="lg:col-span-7 flex flex-col justify-center text-left lg:py-16">
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35 }}>
                 {/* Breadcrumb */}
                 <div className="mb-4 sm:mb-5">
@@ -326,25 +326,34 @@ Solicito una asesoría tributaria.`;
               </motion.div>
             </div>
 
-            {/* RIGHT: Dr. Roberto Marca Cutout with Natural Fade (Corrección 8: sin tarjeta flotante) */}
-            <div className="lg:col-span-5 relative flex justify-center lg:justify-end items-end mt-8 lg:mt-0">
-              <div className="relative w-full max-w-[460px] flex flex-col items-center lg:items-end">
-                {/* Ambient soft gold/emerald glow behind Roberto */}
-                <div className="absolute top-1/4 right-1/4 w-[280px] h-[280px] bg-[#fa9b0c]/15 rounded-full blur-3xl pointer-events-none" />
-                
-                {/* Cutout Image with bottom dissolve fade */}
-                <div className="relative w-full overflow-hidden">
-                  <img
-                    src="/images/hero/roberto-side-cutout.webp"
-                    alt="Dr. Roberto Marca - Socio Principal ROMA & ABOGADOS"
-                    className="w-full h-auto max-h-[580px] object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.6)]"
-                  />
-                  {/* Bottom fade into section floor */}
-                  <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#0e1d14] via-[#0e1d14]/70 to-transparent pointer-events-none" />
-                </div>
+            {/* Spacer for desktop 5 columns so grid preserves spacing */}
+            <div className="hidden lg:block lg:col-span-5 pointer-events-none" aria-hidden="true" />
+
+            {/* Mobile / Tablet: Dr. Roberto below CTAs */}
+            <div className="block lg:hidden mt-8 flex justify-center items-end">
+              <div className="relative w-full max-w-[340px] sm:max-w-[400px]">
+                <img
+                  src="/images/hero/roberto-side-cutout.webp"
+                  alt="Dr. Roberto Marca - Socio Principal ROMA & ABOGADOS"
+                  className="w-full h-auto object-contain object-bottom drop-shadow-[0_20px_35px_rgba(0,0,0,0.6)]"
+                />
               </div>
             </div>
 
+          </div>
+        </div>
+
+        {/* DESKTOP HERO CUTOUT: Dr. Roberto Marca - 100% Flush to Bottom Edge (Al ras del término de la hoja) */}
+        <div className="hidden lg:flex absolute bottom-0 inset-x-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 justify-end items-end pointer-events-none z-20 overflow-visible">
+          <div className="relative w-full max-w-[480px] xl:max-w-[540px] 2xl:max-w-[580px] flex justify-end items-end">
+            {/* Ambient soft gold glow behind Roberto */}
+            <div className="absolute top-1/4 right-1/4 w-[360px] h-[360px] bg-[#fa9b0c]/12 rounded-full blur-3xl pointer-events-none" />
+            
+            <img
+              src="/images/hero/roberto-side-cutout.webp"
+              alt="Dr. Roberto Marca - Socio Principal ROMA & ABOGADOS"
+              className="w-full h-auto max-h-[76vh] xl:max-h-[82vh] 2xl:max-h-[86vh] object-contain object-bottom drop-shadow-[0_25px_45px_rgba(0,0,0,0.7)] block select-none pointer-events-auto"
+            />
           </div>
         </div>
 
@@ -468,8 +477,8 @@ Solicito una asesoría tributaria.`;
                               alt={`${member.name} - ${member.role}`}
                               className="absolute inset-0 w-full h-full object-cover object-[center_12%] transform group-hover:scale-105 transition-transform duration-500 ease-out"
                             />
-                            {/* Degradado oscuro para lectura perfecta */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0e1a11] via-[#14261a]/70 to-transparent group-hover:via-[#14261a]/80 transition-colors" />
+                            {/* Degradado suave para lectura perfecta sin oscurecer los rostros */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#09140d]/95 via-[#09140d]/30 to-transparent to-55% transition-opacity" />
                           </>
                         ) : (
                           <div className="absolute inset-0 bg-gradient-to-b from-[#183122] via-[#112318] to-[#0c1811] flex flex-col items-center justify-center p-6 text-center">

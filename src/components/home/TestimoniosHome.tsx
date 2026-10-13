@@ -5,19 +5,24 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 
 const testimonials = [
   {
+    name: "Andres Rivera",
+    role: "Gerente de Administración y Apoderado de TSNET S.A.",
+    text: "ROMA Abogados nos apoya en temas legales tributarios desde el año 2016 al día de hoy. Recomiendo sus servicios pues siempre responden de manera rápida las consultas o los casos encargados.",
+  },
+  {
     name: "Isaac Picon",
-    role: "Gerente General, Constructora & Inmobiliaria IP S.A.C.",
-    text: "Roma Abogados logró anular una resolución de determinación de SUNAT por más de S/ 450,000 en el Tribunal Fiscal. Su rigor técnico y claridad estratégica marcaron la diferencia. Son el respaldo legal de confianza para nuestra empresa.",
+    role: "Representante de Vidagro SAC y Picon SAC",
+    text: "Roberto me apoya actualmente en los procesos o controversias tributarias de mis empresas, es claro en sus estrategias para disminuir el impacto tributario, tiene un seguimiento personalizado de mis casos y recomiendo su asesoría.",
   },
   {
     name: "Dalton Vilchez",
-    role: "Director Ejecutivo, Corporación Logística del Centro",
-    text: "Teníamos una fiscalización laboral de SUNAFIL con riesgo de multas millonarias. El equipo de Roma Abogados asumió la defensa de forma inmediata y logró archivar el proceso. Su rapidez y conocimiento del procedimiento fueron impecables.",
+    role: "Fundador del Grupo Vilchez (Emsunir SA, Emprosa y Polycoas S.A.C.)",
+    text: "ROMA Abogados junto a Roberto es un grupo profesional con experiencia en asuntos tributarios, con su apoyo legal seguimos en crecimiento en nuestro grupo empresarial.",
   },
   {
     name: "Juan Reyna",
-    role: "Gerente de Operaciones, Retail & Distribución Reyna S.A.C.",
-    text: "Contratamos el servicio integrado de Outsourcing Contable y asesoría tributaria permanente. Desde entonces, nuestras declaraciones están impecables, implementamos el SIRE sin contratiempos y tenemos la tranquilidad de contar con blindaje jurídico ante cualquier duda.",
+    role: "Representante de Conviales y Entrevias S.A.C.",
+    text: "Roberto y su equipo profesional ha demostrado eficiencia y éxito en los procedimientos contenciosos administrativos y en procesos judiciales en materia tributaria de nuestra Compañía, por lo cual agradecemos y recomendamos su apoyo legal.",
   },
 ];
 
@@ -40,12 +45,12 @@ export function TestimoniosHome() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {testimonials.map((t, i) => (
             <ScrollReveal
               key={t.name}
-              delay={0.1 * i}
-              className="bg-[#FAFBF9] p-8 rounded-2xl border border-[#2b4b38]/10 hover:border-[#fa9b0c]/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+              delay={0.08 * i}
+              className="bg-[#FAFBF9] p-6 sm:p-7 rounded-2xl border border-[#2b4b38]/10 hover:border-[#fa9b0c]/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 <div className="flex gap-1 mb-5">

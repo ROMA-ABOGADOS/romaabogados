@@ -19,7 +19,7 @@ const articles = [
   },
   {
     image: "/images/publications/igv.webp",
-    title: "IMPUESTO GENERAL A LAS VENTAS",
+    title: "IMPUESTO GENERAL A LAS VENTAS (IGV)",
     desc: "Operaciones no reales, crédito fiscal y tratamiento de exportación de servicios y detracciones.",
     href: "/defensa-tributaria-sunat",
   },
@@ -68,15 +68,8 @@ export function PublicacionesRecientes() {
 
                 {/* Information Layer */}
                 <div className="relative z-10 p-6 sm:p-7 flex flex-col justify-end h-full">
-                  {/* Category Pill Tag */}
-                  <div className="mb-3">
-                    <span className="inline-block px-3 py-1 rounded-full bg-[#fa9b0c]/20 border border-[#fa9b0c]/30 text-[#fa9b0c] text-[10px] sm:text-[11px] font-bold uppercase tracking-wider backdrop-blur-sm">
-                      Publicación Especializada
-                    </span>
-                  </div>
-
-                  {/* Enriched Prominent Title (previously blue box badge) */}
-                  <h3 className="font-serif text-2xl sm:text-[26px] text-white font-normal leading-tight mb-3 group-hover:text-[#fa9b0c] transition-colors">
+                  {/* Prominent Golden Amber Title */}
+                  <h3 className="font-serif text-2xl sm:text-[26px] text-[#fa9b0c] font-normal leading-tight mb-3 group-hover:text-white transition-colors">
                     {art.title}
                   </h3>
 

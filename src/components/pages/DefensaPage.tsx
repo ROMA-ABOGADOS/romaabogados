@@ -18,11 +18,34 @@ import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
 
 const taxPillars = [
   {
+    icon: Building2,
+    title: "1. Defensa tributaria ante el Poder Judicial",
+    badge: "Poder Judicial",
+    items: [
+      "Procesos contencioso-administrativos en materia tributaria",
+      "Procesos de amparo vinculados a controversias tributarias",
+      "Solicitud y seguimiento de medidas cautelares",
+      "Defensa frente a actuaciones de la Administración Tributaria",
+      "Procesos penales por delitos de defraudación tributaria y delitos tributarios o aduaneros",
+    ],
+  },
+  {
+    icon: AlertOctagon,
+    title: "2. Defensa en Cobranza coactiva y medidas cautelares (Embargos)",
+    badge: "Cobranza Coactiva & Embargos",
+    items: [
+      "Defensa en procedimientos de cobranza coactiva",
+      "Impugnación y levantamiento de embargos y medidas cautelares",
+      "Presentación de quejas y acciones judiciales, cuando corresponda",
+      "Estrategias para la suspensión de remates",
+      "Tercerías excluyentes de propiedad frente a embargos",
+      "Evaluación integral de la deuda y definición de estrategias de defensa",
+    ],
+  },
+  {
     icon: Scale,
-    title: "1. Consultoría y Planeamiento Tributario",
+    title: "3. Consultoría y planeamiento tributario",
     badge: "Preventivo",
-    description:
-      "Diseño e implementación de estrategias fiscales seguras para optimizar la carga impositiva en estricto cumplimiento legal.",
     items: [
       "Diagnóstico tributario preventivo y auditorías fiscales",
       "Planeamiento tributario corporativo y sectorial",
@@ -31,10 +54,8 @@ const taxPillars = [
   },
   {
     icon: Shield,
-    title: "2. Procedimientos ante la SUNAT",
+    title: "4. Procedimientos ante la SUNAT",
     badge: "Administrativo",
-    description:
-      "Acompañamiento y defensa técnica especializada en requerimientos e inspecciones de fiscalización.",
     items: [
       "Defensa en fiscalizaciones parciales y definitivas",
       "Respuesta estratégica a cartas inductivas y citaciones",
@@ -43,38 +64,12 @@ const taxPillars = [
   },
   {
     icon: Gavel,
-    title: "3. Procedimientos Contencioso-Tributarios",
+    title: "5. Procedimientos Contencioso-Tributarios",
     badge: "Tribunal Fiscal",
-    description:
-      "Defensa en segunda instancia administrativa respaldada por exintegrantes del Tribunal Fiscal.",
     items: [
       "Recursos de apelación y quejas ante el Tribunal Fiscal",
       "Sustentación de informes orales ante salas especializadas",
       "Estrategia contenciosa para revocación de valores y multas",
-    ],
-  },
-  {
-    icon: Building2,
-    title: "4. Procesos Judiciales Contencioso-Administrativos",
-    badge: "Poder Judicial",
-    description:
-      "Patrocinio judicial de alta especialización frente a resoluciones adversas del Tribunal Fiscal.",
-    items: [
-      "Demandas contencioso-administrativas ante el Poder Judicial",
-      "Medidas cautelares tributarias para suspensión de cobranzas",
-      "Recursos de casación ante la Corte Suprema de Justicia",
-    ],
-  },
-  {
-    icon: AlertOctagon,
-    title: "5. Cobranza Coactiva y Embargos",
-    badge: "Urgencias",
-    description:
-      "Acción legal urgente para detener embargos bancarios y salvaguardar la liquidez de tu negocio.",
-    items: [
-      "Suspensión y levantamiento urgente de embargos coactivos",
-      "Fraccionamientos y aplazamientos tributarios estratégicos",
-      "Quejas por transgresión del procedimiento de cobranza",
     ],
   },
 ];
