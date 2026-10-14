@@ -41,7 +41,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-[#2b4b38] text-white border-t border-[#fa9b0c]/20">
+    <footer className="bg-[#101e14] text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand */}
@@ -56,11 +56,11 @@ export function Footer() {
             <div className="pt-2 border-t border-white/15 space-y-1.5">
               <p className="text-white/60 text-xs uppercase tracking-wider font-semibold">Estudio Jurídico Especializado</p>
               <a
-                href="mailto:contacto@romaabogados.pe"
+                href="mailto:rm@romaabogados.pe"
                 className="text-[#fa9b0c] hover:text-[#eda340] text-sm font-semibold transition-colors flex items-center gap-1.5"
               >
                 <Mail className="w-4 h-4 shrink-0" />
-                contacto@romaabogados.pe
+                rm@romaabogados.pe
               </a>
             </div>
           </div>
@@ -118,12 +118,12 @@ export function Footer() {
                 +51 905 454 792
               </a>
               <a
-                href="mailto:contacto@romaabogados.pe"
+                href="mailto:rm@romaabogados.pe"
                 className="flex items-center gap-2 text-white/85 hover:text-[#fa9b0c] transition-colors"
                 title="Enviar correo a ROMA & ABOGADOS"
               >
                 <Mail className="w-4 h-4 text-[#fa9b0c] shrink-0" />
-                contacto@romaabogados.pe
+                rm@romaabogados.pe
               </a>
               <div className="flex items-center gap-2 text-white/75">
                 <MapPin className="w-4 h-4 text-[#fa9b0c] shrink-0" />
@@ -156,7 +156,7 @@ export function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10 bg-[#1e3527]">
+      <div className="border-t border-white/10 bg-[#0c170f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col items-center sm:items-start gap-1">
             <p className="text-white/70 text-xs sm:text-sm">

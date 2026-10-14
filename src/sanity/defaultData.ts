@@ -3,7 +3,7 @@ export const defaultSiteSettings = {
   tagline: "Firma Jurídica & Empresarial",
   phone: "+51 905 454 792",
   whatsapp: "51905454792",
-  email: "contacto@romaabogados.pe",
+  email: "rm@romaabogados.pe",
   address: "Lima, Perú",
   schedule: "Lun - Vie: 8:30 - 18:30 / Sáb: 9:00 - 13:00",
   footerDescription:

@@ -18,7 +18,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    detail: "contacto@romaabogados.pe",
+    detail: "rm@romaabogados.pe",
     description: "Respuesta en 24h",
     color: "text-navy",
     bg: "bg-navy/10",

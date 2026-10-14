@@ -97,20 +97,20 @@ export function Services() {
                   <div className="relative z-10 p-6 sm:p-7 flex flex-col justify-end">
                     {/* Tag badge */}
                     <div className="mb-2">
-                      <span className="inline-block px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[#fa9b0c] text-[11px] font-bold uppercase tracking-wider">
+                      <span className="inline-block px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-white text-[11px] font-bold uppercase tracking-wider">
                         {card.tag}
                       </span>
                     </div>
 
                     {/* Area Title */}
-                    <h3 className="font-serif text-2xl text-white font-normal leading-snug mb-4 group-hover:text-[#fa9b0c] transition-colors">
+                    <h3 className="font-serif text-2xl text-white font-normal leading-snug mb-4 group-hover:text-white/90 transition-colors">
                       {card.title}
                     </h3>
 
                     {/* Action link */}
-                    <div className="pt-3 border-t border-white/15 flex items-center gap-2 text-xs font-semibold text-[#fa9b0c] group-hover:text-white transition-colors">
+                    <div className="pt-3 border-t border-white/15 flex items-center gap-2 text-xs font-semibold text-white/90 group-hover:text-white transition-colors">
                       <span>Conocer Especialidad</span>
-                      <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1.5 transition-transform" />
+                      <ArrowRight className="w-3.5 h-3.5 text-white/90 transform group-hover:translate-x-1.5 transition-transform" />
                     </div>
                   </div>
                 </Link>

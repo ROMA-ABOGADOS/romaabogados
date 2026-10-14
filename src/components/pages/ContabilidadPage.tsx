@@ -90,7 +90,7 @@ export function ContabilidadPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="hero-h1 font-serif font-normal text-4xl sm:text-5xl lg:text-[62px] text-white leading-[1.12] tracking-tight mb-5 sm:mb-6"
             >
-              OUTSOURCING <span className="text-[#fa9b0c]">CONTABLE</span>
+              OUTSOURCING CONTABLE
             </motion.h1>
 
             {/* Subtitle */}

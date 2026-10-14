@@ -33,7 +33,7 @@ export const siteSettings = defineType({
       name: 'email',
       title: 'Correo Electrónico de Contacto',
       type: 'string',
-      initialValue: 'contacto@romaabogados.pe',
+      initialValue: 'rm@romaabogados.pe',
     }),
     defineField({
       name: 'address',

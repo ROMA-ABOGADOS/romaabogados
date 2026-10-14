@@ -68,8 +68,8 @@ export function PublicacionesRecientes() {
 
                 {/* Information Layer */}
                 <div className="relative z-10 p-6 sm:p-7 flex flex-col justify-end h-full">
-                  {/* Prominent Golden Amber Title */}
-                  <h3 className="font-serif text-2xl sm:text-[26px] text-[#fa9b0c] font-normal leading-tight mb-3 group-hover:text-white transition-colors">
+                  {/* Clean White Title */}
+                  <h3 className="font-serif text-2xl sm:text-[26px] text-white font-normal leading-tight mb-3 group-hover:text-white/90 transition-colors">
                     {art.title}
                   </h3>
 
@@ -79,9 +79,9 @@ export function PublicacionesRecientes() {
                   </p>
 
                   {/* Link action */}
-                  <div className="pt-3 border-t border-white/15 flex items-center gap-2 text-xs font-semibold text-[#fa9b0c] group-hover:text-white transition-colors">
+                  <div className="pt-3 border-t border-white/15 flex items-center gap-2 text-xs font-semibold text-white/90 group-hover:text-white transition-colors">
                     <span>Ver detalle</span>
-                    <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1.5 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 text-white/90 transform group-hover:translate-x-1.5 transition-transform" />
                   </div>
                 </div>
               </Link>

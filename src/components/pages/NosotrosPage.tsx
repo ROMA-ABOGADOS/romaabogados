@@ -22,7 +22,7 @@ import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
    5. Judith Palomino
    6. Richard Agapito
    7. Rafael Huaranga
-   8. William Valdivia
+   8. Willian Balbin
    ════════════════════════════════════════════════════════════════ */
 
 interface TeamMember {
@@ -148,8 +148,8 @@ const teamMembers: TeamMember[] = [
     ],
   },
   {
-    id: "william",
-    name: "William Valdivia",
+    id: "willian",
+    name: "Willian Balbin",
     role: "Abogado Consultor",
     area: "Derecho Civil & Litigios Comerciales",
     image: "", // Sin foto oficial, monograma institucional
@@ -292,7 +292,7 @@ Solicito una asesoría tributaria.`;
                   transition={{ duration: 0.6, delay: 0.1 }}
                   className="hero-h1 font-serif font-normal text-4xl sm:text-6xl lg:text-[76px] text-white leading-[1.08] tracking-tight mb-4 sm:mb-6"
                 >
-                  ROMA & <span className="text-[#fa9b0c]">ABOGADOS</span>
+                  ROMA & ABOGADOS
                 </motion.h1>
 
                 {/* Subtitle */}
@@ -516,26 +516,26 @@ Solicito una asesoría tributaria.`;
 
                         {/* Botón flotante para voltear */}
                         <div className="absolute top-4 right-4 z-20">
-                          <span className="w-8 h-8 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-[#fa9b0c] flex items-center justify-center text-xs group-hover:scale-110 group-hover:bg-[#fa9b0c] group-hover:text-[#1e3527] transition-all">
+                          <span className="w-8 h-8 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white flex items-center justify-center text-xs group-hover:scale-110 group-hover:bg-white group-hover:text-[#1e3527] transition-all">
                             <RotateCw className="w-3.5 h-3.5" />
                           </span>
                         </div>
 
                         {/* Info inferior */}
                         <div className="relative z-10 p-5 sm:p-6 text-left">
-                          <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#fa9b0c] text-[#1e3527] text-[10px] font-bold uppercase tracking-wider mb-2">
+                          <span className="inline-block px-2.5 py-0.5 rounded-full bg-white text-[#1e3527] text-[10px] font-bold uppercase tracking-wider mb-2 shadow-sm">
                             {member.role}
                           </span>
-                          <h3 className="font-serif text-xl sm:text-2xl text-white font-normal leading-tight group-hover:text-[#fa9b0c] transition-colors">
+                          <h3 className="font-serif text-xl sm:text-2xl text-white font-normal leading-tight group-hover:text-white/90 transition-colors">
                             {member.name}
                           </h3>
                           <p className="text-white/80 text-xs mt-1 line-clamp-1 font-light">
                             {member.area}
                           </p>
 
-                          <div className="mt-4 pt-3 border-t border-white/15 flex items-center justify-between text-[11px] font-semibold text-[#fa9b0c]">
+                          <div className="mt-4 pt-3 border-t border-white/15 flex items-center justify-between text-[11px] font-semibold text-white/90 group-hover:text-white transition-colors">
                             <span>Ver Trayectoria</span>
-                            <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-3.5 h-3.5 text-white/90 transform group-hover:translate-x-1 transition-transform" />
                           </div>
                         </div>
                       </motion.div>
@@ -552,14 +552,14 @@ Solicito una asesoría tributaria.`;
                         <div>
                           <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-3">
                             <div>
-                              <span className="text-[10px] font-bold uppercase tracking-widest text-[#fa9b0c]">
+                              <span className="text-[10px] font-bold uppercase tracking-widest text-white/90">
                                 {member.role}
                               </span>
                               <h4 className="font-serif text-lg text-white font-normal leading-tight">
                                 {member.name}
                               </h4>
                             </div>
-                            <span className="text-xs text-[#fa9b0c] flex items-center gap-1 font-medium">
+                            <span className="text-xs text-white/80 hover:text-white flex items-center gap-1 font-medium cursor-pointer">
                               <RotateCw className="w-3 h-3" /> Volver
                             </span>
                           </div>
@@ -569,7 +569,7 @@ Solicito una asesoría tributaria.`;
                             <div className="space-y-2.5 text-xs text-white/85 font-light leading-relaxed">
                               {member.bullets.map((b, i) => (
                                 <div key={i} className="flex items-start gap-2">
-                                  <CheckCircle2 className="w-3.5 h-3.5 text-[#fa9b0c] shrink-0 mt-0.5" />
+                                  <CheckCircle2 className="w-3.5 h-3.5 text-white/80 shrink-0 mt-0.5" />
                                   <span>{b}</span>
                                 </div>
                               ))}
@@ -585,8 +585,8 @@ Solicito una asesoría tributaria.`;
                               {member.highlights && member.highlights.length > 0 && (
                                 <div className="pt-2 border-t border-white/10 space-y-1.5">
                                   {member.highlights.map((hl) => (
-                                    <div key={hl} className="flex items-center gap-1.5 text-[11px] text-[#fa9b0c]">
-                                      <CheckCircle2 className="w-3 h-3 shrink-0" />
+                                    <div key={hl} className="flex items-center gap-1.5 text-[11px] text-white/90">
+                                      <CheckCircle2 className="w-3 h-3 text-white/70 shrink-0" />
                                       <span>{hl}</span>
                                     </div>
                                   ))}
@@ -622,7 +622,7 @@ Solicito una asesoría tributaria.`;
       </section>
 
       {/* ═══ SECCIÓN TIKTOK (RECOMENDACIÓN DEL CLIENTE - IMAGE33.PNG) ═══ */}
-      <section className="py-16 sm:py-20 bg-[#FAFBF9] border-t border-[#2b4b38]/10">
+      <section id="tiktok" className="py-16 sm:py-20 bg-[#FAFBF9] border-t border-[#2b4b38]/10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-12">
@@ -668,20 +668,20 @@ Solicito una asesoría tributaria.`;
 
                     {/* Play Button center */}
                     <div className="absolute inset-0 flex items-center justify-center z-10">
-                      <div className="w-14 h-14 rounded-full bg-[#fa9b0c]/90 text-[#1e3527] flex items-center justify-center shadow-xl group-hover:scale-115 group-hover:bg-[#fa9b0c] transition-all duration-300">
+                      <div className="w-14 h-14 rounded-full bg-white/95 text-[#1e3527] flex items-center justify-center shadow-xl group-hover:scale-115 group-hover:bg-white transition-all duration-300">
                         <Play className="w-6 h-6 fill-current ml-0.5" />
                       </div>
                     </div>
 
                     {/* Bottom Caption */}
                     <div className="absolute bottom-5 left-5 right-5 z-10 text-left">
-                      <span className="inline-block px-2 py-0.5 rounded-md bg-[#fa9b0c]/20 text-[#fa9b0c] text-[10px] font-bold uppercase tracking-wider mb-1.5">
+                      <span className="inline-block px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-wider mb-2">
                         {video.tag}
                       </span>
-                      <h4 className="font-serif text-white text-base leading-snug line-clamp-2 mb-2 group-hover:text-[#fa9b0c] transition-colors">
+                      <h4 className="font-serif text-white text-base leading-snug line-clamp-2 mb-2 group-hover:text-white/90 transition-colors">
                         &ldquo;{video.title}&rdquo;
                       </h4>
-                      <span className="text-[11px] font-semibold text-[#fa9b0c] flex items-center gap-1">
+                      <span className="text-[11px] font-semibold text-white/90 group-hover:text-white flex items-center gap-1 transition-colors">
                         Ver en TikTok ↗
                       </span>
                     </div>
@@ -744,11 +744,11 @@ Solicito una asesoría tributaria.`;
                   <div>
                     <p className="text-xs text-[#42604e] font-medium">Correo Electrónico</p>
                     <a
-                      href="mailto:contacto@romaabogados.pe"
+                      href="mailto:rm@romaabogados.pe"
                       className="text-base font-bold text-[#2b4b38] hover:text-[#fa9b0c] transition-colors inline-block"
                       title="Enviar correo a ROMA & ABOGADOS"
                     >
-                      contacto@romaabogados.pe
+                      rm@romaabogados.pe
                     </a>
                   </div>
                 </div>

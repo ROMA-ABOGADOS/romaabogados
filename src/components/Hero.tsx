@@ -31,18 +31,28 @@ export function Hero() {
       }
     };
 
-    // Only start the active video depending on viewport to optimize bandwidth and decoder
-    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-    if (isMobile) {
-      startVideo(mobileVideoRef.current);
-    } else {
-      startVideo(desktopVideoRef.current);
-    }
+    // Start the active video depending on orientation / aspect ratio
+    const checkAndPlay = () => {
+      const isPortrait = typeof window !== "undefined" && window.innerHeight > window.innerWidth;
+      if (isPortrait) {
+        startVideo(mobileVideoRef.current);
+      } else {
+        startVideo(desktopVideoRef.current);
+      }
+    };
+
+    checkAndPlay();
+    window.addEventListener("resize", checkAndPlay);
+    window.addEventListener("orientationchange", checkAndPlay);
+    return () => {
+      window.removeEventListener("resize", checkAndPlay);
+      window.removeEventListener("orientationchange", checkAndPlay);
+    };
   }, []);
 
   return (
     <section className="relative w-full min-h-screen min-h-[100dvh] flex flex-col justify-end items-center overflow-hidden bg-[#101e14] text-white">
-      {/* ═══ Background Video Mobile (Vertical 9:16 / 9:20 Remastered) ═══ */}
+      {/* ═══ Background Video Portrait (Vertical 9:16 / 9:20 Remastered - All Portrait Phones & Tablets) ═══ */}
       <video
         ref={mobileVideoRef}
         autoPlay
@@ -51,12 +61,12 @@ export function Hero() {
         playsInline
         preload="auto"
         poster="/videos/hero-poster-mobile.webp"
-        className="absolute inset-0 w-full h-full object-cover z-0 block md:hidden"
+        className="absolute inset-0 w-full h-full object-cover z-0 block portrait:block landscape:hidden"
       >
         <source src="/videos/hero-roma-mobile.mp4?v=6" type="video/mp4" />
       </video>
 
-      {/* ═══ Background Video Desktop (Horizontal 16:9 Remastered) ═══ */}
+      {/* ═══ Background Video Landscape (Horizontal 16:9 Remastered - Desktop & Landscape Tablets) ═══ */}
       <video
         ref={desktopVideoRef}
         autoPlay
@@ -65,7 +75,7 @@ export function Hero() {
         playsInline
         preload="auto"
         poster="/videos/hero-poster.webp"
-        className="absolute inset-0 w-full h-full object-cover z-0 hidden md:block"
+        className="absolute inset-0 w-full h-full object-cover z-0 hidden landscape:block portrait:hidden"
       >
         <source src="/videos/hero-roma.mp4?v=6" type="video/mp4" />
         <source src="/videos/hero-roma.webm?v=6" type="video/webm" />
@@ -82,11 +92,11 @@ export function Hero() {
       {/* ═══ Minimal Soft Bottom Transition into Next Section ═══ */}
       <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/40 to-transparent z-10 pointer-events-none" />
 
-      {/* ═══ Floating Action Bar (Elevated for optimal ergonomic reach & visual harmony) ═══ */}
-      <div className="relative z-20 pb-16 sm:pb-16 md:pb-20 lg:pb-28 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
+      {/* ═══ Floating Action Bar (Ergonomically elevated for all mobiles, phablets, tablets & PC) ═══ */}
+      <div className="relative z-20 pb-[20dvh] sm:pb-[16dvh] md:pb-32 lg:pb-28 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4 w-full max-w-lg sm:max-w-none">
         <button
           onClick={() => openModal()}
-          className="inline-flex items-center gap-2 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-6 py-2.5 sm:px-7 sm:py-3 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-xl shadow-black/50 hover:scale-105 active:scale-[0.98] cursor-pointer"
+          className="inline-flex items-center justify-center gap-2 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-6 py-3 sm:px-7 sm:py-3 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-xl shadow-black/50 hover:scale-105 active:scale-[0.98] cursor-pointer"
         >
           <MessageCircle className="w-4 h-4" />
           <span>Agendar Consulta</span>
@@ -94,7 +104,7 @@ export function Hero() {
 
         <a
           href="#areas"
-          className="inline-flex items-center gap-2 bg-black/40 hover:bg-black/60 text-white backdrop-blur-md border border-white/20 hover:border-[#fa9b0c] px-6 py-2.5 sm:px-7 sm:py-3 rounded-full text-xs sm:text-sm font-medium tracking-wider uppercase transition-all shadow-lg hover:scale-105 active:scale-[0.98]"
+          className="inline-flex items-center justify-center gap-2 bg-black/40 hover:bg-black/60 text-white backdrop-blur-md border border-white/20 hover:border-[#fa9b0c] px-6 py-3 sm:px-7 sm:py-3 rounded-full text-xs sm:text-sm font-medium tracking-wider uppercase transition-all shadow-lg hover:scale-105 active:scale-[0.98]"
         >
           <span>Conocer Áreas</span>
           <ArrowDown className="w-3.5 h-3.5 text-[#fa9b0c] animate-bounce" />
