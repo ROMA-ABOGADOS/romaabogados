@@ -53,7 +53,7 @@ export function Hero() {
         poster="/videos/hero-poster-mobile.webp"
         className="absolute inset-0 w-full h-full object-cover z-0 block md:hidden"
       >
-        <source src="/videos/hero-roma-mobile.mp4?v=4" type="video/mp4" />
+        <source src="/videos/hero-roma-mobile.mp4?v=6" type="video/mp4" />
       </video>
 
       {/* ═══ Background Video Desktop (Horizontal 16:9 Remastered) ═══ */}
@@ -67,8 +67,8 @@ export function Hero() {
         poster="/videos/hero-poster.webp"
         className="absolute inset-0 w-full h-full object-cover z-0 hidden md:block"
       >
-        <source src="/videos/hero-roma.mp4?v=4" type="video/mp4" />
-        <source src="/videos/hero-roma.webm?v=4" type="video/webm" />
+        <source src="/videos/hero-roma.mp4?v=6" type="video/mp4" />
+        <source src="/videos/hero-roma.webm?v=6" type="video/webm" />
       </video>
 
       {/* ═══ Invisible SEO Anchor (Google & Accessibility) ═══ */}
@@ -80,10 +80,10 @@ export function Hero() {
       <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-black/40 via-black/15 to-transparent z-10 pointer-events-none" />
 
       {/* ═══ Minimal Soft Bottom Transition into Next Section ═══ */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/35 to-transparent z-10 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/40 to-transparent z-10 pointer-events-none" />
 
-      {/* ═══ Discreet Bottom Actions (Leaves the whole video 100% visible) ═══ */}
-      <div className="relative z-20 pb-8 sm:pb-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
+      {/* ═══ Floating Action Bar (Elevated for optimal ergonomic reach & visual harmony) ═══ */}
+      <div className="relative z-20 pb-16 sm:pb-16 md:pb-20 lg:pb-28 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
         <button
           onClick={() => openModal()}
           className="inline-flex items-center gap-2 bg-[#fa9b0c] hover:bg-[#eda340] text-[#1e3527] px-6 py-2.5 sm:px-7 sm:py-3 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-xl shadow-black/50 hover:scale-105 active:scale-[0.98] cursor-pointer"

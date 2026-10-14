@@ -21,10 +21,10 @@ const serviceLinks = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: TikTokIcon, href: "https://www.tiktok.com/@RobertoDefensaTributaria", label: "TikTok" },
+  { icon: Facebook, href: "https://www.facebook.com/RMDefensaEmpresarial/mentions/", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/rm_defensaempresarial/", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/rm-roma-abogados/posts/?viewAsMember=true", label: "LinkedIn" },
+  { icon: TikTokIcon, href: "https://www.tiktok.com/@roberto.i.defensa", label: "TikTok" },
 ];
 
 function TikTokIcon({ className }: { className?: string }) {

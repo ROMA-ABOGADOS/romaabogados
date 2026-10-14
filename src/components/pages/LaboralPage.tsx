@@ -19,14 +19,18 @@ import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
 const laborPillars = [
   {
     icon: FileText,
-    title: "1. Consultoría Laboral Preventiva",
-    badge: "Preventivo",
+    title: "1. Consultoría Laboral y Tributario-Laboral",
+    badge: "Preventivo & Fiscal",
     description:
       "Estructuración sólida de la relación laboral para prevenir contingencias y sanciones administrativas.",
     items: [
-      "Redacción y revisión de contratos de trabajo y teletrabajo",
-      "Reglamento Interno de Trabajo (RIT) y políticas corporativas",
-      "Consultoría en remuneraciones, beneficios sociales y utilidades",
+      "Redacción y revisión de contratos de trabajo y teletrabajo.",
+      "Reglamento Interno de Trabajo (RIT) y políticas corporativas.",
+      "Consultoría en remuneraciones, beneficios sociales y utilidades.",
+      "Impuesto a la Renta de quinta categoría.",
+      "Rentas de cuarta categoría y trabajadores independientes.",
+      "Revisión del cumplimiento de obligaciones laborales y tributarias.",
+      "Identificación y prevención de contingencias laborales y tributarias.",
     ],
   },
   {
@@ -36,45 +40,51 @@ const laborPillars = [
     description:
       "Verificación exhaustiva del cumplimiento de la normativa laboral y de seguridad y salud en el trabajo.",
     items: [
-      "Auditorías laborales integrales de compliance preventivo",
-      "Asesoría en Seguridad y Salud en el Trabajo (SST) y comités paritarios",
-      "Protocolos obligatorios contra el hostigamiento sexual (Ley 27942)",
+      "Auditorías laborales integrales de compliance preventivo.",
+      "Asesoría en Seguridad y Salud en el Trabajo (SST) y comités paritarios.",
+      "Protocolos obligatorios contra el hostigamiento sexual (Ley 27942).",
     ],
   },
   {
     icon: AlertTriangle,
-    title: "3. Procedimientos ante SUNAFIL y MTPE",
-    badge: "Defensa Inspectiva",
+    title: "3. Fiscalización y defensa ante SUNAFIL y SUNAT",
+    badge: "SUNAFIL & SUNAT",
     description:
-      "Defensa técnica inmediata ante actuaciones inspectivas de la Superintendencia Nacional de Fiscalización Laboral.",
+      "Defensa técnica inmediata ante actuaciones inspectivas de la Superintendencia Nacional de Fiscalización Laboral y SUNAT.",
     items: [
-      "Defensa en comparecencias e inspecciones presenciales de SUNAFIL",
-      "Descargos fundamentados contra actas de infracción y multas",
-      "Recursos de apelación y revisión ante el Tribunal de Fiscalización Laboral",
+      "Asesoría y representación durante procedimientos de fiscalización de SUNAFIL y SUNAT.",
+      "Atención de requerimientos, actas y actuaciones administrativas.",
+      "Elaboración de descargos, escritos y recursos.",
+      "Defensa frente a observaciones, infracciones y sanciones.",
+      "Seguimiento integral de los procedimientos.",
     ],
   },
   {
     icon: Gavel,
-    title: "4. Litigios y Procesos Judiciales Laborales",
+    title: "4. Litigios y defensa judicial en materia laboral",
     badge: "Poder Judicial",
     description:
       "Patrocinio judicial estratégico bajo las reglas orales de la Nueva Ley Procesal del Trabajo (NLPT).",
     items: [
-      "Defensa en demandas por despido incausado, arbitrario o nulo",
-      "Patrocinio en reclamos de beneficios sociales e indemnizaciones",
-      "Negociación y resolución de controversias colectivas e individuales",
+      "Procesos laborales iniciados por trabajadores y extrabajadores.",
+      "Controversias sobre beneficios sociales, remuneraciones, despidos e indemnizaciones.",
+      "Procesos vinculados con relaciones laborales de trabajadores independientes.",
+      "Procesos contencioso-administrativos en materia laboral y pensionaria.",
+      "Diseño de estrategias procesales y defensa integral de nuestros clientes.",
     ],
   },
   {
     icon: Globe,
-    title: "5. Gestión Migratoria para Empresas",
-    badge: "Extranjería",
+    title: "5. Gestión migratoria",
+    badge: "Migraciones",
     description:
       "Tramitación legal integral para incorporación de talento y directivos extranjeros en el Perú.",
     items: [
-      "Visas de trabajo y calidades migratorias ante MIGRACIONES",
-      "Aprobación y registro de contratos extranjeros ante el MTPE",
-      "Control de porcentajes limitativos de personal extranjero",
+      "Gestión para la obtención y renovación de visas de trabajo.",
+      "Tramitación de visas por llamado de familia.",
+      "Gestión de permisos especiales de salida.",
+      "Renovación de visas y documentos migratorios.",
+      "Obtención de duplicados del carné de extranjería.",
     ],
   },
 ];
