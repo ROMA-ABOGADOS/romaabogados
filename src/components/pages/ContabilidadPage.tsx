@@ -18,26 +18,36 @@ import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
 const contablePillars = [
   {
     icon: Calculator,
-    title: "1. Gestión Contable y Tributaria Integral",
-    badge: "Contabilidad & Impuestos",
+    title: "1. Gestión contable y tributaria",
+    badge: "Contabilidad & Tributación",
     description:
-      "Teneduría ordenada y determinación oportuna de tributos para garantizar cero multas y cumplimiento tributario impecable.",
+      "Teneduría ordenada, libros electrónicos y determinación oportuna de tributos para garantizar cero contingencias.",
     items: [
-      "Teneduría de libros contables físicos y electrónicos (SLE-PLE) con conciliaciones periódicas",
-      "Determinación y liquidación mensual de impuestos (IGV, Renta, ITAN) y Declaración Jurada Anual SUNAT",
-      "Elaboración de estados financieros de balance y gestión bajo normas NIIF para la gerencia",
+      "Registro y procesamiento de operaciones contables.",
+      "Elaboración y actualización de libros y registros contables.",
+      "Cumplimiento de obligaciones contables y tributarias.",
+      "Conciliación y análisis de cuentas.",
+      "Determinación y declaración de obligaciones tributarias.",
+      "Elaboración de reportes e informes gerenciales.",
+      "Regularización y actualización de información contable.",
+      "Identificación de inconsistencias y contingencias contables y tributarias.",
     ],
   },
   {
     icon: Users,
-    title: "2. Gestión de Planillas y Obligaciones Laborales",
-    badge: "Planillas & PLAME",
+    title: "2. Gestión de planillas y obligaciones laborales",
+    badge: "Planillas & Obligaciones Laborales",
     description:
-      "Liquidación exacta de nóminas y cumplimiento riguroso de aportes y contribuciones de seguridad social.",
+      "Liquidación exacta de nóminas, PLAME, AFPnet y cumplimiento riguroso de obligaciones del personal.",
     items: [
-      "Elaboración y procesamiento de planillas de sueldos, salarios y emisión de boletas electrónicas",
-      "Cálculo riguroso de beneficios sociales: gratificaciones, CTS, vacaciones y liquidaciones de cese",
-      "Declaración y pago mensual de obligaciones laborales: PLAME, T-Registro, ESSALUD y AFPnet",
+      "Procesamiento de planillas de sueldos y jornales.",
+      "Cálculo y liquidación de remuneraciones y conceptos laborales.",
+      "Liquidación de beneficios sociales.",
+      "Revisión y control de las retenciones del Impuesto a la Renta de quinta categoría.",
+      "Elaboración y presentación del PDT PLAME.",
+      "Preparación y gestión de información para AFPnet.",
+      "Control de las obligaciones laborales y tributarias vinculadas con la planilla.",
+      "Elaboración de reportes relacionados con los costos laborales y obligaciones del personal.",
     ],
   },
 ];

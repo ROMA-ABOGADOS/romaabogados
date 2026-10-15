@@ -9,13 +9,13 @@ const columns = [
     icon: Target,
     title: "Misión",
     description:
-      "Brindar soluciones jurídicas, tributarias y contables de excelencia que protejan el patrimonio de nuestros clientes y contribuyan al crecimiento sostenible de sus negocios.",
+      "Brindar soluciones jurídicas estratégicas, eficientes y especializadas, protegiendo los intereses de nuestros clientes y acompañándolos en la prevención y solución de sus contingencias legales, con altos estándares de calidad, ética y compromiso profesional.",
   },
   {
     icon: Eye,
     title: "Visión",
     description:
-      "Ser el estudio jurídico y tributario líder en Perú, reconocido por nuestra rigurosidad legal, innovación tecnológica y compromiso con resultados medibles.",
+      "Ser un estudio jurídico líder y referente a nivel nacional en derecho tributario, laboral y empresarial, reconocido por nuestra especialización, excelencia profesional y capacidad para brindar soluciones legales eficientes.",
   },
   {
     icon: Heart,

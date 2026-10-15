@@ -45,18 +45,18 @@ export function AcercaDeNosotros() {
           {/* RIGHT: Text Content without Misión & Visión */}
           <ScrollReveal x={30} duration={0.7} className="lg:col-span-7 flex flex-col justify-center text-left">
             <span className="inline-block text-[#fa9b0c] font-bold text-xs tracking-[0.22em] uppercase mb-3">
-              somos expertos en lo que hacemos
+              ¿Quiénes somos?
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2b4b38] leading-[1.18] mb-6">
-              Acerca de nosotros
+              ROMA & ABOGADOS
             </h2>
 
             <div className="space-y-4 text-[#42604e] text-base sm:text-lg leading-relaxed font-light mb-8">
               <p>
-                Firma legal y contable especializada en asesoría tributaria, laboral y empresarial. Ofrecemos soluciones integrales y de alto impacto para proteger el patrimonio y crecimiento de empresas y personas naturales.
+                <strong>ROMA ABOGADOS</strong> es una firma especializada en asesoría y defensa tributaria, laboral y empresarial, con más de 15 años de experiencia en el sector empresarial.
               </p>
               <p>
-                Bajo la dirección del <strong>Dr. Roberto Marca</strong>, exintegrante del Tribunal Fiscal y de la SUNAT, especialista en litigación tributaria por la Pontificia Universidad Católica del Perú (PUCP), nuestro equipo combina experiencia directa en los órganos resolutivos con un riguroso estándar técnico.
+                Contamos con un equipo de profesionales altamente capacitados, con experiencia en SUNAT, Tribunal Fiscal, Poder Judicial y reconocidas sociedades de auditoría tributaria. Bajo el liderazgo de Roberto Marca, abogado egresado de la PUCP y especialista en derecho tributario y empresarial, brindamos soluciones jurídicas estratégicas y eficientes.
               </p>
             </div>
 

@@ -19,50 +19,49 @@ import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
 const corporatePillars = [
   {
     icon: Building2,
-    title: "1. Constitución y Estructuración Societaria",
-    badge: "Sociedades",
+    title: "1. Derecho Administrativo",
+    badge: "Administrativo & Entidades Públicas",
     description:
-      "Acompañamiento integral en la creación y formalización ágil de vehículos societarios adaptados al modelo de negocio.",
+      "Patrocinio y asesoría estratégica ante entidades estatales, organismos reguladores y procesos contencioso-administrativos.",
     items: [
-      "Constitución estratégica de sociedades (SAC, SRL, EIRL) y sucursales",
-      "Elaboración de estatutos a medida y reserva de denominación SUNARP",
-      "Obtención de RUC, licencias y registro de apoderados y facultades",
-    ],
-  },
-  {
-    icon: Handshake,
-    title: "2. Reorganizaciones Societarias y Due Diligence",
-    badge: "Fusiones & Adquisiciones",
-    description:
-      "Auditoría legal y reestructuración patrimonial estratégica para optimizar operaciones y prevenir pasivos.",
-    items: [
-      "Fusiones, escisiones y reorganizaciones societarias complejas",
-      "Due diligence legal previo a compra, venta o ingreso de inversionistas",
-      "Aumentos y reducciones de capital, cesión de participaciones y acciones",
+      "Procedimientos ante Ministerios, OSCE, RNP, INDECOPI y Municipalidades.",
+      "Procesos contencioso-administrativos contra entidades públicas.",
+      "Concesiones, adquisiciones y licitaciones públicas.",
+      "Licencias, permisos y autorizaciones.",
+      "Recursos administrativos y medios impugnatorios.",
+      "Defensa frente a sanciones, multas, suspensiones y clausuras.",
     ],
   },
   {
     icon: Scale,
-    title: "3. Contratos Civiles y Mercantiles",
-    badge: "Contratos & Negocios",
+    title: "2. Derecho Civil",
+    badge: "Civil & Contratos",
     description:
-      "Redacción y blindaje contractual de alto valor para salvaguardar intereses y mitigar riesgos comerciales.",
+      "Asesoría y prevención en relaciones contractuales, gravámenes patrimoniales y contingencias civiles.",
     items: [
-      "Contratos de compraventa, arrendamiento, distribución y franquicias",
-      "Contratos de fianza, garantías mobiliarias y convenios comerciales",
-      "Revisión y negociación estratégica de contratos de proveedores y clientes",
+      "Consultoría y asesoría en materia civil.",
+      "Elaboración, revisión y negociación de contratos.",
+      "Contratos de arrendamiento, compraventa, cesión de derechos y otros.",
+      "Donaciones y anticipos de legítima.",
+      "Constitución y levantamiento de gravámenes e hipotecas.",
+      "Asesoría sobre embargos, usufructos y testamentos.",
+      "Prevención y gestión de contingencias civiles y contractuales.",
     ],
   },
   {
-    icon: Shield,
-    title: "4. Gobierno Corporativo y Acuerdos de Socios",
-    badge: "Blindaje Societario",
+    icon: Handshake,
+    title: "3. Derecho Corporativo",
+    badge: "Corporativo & Societario",
     description:
-      "Estructuración de órganos de administración, convenios parasociales y protocolos familiares.",
+      "Acompañamiento integral en constitución de empresas, reorganizaciones societarias y acuerdos de gobierno corporativo.",
     items: [
-      "Convenios parasociales (pactos entre accionistas) y derechos de salida",
-      "Protocolos familiares y planes de sucesión patrimonial empresarial",
-      "Asesoría a directorios y juntas generales de accionistas",
+      "Constitución y organización de empresas.",
+      "Asesoría en incrementos y reducciones de capital.",
+      "Elaboración de actas de juntas generales de accionistas y directorios.",
+      "Asesoría en reorganizaciones societarias.",
+      "Elaboración y revisión de poderes y documentos societarios.",
+      "Asesoría en procesos de disolución y liquidación de empresas.",
+      "Consultoría en asuntos societarios y corporativos.",
     ],
   },
 ];
@@ -118,15 +117,14 @@ export function ConstitucionPage() {
               DERECHO EMPRESARIAL
             </motion.h1>
 
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="hero-subtitle mb-8 sm:mb-10 text-[16px] sm:text-[18px] lg:text-[20px] text-[#FAFBF9]/90 max-w-2xl leading-relaxed font-light"
-            >
-              Constitución estratégica de sociedades, reorganizaciones societarias, redacción de contratos mercantiles y gobierno corporativo.
-            </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="hero-subtitle mb-8 sm:mb-10 text-[16px] sm:text-[18px] lg:text-[20px] text-[#FAFBF9]/90 max-w-2xl leading-relaxed font-light"
+              >
+                Asesoría y defensa jurídica integral en Derecho Administrativo, Derecho Civil y Derecho Corporativo para la protección patrimonial y el desarrollo empresarial.
+              </motion.p>
 
             {/* CTAs */}
             <motion.div
@@ -168,7 +166,7 @@ export function ConstitucionPage() {
               </h2>
               <div className="w-16 h-0.5 bg-[#fa9b0c] mx-auto mt-4 mb-4" />
               <p className="mt-2 text-base sm:text-lg text-[#42604e] leading-relaxed font-light">
-                Acompañamiento en el ciclo de vida societario integral, desde la constitución hasta reorganizaciones y gobierno corporativo.
+                Asesoría legal integral en Derecho Administrativo, Derecho Civil y Derecho Corporativo.
               </p>
             </div>
           </ScrollReveal>

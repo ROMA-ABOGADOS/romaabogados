@@ -14,15 +14,16 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
 
 /* ════════════════════════════════════════════════════════════════
-   EQUIPO LEGAL Y CONSULTORES — ORDEN OFICIAL (CORRECCIÓN 25)
-   1. Roberto Marca
-   2. Estefanía Pineda
-   3. David Corthon
-   4. Alonso Silva
-   5. Judith Palomino
-   6. Richard Agapito
-   7. Rafael Huaranga
-   8. Willian Balbin
+   EQUIPO LEGAL Y CONSULTORES — ORDEN OFICIAL SEGÚN GOOGLE DOC
+   1. Roberto Marca (Socio Principal)
+   2. Estefanía Pineda (Abogada Asociada)
+   3. David Corthorn (Abogado Asociado)
+   4. Alonso Silva (Egresado de Derecho)
+   5. Delila Ronceros (Egresada de Derecho)
+   6. Richard Agapito (Consultor)
+   7. Rafael Huaranga (Consultor)
+   8. Willian Balbin Guevara (Consultor)
+   9. Judith Palomino (Administración)
    ════════════════════════════════════════════════════════════════ */
 
 interface TeamMember {
@@ -42,128 +43,158 @@ const teamMembers: TeamMember[] = [
     id: "roberto",
     name: "Dr. Roberto Marca",
     role: "Socio Principal",
-    area: "Derecho Tributario & Dirección General",
+    area: "Derecho Tributario · Procesal Tributario · Administrativo · Empresarial",
     image: "/images/team/roberto-marca-portrait.webp",
-    education: "Abogado por la Pontificia Universidad Católica del Perú (PUCP). Especialista en Derecho Tributario por la Universidad de Lima.",
-    experience: "Exintegrante del Tribunal Fiscal y de la SUNAT. Más de 12 años liderando defensas y asesorías fiscales de alta complejidad.",
+    education:
+      "Abogado titulado con grado en la Pontificia Universidad Católica del Perú (PUCP). Posee maestría en Derecho Tributario y Fiscalidad Internacional (USMP).",
+    experience:
+      "Más de 15 años de experiencia en patrocinio y defensas en controversias tributarias y empresariales logrando disminuir y/o dejar sin efecto importantes contingencias y/o reparos tributarios en instancia administrativa y en el Poder Judicial.",
     highlights: [
       "Pontificia Universidad Católica del Perú (PUCP)",
-      "Exfuncionario del Tribunal Fiscal y de la SUNAT",
-      "+12 Años de trayectoria tributaria y fiscal",
+      "Asesor de las Salas Especializadas del Tribunal Fiscal (MEF)",
+      "Exfuncionario de SUNAT y egresado del I-CAAT del INDESTA",
+      "+15 Años en patrocinio y controversias tributarias de alta complejidad",
     ],
   },
   {
     id: "estefania",
     name: "Estefanía Pineda",
     role: "Abogada Asociada",
-    area: "Derecho Procesal · Constitucional · Civil",
+    area: "Derecho Procesal · Derecho Constitucional · Derecho Civil",
     image: "/images/team/estefania-pineda.webp",
-    bullets: [
+    education:
       "Abogada del Colegio de Abogados de Lima, egresada de la Universidad San Martín de Porres (USMP) con Especialidad en Derecho Civil y Patrimonial.",
+    experience:
       "Amplia experiencia de más de 6 años en el patrocinio de controversias tributarias, civiles, constitucionales y comerciales (judiciales y extrajudiciales).",
-      "Desempeño específico en el área Procesal Tributario, Civil, análisis de controversias y solución de conflictos, redacción de demandas y todo tipo de escritos judiciales (etapa judicial) y extrajudiciales (etapa conciliatoria), así como el manejo de plataformas del Poder Judicial.",
+    highlights: [
+      "Especialidad en Derecho Civil y Patrimonial (USMP)",
+      "Área Procesal Tributario, Civil y Solución de Conflictos",
+      "Redacción de demandas y todo tipo de escritos judiciales y conciliatorios",
+      "Manejo integral de plataformas del Poder Judicial",
     ],
   },
   {
     id: "david",
-    name: "David Corthon",
-    role: "Asociado",
-    area: "Derecho Laboral & Relaciones Laborales",
+    name: "David Corthorn",
+    role: "Abogado Asociado",
+    area: "Derecho Laboral y Seguridad Social · Derecho Migratorio",
     image: "/images/team/david-corthorn.webp",
-    education: "Abogado especialista en relaciones laborales individuales y colectivas.",
-    experience: "Experto en inspecciones ante SUNAFIL, auditorías de compliance laboral, comités SST y litigios laborales orales bajo la NLPT.",
+    education:
+      "Abogado titulado con grado en la Pontificia Universidad Católica del Perú (PUCP). Maestría en Derecho del Trabajo y de la Seguridad Social en la UNMSM.",
+    experience:
+      "Experiencia en derecho laboral en sectores público y privado, habiendo desempeñado funciones en diversos estudios jurídicos y empresas consultoras.",
     highlights: [
-      "Especialista en Inspecciones SUNAFIL",
-      "Auditorías de Compliance Laboral y SST",
-      "Patrocinio en Litigios Orales NLPT",
+      "Pontificia Universidad Católica del Perú (PUCP)",
+      "Maestría en Derecho del Trabajo y Seguridad Social (UNMSM)",
+      "Encargado de la elaboración de Manuales Legales de Regímenes Laborales",
+      "Autor de diversos artículos e informes en materia laboral y aduanera",
     ],
   },
   {
     id: "alonso",
     name: "Alonso Silva",
     role: "Egresado de Derecho",
-    area: "Derecho Tributario & Empresarial",
+    area: "Derecho Tributario · Derecho Empresarial",
     image: "/images/team/alonso-silva.webp",
-    bullets: [
-      "Egresado de Derecho Empresarial de la Facultad de Derecho de la Universidad de San Martín de Porres, con especialidad en Derecho Tributario y Derecho Aduanero, experiencia en resolución de controversias y litigios tributarios en sede administrativa y judicial.",
-      "Pertenece al Décimo Superior de su promoción y actualmente es Ayudante de Cátedra en el curso de Jurisprudencia Tributaria del ciclo 11 de la Especialidad de Derecho Empresarial de la USMP.",
-      "Miembro del Centro de Estudios en Derecho Administrativo (CEDA) y del Centro de Comercio Exterior y Aduanero (CECEDA) de la USMP.",
-      "Reconocimientos por la USMP por trabajo de investigación en 2024 y del Foro Iberoamericano de Derecho Administrativo (FIDA).",
+    education:
+      "Egresado de Derecho Empresarial de la Facultad de Derecho de la Universidad de San Martín de Porres (USMP), con especialidad en Derecho Tributario y Derecho Aduanero.",
+    experience:
+      "Experiencia en resolución de controversias y litigios tributarios en sede administrativa y judicial. Pertenece al Décimo Superior de su promoción.",
+    highlights: [
+      "Décimo Superior y Ayudante de Cátedra en Jurisprudencia Tributaria (USMP)",
+      "Miembro de centros de investigación CEDA y CECEDA (USMP)",
+      "Reconocimiento por trabajo de investigación jurídica 2024 (USMP)",
+      "Participante del Foro Iberoamericano de Derecho Administrativo (FIDA)",
     ],
   },
   {
     id: "delila",
     name: "Delila Ronceros",
     role: "Egresada de Derecho",
-    area: "Derecho Corporativo & Cumplimiento",
+    area: "Derecho Tributario · Derecho Administrativo",
     image: "/images/team/delila-ronceros.webp",
-    education: "Egresada de la Facultad de Derecho con especialización en derecho corporativo, societario y cumplimiento empresarial preventivo.",
-    experience: "Asesoría estratégica en derecho empresarial, redacción contractual, reestructuraciones y gobierno societario.",
+    education:
+      "Egresada de la Facultad de Derecho de la Universidad Tecnológica del Perú (UTP), perteneciente al tercio superior de su promoción.",
+    experience:
+      "Experiencia en Derecho Tributario y Derecho Administrativo, con desarrollo de investigaciones y trabajos académicos en distintas áreas del Derecho.",
     highlights: [
-      "Derecho Corporativo y Societario",
-      "Contratos Mercantiles y Acuerdos de Inversión",
-      "Cumplimiento y Regulación Empresarial",
+      "Tercio Superior de su promoción académica (UTP)",
+      "Especialidad en Derecho Tributario y Derecho Administrativo",
+      "Desarrollo de investigaciones jurídicas y académicas",
+      "Análisis normativo y resolución de controversias",
+    ],
+  },
+  {
+    id: "richard",
+    name: "Richard Agapito",
+    role: "Consultor",
+    area: "Auditoría Tributaria Preventiva · Docente y Conferencista",
+    image: "/images/team/richard-agapito.webp",
+    education:
+      "Contador Público Colegiado con maestría en Derecho Tributario y Fiscalidad Internacional (USMP) y posgrado en Tributación Internacional (UPC).",
+    experience:
+      "Estudios de Derecho Tributario Internacional en la Universidad Austral en Buenos Aires, Argentina. Trabajó como asociado Tax & Legal en KPMG-Perú.",
+    highlights: [
+      "Derecho Tributario Internacional (U. Austral, Buenos Aires)",
+      "Maestría en Tributación y Fiscalidad Internacional (USMP)",
+      "Exasociado Tax & Legal en KPMG-Perú",
+      "Capacitador y conferencista tributario a nivel nacional",
+    ],
+  },
+  {
+    id: "rafael",
+    name: "Rafael Huaranga",
+    role: "Consultor",
+    area: "Derecho Notarial y Registral · Inmobiliario · Civil",
+    image: "", // Sin foto oficial, monograma institucional
+    education:
+      "Abogado egresado de la UNMSM, con estudios de Maestría en Derecho Empresarial en la Pontificia Universidad Católica del Perú (PUCP).",
+    experience:
+      "Especialista en saneamiento y regularización de propiedades, con amplio conocimiento en contratación empresarial, litigios civiles y estrategias legales para la protección del patrimonio.",
+    highlights: [
+      "Abogado egresado de la UNMSM",
+      "Estudios de Maestría en Derecho Empresarial (PUCP)",
+      "Saneamiento físico-legal y regularización de propiedades",
+      "Contratación empresarial y protección del patrimonio",
+    ],
+  },
+  {
+    id: "willian",
+    name: "Willian Balbin Guevara",
+    role: "Consultor",
+    area: "Derecho Penal y Procesal Penal",
+    image: "", // Sin foto oficial, monograma institucional
+    education:
+      "Abogado egresado de la UIGV, miembro del Colegio de Abogados de Lima, con Maestría en Derecho Penal por la USMP.",
+    experience:
+      "Abogado litigante con más de 15 años de experiencia y trayectoria de trabajo en materia penal dentro del Poder Judicial.",
+    highlights: [
+      "Miembro del Colegio de Abogados de Lima (CAL)",
+      "Maestría en Derecho Penal por la USMP",
+      "+15 Años de experiencia en litigación penal",
+      "Docente de la Escuela de Oficiales de la PNP",
     ],
   },
   {
     id: "judith",
     name: "Judith Palomino",
     role: "Administración",
-    area: "Área Administrativa & Gestión Institucional",
+    area: "Gestión Administrativa",
     image: "/images/team/judith-palomino-portrait.webp",
-    education: "Especialista en administración corporativa y gestión institucional del estudio.",
-    experience: "Lidera la administración del estudio, seguimiento de requerimientos, soporte a expedientes y enlace directo con clientes.",
+    education:
+      "Administración de Empresas, responsable de la gestión y coordinación administrativa institucional de ROMA ABOGADOS.",
+    experience:
+      "Se encarga de la organización, seguimiento y coordinación de las actividades internas del estudio, contribuyendo a su adecuado funcionamiento.",
     highlights: [
-      "Gestión Administrativa y Operativa",
-      "Atención y Enlace Institucional",
-      "Soporte y Control de Procesos",
-    ],
-  },
-  {
-    id: "richard",
-    name: "Richard Agapito",
-    role: "Consultor Senior",
-    area: "Contrataciones con el Estado & OSCE",
-    image: "/images/team/richard-agapito.webp",
-    education: "Especialista en Contrataciones Públicas y Gestión Estatal.",
-    experience: "Asesor en licitaciones del Estado (OSCE/RNP), absolución de consultas, apelaciones ante el Tribunal del OSCE y arbitrajes estatales.",
-    highlights: [
-      "Especialista RNP y Tribunal del OSCE",
-      "Licitaciones Públicas y Adjudicaciones",
-      "Controversias y Arbitraje con el Estado",
-    ],
-  },
-  {
-    id: "rafael",
-    name: "Rafael Huaranga",
-    role: "Abogado Asociado",
-    area: "Contabilidad & Auditoría Tributaria",
-    image: "", // Sin foto oficial, monograma institucional
-    education: "Abogado y Contador Público Colegiado con postgrado en Auditoría Tributaria y NIIF.",
-    experience: "Lidera la supervisión técnica y legal de controversias tributarias, determinación de tributos y auditoría financiera.",
-    highlights: [
-      "Abogado y Contador Público Colegiado",
-      "Especialista en Normas NIIF y Tributación",
-      "Auditoría Contable y Planillas PLAME",
-    ],
-  },
-  {
-    id: "willian",
-    name: "Willian Balbin",
-    role: "Abogado Consultor",
-    area: "Derecho Civil & Litigios Comerciales",
-    image: "", // Sin foto oficial, monograma institucional
-    education: "Abogado litigante con especialidad en derecho civil patrimonial.",
-    experience: "Especialista en contratos comerciales, saneamiento inmobiliario, desalojos y litigios ante las Cortes Superiores de Justicia.",
-    highlights: [
-      "Litigios Civiles y Comerciales",
-      "Saneamiento Inmobiliario y Estudio de Títulos",
-      "Garantías Hipotecarias y Contratos",
+      "Gestión y Coordinación Administrativa de ROMA ABOGADOS",
+      "Organización y seguimiento de las actividades internas del estudio",
+      "Atención institucional y enlace con clientes",
+      "Soporte operativo a la gestión de expedientes y servicios",
     ],
   },
 ];
 
-/* 3 VALORES OFICIALES (CORRECCIÓN 23) */
+/* 3 VALORES OFICIALES (EXCELENCIA, INTEGRIDAD, COMPROMISO) */
 const firmValues = [
   {
     icon: Award,
@@ -281,7 +312,7 @@ Solicito una asesoría tributaria.`;
                 <div className="mb-3 sm:mb-5">
                   <span className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#fa9b0c] text-xs font-bold uppercase tracking-[0.15em] backdrop-blur-sm">
                     <Shield className="w-3.5 h-3.5 text-[#fa9b0c]" />
-                    Firma Jurídica y Empresarial en el Perú
+                    ¿Quiénes somos?
                   </span>
                 </div>
 
@@ -295,15 +326,20 @@ Solicito una asesoría tributaria.`;
                   ROMA & ABOGADOS
                 </motion.h1>
 
-                {/* Subtitle */}
-                <motion.p
+                {/* Subtitle con los 2 párrafos oficiales del Word */}
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="hero-subtitle mb-6 sm:mb-8 text-[15px] sm:text-[18px] text-[#FAFBF9]/85 max-w-2xl leading-relaxed font-light"
+                  className="hero-subtitle mb-6 sm:mb-8 text-[15px] sm:text-[17px] text-[#FAFBF9]/90 max-w-2xl leading-relaxed font-light space-y-3"
                 >
-                  Somos una firma de profesionales especializada en asesoría tributaria, laboral y empresarial. Te brindamos soluciones jurídicas eficientes y estratégicas para proteger y potenciar tu negocio.
-                </motion.p>
+                  <p>
+                    ROMA ABOGADOS es una firma especializada en asesoría y defensa tributaria, laboral y empresarial, con más de 15 años de experiencia en el sector empresarial.
+                  </p>
+                  <p className="text-[#FAFBF9]/80 text-[14px] sm:text-[15.5px]">
+                    Contamos con un equipo de profesionales altamente capacitados, con experiencia en SUNAT, Tribunal Fiscal, Poder Judicial y reconocidas sociedades de auditoría tributaria. Bajo el liderazgo de Roberto Marca, abogado egresado de la PUCP y especialista en derecho tributario y empresarial, brindamos soluciones jurídicas estratégicas y eficientes.
+                  </p>
+                </motion.div>
 
                 {/* CTAs */}
                 <motion.div
@@ -380,7 +416,7 @@ Solicito una asesoría tributaria.`;
               </span>
               <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#2b4b38] mb-2.5">Nuestra Misión</h3>
               <p className="text-[#42604e] text-sm sm:text-base leading-relaxed font-light">
-                Brindar soluciones jurídicas y contables estratégicas con el más alto rigor técnico, protegiendo el patrimonio y facilitando el crecimiento de nuestros clientes.
+                Brindar soluciones jurídicas estratégicas, eficientes y especializadas, protegiendo los intereses de nuestros clientes y acompañándolos en la prevención y solución de sus contingencias legales, con altos estándares de calidad, ética y compromiso profesional.
               </p>
             </ScrollReveal>
 
@@ -392,7 +428,7 @@ Solicito una asesoría tributaria.`;
               </span>
               <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#2b4b38] mb-2.5">Nuestra Visión</h3>
               <p className="text-[#42604e] text-sm sm:text-base leading-relaxed font-light">
-                Ser la firma referente en defensa tributaria, laboral y empresarial en el Perú, destacando por solvencia académica PUCP, disciplina procesal y ética inquebrantable.
+                Ser un estudio jurídico líder y referente a nivel nacional en derecho tributario, laboral y empresarial, reconocido por nuestra especialización, excelencia profesional y capacidad para brindar soluciones legales eficientes.
               </p>
             </ScrollReveal>
           </div>
@@ -564,8 +600,27 @@ Solicito una asesoría tributaria.`;
                             </span>
                           </div>
 
-                          {/* Bullets o descripción */}
-                          {member.bullets && member.bullets.length > 0 ? (
+                          {/* Formato 1: Texto primario, texto secundario, línea debajo y viñetas descriptivas */}
+                          {member.education || member.experience || (member.highlights && member.highlights.length > 0) ? (
+                            <div className="text-xs text-white/85 font-light leading-relaxed">
+                              {member.education && (
+                                <p className="text-white/90 font-normal leading-relaxed">{member.education}</p>
+                              )}
+                              {member.experience && (
+                                <p className="text-white/75 mt-2.5 leading-relaxed">{member.experience}</p>
+                              )}
+                              {member.highlights && member.highlights.length > 0 && (
+                                <div className="pt-3 mt-3 border-t border-white/10 space-y-2">
+                                  {member.highlights.map((hl, idx) => (
+                                    <div key={idx} className="flex items-start gap-2 text-[11.5px] text-white/90 leading-snug">
+                                      <CheckCircle2 className="w-3.5 h-3.5 text-white/70 shrink-0 mt-0.5" />
+                                      <span>{hl}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          ) : member.bullets && (
                             <div className="space-y-2.5 text-xs text-white/85 font-light leading-relaxed">
                               {member.bullets.map((b, i) => (
                                 <div key={i} className="flex items-start gap-2">
@@ -573,25 +628,6 @@ Solicito una asesoría tributaria.`;
                                   <span>{b}</span>
                                 </div>
                               ))}
-                            </div>
-                          ) : (
-                            <div className="space-y-2 text-xs text-white/85 font-light leading-relaxed">
-                              {member.education && (
-                                <p className="text-white/90 font-normal">{member.education}</p>
-                              )}
-                              {member.experience && (
-                                <p className="text-white/75">{member.experience}</p>
-                              )}
-                              {member.highlights && member.highlights.length > 0 && (
-                                <div className="pt-2 border-t border-white/10 space-y-1.5">
-                                  {member.highlights.map((hl) => (
-                                    <div key={hl} className="flex items-center gap-1.5 text-[11px] text-white/90">
-                                      <CheckCircle2 className="w-3 h-3 text-white/70 shrink-0" />
-                                      <span>{hl}</span>
-                                    </div>
-                                  ))}
-                                </div>
-                              )}
                             </div>
                           )}
                         </div>

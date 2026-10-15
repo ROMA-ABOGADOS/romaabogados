@@ -36,11 +36,11 @@ export function PublicacionesRecientes() {
               Análisis y opinión
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#2b4b38] leading-[1.18]">
-              Publicaciones Recientes
+              Actualidad Tributaria y Empresarial
             </h2>
             <div className="w-16 h-0.5 bg-[#fa9b0c] mx-auto mt-4 mb-4" />
             <p className="mt-2 text-[#42604e] text-base sm:text-lg leading-relaxed font-light">
-              Criterios técnicos, resoluciones vinculantes y análisis tributario estratégico para la toma de decisiones empresariales.
+              Artículos, novedades y análisis estratégico en materia tributaria y empresarial para la toma de decisiones.
             </p>
           </div>
         </ScrollReveal>

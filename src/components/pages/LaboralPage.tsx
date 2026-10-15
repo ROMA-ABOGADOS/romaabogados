@@ -19,30 +19,33 @@ import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
 const laborPillars = [
   {
     icon: FileText,
-    title: "1. Consultoría Laboral y Tributario-Laboral",
-    badge: "Preventivo & Fiscal",
+    title: "1. Consultoría y asesoría preventiva en derecho laboral",
+    badge: "Asesoría Preventiva",
     description:
       "Estructuración sólida de la relación laboral para prevenir contingencias y sanciones administrativas.",
     items: [
-      "Redacción y revisión de contratos de trabajo y teletrabajo.",
-      "Reglamento Interno de Trabajo (RIT) y políticas corporativas.",
-      "Consultoría en remuneraciones, beneficios sociales y utilidades.",
-      "Impuesto a la Renta de quinta categoría.",
-      "Rentas de cuarta categoría y trabajadores independientes.",
-      "Revisión del cumplimiento de obligaciones laborales y tributarias.",
-      "Identificación y prevención de contingencias laborales y tributarias.",
+      "Contratos y relaciones laborales.",
+      "Jornada, horario y tiempo de trabajo.",
+      "Tercerización e intermediación laboral.",
+      "Estructuras salariales y conceptos remunerativos.",
+      "Cálculo y determinación de beneficios laborales.",
+      "Procedimientos disciplinarios y desvinculaciones.",
+      "Seguridad y Salud en el Trabajo.",
+      "Identificación y prevención de contingencias laborales.",
     ],
   },
   {
     icon: Shield,
-    title: "2. Gestión de Riesgos y Compliance Laboral",
-    badge: "Auditoría & SST",
+    title: "2. Gestión de riesgos y obligaciones laborales",
+    badge: "Riesgos & Obligaciones",
     description:
-      "Verificación exhaustiva del cumplimiento de la normativa laboral y de seguridad y salud en el trabajo.",
+      "Verificación exhaustiva del cumplimiento de la normativa laboral y obligaciones previsionales y tributarias.",
     items: [
-      "Auditorías laborales integrales de compliance preventivo.",
-      "Asesoría en Seguridad y Salud en el Trabajo (SST) y comités paritarios.",
-      "Protocolos obligatorios contra el hostigamiento sexual (Ley 27942).",
+      "EsSalud y aportes previsionales: SNP y SPP.",
+      "Impuesto a la Renta de quinta categoría.",
+      "Rentas de cuarta categoría y trabajadores independientes.",
+      "Revisión del cumplimiento de obligaciones laborales y tributarias.",
+      "Identificación y prevención de contingencias laborales y tributarias.",
     ],
   },
   {
