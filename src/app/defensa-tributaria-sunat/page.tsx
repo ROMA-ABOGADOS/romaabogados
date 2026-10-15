@@ -16,16 +16,20 @@ export const metadata: Metadata = {
     "Roma Abogados",
   ],
   openGraph: {
-    title: "Defensa Tributaria Urgente | ROMAABOGADOS",
+    title: "Defensa Tributaria Urgente | ROMA & ABOGADOS",
     description: "Atención urgente de cartas inductivas, fiscalizaciones SUNAT y cobranzas coactivas. Escudo legal y tributario para proteger tu patrimonio.",
-    url: "https://romaabogados.pe/defensa-tributaria-sunat",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, type: "image/png" }],
+    url: "https://www.romaabogados.pe/defensa-tributaria-sunat",
+    siteName: "ROMA & ABOGADOS",
+    images: [
+      { url: "https://www.romaabogados.pe/og-image.jpg", width: 1200, height: 630, type: "image/jpeg" },
+      { url: "https://www.romaabogados.pe/og-image.png", width: 1200, height: 630, type: "image/png" },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Defensa Tributaria Urgente | ROMAABOGADOS",
+    title: "Defensa Tributaria Urgente | ROMA & ABOGADOS",
     description: "¿SUNAT te fiscalizó? Atención urgente de cartas inductivas, fiscalizaciones y cobranza coactiva.",
-    images: ["/og-image.png"],
+    images: ["https://www.romaabogados.pe/og-image.jpg"],
   },
 };
 

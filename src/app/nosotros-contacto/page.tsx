@@ -2,28 +2,34 @@ import type { Metadata } from "next";
 import { NosotrosPage } from "@/components/pages/NosotrosPage";
 
 export const metadata: Metadata = {
-  title: "Nosotros y Contacto | ROMAABOGADOS - Estudio Jurídico y Tributario",
+  title: "Quiénes Somos & Equipo Legal | ROMA & ABOGADOS",
   description:
-    "Conoce a ROMAABOGADOS, estudio especializado en derecho corporativo, asesoría tributaria y contabilidad en Perú. Respaldo legal, solvencia y resultados comprobados.",
+    "Conoce al equipo legal y consultores de ROMA & ABOGADOS. Más de 15 años de trayectoria en defensa tributaria, laboral y empresarial en el Perú. Rigor técnico y ética inquebrantable.",
   keywords: [
-    "ROMAABOGADOS",
+    "ROMA & ABOGADOS",
     "Roma Abogados",
+    "Roberto Marca",
     "estudio jurídico Lima",
     "abogados Perú",
     "asesores tributarios Lima",
     "defensa SUNAT",
+    "Tribunal Fiscal",
   ],
   openGraph: {
-    title: "Nosotros y Contacto | ROMAABOGADOS",
-    description: "Trayectoria y respaldo legal protegiendo patrimonios en el Perú. Transparencia, rigurosidad y resultados. Agenda tu consulta gratuita.",
-    url: "https://romaabogados.pe/nosotros-contacto",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, type: "image/png" }],
+    title: "Quiénes Somos & Equipo Legal | ROMA & ABOGADOS",
+    description: "Conoce a nuestros abogados y consultores especialistas en defensa tributaria, laboral y empresarial en el Perú. +15 años de experiencia.",
+    url: "https://www.romaabogados.pe/nosotros-contacto",
+    siteName: "ROMA & ABOGADOS",
+    images: [
+      { url: "https://www.romaabogados.pe/og-image.jpg", width: 1200, height: 630, type: "image/jpeg" },
+      { url: "https://www.romaabogados.pe/og-image.png", width: 1200, height: 630, type: "image/png" },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nosotros y Contacto | ROMAABOGADOS",
-    description: "Estudio líder en asesoría legal corporativa y tributaria en Perú. Consulta gratuita.",
-    images: ["/og-image.png"],
+    title: "Quiénes Somos & Equipo Legal | ROMA & ABOGADOS",
+    description: "Firma legal especializada en asesoría tributaria, laboral y empresarial en el Perú.",
+    images: ["https://www.romaabogados.pe/og-image.jpg"],
   },
 };
 

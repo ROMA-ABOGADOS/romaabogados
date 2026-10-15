@@ -17,14 +17,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Derecho Empresarial | ROMA & ABOGADOS",
     description: "Asesoría y defensa jurídica integral en Derecho Administrativo, Derecho Civil y Derecho Corporativo.",
-    url: "https://romaabogados.pe/constitucion-de-empresas",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, type: "image/png" }],
+    url: "https://www.romaabogados.pe/constitucion-de-empresas",
+    siteName: "ROMA & ABOGADOS",
+    images: [
+      { url: "https://www.romaabogados.pe/og-image.jpg", width: 1200, height: 630, type: "image/jpeg" },
+      { url: "https://www.romaabogados.pe/og-image.png", width: 1200, height: 630, type: "image/png" },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Derecho Empresarial | ROMA & ABOGADOS",
     description: "Asesoría y defensa jurídica especializada en Derecho Administrativo, Derecho Civil y Derecho Corporativo.",
-    images: ["/og-image.png"],
+    images: ["https://www.romaabogados.pe/og-image.jpg"],
   },
 };
 

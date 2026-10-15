@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { NosotrosPage } from "@/components/pages/NosotrosPage";
 
 export const metadata: Metadata = {
-  title: "Nosotros | ROMAABOGADOS - Estudio Jurídico y Tributario en Perú",
+  title: "Quiénes Somos | ROMA & ABOGADOS",
   description:
-    "Conoce a ROMAABOGADOS, estudio especializado en derecho corporativo, asesoría tributaria y contabilidad integral en Perú. Respaldo legal, transparencia y resultados comprobados.",
+    "Conoce a ROMA & ABOGADOS, firma especializada en asesoría tributaria, laboral, corporativa y outsourcing contable en el Perú. Solvencia técnica y resultados comprobados.",
   keywords: [
-    "ROMAABOGADOS",
+    "ROMA & ABOGADOS",
     "Roma Abogados",
     "estudio jurídico Lima",
     "abogados corporativos Perú",

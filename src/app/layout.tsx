@@ -29,10 +29,10 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://romaabogados.pe"),
+  metadataBase: new URL("https://www.romaabogados.pe"),
   title: "ROMA & ABOGADOS | Firma Especializada en Asesoría Tributaria, Laboral y Empresarial",
   description:
-    "ROMA & ABOGADOS: Soluciones jurídicas eficientes y estratégicas. Especialistas en Derecho Tributario, Laboral, Outsourcing Contable y Derecho Empresarial en el Perú.",
+    "ROMA & ABOGADOS: Firma especializada en asesoría y defensa tributaria ante SUNAT y Tribunal Fiscal, derecho laboral, constitución empresarial y outsourcing contable en el Perú. Más de 15 años de trayectoria.",
   keywords: [
     "ROMA & ABOGADOS",
     "Roma Abogados",
@@ -57,29 +57,38 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "ROMAABOGADOS | Estudio Jurídico, Asesoría Tributaria y Contable",
+    title: "ROMA & ABOGADOS | Firma Especializada en Asesoría Tributaria, Laboral y Empresarial",
     description:
-      "Protege tu patrimonio y haz crecer tu negocio con ROMAABOGADOS. Asesoría legal, contabilidad integral, constitución empresarial y defensa estratégica ante SUNAT. Consultoría gratuita.",
+      "Firma legal especializada en defensa tributaria ante SUNAT y Tribunal Fiscal, derecho laboral corporativo, constitución de empresas y outsourcing contable en el Perú. Más de 15 años de trayectoria y excelencia jurídica.",
     type: "website",
     locale: "es_PE",
-    siteName: "ROMAABOGADOS",
-    url: "https://romaabogados.pe",
+    siteName: "ROMA & ABOGADOS",
+    url: "https://www.romaabogados.pe",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://www.romaabogados.pe/og-image.jpg",
+        secureUrl: "https://www.romaabogados.pe/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "ROMAABOGADOS - Estudio Jurídico y Tributario en Perú",
+        alt: "ROMA & ABOGADOS - Firma Especializada en Asesoría Tributaria, Laboral y Empresarial",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://www.romaabogados.pe/og-image.png",
+        secureUrl: "https://www.romaabogados.pe/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "ROMA & ABOGADOS - Firma Especializada en Asesoría Tributaria, Laboral y Empresarial",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ROMAABOGADOS | Estudio Jurídico y Tributario",
+    title: "ROMA & ABOGADOS | Firma Especializada en Asesoría Tributaria, Laboral y Empresarial",
     description:
-      "Asesoría legal, contable y defensa jurídica ante SUNAT en el Perú. Seguridad y respaldo para tu empresa con ROMAABOGADOS.",
-    images: ["/og-image.png"],
+      "Firma legal especializada en defensa tributaria ante SUNAT, derecho laboral, empresarial y outsourcing contable en el Perú. +15 años de experiencia.",
+    images: ["https://www.romaabogados.pe/og-image.jpg"],
   },
   robots: {
     index: true,
