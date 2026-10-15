@@ -14,16 +14,16 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { ScrollDownIndicator } from "@/components/ScrollDownIndicator";
 
 /* ════════════════════════════════════════════════════════════════
-   EQUIPO LEGAL Y CONSULTORES — ORDEN OFICIAL SEGÚN GOOGLE DOC
+   EQUIPO LEGAL Y CONSULTORES — ORDEN OFICIAL
    1. Roberto Marca (Socio Principal)
    2. Estefanía Pineda (Abogada Asociada)
    3. David Corthorn (Abogado Asociado)
    4. Alonso Silva (Egresado de Derecho)
    5. Delila Ronceros (Egresada de Derecho)
-   6. Richard Agapito (Consultor)
-   7. Rafael Huaranga (Consultor)
-   8. Willian Balbin Guevara (Consultor)
-   9. Judith Palomino (Administración)
+   6. Judith Palomino (Administración)
+   7. Richard Agapito (Consultor)
+   8. Rafael Huaranga (Consultor)
+   9. Willian Balbin (Consultor)
    ════════════════════════════════════════════════════════════════ */
 
 interface TeamMember {
@@ -125,6 +125,23 @@ const teamMembers: TeamMember[] = [
     ],
   },
   {
+    id: "judith",
+    name: "Judith Palomino",
+    role: "Administración",
+    area: "Gestión Administrativa",
+    image: "/images/team/judith-palomino-portrait.webp",
+    education:
+      "Administración de Empresas, responsable de la gestión y coordinación administrativa institucional de ROMA ABOGADOS.",
+    experience:
+      "Se encarga de la organización, seguimiento y coordinación de las actividades internas del estudio, contribuyendo a su adecuado funcionamiento.",
+    highlights: [
+      "Gestión y Coordinación Administrativa de ROMA ABOGADOS",
+      "Organización y seguimiento de las actividades internas del estudio",
+      "Atención institucional y enlace con clientes",
+      "Soporte operativo a la gestión de expedientes y servicios",
+    ],
+  },
+  {
     id: "richard",
     name: "Richard Agapito",
     role: "Consultor",
@@ -160,7 +177,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: "willian",
-    name: "Willian Balbin Guevara",
+    name: "Willian Balbin",
     role: "Consultor",
     area: "Derecho Penal y Procesal Penal",
     image: "", // Sin foto oficial, monograma institucional
@@ -173,23 +190,6 @@ const teamMembers: TeamMember[] = [
       "Maestría en Derecho Penal por la USMP",
       "+15 Años de experiencia en litigación penal",
       "Docente de la Escuela de Oficiales de la PNP",
-    ],
-  },
-  {
-    id: "judith",
-    name: "Judith Palomino",
-    role: "Administración",
-    area: "Gestión Administrativa",
-    image: "/images/team/judith-palomino-portrait.webp",
-    education:
-      "Administración de Empresas, responsable de la gestión y coordinación administrativa institucional de ROMA ABOGADOS.",
-    experience:
-      "Se encarga de la organización, seguimiento y coordinación de las actividades internas del estudio, contribuyendo a su adecuado funcionamiento.",
-    highlights: [
-      "Gestión y Coordinación Administrativa de ROMA ABOGADOS",
-      "Organización y seguimiento de las actividades internas del estudio",
-      "Atención institucional y enlace con clientes",
-      "Soporte operativo a la gestión de expedientes y servicios",
     ],
   },
 ];
