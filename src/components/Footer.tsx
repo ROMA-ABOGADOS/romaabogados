@@ -13,10 +13,10 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  { label: "Derecho Tributario & SUNAT", href: "/defensa-tributaria-sunat#lineas-de-servicio" },
-  { label: "Derecho Laboral & SUNAFIL", href: "/derecho-laboral#lineas-de-servicio" },
-  { label: "Derecho Empresarial & Sociedades", href: "/constitucion-de-empresas#lineas-de-servicio" },
-  { label: "Outsourcing Contable Integral", href: "/contabilidad-tributacion#lineas-de-servicio" },
+  { label: "Derecho Tributario", href: "/defensa-tributaria-sunat#lineas-de-servicio" },
+  { label: "Derecho Laboral", href: "/derecho-laboral#lineas-de-servicio" },
+  { label: "Derecho Empresarial", href: "/constitucion-de-empresas#lineas-de-servicio" },
+  { label: "Outsourcing Contable", href: "/contabilidad-tributacion#lineas-de-servicio" },
   { label: "Quiénes Somos & Equipo Legal", href: "/nosotros-contacto#equipo-legal" },
 ];
 
@@ -125,9 +125,9 @@ export function Footer() {
                 <Mail className="w-4 h-4 text-[#fa9b0c] shrink-0" />
                 rm@romaabogados.pe
               </a>
-              <div className="flex items-center gap-2 text-white/75">
-                <MapPin className="w-4 h-4 text-[#fa9b0c] shrink-0" />
-                Lima, Perú (Atención Nacional)
+              <div className="flex items-start gap-2 text-white/75">
+                <MapPin className="w-4 h-4 text-[#fa9b0c] shrink-0 mt-0.5" />
+                <span>Av. Los Frutales 825 - La Molina, Lima</span>
               </div>
             </div>
 

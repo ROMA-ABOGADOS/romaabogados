@@ -4,7 +4,7 @@ export const defaultSiteSettings = {
   phone: "+51 905 454 792",
   whatsapp: "51905454792",
   email: "rm@romaabogados.pe",
-  address: "Lima, Perú",
+  address: "Av. Los Frutales 825 - La Molina, Lima",
   schedule: "Lun - Vie: 8:30 - 18:30 / Sáb: 9:00 - 13:00",
   footerDescription:
     "Firma de profesionales especializada en asesoría tributaria, laboral y empresarial. Soluciones jurídicas eficientes y estratégicas para proteger y potenciar tu negocio.",

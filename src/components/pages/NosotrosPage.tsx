@@ -795,7 +795,8 @@ Solicito una asesoría tributaria.`;
                   </div>
                   <div>
                     <p className="text-xs text-[#42604e] font-medium">Ubicación</p>
-                    <p className="text-base font-bold text-[#2b4b38]">Lima, Perú (Atención a Nivel Nacional)</p>
+                    <p className="text-base font-bold text-[#2b4b38]">Av. Los Frutales 825 - La Molina</p>
+                    <p className="text-xs text-[#42604e]/80 font-light mt-0.5">Lima, Perú (Atención a Nivel Nacional)</p>
                   </div>
                 </div>
               </div>

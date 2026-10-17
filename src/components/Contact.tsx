@@ -26,8 +26,8 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Ubicación",
-    detail: "Lima, Perú",
-    description: "Atención virtual y presencial",
+    detail: "Av. Los Frutales 825 - La Molina",
+    description: "Lima, Perú (Atención a Nivel Nacional)",
     color: "text-purple",
     bg: "bg-purple/10",
   },
